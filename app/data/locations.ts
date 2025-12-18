@@ -13,7 +13,7 @@
   notes?: string;
   isPrimary?: boolean;
   mapUrl?: string;
-  image?: string;
+  image: string;
 };
 
 export const locations: Location[] = [
