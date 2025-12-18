@@ -1,0 +1,53 @@
+﻿backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+site_url: https://www.beisserlumber.com
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: true
+    extension: "mdx"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "community"
+    label: "Community & Involvement"
+    folder: "content/community"
+    create: true
+    extension: "mdx"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "string", required: false }
+      - {
+          label: "Featured Image",
+          name: "image",
+          widget: "image",
+          required: false
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "categories"
+    label: "Product Categories"
+    folder: "content/categories"
+    create: true
+    extension: "mdx"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

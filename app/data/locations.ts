@@ -1,4 +1,4 @@
-export type Location = {
+﻿export type Location = {
   slug: string;
   name: string;
   addressLine1: string;
@@ -13,6 +13,7 @@ export type Location = {
   notes?: string;
   isPrimary?: boolean;
   mapUrl?: string;
+  image?: string;
 };
 
 export const locations: Location[] = [
@@ -30,6 +31,7 @@ export const locations: Location[] = [
     isPrimary: true,
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=3705+SE+Beisser+Drive+Grimes+IA+50111",
+    image: "/locations/grimes.jpg",
   },
   {
     slug: "coralville",
@@ -44,6 +46,7 @@ export const locations: Location[] = [
     hoursSundayNote: "Closed Sundays & Major Holidays",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=415+Westcor+Drive+Coralville+IA+52241",
+    image: "/locations/coralville.jpg",
   },
   {
     slug: "fort-dodge",
@@ -58,6 +61,7 @@ export const locations: Location[] = [
     hoursSundayNote: "Closed Sundays & Major Holidays",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=1920+Central+Avenue+Fort+Dodge+IA+50501",
+    image: "/locations/fort-dodge.jpg",
   },
   {
     slug: "birchwood-showroom",
@@ -73,5 +77,6 @@ export const locations: Location[] = [
     notes: "Dedicated showroom & millwork location.",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=7901+Birchwood+Court+Johnston+IA+50131",
+    image: "/locations/birchwood.jpg",
   },
 ];
