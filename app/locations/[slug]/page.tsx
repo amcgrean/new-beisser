@@ -35,7 +35,13 @@ export default function LocationDetailPage({ params }: { params: Params }) {
           <div className="grid gap-4 sm:grid-cols-2 text-sm">
             <div>
               <div className="font-medium text-slate-800">Address</div>
-              <div className="text-slate-600 text-sm">{location.address}</div>
+              <div className="text-slate-600 text-sm">
+                  {location.addressLine1}
+                  {location.addressLine2 ? `, ${location.addressLine2}` : ""}
+                  <br />
+                  {location.city}, {location.state} {location.zip}
+              </div>
+
             </div>
             <div>
               <div className="font-medium text-slate-800">Phone</div>
