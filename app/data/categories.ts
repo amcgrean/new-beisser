@@ -5,6 +5,7 @@
   description: string;
   heroImage: string;
   bullets: string[];
+  tagline?: string;
 };
 
 export const productCategories: ProductCategory[] = [
