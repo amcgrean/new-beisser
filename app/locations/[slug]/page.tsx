@@ -8,7 +8,7 @@ export default function LocationDetailPage({ params }: { params: Params }) {
   const location = locations.find((l) => l.slug === params.slug);
 
   if (!location) {
-    notFound();
+    return notFound();
   }
 
   return (
@@ -23,6 +23,7 @@ export default function LocationDetailPage({ params }: { params: Params }) {
           map below are placeholders your team can swap out for real photos and embed codes.
         </p>
       </header>
+
       <div className="grid gap-6 md:grid-cols-3 items-start">
         <div className="md:col-span-2 space-y-4">
           <Image
@@ -32,43 +33,58 @@ export default function LocationDetailPage({ params }: { params: Params }) {
             height={450}
             className="w-full h-56 object-cover rounded-lg border bg-slate-100"
           />
+
           <div className="grid gap-4 sm:grid-cols-2 text-sm">
             <div>
               <div className="font-medium text-slate-800">Address</div>
               <div className="text-slate-600 text-sm">
-                  {location.addressLine1}
-                  {location.addressLine2 ? `, ${location.addressLine2}` : ""}
-                  <br />
-                  {location.city}, {location.state} {location.zip}
+                {location.addressLine1}
+                {location.addressLine2 ? `, ${location.addressLine2}` : ""}
+                <br />
+                {location.city}, {location.state} {location.zip}
               </div>
-
             </div>
+
             <div>
               <div className="font-medium text-slate-800">Phone</div>
               <div className="text-slate-600 text-sm">{location.phone}</div>
             </div>
+
             <div>
               <div className="font-medium text-slate-800">Hours</div>
-              <div className="text-slate-600 text-sm">{location.hours}</div>
+              <div className="text-slate-600 text-sm space-y-1">
+                <div>{location.hoursWeekday}</div>
+                <div>{location.hoursSaturday}</div>
+                <div>{location.hoursSundayNote}</div>
+              </div>
             </div>
+
             <div>
-              <div className="font-medium text-slate-800">Services</div>
-              <ul className="list-disc list-inside text-slate-600 text-sm space-y-0.5">
-                {location.services.map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
-              </ul>
+              <div className="font-medium text-slate-800">Notes</div>
+              <div className="text-slate-600 text-sm">
+                {location.notes ?? "Branch-specific services and notes coming soon."}
+              </div>
             </div>
           </div>
-          <div className="rounded-lg border overflow-hidden">
-            <iframe
-              src={location.mapEmbedUrl}
-              className="w-full h-64 border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+
+          {/* Map */}
+          <div className="rounded-lg border bg-white p-4 text-sm">
+            <div className="font-medium text-slate-800">Map</div>
+            {location.mapUrl ? (
+              <a
+                href={location.mapUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="text-beisserGreen hover:underline"
+              >
+                Open in Google Maps
+              </a>
+            ) : (
+              <div className="text-slate-600">Map link coming soon.</div>
+            )}
           </div>
         </div>
+
         <aside className="rounded-lg border bg-white p-4 text-sm space-y-3">
           <div className="font-medium text-slate-800">Next Steps</div>
           <ul className="space-y-1 text-slate-600">
