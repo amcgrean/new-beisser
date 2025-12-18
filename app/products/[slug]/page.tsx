@@ -22,6 +22,13 @@ export default function ProductCategoryPage({ params }: PageProps) {
     (b.categories ?? []).includes(category.slug)
   );
 
+  // ✅ fallbacks to prevent Next/Image build failures
+  const heroSrc = category.heroImage ?? "/placeholders/category.jpg";
+
+  // Decap CMS often writes body into frontmatter.body.
+  const mdxBody =
+    (categoryMdx?.frontmatter?.body as string | undefined) ?? categoryMdx?.content;
+
   return (
     <div className="space-y-8">
       <Breadcrumbs
@@ -35,87 +42,88 @@ export default function ProductCategoryPage({ params }: PageProps) {
       {/* Hero section */}
       <section className="grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1.4fr)] items-start">
         <div className="space-y-4">
-          <h1 className="text-3xl font-bold text-beisserGray">
-            {category.name}
-          </h1>
-          {category.tagline && (
-            <p className="text-sm font-medium text-beisserGreen">
-              {category.tagline}
-            </p>
-          )}
-          {category.description && (
-            <p className="max-w-2xl text-sm text-slate-700">
-              {category.description}
-            </p>
-          )}
-          {category.bullets && category.bullets.length > 0 && (
+          <h1 className="text-3xl font-bold text-beisserGray">{category.name}</h1>
+
+          {category.tagline ? (
+            <p className="text-sm font-medium text-beisserGreen">{category.tagline}</p>
+          ) : null}
+
+          {category.description ? (
+            <p className="max-w-2xl text-sm text-slate-700">{category.description}</p>
+          ) : null}
+
+          {Array.isArray(category.bullets) && category.bullets.length > 0 ? (
             <ul className="mt-2 list-disc list-inside space-y-1 text-sm text-slate-700">
               {category.bullets.map((item: string) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          )}
+          ) : null}
         </div>
 
         <div className="relative h-64 overflow-hidden rounded-2xl border bg-slate-100 shadow-sm sm:h-72 lg:h-80">
-          <Image
-            src={category.heroImage}
-            alt={category.name}
-            fill
-            className="object-cover"
-          />
+          <Image src={heroSrc} alt={category.name} fill className="object-cover" />
         </div>
       </section>
 
       {/* MDX detail section */}
-      {categoryMdx && (
+      {categoryMdx && mdxBody ? (
         <section className="space-y-3 rounded-xl border bg-white p-4 shadow-sm">
           <h2 className="text-xl font-semibold text-beisserGray">
-            {categoryMdx.frontmatter.title ?? category.name}
+            {(categoryMdx.frontmatter.title as string) ?? category.name}
           </h2>
-          {categoryMdx.frontmatter.summary && (
+
+          {categoryMdx.frontmatter.summary ? (
             <p className="max-w-2xl text-sm text-slate-700">
               {categoryMdx.frontmatter.summary as string}
             </p>
-          )}
-          <MdxContent content={categoryMdx.content} />
+          ) : null}
+
+          <MdxContent content={mdxBody} />
         </section>
-      )}
+      ) : null}
 
       {/* Brands section */}
-      {categoryBrands.length > 0 && (
+      {categoryBrands.length > 0 ? (
         <section className="space-y-3">
           <h2 className="text-xl font-semibold text-beisserGray">
             Featured Brands in {category.name}
           </h2>
+
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {categoryBrands.map((brand) => (
-              <Link
-                key={brand.slug}
-                href={`/brands/${brand.slug}`}
-                className="flex flex-col items-center rounded-lg border bg-white p-3 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-              >
-                <div className="relative mb-2 h-12 w-32">
-                  <Image
-                    src={brand.logo}
-                    alt={brand.name}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <div className="text-sm font-semibold text-beisserGray">
-                  {brand.name}
-                </div>
-                {brand.summary && (
-                  <p className="mt-1 line-clamp-3 text-xs text-slate-600">
-                    {brand.summary}
-                  </p>
-                )}
-              </Link>
-            ))}
+            {categoryBrands.map((brand) => {
+              const brandLogo = brand.logo ?? "/placeholders/brand.png";
+
+              return (
+                <Link
+                  key={brand.slug}
+                  href={`/brands/${brand.slug}`}
+                  className="flex flex-col items-center rounded-lg border bg-white p-3 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <div className="relative mb-2 h-12 w-32">
+                    <Image
+                      src={brandLogo}
+                      alt={brand.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+
+                  <div className="text-sm font-semibold text-beisserGray">
+                    {brand.name}
+                  </div>
+
+                  {brand.summary ? (
+                    <p className="mt-1 line-clamp-3 text-xs text-slate-600">
+                      {brand.summary}
+                    </p>
+                  ) : null}
+                </Link>
+              );
+            })}
           </div>
         </section>
-      )}
+      ) : null}
     </div>
   );
 }
