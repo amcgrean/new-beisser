@@ -1,10 +1,11 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
-import { brands } from "@/app/data/brands";
 import { productCategories } from "@/app/data/categories";
 import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import { getBrandEntries } from "@/app/lib/brands";
 
 export default function BrandsPage() {
+    const brands = getBrandEntries();
   return (
     <div className="space-y-8">
       <Breadcrumbs

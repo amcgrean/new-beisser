@@ -144,3 +144,27 @@ collections:
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Featured", name: "featured", widget: "boolean", required: false, default: false }
       - { label: "Body (Optional)", name: "body", widget: "markdown", required: false }
+  - name: "brands"
+    label: "Brands"
+    folder: "content/brands"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+        - { label: "Brand Name", name: "title", widget: "string" }
+
+        # URL-friendly key you can use for lookups (optional but handy)
+        - { label: "Brand Key", name: "key", widget: "string", required: false, hint: "Short id like 'trex' or 'andersen'." }
+
+        - { label: "Website", name: "website", widget: "string", required: false }
+
+        - label: "Logo"
+        name: "logo"
+        widget: "image"
+        required: false
+        hint: "Upload a PNG/SVG. Keep it under ~500KB if possible."
+
+        - { label: "Short Description", name: "summary", widget: "text", required: false }
+        - { label: "Body", name: "body", widget: "markdown", required: false }

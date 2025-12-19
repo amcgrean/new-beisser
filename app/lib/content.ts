@@ -99,3 +99,11 @@ export function getGalleryEntries(): MdxEntry[] {
     .map((slug) => getGalleryEntry(slug))
     .filter((entry): entry is MdxEntry => entry !== null);
 }
+export type Brand = {
+  slug: string;
+  title: string;
+  key?: string;
+  website?: string;
+  logo?: string;
+  summary?: string;
+};
