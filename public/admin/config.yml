@@ -8,6 +8,8 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 site_url: https://beisser.netlify.app
+display_url: https://beisser.netlify.app
+
 
 
 collections:
@@ -58,6 +60,7 @@ collections:
       - name: "showroom"
         label: "Showroom (Johnston / Birchwood)"
         file: "content/pages/showroom.mdx"
+        preview_path: "showroom"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Summary", name: "summary", widget: "string", required: false }
@@ -85,6 +88,14 @@ collections:
                 fields:
                   - { label: "Label", name: "label", widget: "string", required: false }
                   - { label: "Href", name: "href", widget: "string", required: false }
+
+          - label: "Showroom Gallery"
+            name: "gallery"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Image", name: "src", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string", required: false }
 
           - label: "Featured Categories"
             name: "features"
@@ -115,8 +126,8 @@ collections:
                   - { label: "Day", name: "day", widget: "string" }
                   - { label: "Time", name: "time", widget: "string" }
 
-          # This is IMPORTANT: Decap uses the special "body" field for the file content
           - { label: "Page Content", name: "body", widget: "markdown", required: false }
+
   - name: "gallery"
     label: "Gallery Items"
     folder: "content/gallery"
