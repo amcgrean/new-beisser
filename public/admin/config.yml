@@ -117,9 +117,7 @@ collections:
 
           # This is IMPORTANT: Decap uses the special "body" field for the file content
           - { label: "Page Content", name: "body", widget: "markdown", required: false }
-
-
-   - name: "gallery"
+  - name: "gallery"
     label: "Gallery Items"
     folder: "content/gallery"
     create: true
