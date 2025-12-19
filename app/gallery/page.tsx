@@ -1,246 +1,113 @@
-﻿import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
-import { getPageMdx, getGalleryEntries } from "@/app/lib/content";
-import { MdxContent } from "@/app/ui/MdxContent";
+﻿import Image from "next/image";
+import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import { getGalleryEntries } from "@/app/lib/content";
 
-type FeatureItem = { code: string; title: string; text: string };
-type HoursItem = { day: string; time: string };
-
-type FeaturedGalleryItem = {
-  src: string;
-  alt: string;
+type GalleryItem = {
+  slug: string;
+  title: string;
+  caption: string;
+  image: string;
+  location: string;
   featured: boolean;
   date: Date | null;
+  tags: string[];
 };
 
-export default function ShowroomPage() {
-  const entry = getPageMdx("showroom");
-  const fm: any = entry?.frontmatter ?? {};
-
-  const hero = fm.hero as
-    | {
-        eyebrow?: string;
-        heading?: string;
-        subheading?: string;
-        image?: string;
-        primaryCta?: { label?: string; href?: string };
-        secondaryCta?: { label?: string; href?: string };
-      }
-    | undefined;
-
-  const features = (fm.features as FeatureItem[] | undefined) ?? [];
-  const visit = fm.visit as
-    | {
-        addressLine1?: string;
-        addressLine2?: string;
-        phoneLabel?: string;
-        phoneHref?: string;
-        directionsHref?: string;
-        emailHref?: string;
-        mapEmbedSrc?: string;
-        hours?: HoursItem[];
-      }
-    | undefined;
-
-  // Pull featured gallery items from CMS-managed content/gallery/*.mdx
-  const featuredGallery: FeaturedGalleryItem[] = getGalleryEntries()
+export default function GalleryPage() {
+  const items: GalleryItem[] = getGalleryEntries()
     .map((e) => {
-      const gfm = e.frontmatter ?? {};
+      const fm = e.frontmatter ?? {};
       return {
-        src: (gfm.image as string) ?? "",
-        alt: (gfm.title as string) ?? e.slug,
-        featured: Boolean(gfm.featured),
-        date: gfm.date ? new Date(gfm.date as string) : null,
+        slug: e.slug,
+        title: (fm.title as string) ?? e.slug,
+        caption: (fm.caption as string) ?? "",
+        image: (fm.image as string) ?? "/placeholders/gallery.jpg",
+        location: (fm.location as string) ?? "",
+        featured: Boolean(fm.featured),
+        date: fm.date ? new Date(fm.date as string) : null,
+        tags: Array.isArray(fm.tags) ? (fm.tags as string[]) : [],
       };
     })
-    .filter((x) => x.featured && x.src)
-    // Featured first (already filtered), then newest by date if available
+    // Featured first, then newest by date (if present), then title
     .sort((a, b) => {
+      const featuredDelta = Number(b.featured) - Number(a.featured);
+      if (featuredDelta !== 0) return featuredDelta;
+
       const aTime = a.date ? a.date.getTime() : 0;
       const bTime = b.date ? b.date.getTime() : 0;
-      return bTime - aTime;
-    })
-    .slice(0, 6);
+      if (bTime !== aTime) return bTime - aTime;
+
+      return a.title.localeCompare(b.title);
+    });
 
   return (
     <div className="space-y-8">
       <Breadcrumbs
         items={[
           { label: "Home", href: "/" },
-          { label: "Showroom & Millwork", href: "/showroom" },
+          { label: "Gallery", href: "/gallery" },
         ]}
       />
 
-      <section className="space-y-4">
-        <h1 className="text-3xl font-bold text-beisserGray">
-          {fm.title ?? "Showroom & Millwork"}
-        </h1>
+      <header className="space-y-2">
+        <h1 className="text-3xl font-bold text-beisserGray">Gallery</h1>
+        <p className="text-sm text-slate-700 max-w-2xl">
+          Project photos, in-store highlights, community involvement, and more.
+        </p>
+      </header>
 
-        {fm.summary && (
-          <p className="max-w-2xl text-sm text-slate-700">{fm.summary}</p>
-        )}
-
-        {/* HERO */}
-        {hero?.image && (
-          <div className="relative overflow-hidden rounded-2xl bg-beisserGray text-white">
-            <div className="absolute inset-0 opacity-40">
-              <img src={hero.image} alt="" className="h-full w-full object-cover" />
-            </div>
-            <div className="relative p-8 md:p-12 space-y-3">
-              {hero.eyebrow && (
-                <div className="text-xs font-bold tracking-widest uppercase text-beisserGold">
-                  {hero.eyebrow}
-                </div>
-              )}
-              <h2 className="text-2xl md:text-4xl font-extrabold">
-                {hero.heading ?? fm.title}
-              </h2>
-              {hero.subheading && (
-                <p className="max-w-2xl text-white/90">{hero.subheading}</p>
-              )}
-
-              <div className="pt-3 flex flex-wrap gap-3">
-                {hero.primaryCta?.href && hero.primaryCta?.label && (
-                  <a className="btn-primary" href={hero.primaryCta.href}>
-                    {hero.primaryCta.label}
-                  </a>
-                )}
-                {hero.secondaryCta?.href && hero.secondaryCta?.label && (
-                  <a
-                    className="btn-outline bg-white/10 border-white text-white hover:bg-white/20"
-                    href={hero.secondaryCta.href}
-                  >
-                    {hero.secondaryCta.label}
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* BODY MARKDOWN */}
-        {entry && <MdxContent content={entry.content} />}
-      </section>
-
-      {/* FEATURED GALLERY (from content/gallery) */}
-      {featuredGallery.length > 0 && (
-        <section className="space-y-4">
-          <div className="flex items-end justify-between gap-4">
-            <div>
-              <h2 className="text-xl font-bold text-beisserGray">Gallery</h2>
-              <p className="text-sm text-slate-600">
-                Featured photos from our gallery.
-              </p>
-            </div>
-
-            <a href="/gallery" className="text-sm text-beisserGreen underline">
-              View all
-            </a>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {featuredGallery.map((img, idx) => (
-              <img
-                key={`${img.src}-${idx}`}
-                src={img.src}
-                alt={img.alt}
-                className="rounded-xl w-full h-40 md:h-48 object-cover"
-                loading="lazy"
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((item) => (
+          <article
+            key={item.slug}
+            className="overflow-hidden rounded-xl border bg-white shadow-sm transition hover:shadow-md"
+          >
+            <div className="relative h-44 bg-slate-100">
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* FEATURES */}
-      {features.length > 0 && (
-        <section className="space-y-4">
-          <h2 className="text-xl font-bold text-beisserGray">
-            Featured Categories
-          </h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {features.map((f, idx) => (
-              <div key={idx} className="rounded-xl border bg-white p-5">
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-beisserGreen text-white font-bold">
-                  {f.code}
-                </div>
-                <div className="mt-3 text-lg font-bold text-beisserGray">
-                  {f.title}
-                </div>
-                <p className="mt-2 text-sm text-slate-700">{f.text}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* VISIT */}
-      {visit && (
-        <section id="visit" className="space-y-4">
-          <h2 className="text-xl font-bold text-beisserGray">Plan Your Visit</h2>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border bg-white p-6 space-y-3">
-              <div className="text-sm">
-                <div className="font-semibold text-beisserGray">Address</div>
-                <div>{visit.addressLine1}</div>
-                <div>{visit.addressLine2}</div>
-              </div>
-
-              <div className="text-sm">
-                <div className="font-semibold text-beisserGray">Phone</div>
-                {visit.phoneHref ? (
-                  <a className="text-beisserGreen underline" href={visit.phoneHref}>
-                    {visit.phoneLabel}
-                  </a>
-                ) : (
-                  <div>{visit.phoneLabel}</div>
-                )}
-              </div>
-
-              {visit.hours?.length ? (
-                <div className="text-sm">
-                  <div className="font-semibold text-beisserGray">Hours</div>
-                  <div className="mt-2 space-y-1">
-                    {visit.hours.map((h, idx) => (
-                      <div key={idx} className="flex justify-between gap-4">
-                        <span>{h.day}</span>
-                        <span className="font-semibold">{h.time}</span>
-                      </div>
-                    ))}
-                  </div>
+              {item.featured ? (
+                <div className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-beisserGray shadow-sm">
+                  Featured
                 </div>
               ) : null}
-
-              <div className="pt-2 flex flex-wrap gap-3">
-                {visit.directionsHref && (
-                  <a
-                    className="btn-primary"
-                    href={visit.directionsHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Get Directions
-                  </a>
-                )}
-                {visit.emailHref && (
-                  <a className="btn-outline" href={visit.emailHref}>
-                    Contact Us
-                  </a>
-                )}
-              </div>
             </div>
 
-            {visit.mapEmbedSrc && (
-              <iframe
-                className="w-full aspect-[16/11] rounded-2xl border"
-                loading="lazy"
-                src={visit.mapEmbedSrc}
-                title="Map to Beisser Lumber Showroom"
-              />
-            )}
-          </div>
-        </section>
-      )}
+            <div className="p-4 space-y-2">
+              <div className="font-semibold text-beisserGray">{item.title}</div>
+
+              {item.caption ? (
+                <div className="text-sm text-slate-600">{item.caption}</div>
+              ) : null}
+
+              {(item.location || item.date) && (
+                <div className="text-xs text-slate-500">
+                  {[item.location, item.date ? item.date.toLocaleDateString() : ""]
+                    .filter(Boolean)
+                    .join(" • ")}
+                </div>
+              )}
+
+              {item.tags.length ? (
+                <div className="flex flex-wrap gap-2 pt-1">
+                  {item.tags.slice(0, 6).map((t) => (
+                    <span
+                      key={t}
+                      className="text-[11px] px-2 py-1 rounded-full bg-slate-100 text-slate-600"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          </article>
+        ))}
+      </div>
     </div>
   );
 }
