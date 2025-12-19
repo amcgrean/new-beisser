@@ -108,4 +108,57 @@ collections:
               - { label: "Address Line 1", name: "addressLine1", widget: "string", required: false }
               - { label: "Address Line 2", name: "addressLine2", widget: "string", required: false }
               - { label: "Phone Label", name: "phoneLabel", widget: "string", required: false }
-              - { label: "Phone Link (tel:)", name: "phon
+              - { label: "Phone Link (tel:)", name: "phoneHref", widget: "string", required: false }
+              - { label: "Directions Link", name: "directionsHref", widget: "string", required: false }
+              - { label: "Email Link (mailto:)", name: "emailHref", widget: "string", required: false }
+              - { label: "Map Embed Src", name: "mapEmbedSrc", widget: "string", required: false }
+              - label: "Hours"
+                name: "hours"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Day", name: "day", widget: "string" }
+                  - { label: "Time", name: "time", widget: "string" }
+
+          - { label: "Page Content", name: "body", widget: "markdown", required: false }
+
+  - name: "gallery"
+    label: "Gallery Items"
+    folder: "content/gallery"
+    create: true
+    extension: "mdx"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Caption", name: "caption", widget: "string", required: false }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Location", name: "location", widget: "string", required: false }
+      - { label: "Date", name: "date", widget: "datetime", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Featured", name: "featured", widget: "boolean", required: false, default: false }
+      - { label: "Body (Optional)", name: "body", widget: "markdown", required: false }
+
+  - name: "brands"
+    label: "Brands"
+    folder: "content/brands"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { label: "Brand Name", name: "title", widget: "string" }
+
+      - { label: "Brand Key", name: "key", widget: "string", required: false, hint: "Short id like 'trex' or 'andersen'." }
+
+      - { label: "Website", name: "website", widget: "string", required: false }
+
+      - label: "Logo"
+        name: "logo"
+        widget: "image"
+        required: false
+        hint: "Upload a PNG/SVG. Keep it under ~500KB if possible."
+
+      - { label: "Short Description", name: "summary", widget: "text", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
