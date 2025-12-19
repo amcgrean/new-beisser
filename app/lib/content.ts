@@ -2,6 +2,7 @@
 import path from "path";
 import matter from "gray-matter";
 
+
 export type MdxEntry = {
   slug: string;
   frontmatter: Record<string, any>;
@@ -99,11 +100,42 @@ export function getGalleryEntries(): MdxEntry[] {
     .map((slug) => getGalleryEntry(slug))
     .filter((entry): entry is MdxEntry => entry !== null);
 }
+
+
 export type Brand = {
   slug: string;
   title: string;
   key?: string;
   website?: string;
-  logo?: string;
+  logo?: string;    // e.g. "/uploads/trex.png"
   summary?: string;
 };
+
+const BRANDS_DIR = path.join(process.cwd(), "content", "brands");
+
+export function getBrandEntries(): Brand[] {
+  if (!fs.existsSync(BRANDS_DIR)) return [];
+
+  const files = fs
+    .readdirSync(BRANDS_DIR)
+    .filter((f) => f.endsWith(".md") || f.endsWith(".mdx"));
+
+  return files
+    .map((filename) => {
+      const fullPath = path.join(BRANDS_DIR, filename);
+      const raw = fs.readFileSync(fullPath, "utf8");
+      const { data } = matter(raw);
+
+      const slug = filename.replace(/\.(md|mdx)$/, "");
+
+      return {
+        slug,
+        title: String(data.title ?? slug),
+        key: data.key ? String(data.key) : undefined,
+        website: data.website ? String(data.website) : undefined,
+        logo: data.logo ? String(data.logo) : undefined,
+        summary: data.summary ? String(data.summary) : undefined,
+      } satisfies Brand;
+    })
+    .sort((a, b) => a.title.localeCompare(b.title));
+}

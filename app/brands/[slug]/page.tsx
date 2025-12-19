@@ -1,17 +1,23 @@
 ﻿import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { brands } from "@/app/data/brands";
 import { productCategories } from "@/app/data/categories";
 import { generateBrandMetadata } from "@/app/lib/seo";
 import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import { getBrandBySlug, getBrandEntries } from "@/app/lib/brands";
+
+export function generateStaticParams() {
+  return getBrandEntries().map((b) => ({ slug: b.slug }));
+}
+
+
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   return generateBrandMetadata(params.slug);
 }
 
 export default function BrandPage({ params }: { params: { slug: string } }) {
-  const brand = brands.find((b) => b.slug === params.slug);
+  const brand = getBrandBySlug(params.slug);
 
   if (!brand) return notFound();
 
