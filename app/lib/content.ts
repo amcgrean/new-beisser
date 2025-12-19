@@ -1,4 +1,4 @@
-import fs from "fs";
+﻿import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
@@ -72,5 +72,30 @@ export function getCommunityEntries(): MdxEntry[] {
         ...result,
       } as MdxEntry;
     })
+    .filter((entry): entry is MdxEntry => entry !== null);
+}
+function getMdxSlugs(dir: string): string[] {
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => file.replace(/\.mdx$/, ""));
+}
+
+export function getGallerySlugs(): string[] {
+  return getMdxSlugs(path.join(process.cwd(), "content", "gallery"));
+}
+
+export function getGalleryEntry(slug: string): MdxEntry | null {
+  const filePath = path.join(process.cwd(), "content", "gallery", `${slug}.mdx`);
+  const result = readMdxFile(filePath);
+  if (!result) return null;
+  return { slug, ...result };
+}
+
+export function getGalleryEntries(): MdxEntry[] {
+  const dir = path.join(process.cwd(), "content", "gallery");
+  return getMdxSlugs(dir)
+    .map((slug) => getGalleryEntry(slug))
     .filter((entry): entry is MdxEntry => entry !== null);
 }

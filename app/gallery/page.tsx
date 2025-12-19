@@ -1,111 +1,246 @@
-import Image from "next/image";
-import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+﻿import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import { getPageMdx, getGalleryEntries } from "@/app/lib/content";
+import { MdxContent } from "@/app/ui/MdxContent";
 
-type GalleryItem = {
+type FeatureItem = { code: string; title: string; text: string };
+type HoursItem = { day: string; time: string };
+
+type FeaturedGalleryItem = {
   src: string;
   alt: string;
-  category: string;
+  featured: boolean;
+  date: Date | null;
 };
 
-const galleryItems: GalleryItem[] = [
-  {
-    category: "Decking & Outdoor Living",
-    src: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80",
-    alt: "Composite deck with railing",
-  },
-  {
-    category: "Decking & Outdoor Living",
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-    alt: "Deck and outdoor seating area",
-  },
-  {
-    category: "Windows & Doors",
-    src: "https://images.unsplash.com/photo-1600607687920-4e2a5345c9bc?auto=format&fit=crop&w=1200&q=80",
-    alt: "Large windows bringing in natural light",
-  },
-  {
-    category: "Windows & Doors",
-    src: "https://images.unsplash.com/photo-1519710889899-4fbb2a9a5214?auto=format&fit=crop&w=1200&q=80",
-    alt: "Entry door with glass sidelites",
-  },
-  {
-    category: "Siding & Exterior Trim",
-    src: "https://images.unsplash.com/photo-1570129476766-47cbb58fc0c6?auto=format&fit=crop&w=1200&q=80",
-    alt: "New home under construction with siding installed",
-  },
-  {
-    category: "Millwork & Interior Trim",
-    src: "https://images.unsplash.com/photo-1595526114035-45c97e22c8c6?auto=format&fit=crop&w=1200&q=80",
-    alt: "Interior trim and door casing",
-  },
-  {
-    category: "Framing & Structure",
-    src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
-    alt: "Framing materials on a jobsite",
-  },
-  {
-    category: "Trusses & Components",
-    src: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80",
-    alt: "Roof trusses being installed",
-  },
-  {
-    category: "Lumber & Panels",
-    src: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80",
-    alt: "Lumber yard with stacked boards",
-  },
-  {
-    category: "Jobsite & Crews",
-    src: "https://images.unsplash.com/photo-1512914890250-353c97c9e7e2?auto=format&fit=crop&w=1200&q=80",
-    alt: "Framing crew working on a house",
-  },
-];
+export default function ShowroomPage() {
+  const entry = getPageMdx("showroom");
+  const fm: any = entry?.frontmatter ?? {};
 
-const categories = Array.from(new Set(galleryItems.map((item) => item.category)));
+  const hero = fm.hero as
+    | {
+        eyebrow?: string;
+        heading?: string;
+        subheading?: string;
+        image?: string;
+        primaryCta?: { label?: string; href?: string };
+        secondaryCta?: { label?: string; href?: string };
+      }
+    | undefined;
 
-export default function GalleryPage() {
+  const features = (fm.features as FeatureItem[] | undefined) ?? [];
+  const visit = fm.visit as
+    | {
+        addressLine1?: string;
+        addressLine2?: string;
+        phoneLabel?: string;
+        phoneHref?: string;
+        directionsHref?: string;
+        emailHref?: string;
+        mapEmbedSrc?: string;
+        hours?: HoursItem[];
+      }
+    | undefined;
+
+  // Pull featured gallery items from CMS-managed content/gallery/*.mdx
+  const featuredGallery: FeaturedGalleryItem[] = getGalleryEntries()
+    .map((e) => {
+      const gfm = e.frontmatter ?? {};
+      return {
+        src: (gfm.image as string) ?? "",
+        alt: (gfm.title as string) ?? e.slug,
+        featured: Boolean(gfm.featured),
+        date: gfm.date ? new Date(gfm.date as string) : null,
+      };
+    })
+    .filter((x) => x.featured && x.src)
+    // Featured first (already filtered), then newest by date if available
+    .sort((a, b) => {
+      const aTime = a.date ? a.date.getTime() : 0;
+      const bTime = b.date ? b.date.getTime() : 0;
+      return bTime - aTime;
+    })
+    .slice(0, 6);
+
   return (
     <div className="space-y-8">
       <Breadcrumbs
         items={[
           { label: "Home", href: "/" },
-          { label: "Gallery", href: "/gallery" },
+          { label: "Showroom & Millwork", href: "/showroom" },
         ]}
       />
 
-      <header className="space-y-3">
+      <section className="space-y-4">
         <h1 className="text-3xl font-bold text-beisserGray">
-          Project & Product Gallery
+          {fm.title ?? "Showroom & Millwork"}
         </h1>
-        <p className="max-w-2xl text-sm text-slate-700">
-          A visual look at the types of projects and product categories Beisser
-          Lumber supports, from framing and trusses to decks, siding, and
-          finished millwork.
-        </p>
-      </header>
 
-      {categories.map((cat) => {
-        const items = galleryItems.filter((item) => item.category === cat);
-        return (
-          <section key={cat} className="space-y-3">
-            <h2 className="text-xl font-semibold text-beisserGray">{cat}</h2>
-            <div className="grid auto-rows-[120px] grid-cols-2 gap-3 sm:auto-rows-[150px] md:grid-cols-3 lg:auto-rows-[180px] lg:grid-cols-4">
-              {items.map((item) => (
-                <div
-                  key={item.src}
-                  className="relative overflow-hidden rounded-lg border bg-slate-100 shadow-sm"
-                >
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
-              ))}
+        {fm.summary && (
+          <p className="max-w-2xl text-sm text-slate-700">{fm.summary}</p>
+        )}
+
+        {/* HERO */}
+        {hero?.image && (
+          <div className="relative overflow-hidden rounded-2xl bg-beisserGray text-white">
+            <div className="absolute inset-0 opacity-40">
+              <img src={hero.image} alt="" className="h-full w-full object-cover" />
             </div>
-          </section>
-        );
-      })}
+            <div className="relative p-8 md:p-12 space-y-3">
+              {hero.eyebrow && (
+                <div className="text-xs font-bold tracking-widest uppercase text-beisserGold">
+                  {hero.eyebrow}
+                </div>
+              )}
+              <h2 className="text-2xl md:text-4xl font-extrabold">
+                {hero.heading ?? fm.title}
+              </h2>
+              {hero.subheading && (
+                <p className="max-w-2xl text-white/90">{hero.subheading}</p>
+              )}
+
+              <div className="pt-3 flex flex-wrap gap-3">
+                {hero.primaryCta?.href && hero.primaryCta?.label && (
+                  <a className="btn-primary" href={hero.primaryCta.href}>
+                    {hero.primaryCta.label}
+                  </a>
+                )}
+                {hero.secondaryCta?.href && hero.secondaryCta?.label && (
+                  <a
+                    className="btn-outline bg-white/10 border-white text-white hover:bg-white/20"
+                    href={hero.secondaryCta.href}
+                  >
+                    {hero.secondaryCta.label}
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* BODY MARKDOWN */}
+        {entry && <MdxContent content={entry.content} />}
+      </section>
+
+      {/* FEATURED GALLERY (from content/gallery) */}
+      {featuredGallery.length > 0 && (
+        <section className="space-y-4">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <h2 className="text-xl font-bold text-beisserGray">Gallery</h2>
+              <p className="text-sm text-slate-600">
+                Featured photos from our gallery.
+              </p>
+            </div>
+
+            <a href="/gallery" className="text-sm text-beisserGreen underline">
+              View all
+            </a>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {featuredGallery.map((img, idx) => (
+              <img
+                key={`${img.src}-${idx}`}
+                src={img.src}
+                alt={img.alt}
+                className="rounded-xl w-full h-40 md:h-48 object-cover"
+                loading="lazy"
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* FEATURES */}
+      {features.length > 0 && (
+        <section className="space-y-4">
+          <h2 className="text-xl font-bold text-beisserGray">
+            Featured Categories
+          </h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {features.map((f, idx) => (
+              <div key={idx} className="rounded-xl border bg-white p-5">
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-beisserGreen text-white font-bold">
+                  {f.code}
+                </div>
+                <div className="mt-3 text-lg font-bold text-beisserGray">
+                  {f.title}
+                </div>
+                <p className="mt-2 text-sm text-slate-700">{f.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* VISIT */}
+      {visit && (
+        <section id="visit" className="space-y-4">
+          <h2 className="text-xl font-bold text-beisserGray">Plan Your Visit</h2>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border bg-white p-6 space-y-3">
+              <div className="text-sm">
+                <div className="font-semibold text-beisserGray">Address</div>
+                <div>{visit.addressLine1}</div>
+                <div>{visit.addressLine2}</div>
+              </div>
+
+              <div className="text-sm">
+                <div className="font-semibold text-beisserGray">Phone</div>
+                {visit.phoneHref ? (
+                  <a className="text-beisserGreen underline" href={visit.phoneHref}>
+                    {visit.phoneLabel}
+                  </a>
+                ) : (
+                  <div>{visit.phoneLabel}</div>
+                )}
+              </div>
+
+              {visit.hours?.length ? (
+                <div className="text-sm">
+                  <div className="font-semibold text-beisserGray">Hours</div>
+                  <div className="mt-2 space-y-1">
+                    {visit.hours.map((h, idx) => (
+                      <div key={idx} className="flex justify-between gap-4">
+                        <span>{h.day}</span>
+                        <span className="font-semibold">{h.time}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
+              <div className="pt-2 flex flex-wrap gap-3">
+                {visit.directionsHref && (
+                  <a
+                    className="btn-primary"
+                    href={visit.directionsHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get Directions
+                  </a>
+                )}
+                {visit.emailHref && (
+                  <a className="btn-outline" href={visit.emailHref}>
+                    Contact Us
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {visit.mapEmbedSrc && (
+              <iframe
+                className="w-full aspect-[16/11] rounded-2xl border"
+                loading="lazy"
+                src={visit.mapEmbedSrc}
+                title="Map to Beisser Lumber Showroom"
+              />
+            )}
+          </div>
+        </section>
+      )}
     </div>
   );
 }
