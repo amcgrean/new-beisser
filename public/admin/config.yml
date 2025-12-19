@@ -7,7 +7,8 @@ publish_mode: editorial_workflow
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
-site_url: https://www.beisserlumber.com
+site_url: https://beisser.netlify.app
+
 
 collections:
   - name: "pages"
