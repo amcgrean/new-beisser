@@ -139,3 +139,69 @@ export function getBrandEntries(): Brand[] {
     })
     .sort((a, b) => a.title.localeCompare(b.title));
 }
+// app/lib/content.ts
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+
+export type CmsCategory = {
+  slug: string;
+  name: string;
+  summary?: string;
+  description?: string;
+  tagline?: string;
+  heroImage?: string;
+  bullets?: string[];
+  body?: string; // decap sometimes puts body here
+};
+
+const CATEGORIES_DIR = path.join(process.cwd(), "content", "categories");
+
+export function getCategoryEntries(): CmsCategory[] {
+  if (!fs.existsSync(CATEGORIES_DIR)) return [];
+
+  const files = fs
+    .readdirSync(CATEGORIES_DIR)
+    .filter((f) => f.endsWith(".mdx") || f.endsWith(".md"));
+
+  return files
+    .map((filename) => {
+      const slug = filename.replace(/\.(mdx|md)$/, "");
+      const fullPath = path.join(CATEGORIES_DIR, filename);
+      const raw = fs.readFileSync(fullPath, "utf8");
+      const { data } = matter(raw);
+
+      return {
+        slug,
+        name: String(data.name ?? data.title ?? slug),
+        summary: data.summary ? String(data.summary) : undefined,
+        description: data.description ? String(data.description) : undefined,
+        tagline: data.tagline ? String(data.tagline) : undefined,
+        heroImage: data.heroImage ? String(data.heroImage) : undefined,
+        bullets: Array.isArray(data.bullets) ? data.bullets.map(String) : [],
+        body: data.body ? String(data.body) : undefined,
+      } satisfies CmsCategory;
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export function getCategoryBySlug(slug: string): CmsCategory | null {
+  const mdx = path.join(CATEGORIES_DIR, `${slug}.mdx`);
+  const md = path.join(CATEGORIES_DIR, `${slug}.md`);
+  const fullPath = fs.existsSync(mdx) ? mdx : fs.existsSync(md) ? md : null;
+  if (!fullPath) return null;
+
+  const raw = fs.readFileSync(fullPath, "utf8");
+  const { data } = matter(raw);
+
+  return {
+    slug,
+    name: String(data.name ?? data.title ?? slug),
+    summary: data.summary ? String(data.summary) : undefined,
+    description: data.description ? String(data.description) : undefined,
+    tagline: data.tagline ? String(data.tagline) : undefined,
+    heroImage: data.heroImage ? String(data.heroImage) : undefined,
+    bullets: Array.isArray(data.bullets) ? data.bullets.map(String) : [],
+    body: data.body ? String(data.body) : undefined,
+  } satisfies CmsCategory;
+}

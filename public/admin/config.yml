@@ -162,3 +162,21 @@ collections:
 
       - { label: "Short Description", name: "summary", widget: "text", required: false }
       - { label: "Body", name: "body", widget: "markdown", required: false }
+  - name: "categories"
+    label: "Product Categories"
+    folder: "content/categories"
+    create: true
+    extension: "mdx"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Tagline", name: "tagline", widget: "string", required: false }
+      - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+      - label: "Bullets"
+        name: "bullets"
+        widget: "list"
+        required: false
+      - { label: "Body", name: "body", widget: "markdown", required: false }

@@ -1,33 +1,40 @@
 ﻿import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { productCategories } from "@/app/data/categories";
-import { brands } from "@/app/data/brands";
+
 import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
-import { getCategoryMdx } from "@/app/lib/content";
 import { MdxContent } from "@/app/ui/MdxContent";
+
+import {
+  getCategoryEntries,
+  getCategoryMdx,
+  getCategoryBySlug,
+} from "@/app/lib/content";
+
+import { getBrandEntries } from "@/app/lib/brands";
 
 type PageProps = {
   params: { slug: string };
 };
 
 export default function ProductCategoryPage({ params }: PageProps) {
-  const category = productCategories.find((c) => c.slug === params.slug);
-
+  const category = getCategoryBySlug(params.slug);
   if (!category) return notFound();
 
   const categoryMdx = getCategoryMdx(category.slug);
 
-  const categoryBrands = brands.filter((b) =>
+  const allBrands = getBrandEntries();
+  const categoryBrands = allBrands.filter((b) =>
     (b.categories ?? []).includes(category.slug)
   );
 
-  // ✅ fallbacks to prevent Next/Image build failures
   const heroSrc = category.heroImage ?? "/placeholders/category.jpg";
 
-  // Decap CMS often writes body into frontmatter.body.
   const mdxBody =
-    (categoryMdx?.frontmatter?.body as string | undefined) ?? categoryMdx?.content;
+    (categoryMdx?.frontmatter?.body as string | undefined) ??
+    categoryMdx?.content;
+
+  const description = category.description ?? category.summary ?? "";
 
   return (
     <div className="space-y-8">
@@ -42,14 +49,18 @@ export default function ProductCategoryPage({ params }: PageProps) {
       {/* Hero section */}
       <section className="grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1.4fr)] items-start">
         <div className="space-y-4">
-          <h1 className="text-3xl font-bold text-beisserGray">{category.name}</h1>
+          <h1 className="text-3xl font-bold text-beisserGray">
+            {category.name}
+          </h1>
 
           {category.tagline ? (
-            <p className="text-sm font-medium text-beisserGreen">{category.tagline}</p>
+            <p className="text-sm font-medium text-beisserGreen">
+              {category.tagline}
+            </p>
           ) : null}
 
-          {category.description ? (
-            <p className="max-w-2xl text-sm text-slate-700">{category.description}</p>
+          {description ? (
+            <p className="max-w-2xl text-sm text-slate-700">{description}</p>
           ) : null}
 
           {Array.isArray(category.bullets) && category.bullets.length > 0 ? (
@@ -126,4 +137,8 @@ export default function ProductCategoryPage({ params }: PageProps) {
       ) : null}
     </div>
   );
+}
+
+export function generateStaticParams() {
+  return getCategoryEntries().map((c) => ({ slug: c.slug }));
 }
