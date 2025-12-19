@@ -146,9 +146,9 @@ collections:
     extension: "md"
     format: "frontmatter"
     slug: "{{slug}}"
-    summary: "{{title}}"
+    summary: "{{name}}"
     fields:
-      - { label: "Brand Name", name: "title", widget: "string" }
+      - { label: "Brand Name", name: "name", widget: "string" }
 
       - { label: "Brand Key", name: "key", widget: "string", required: false, hint: "Short id like 'trex' or 'andersen'." }
 
