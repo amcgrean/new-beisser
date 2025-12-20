@@ -130,6 +130,41 @@ collections:
       - { label: "Featured", name: "featured", widget: "boolean", required: false, default: false }
       - { label: "Body (Optional)", name: "body", widget: "markdown", required: false }
 
+  - name: "categories"
+    label: "Product Categories"
+    folder: "content/categories"
+    create: true
+    extension: "mdx"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Tagline", name: "tagline", widget: "string", required: false }
+      - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+
+      - label: "Bullets"
+        name: "bullets"
+        widget: "list"
+        required: false
+
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+
+      - { label: "Last Updated", name: "updated", widget: "datetime", required: false }
+
+      - label: "Completion Checklist"
+        name: "completion"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Name Added", name: "nameAdded", widget: "boolean", required: false, default: false }
+          - { label: "Summary Added", name: "summaryAdded", widget: "boolean", required: false, default: false }
+          - { label: "Description Added", name: "descriptionAdded", widget: "boolean", required: false, default: false }
+          - { label: "Hero Image Added", name: "heroImageAdded", widget: "boolean", required: false, default: false }
+          - { label: "Bullets Added", name: "bulletsAdded", widget: "boolean", required: false, default: false }
+          - { label: "Body Added", name: "bodyAdded", widget: "boolean", required: false, default: false }
+
   - name: "brands"
     label: "Brands"
     folder: "content/brands"
@@ -175,39 +210,4 @@ collections:
           - { label: "Logo Added", name: "logoAdded", widget: "boolean", required: false, default: false }
           - { label: "Website Added", name: "websiteAdded", widget: "boolean", required: false, default: false }
           - { label: "Short Description Added", name: "summaryAdded", widget: "boolean", required: false, default: false }
-          - { label: "Body Added", name: "bodyAdded", widget: "boolean", required: false, default: false }
-
-  - name: "categories"
-    label: "Product Categories"
-    folder: "content/categories"
-    create: true
-    extension: "mdx"
-    format: "frontmatter"
-    slug: "{{slug}}"
-    fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text", required: false }
-      - { label: "Description", name: "description", widget: "text", required: false }
-      - { label: "Tagline", name: "tagline", widget: "string", required: false }
-      - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
-
-      - label: "Bullets"
-        name: "bullets"
-        widget: "list"
-        required: false
-
-      - { label: "Body", name: "body", widget: "markdown", required: false }
-
-      - { label: "Last Updated", name: "updated", widget: "datetime", required: false }
-
-      - label: "Completion Checklist"
-        name: "completion"
-        widget: "object"
-        required: false
-        fields:
-          - { label: "Name Added", name: "nameAdded", widget: "boolean", required: false, default: false }
-          - { label: "Summary Added", name: "summaryAdded", widget: "boolean", required: false, default: false }
-          - { label: "Description Added", name: "descriptionAdded", widget: "boolean", required: false, default: false }
-          - { label: "Hero Image Added", name: "heroImageAdded", widget: "boolean", required: false, default: false }
-          - { label: "Bullets Added", name: "bulletsAdded", widget: "boolean", required: false, default: false }
           - { label: "Body Added", name: "bodyAdded", widget: "boolean", required: false, default: false }
