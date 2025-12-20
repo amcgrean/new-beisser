@@ -36,18 +36,6 @@ collections:
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "categories"
-    label: "Product Categories"
-    folder: "content/categories"
-    create: true
-    extension: "mdx"
-    format: "frontmatter"
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "string", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
-
   - name: "showroom"
     label: "Showroom Page"
     files:
@@ -68,6 +56,7 @@ collections:
               - { label: "Heading", name: "heading", widget: "string", required: false }
               - { label: "Subheading", name: "subheading", widget: "text", required: false }
               - { label: "Image", name: "image", widget: "image", required: false }
+
               - label: "Primary CTA"
                 name: "primaryCta"
                 widget: "object"
@@ -75,6 +64,7 @@ collections:
                 fields:
                   - { label: "Label", name: "label", widget: "string", required: false }
                   - { label: "Href", name: "href", widget: "string", required: false }
+
               - label: "Secondary CTA"
                 name: "secondaryCta"
                 widget: "object"
@@ -112,6 +102,7 @@ collections:
               - { label: "Directions Link", name: "directionsHref", widget: "string", required: false }
               - { label: "Email Link (mailto:)", name: "emailHref", widget: "string", required: false }
               - { label: "Map Embed Src", name: "mapEmbedSrc", widget: "string", required: false }
+
               - label: "Hours"
                 name: "hours"
                 widget: "list"
@@ -149,10 +140,19 @@ collections:
     summary: "{{name}}"
     fields:
       - { label: "Brand Name", name: "name", widget: "string" }
-
       - { label: "Brand Key", name: "key", widget: "string", required: false, hint: "Short id like 'trex' or 'andersen'." }
-
       - { label: "Website", name: "website", widget: "string", required: false }
+
+      - label: "Product Categories"
+        name: "categories"
+        widget: "relation"
+        collection: "categories"
+        search_fields: ["name"]
+        value_field: "{{slug}}"
+        display_fields: ["name"]
+        multiple: true
+        required: false
+        hint: "Select which product categories this brand belongs to."
 
       - label: "Logo"
         name: "logo"
@@ -162,6 +162,21 @@ collections:
 
       - { label: "Short Description", name: "summary", widget: "text", required: false }
       - { label: "Body", name: "body", widget: "markdown", required: false }
+
+      - { label: "Last Updated", name: "updated", widget: "datetime", required: false }
+
+      - label: "Completion Checklist"
+        name: "completion"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Name Added", name: "nameAdded", widget: "boolean", required: false, default: false }
+          - { label: "Key Added", name: "keyAdded", widget: "boolean", required: false, default: false }
+          - { label: "Logo Added", name: "logoAdded", widget: "boolean", required: false, default: false }
+          - { label: "Website Added", name: "websiteAdded", widget: "boolean", required: false, default: false }
+          - { label: "Short Description Added", name: "summaryAdded", widget: "boolean", required: false, default: false }
+          - { label: "Body Added", name: "bodyAdded", widget: "boolean", required: false, default: false }
+
   - name: "categories"
     label: "Product Categories"
     folder: "content/categories"
@@ -175,8 +190,24 @@ collections:
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Tagline", name: "tagline", widget: "string", required: false }
       - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+
       - label: "Bullets"
         name: "bullets"
         widget: "list"
         required: false
+
       - { label: "Body", name: "body", widget: "markdown", required: false }
+
+      - { label: "Last Updated", name: "updated", widget: "datetime", required: false }
+
+      - label: "Completion Checklist"
+        name: "completion"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Name Added", name: "nameAdded", widget: "boolean", required: false, default: false }
+          - { label: "Summary Added", name: "summaryAdded", widget: "boolean", required: false, default: false }
+          - { label: "Description Added", name: "descriptionAdded", widget: "boolean", required: false, default: false }
+          - { label: "Hero Image Added", name: "heroImageAdded", widget: "boolean", required: false, default: false }
+          - { label: "Bullets Added", name: "bulletsAdded", widget: "boolean", required: false, default: false }
+          - { label: "Body Added", name: "bodyAdded", widget: "boolean", required: false, default: false }

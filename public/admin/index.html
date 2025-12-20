@@ -23,5 +23,87 @@
         });
       }
     </script>
+
+    <script>
+      // Auto-timestamps + auto completion checklist
+      (function () {
+        function truthy(val) {
+          if (val === null || val === undefined) return false;
+          if (typeof val === "string") return val.trim().length > 0;
+          if (Array.isArray(val)) return val.length > 0;
+          // Immutable.js types sometimes show up; attempt common conversions:
+          if (val && typeof val.size === "number") return val.size > 0;
+          return Boolean(val);
+        }
+
+        if (!window.CMS) return;
+
+        window.CMS.registerEventListener({
+          name: "preSave",
+          handler: ({ entry, collection }) => {
+            const collectionName = collection?.get?.("name") || collection?.name;
+
+            const shouldHandle =
+              collectionName === "brands" ||
+              collectionName === "categories" ||
+              collectionName === "pages" ||
+              collectionName === "community" ||
+              collectionName === "gallery";
+
+            if (!shouldHandle) return entry;
+
+            let data = entry.get("data");
+
+            // Always update timestamp (top-level frontmatter "updated")
+            data = data.set("updated", new Date().toISOString());
+
+            // Brands completion
+            if (collectionName === "brands") {
+              const name = data.get("name");
+              const key = data.get("key");
+              const website = data.get("website");
+              const logo = data.get("logo");
+              const summary = data.get("summary");
+              const body = data.get("body");
+
+              const completion = {
+                nameAdded: truthy(name),
+                keyAdded: truthy(key),
+                websiteAdded: truthy(website),
+                logoAdded: truthy(logo),
+                summaryAdded: truthy(summary),
+                bodyAdded: truthy(body),
+              };
+
+              data = data.set("completion", completion);
+            }
+
+            // Categories completion
+            if (collectionName === "categories") {
+              // Your categories use "name" (per your config), not necessarily "title"
+              const name = data.get("name");
+              const summary = data.get("summary");
+              const description = data.get("description");
+              const heroImage = data.get("heroImage");
+              const bullets = data.get("bullets");
+              const body = data.get("body");
+
+              const completion = {
+                nameAdded: truthy(name),
+                summaryAdded: truthy(summary),
+                descriptionAdded: truthy(description),
+                heroImageAdded: truthy(heroImage),
+                bulletsAdded: truthy(bullets),
+                bodyAdded: truthy(body),
+              };
+
+              data = data.set("completion", completion);
+            }
+
+            return entry.set("data", data);
+          },
+        });
+      })();
+    </script>
   </body>
 </html>
