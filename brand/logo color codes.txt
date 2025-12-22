@@ -1,0 +1,15 @@
+
+New Logo Colors
+ 
+Green: 
+CMYK: 90 / 30 / 100 / 300
+RGB: 0 / 104 / 52 (006834)
+Pantone: PMS 349 C
+
+
+
+Gold:
+CMYK: 41 / 43 / 100 / 4
+RGB: 158 / 134 / 53 (9E8635)
+Pantone: PMS 7754 C
+
