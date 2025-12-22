@@ -6,11 +6,18 @@ import Image from "next/image";
 
 const navLinks = [
   { href: "/products", label: "Products" },
+  { href: "/brands", label: "Brands" },
   { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
+  { href: "/showroom", label: "Showroom" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/for-pros", label: "For Pros" },
+  { href: "/community", label: "Community" },
   { href: "/resources", label: "Resources" },
-  { href: "/contact", label: "Contact" },
+  { href: "/careers", label: "Careers" },
+  { href: "/about", label: "About" },
   { href: "/locations", label: "Locations" },
+  { href: "/contact", label: "Contact" },
+  { href: "/search", label: "Search" },
 ];
 
 export function Header() {
