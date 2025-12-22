@@ -20,10 +20,8 @@ const navLinks = [
 export function Header() {
   const [open, setOpen] = useState(false);
 
-  // Close mobile menu on route change-like behavior (clicking a link)
   const close = () => setOpen(false);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -34,19 +32,19 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-20 border-b bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="main-container flex items-center justify-between gap-4 py-4">
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
           aria-label="Beisser Lumber Company home"
           onClick={close}
         >
-          {/* Mobile: full horizontal logo (change to mark-only if you prefer) */}
+          {/* Mobile */}
           <div className="relative h-9 w-[190px] sm:w-[210px] md:hidden">
             <Image
-              src="/brand/beisser-logo-full.png"
+              src="/images/logos/beisser-logo-full.png"
               alt="Beisser Lumber Company"
               fill
               className="object-contain"
@@ -54,10 +52,10 @@ export function Header() {
             />
           </div>
 
-          {/* Desktop: full horizontal logo */}
+          {/* Desktop */}
           <div className="relative hidden h-10 w-[230px] md:block">
             <Image
-              src="/brand/beisser-logo-full.png"
+              src="/images/logos/beisser-logo-full.png"
               alt="Beisser Lumber Company"
               fill
               className="object-contain"
@@ -72,7 +70,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-slate-700 hover:text-beisserGreen transition-colors"
+              className="text-slate-700 transition-colors hover:text-brand-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
             >
               {link.label}
             </Link>
@@ -83,14 +81,14 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Link
             href="/for-pros/portal"
-            className="hidden sm:inline-flex rounded-md bg-beisserGreen px-3 py-2 text-sm text-white transition-colors hover:bg-emerald-700"
+            className="hidden sm:inline-flex rounded-md bg-brand-green px-3 py-2 text-sm text-white transition-colors hover:bg-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
           >
             Customer Portal
           </Link>
 
           <Link
             href="/for-pros/credit"
-            className="hidden lg:inline-flex rounded-md border border-beisserGreen px-3 py-2 text-sm text-beisserGreen transition-colors hover:bg-beisserGreen hover:text-white"
+            className="hidden lg:inline-flex rounded-md border border-brand-green px-3 py-2 text-sm text-brand-green transition-colors hover:border-brand-accent hover:bg-brand-accent hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
           >
             Apply for Credit
           </Link>
@@ -98,7 +96,7 @@ export function Header() {
           {/* Mobile hamburger */}
           <button
             type="button"
-            className="inline-flex md:hidden items-center justify-center rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm hover:bg-slate-50"
+            className="inline-flex md:hidden items-center justify-center rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm transition-colors hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -118,7 +116,7 @@ export function Header() {
             onClick={close}
           />
           {/* Panel */}
-          <div className="fixed left-0 right-0 top-[73px] z-30 border-b bg-white shadow-lg">
+          <div className="fixed left-0 right-0 top-[73px] z-30 border-b border-slate-200 bg-white shadow-lg">
             <nav className="main-container py-4">
               <ul className="grid grid-cols-1 gap-2">
                 {navLinks.map((link) => (
@@ -126,7 +124,7 @@ export function Header() {
                     <Link
                       href={link.href}
                       onClick={close}
-                      className="block rounded-md px-3 py-2 text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-beisserGreen"
+                      className="block rounded-md px-3 py-2 text-base font-medium text-slate-800 transition-colors hover:bg-slate-50 hover:text-brand-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
                     >
                       {link.label}
                     </Link>
@@ -136,7 +134,7 @@ export function Header() {
                   <Link
                     href="/for-pros/portal"
                     onClick={close}
-                    className="block rounded-md bg-beisserGreen px-3 py-2 text-center text-base font-medium text-white hover:bg-emerald-700"
+                    className="block rounded-md bg-brand-green px-3 py-2 text-center text-base font-medium text-white transition-colors hover:bg-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
                   >
                     Customer Portal
                   </Link>
@@ -145,7 +143,7 @@ export function Header() {
                   <Link
                     href="/for-pros/credit"
                     onClick={close}
-                    className="block rounded-md border border-beisserGreen px-3 py-2 text-center text-base font-medium text-beisserGreen hover:bg-beisserGreen hover:text-white"
+                    className="block rounded-md border border-brand-green px-3 py-2 text-center text-base font-medium text-brand-green transition-colors hover:border-brand-accent hover:bg-brand-accent hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
                   >
                     Apply for Credit
                   </Link>
