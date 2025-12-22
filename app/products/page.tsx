@@ -6,8 +6,28 @@ export default function ProductsPage() {
   const categories = getCategoryEntries();
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-8">Products & Services</h1>
+    <div className="space-y-6">
+      <header className="space-y-2">
+        <h1 className="text-3xl font-bold text-beisserGray">Products</h1>
+        <p className="text-sm text-slate-700 max-w-3xl">
+          Materials, components, and systems for residential and light commercial projects across Iowa. Browse
+          categories, see brand coverage, and request pricing when you are ready.
+        </p>
+        <div className="flex flex-wrap gap-3 text-sm">
+          <Link
+            href="/request-quote"
+            className="inline-flex rounded-md bg-brand-green px-3 py-2 font-semibold text-white hover:bg-brand-accent"
+          >
+            Request a Quote
+          </Link>
+          <Link
+            href="/services"
+            className="inline-flex rounded-md border border-slate-300 px-3 py-2 font-semibold text-slate-700 hover:border-beisserGreen hover:text-beisserGreen"
+          >
+            View Services
+          </Link>
+        </div>
+      </header>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {categories.map((cat) => {

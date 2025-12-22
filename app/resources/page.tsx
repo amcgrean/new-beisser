@@ -8,8 +8,8 @@ export default function ResourcesPage() {
       <header className="space-y-2">
         <h1 className="text-2xl font-semibold text-beisserGray">Resources</h1>
         <p className="text-sm text-slate-600 max-w-3xl">
-          This section will grow into your hub for articles, guides, and project highlights. The example
-          content below is placeholder copy so your team can see the layout and begin drafting real pieces.
+          Practical guidance for builders and remodelers working with Beisser Lumber—covering quotes, deliveries,
+          product basics, and terminology you can share with clients.
         </p>
       </header>
       <div className="grid gap-4 md:grid-cols-3 text-sm">

@@ -5,16 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/products", label: "Products & Services" },
-  { href: "/brands", label: "Brands" },
-  { href: "/for-pros", label: "For Pros" },
-  { href: "/showroom", label: "Showroom" },
-  { href: "/locations", label: "Locations" },
+  { href: "/products", label: "Products" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
   { href: "/resources", label: "Resources" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact" },
+  { href: "/locations", label: "Locations" },
 ];
 
 export function Header() {
@@ -80,6 +76,12 @@ export function Header() {
         {/* Right-side actions + Mobile menu button */}
         <div className="flex items-center gap-2">
           <Link
+            href="/request-quote"
+            className="hidden lg:inline-flex rounded-md bg-brand-green px-3 py-2 text-sm text-white transition-colors hover:bg-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
+          >
+            Request a Quote
+          </Link>
+          <Link
             href="/for-pros/portal"
             className="hidden sm:inline-flex rounded-md bg-brand-green px-3 py-2 text-sm text-white transition-colors hover:bg-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
           >
@@ -131,6 +133,15 @@ export function Header() {
                   </li>
                 ))}
                 <li className="pt-2">
+                  <Link
+                    href="/request-quote"
+                    onClick={close}
+                    className="block rounded-md bg-brand-green px-3 py-2 text-center text-base font-medium text-white transition-colors hover:bg-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
+                  >
+                    Request a Quote
+                  </Link>
+                </li>
+                <li>
                   <Link
                     href="/for-pros/portal"
                     onClick={close}

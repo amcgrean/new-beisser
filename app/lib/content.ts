@@ -99,6 +99,9 @@ export type CmsCategory = {
   tagline?: string;
   heroImage?: string;
   bullets?: string[];
+  subcategories?: string[];
+  useCases?: string[];
+  materials?: string[];
   body?: string; // if you ever need frontmatter body
 };
 
@@ -126,6 +129,13 @@ export function getCategoryEntries(): CmsCategory[] {
         tagline: data.tagline ? String(data.tagline) : undefined,
         heroImage: data.heroImage ? String(data.heroImage) : undefined,
         bullets: Array.isArray(data.bullets) ? data.bullets.map(String) : [],
+        subcategories: Array.isArray(data.subcategories)
+          ? data.subcategories.map(String)
+          : [],
+        useCases: Array.isArray(data.useCases) ? data.useCases.map(String) : [],
+        materials: Array.isArray(data.materials)
+          ? data.materials.map(String)
+          : [],
         body: data.body ? String(data.body) : undefined,
       } satisfies CmsCategory;
     })
@@ -149,6 +159,13 @@ export function getCategoryBySlug(slug: string): CmsCategory | null {
     tagline: data.tagline ? String(data.tagline) : undefined,
     heroImage: data.heroImage ? String(data.heroImage) : undefined,
     bullets: Array.isArray(data.bullets) ? data.bullets.map(String) : [],
+    subcategories: Array.isArray(data.subcategories)
+      ? data.subcategories.map(String)
+      : [],
+    useCases: Array.isArray(data.useCases) ? data.useCases.map(String) : [],
+    materials: Array.isArray(data.materials)
+      ? data.materials.map(String)
+      : [],
     body: data.body ? String(data.body) : undefined,
   } satisfies CmsCategory;
 }

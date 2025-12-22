@@ -1,63 +1,94 @@
 import Link from "next/link";
 import Image from "next/image";
 import { HomeCarousel } from "./ui/HomeCarousel";
-import { productCategories } from "./data/categories";
+import { getCategoryEntries } from "./lib/content";
+
+const services = [
+  {
+    title: "Delivery & Pickup",
+    description: "Fleet coverage across Central and Eastern Iowa with staging to match your build order.",
+    href: "/services/delivery",
+  },
+  {
+    title: "Estimating & Takeoffs",
+    description: "Lumber lists, window and door quotes, and engineered wood layouts with clear timelines.",
+    href: "/services/estimating",
+  },
+  {
+    title: "Showroom & Design Support",
+    description: "Guide clients through windows, doors, and millwork at our Birchwood/Johnston showroom.",
+    href: "/services/showroom-design",
+  },
+  {
+    title: "Special Orders",
+    description: "Custom sizes and brand-specific options managed with defined approvals and lead times.",
+    href: "/services/special-orders",
+  },
+  {
+    title: "Jobsite Coordination",
+    description: "Communication with supers and crews so deliveries, returns, and service stay organized.",
+    href: "/services/jobsite-coordination",
+  },
+];
 
 export default function HomePage() {
+  const categories = getCategoryEntries().slice(0, 9);
+
   return (
     <div className="space-y-12">
       <HomeCarousel />
 
       {/* Quick intro */}
-      <section className="grid gap-8 lg:grid-cols-[minmax(0,1.8fr)_minmax(0,1.2fr)] items-start">
+      <section className="grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1.2fr)] items-start">
         <div className="space-y-4">
-          <h2 className="text-2xl font-semibold text-beisserGray">
-            Your Building Materials Partner in Iowa
+          <h2 className="text-3xl font-bold text-beisserGray">
+            Building Materials for Iowa Builders
           </h2>
           <p className="text-sm text-slate-700">
-            Beisser Lumber is a family- and employee-owned building materials
-            supplier serving professional builders, remodelers, and contractors
-            across Iowa. From framing packages to finished millwork and
-            showrooms that help your clients make decisions, our goal is to keep
-            your jobs moving and your crews supported.
+            Beisser Lumber supplies framing packages, engineered wood, windows and doors, decking, siding, and
+            interior millwork for residential and light commercial projects. We pair product depth with local service
+            teams who understand jobsite realities.
           </p>
           <p className="text-sm text-slate-700">
-            With locations in Grimes, Coralville, Fort Dodge, and our
-            Birchwood/Johnston showroom and millwork facility, we offer
-            centralized service with local relationships and jobsite knowledge.
+            With branches in Grimes, Coralville, Fort Dodge, and our Birchwood/Johnston showroom and millwork
+            facility, you get centralized coordination with people who know your market.
           </p>
           <div className="flex flex-wrap gap-3 pt-1">
             <Link
-              href="/products"
-              className="inline-flex rounded-md bg-beisserGreen px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700"
+              href="/request-quote"
+              className="inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-accent"
             >
-              Browse Products & Services
+              Request a Quote
             </Link>
             <Link
-              href="/for-pros"
+              href="/products"
               className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-beisserGreen hover:text-beisserGreen"
             >
-              For Pros
+              View Products
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-beisserGreen hover:text-beisserGreen"
+            >
+              Explore Services
             </Link>
           </div>
         </div>
 
         <div className="grid gap-3 text-sm text-slate-700">
           <div className="rounded-lg border bg-white p-4 shadow-sm">
-            <h3 className="font-semibold text-beisserGray">Serving Iowa Builders</h3>
+            <h3 className="font-semibold text-beisserGray">Pro-Ready Supply</h3>
             <p className="mt-1 text-xs text-slate-600">
-              Pro-focused service for framing crews, trim carpenters, and
-              exterior contractors who need the right loads on the ground at the
-              right time.
+              Framing lumber, engineered wood, weatherization, and fasteners backed by dispatch teams who know your job
+              timelines.
             </p>
           </div>
           <div className="rounded-lg border bg-white p-4 shadow-sm">
             <h3 className="font-semibold text-beisserGray">
-              Largest Millwork Showroom in the Region
+              Showroom &amp; Millwork
             </h3>
             <p className="mt-1 text-xs text-slate-600">
-              Our Birchwood/Johnston showroom lets your customers see, touch,
-              and compare windows, doors, and trim before they sign off.
+              Windows, doors, trim, and stair parts displayed for homeowner selections with specialist support.
             </p>
             <Link
               href="/showroom"
@@ -67,10 +98,9 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="rounded-lg border bg-white p-4 shadow-sm">
-            <h3 className="font-semibold text-beisserGray">Digital Tools for Pros</h3>
+            <h3 className="font-semibold text-beisserGray">Built for Pros</h3>
             <p className="mt-1 text-xs text-slate-600">
-              Online customer portal, credit applications, and more tools coming
-              to make working with Beisser even easier.
+              Request quotes, coordinate deliveries, and access your account online through our pro tools.
             </p>
             <Link
               href="/for-pros"
@@ -86,7 +116,7 @@ export default function HomePage() {
       <section className="space-y-4">
         <div className="flex items-center justify-between gap-3">
           <h2 className="text-2xl font-semibold text-beisserGray">
-            Products & Services
+            Product Categories
           </h2>
           <Link
             href="/products"
@@ -96,30 +126,81 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {productCategories.map((cat) => (
+          {categories.map((cat) => {
+            const hero = cat.heroImage ?? "/placeholders/category.jpg";
+            return (
+              <Link
+                key={cat.slug}
+                href={`/products/${cat.slug}`}
+                className="group flex flex-col overflow-hidden rounded-lg border bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <div className="relative h-36 w-full overflow-hidden">
+                  <Image
+                    src={hero}
+                    alt={cat.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col gap-1 p-4">
+                  <h3 className="text-sm font-semibold text-beisserGray">
+                    {cat.name}
+                  </h3>
+                  <p className="text-xs text-slate-600 line-clamp-2">
+                    {cat.summary ?? cat.description}
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Services snapshot */}
+      <section className="space-y-4">
+        <div className="flex items-center justify-between gap-3">
+          <h2 className="text-2xl font-semibold text-beisserGray">
+            Services for Builders
+          </h2>
+          <Link
+            href="/services"
+            className="text-sm font-medium text-beisserGreen hover:underline"
+          >
+            View all services
+          </Link>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-sm">
+          {services.map((service) => (
             <Link
-              key={cat.slug}
-              href={`/products/${cat.slug}`}
-              className="group flex flex-col overflow-hidden rounded-lg border bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+              key={service.href}
+              href={service.href}
+              className="rounded-lg border bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
             >
-              <div className="relative h-36 w-full overflow-hidden">
-                <Image
-                  src={cat.heroImage}
-                  alt={cat.name}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+              <div className="text-base font-semibold text-beisserGray">
+                {service.title}
               </div>
-              <div className="flex flex-1 flex-col gap-1 p-4">
-                <h3 className="text-sm font-semibold text-beisserGray">
-                  {cat.name}
-                </h3>
-                <p className="text-xs text-slate-600 line-clamp-2">
-                  {cat.summary}
-                </p>
-              </div>
+              <p className="mt-1 text-slate-600">{service.description}</p>
+              <span className="mt-2 inline-flex text-sm font-semibold text-beisserGreen underline-offset-4 hover:underline">
+                Learn more
+              </span>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Trust signals */}
+      <section className="grid gap-4 rounded-2xl border bg-slate-50 p-6 md:grid-cols-3">
+        <div>
+          <div className="text-2xl font-bold text-beisserGray">70+ years</div>
+          <p className="text-sm text-slate-700">Family- and employee-owned since 1953, serving Iowa builders.</p>
+        </div>
+        <div>
+          <div className="text-2xl font-bold text-beisserGray">Showroom &amp; Millwork</div>
+          <p className="text-sm text-slate-700">Largest regional showroom for windows, doors, trim, and hardware.</p>
+        </div>
+        <div>
+          <div className="text-2xl font-bold text-beisserGray">Pro Support</div>
+          <p className="text-sm text-slate-700">Estimating, delivery, and jobsite coordination built for trade timelines.</p>
         </div>
       </section>
 
