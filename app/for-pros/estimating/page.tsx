@@ -3,13 +3,14 @@ export default function EstimatingPage() {
     <div className="space-y-4 max-w-3xl">
       <h1 className="text-2xl font-semibold text-beisserGray">Estimating & Takeoffs</h1>
       <p className="text-sm text-slate-600">
-        Use this page to describe your estimating capabilities—lumber lists, window and door quotes, and custom
-        project support. Later you can embed a simple request form or connect this to internal tools.
+        Looking for full details? Visit our services page for scope, turnaround expectations, and how to share plans.
       </p>
-      <p className="text-xs text-slate-500">
-        Placeholder tip: highlight how your estimating team collaborates with builders early in the project to
-        avoid surprises and keep material flow predictable.
-      </p>
+      <a
+        href="/services/estimating"
+        className="inline-flex rounded-md bg-brand-green px-3 py-2 text-sm font-semibold text-white hover:bg-brand-accent"
+      >
+        View Estimating Service
+      </a>
     </div>
   );
 }

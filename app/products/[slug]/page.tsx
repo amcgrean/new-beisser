@@ -35,13 +35,16 @@ export default function ProductCategoryPage({ params }: PageProps) {
     categoryMdx?.content;
 
   const description = category.description ?? category.summary ?? "";
+  const subcategories = category.subcategories ?? [];
+  const useCases = category.useCases ?? [];
+  const materials = category.materials ?? [];
 
   return (
     <div className="space-y-8">
       <Breadcrumbs
         items={[
           { label: "Home", href: "/" },
-          { label: "Products & Services", href: "/products" },
+          { label: "Products", href: "/products" },
           { label: category.name },
         ]}
       />
@@ -77,6 +80,51 @@ export default function ProductCategoryPage({ params }: PageProps) {
         </div>
       </section>
 
+      <section className="grid gap-4 rounded-xl border bg-white p-4 shadow-sm md:grid-cols-3">
+        <div className="space-y-2">
+          <h2 className="text-lg font-semibold text-beisserGray">Category Coverage</h2>
+          {subcategories.length ? (
+            <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
+              {subcategories.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-slate-700">
+              Explore common options and packages available through Beisser Lumber.
+            </p>
+          )}
+        </div>
+        <div className="space-y-2">
+          <h2 className="text-lg font-semibold text-beisserGray">Typical Uses</h2>
+          {useCases.length ? (
+            <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
+              {useCases.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-slate-700">
+              Built for residential and light commercial projects across Iowa.
+            </p>
+          )}
+        </div>
+        <div className="space-y-2">
+          <h2 className="text-lg font-semibold text-beisserGray">Materials & Options</h2>
+          {materials.length ? (
+            <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
+              {materials.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-slate-700">
+              Material selections tailored to your plans, climate considerations, and budgets.
+            </p>
+          )}
+        </div>
+      </section>
+
       {/* MDX detail section */}
       {categoryMdx && mdxBody ? (
         <section className="space-y-3 rounded-xl border bg-white p-4 shadow-sm">
@@ -93,6 +141,19 @@ export default function ProductCategoryPage({ params }: PageProps) {
           <MdxContent content={mdxBody} />
         </section>
       ) : null}
+
+      <section className="flex flex-wrap gap-3 rounded-xl border bg-slate-50 p-4">
+        <div className="text-sm text-slate-800">
+          Ready for pricing or product guidance? Tell us about your project and we’ll connect you with the right
+          team member.
+        </div>
+        <Link
+          href="/request-quote"
+          className="inline-flex rounded-md bg-brand-green px-3 py-2 text-sm font-semibold text-white hover:bg-brand-accent"
+        >
+          Request a Quote
+        </Link>
+      </section>
 
       {/* Brands section */}
       {categoryBrands.length > 0 ? (

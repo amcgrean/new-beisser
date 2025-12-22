@@ -13,78 +13,92 @@ export function Footer() {
             Family- and employee-owned building materials supplier serving Iowa
             builders since 1953.
           </p>
+          <div className="mt-3 space-y-1 text-slate-300">
+            <div>3705 SE Beisser Drive, Grimes, IA 50111</div>
+            <div>(515) 986-4422</div>
+            <div>Serving Central &amp; Eastern Iowa</div>
+          </div>
         </div>
 
         <div>
-          <div className="mb-2 font-semibold">For Pros</div>
+          <div className="mb-2 font-semibold">Products</div>
           <ul className="space-y-1 text-slate-300">
             <li>
-              <Link href="/for-pros" className={footerLink}>
-                Pro Services Overview
+              <Link href="/products/windows-and-patio-doors" className={footerLink}>
+                Windows &amp; Patio Doors
               </Link>
             </li>
             <li>
-              <Link href="/for-pros/portal" className={footerLink}>
-                Customer Portal
+              <Link href="/products/siding-and-exterior-trim" className={footerLink}>
+                Siding &amp; Exterior Trim
               </Link>
             </li>
             <li>
-              <Link href="/for-pros/credit" className={footerLink}>
-                Credit & Accounts
+              <Link href="/products/decking-and-exteriors" className={footerLink}>
+                Decking &amp; Exteriors
               </Link>
             </li>
             <li>
-              <Link href="/locations" className={footerLink}>
-                Find a Location
+              <Link href="/products/lumber-and-panels" className={footerLink}>
+                Lumber &amp; Panels
+              </Link>
+            </li>
+            <li>
+              <Link href="/products/millwork-and-trim" className={footerLink}>
+                Millwork &amp; Interior Trim
               </Link>
             </li>
           </ul>
         </div>
 
         <div>
-          <div className="mb-2 font-semibold">Company</div>
+          <div className="mb-2 font-semibold">Services</div>
           <ul className="space-y-1 text-slate-300">
             <li>
-              <Link href="/about" className={footerLink}>
-                About Beisser
+              <Link href="/services/delivery" className={footerLink}>
+                Delivery &amp; Pickup
               </Link>
             </li>
             <li>
-              <Link href="/resources" className={footerLink}>
-                Resources
+              <Link href="/services/estimating" className={footerLink}>
+                Estimating &amp; Takeoffs
               </Link>
             </li>
             <li>
-              <Link href="/careers" className={footerLink}>
-                Careers
+              <Link href="/services/showroom-design" className={footerLink}>
+                Showroom &amp; Design Support
               </Link>
             </li>
             <li>
-              <Link href="/contact" className={footerLink}>
-                Contact
+              <Link href="/services/special-orders" className={footerLink}>
+                Special Orders
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/jobsite-coordination" className={footerLink}>
+                Jobsite Coordination
               </Link>
             </li>
           </ul>
         </div>
 
         <div>
-          <div className="mb-2 font-semibold">Stay Connected</div>
+          <div className="mb-2 font-semibold">Trust &amp; Support</div>
           <p className="mb-2 text-slate-400">
-            Follow us for project highlights, new products, and updates for Iowa
-            builders.
+            Serving Iowa builders for 70+ years with local ownership, delivery fleets, and product specialists.
           </p>
-
-          {/* Placeholder social links — swap hrefs when ready */}
-          <div className="flex gap-3 text-slate-300">
-            <a href="#" className={footerLink} aria-label="Facebook">
-              FB
-            </a>
-            <a href="#" className={footerLink} aria-label="Instagram">
-              IG
-            </a>
-            <a href="#" className={footerLink} aria-label="LinkedIn">
-              LI
-            </a>
+          <ul className="space-y-1 text-slate-300">
+            <li>Family- &amp; employee-owned since 1953</li>
+            <li>Largest window &amp; door showroom in the region</li>
+            <li>Millwork, truss, and engineered wood support</li>
+          </ul>
+          <div className="mt-3">
+            <Link
+              href="/request-quote"
+              className="inline-flex rounded-md bg-brand-green px-3 py-2 text-sm font-semibold text-white hover:bg-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+            >
+              Request a Quote
+            </Link>
           </div>
         </div>
       </div>

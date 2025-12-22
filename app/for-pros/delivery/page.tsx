@@ -3,13 +3,15 @@ export default function DeliveryPage() {
     <div className="space-y-4 max-w-3xl">
       <h1 className="text-2xl font-semibold text-beisserGray">Delivery & Pickup</h1>
       <p className="text-sm text-slate-600">
-        Explain how contractors can schedule deliveries or pickups, typical lead times, and what to expect on site.
-        When you are ready to add delivery tracking, this page can link into that experience.
+        For scheduling guidance, jobsite readiness tips, and what to include with each request, visit our Delivery &
+        Pickup service page.
       </p>
-      <p className="text-xs text-slate-500">
-        Placeholder idea: include bullets showing best practices, such as clearly marked lots, staging areas, and
-        onsite contacts for the driver.
-      </p>
+      <a
+        href="/services/delivery"
+        className="inline-flex rounded-md bg-brand-green px-3 py-2 text-sm font-semibold text-white hover:bg-brand-accent"
+      >
+        View Delivery Service
+      </a>
     </div>
   );
 }

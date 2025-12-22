@@ -15,12 +15,17 @@ export default function ForProsPage() {
     {
       title: "Estimating & Takeoffs",
       description: "Partner with our estimating team for lumber lists, window and door packages, and more.",
-      href: "/for-pros/estimating",
+      href: "/services/estimating",
     },
     {
       title: "Delivery & Pickup",
       description: "Jobsite delivery, will call, and options for coordinating material flow to your projects.",
-      href: "/for-pros/delivery",
+      href: "/services/delivery",
+    },
+    {
+      title: "Showroom & Design Support",
+      description: "Host client selections at our Birchwood/Johnston showroom with product specialists.",
+      href: "/services/showroom-design",
     },
   ];
 
