@@ -18,7 +18,7 @@ const slides: Slide[] = [
       "https://images.unsplash.com/photo-1512914890250-353c97c9e7e2?auto=format&fit=crop&w=1600&q=80",
     headline: "Building Materials for Iowa Builders",
     subheadline:
-      "Family- and employee-owned since 1953, focused on keeping your jobs moving.",
+      "Framing lumber, engineered wood, windows, doors, siding, and jobsite support for residential and light commercial work.",
     ctaLabel: "Browse Products & Services",
     ctaHref: "/products",
   },
@@ -27,7 +27,7 @@ const slides: Slide[] = [
       "https://images.unsplash.com/photo-1519710889899-4fbb2a9a5214?auto=format&fit=crop&w=1600&q=80",
     headline: "Largest Millwork Showroom in the Region",
     subheadline:
-      "Windows, doors, and trim displays that help homeowners see and choose with confidence.",
+      "Windows, doors, and trim displays for guided homeowner selections with documentation ready for your quotes.",
     ctaLabel: "Explore Our Showroom",
     ctaHref: "/showroom",
   },
@@ -36,7 +36,7 @@ const slides: Slide[] = [
       "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1600&q=80",
     headline: "Decking, Siding & Exterior Packages",
     subheadline:
-      "From framing to finish, we help you pull together complete exterior packages that last.",
+      "Coordinated exterior packages with preferred brands, install details, and delivery sequencing by phase.",
     ctaLabel: "See Exterior Categories",
     ctaHref: "/products",
   },

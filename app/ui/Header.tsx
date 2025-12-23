@@ -4,19 +4,23 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const navLinks = [
+const primaryNav = [
   { href: "/products", label: "Products" },
-  { href: "/brands", label: "Brands" },
   { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/resources", label: "Resources" },
+  { href: "/contact", label: "Contact" },
+];
+
+const secondaryNav = [
+  { href: "/request-quote", label: "Request a Quote" },
+  { href: "/locations", label: "Locations" },
   { href: "/showroom", label: "Showroom" },
+  { href: "/brands", label: "Brands" },
   { href: "/gallery", label: "Gallery" },
   { href: "/for-pros", label: "For Pros" },
   { href: "/community", label: "Community" },
-  { href: "/resources", label: "Resources" },
   { href: "/careers", label: "Careers" },
-  { href: "/about", label: "About" },
-  { href: "/locations", label: "Locations" },
-  { href: "/contact", label: "Contact" },
   { href: "/search", label: "Search" },
 ];
 
@@ -69,7 +73,7 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex flex-wrap gap-4 text-sm">
-          {navLinks.map((link) => (
+          {primaryNav.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -84,23 +88,24 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Link
             href="/request-quote"
-            className="hidden lg:inline-flex rounded-md bg-brand-green px-3 py-2 text-sm text-white transition-colors hover:bg-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
+            className="inline-flex rounded-md bg-brand-green px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 sm:hidden"
           >
-            Request a Quote
+            Quote
           </Link>
-          <Link
-            href="/for-pros/portal"
-            className="hidden sm:inline-flex rounded-md bg-brand-green px-3 py-2 text-sm text-white transition-colors hover:bg-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
-          >
-            Customer Portal
-          </Link>
-
-          <Link
-            href="/for-pros/credit"
-            className="hidden lg:inline-flex rounded-md border border-brand-green px-3 py-2 text-sm text-brand-green transition-colors hover:border-brand-accent hover:bg-brand-accent hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
-          >
-            Apply for Credit
-          </Link>
+          <div className="hidden items-center gap-2 sm:flex">
+            <Link
+              href="/locations"
+              className="hidden lg:inline-flex rounded-md border border-slate-200 px-3 py-2 text-sm text-slate-700 transition-colors hover:border-brand-accent hover:text-brand-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
+            >
+              Locations
+            </Link>
+            <Link
+              href="/request-quote"
+              className="inline-flex rounded-md bg-brand-green px-3 py-2 text-sm text-white transition-colors hover:bg-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
+            >
+              Request a Quote
+            </Link>
+          </div>
 
           {/* Mobile hamburger */}
           <button
@@ -128,7 +133,7 @@ export function Header() {
           <div className="fixed left-0 right-0 top-[73px] z-30 border-b border-slate-200 bg-white shadow-lg">
             <nav className="main-container py-4">
               <ul className="grid grid-cols-1 gap-2">
-                {navLinks.map((link) => (
+                {primaryNav.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
@@ -140,32 +145,21 @@ export function Header() {
                   </li>
                 ))}
                 <li className="pt-2">
-                  <Link
-                    href="/request-quote"
-                    onClick={close}
-                    className="block rounded-md bg-brand-green px-3 py-2 text-center text-base font-medium text-white transition-colors hover:bg-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
-                  >
-                    Request a Quote
-                  </Link>
+                  <div className="rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    More from Beisser
+                  </div>
                 </li>
-                <li>
-                  <Link
-                    href="/for-pros/portal"
-                    onClick={close}
-                    className="block rounded-md bg-brand-green px-3 py-2 text-center text-base font-medium text-white transition-colors hover:bg-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
-                  >
-                    Customer Portal
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/for-pros/credit"
-                    onClick={close}
-                    className="block rounded-md border border-brand-green px-3 py-2 text-center text-base font-medium text-brand-green transition-colors hover:border-brand-accent hover:bg-brand-accent hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
-                  >
-                    Apply for Credit
-                  </Link>
-                </li>
+                {secondaryNav.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={close}
+                      className="block rounded-md px-3 py-2 text-base font-medium text-slate-800 transition-colors hover:bg-slate-50 hover:text-brand-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>
