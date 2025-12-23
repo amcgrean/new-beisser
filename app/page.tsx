@@ -234,6 +234,41 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Service area snapshot */}
+      <section className="grid gap-4 rounded-2xl border bg-white p-6 shadow-sm md:grid-cols-3">
+        <div className="space-y-2">
+          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-beisserGreen">
+            Service Area
+          </div>
+          <h3 className="text-lg font-semibold text-beisserGray">Central &amp; Eastern Iowa</h3>
+          <p className="text-sm text-slate-700">
+            Branches in Grimes, Coralville, and Fort Dodge with the Birchwood/Johnston showroom and millwork campus to
+            keep selections and deliveries close to your jobs.
+          </p>
+        </div>
+        <div className="space-y-2">
+          <h4 className="text-sm font-semibold text-beisserGray">How we coordinate</h4>
+          <p className="text-sm text-slate-700">
+            Dedicated dispatch and inside sales contacts per branch, with photos or signatures on delivery when
+            requested.
+          </p>
+        </div>
+        <div className="flex flex-col gap-2">
+          <Link
+            href="/locations"
+            className="inline-flex items-center justify-center rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-800 transition hover:border-beisserGreen hover:text-beisserGreen"
+          >
+            View Locations
+          </Link>
+          <Link
+            href="/request-quote"
+            className="inline-flex items-center justify-center rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-accent"
+          >
+            Start a Quote
+          </Link>
+        </div>
+      </section>
+
       {/* Trust signals */}
       <section className="grid gap-4 rounded-2xl border bg-slate-50 p-6 md:grid-cols-3">
         <div>

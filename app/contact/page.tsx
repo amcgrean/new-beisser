@@ -6,6 +6,19 @@ export default function ContactPage() {
         Reach a branch team for general questions or partnership requests. For pricing or submittals, use the
         Request a Quote form so we capture the details needed to respond quickly.
       </p>
+      <div className="rounded-lg border bg-white p-3 text-xs text-slate-700">
+        <div className="font-semibold text-beisserGray">Prefer to stop by?</div>
+        <p className="mt-1">
+          Locations in Grimes, Coralville, Fort Dodge, and the Birchwood/Johnston showroom cover Central and Eastern
+          Iowa. See addresses and hours on the locations page.
+        </p>
+        <a
+          href="/locations"
+          className="mt-2 inline-flex text-beisserGreen font-semibold underline-offset-4 hover:underline"
+        >
+          View locations
+        </a>
+      </div>
       <form className="space-y-3 bg-white border rounded-lg p-4">
         <div className="grid gap-3 sm:grid-cols-2">
           <div>

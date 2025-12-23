@@ -105,6 +105,14 @@ export default function RequestQuotePage() {
           </div>
         </div>
 
+        <div className="rounded-md border bg-slate-50 p-3">
+          <div className="text-sm font-semibold text-beisserGray">What happens next</div>
+          <p className="mt-1 text-xs text-slate-600">
+            We confirm scope, timeline, and delivery preferences within one business day. If engineered wood or window
+            and door details are involved, we will clarify specs and alternates before pricing.
+          </p>
+        </div>
+
         <button
           type="button"
           className="rounded-md bg-brand-green px-4 py-2 text-white font-semibold hover:bg-brand-accent"
