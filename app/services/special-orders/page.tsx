@@ -7,6 +7,12 @@ const orderSteps = [
   "Provide delivery or will call timing once the product ships to our yard.",
 ];
 
+const whoItServes = [
+  "Builders needing non-stock options to match architectural details.",
+  "Remodelers replacing units with custom sizes or historic profiles.",
+  "Trade partners coordinating accessories, hardware, or trim to finish a project cleanly.",
+];
+
 export default function SpecialOrdersPage() {
   return (
     <div className="space-y-5 max-w-4xl">
@@ -49,6 +55,15 @@ export default function SpecialOrdersPage() {
           or homeowner approvals. If you have submittals or inspiration photos, include them so we can align options
           quickly.
         </p>
+      </section>
+
+      <section className="space-y-3 rounded-xl border bg-white p-4 shadow-sm">
+        <h2 className="text-lg font-semibold text-beisserGray">Who It&apos;s For</h2>
+        <ul className="list-disc list-inside space-y-1 text-sm text-slate-700">
+          {whoItServes.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </section>
 
       <div className="rounded-xl border bg-white p-4 shadow-sm flex flex-wrap gap-3 items-center">

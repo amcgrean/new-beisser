@@ -7,6 +7,12 @@ const coordinationBullets = [
   "Service requests routed to the right product specialists quickly.",
 ];
 
+const whoServed = [
+  "Production and custom builders balancing multiple active jobsites.",
+  "Remodelers coordinating deliveries into occupied homes or tight lots.",
+  "Superintendents who want weekly updates on material status and service calls.",
+];
+
 export default function JobsiteCoordinationPage() {
   return (
     <div className="space-y-5 max-w-4xl">
@@ -26,6 +32,14 @@ export default function JobsiteCoordinationPage() {
           <h2 className="text-lg font-semibold text-beisserGray">What’s Included</h2>
           <ul className="list-disc list-inside space-y-1 text-sm text-slate-700">
             {coordinationBullets.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="space-y-3 rounded-xl border bg-white p-4 shadow-sm">
+          <h2 className="text-lg font-semibold text-beisserGray">Who It&apos;s For</h2>
+          <ul className="list-disc list-inside space-y-1 text-sm text-slate-700">
+            {whoServed.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>

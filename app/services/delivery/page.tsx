@@ -23,6 +23,14 @@ export default function DeliveryPage() {
 
       <section className="grid gap-6 md:grid-cols-2">
         <div className="space-y-3 rounded-xl border bg-white p-4 shadow-sm">
+          <h2 className="text-lg font-semibold text-beisserGray">Who It&apos;s For</h2>
+          <ul className="list-disc list-inside space-y-1 text-sm text-slate-700">
+            <li>Builders sequencing framing, exterior, and trim loads by phase.</li>
+            <li>Remodelers coordinating tight access sites that need specific equipment.</li>
+            <li>Crews scheduling will call pickups for fills, repairs, or returns.</li>
+          </ul>
+        </div>
+        <div className="space-y-3 rounded-xl border bg-white p-4 shadow-sm">
           <h2 className="text-lg font-semibold text-beisserGray">How it Works</h2>
           <ul className="list-disc list-inside space-y-1 text-sm text-slate-700">
             <li>Schedule deliveries by phase so framing, exterior, and finish loads arrive when you need them.</li>

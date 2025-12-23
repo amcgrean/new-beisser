@@ -14,6 +14,12 @@ const prepItems = [
   "Project location and whether the lot is platted or under construction.",
 ];
 
+const whoItems = [
+  "Builders pricing new construction packages that need clear allowances and alternates.",
+  "Remodelers confirming structural changes, headers, and layout updates before ordering.",
+  "Contractors needing engineered wood layouts coordinated with trades to avoid conflicts.",
+];
+
 export default function EstimatingPage() {
   return (
     <div className="space-y-5 max-w-4xl">
@@ -46,6 +52,15 @@ export default function EstimatingPage() {
             ))}
           </ul>
         </div>
+      </section>
+
+      <section className="space-y-3 rounded-xl border bg-white p-4 shadow-sm">
+        <h2 className="text-lg font-semibold text-beisserGray">Who It&apos;s For</h2>
+        <ul className="list-disc list-inside space-y-1 text-sm text-slate-700">
+          {whoItems.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </section>
 
       <section className="space-y-3 rounded-xl border bg-slate-50 p-4">
