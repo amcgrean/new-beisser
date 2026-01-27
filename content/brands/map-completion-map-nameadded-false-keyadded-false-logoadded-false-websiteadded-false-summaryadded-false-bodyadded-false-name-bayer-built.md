@@ -1,5 +1,6 @@
 ---
 name: Bayer Built
+logo: /uploads/bayer-built.png
 completion:
   nameAdded: false
   keyAdded: false
