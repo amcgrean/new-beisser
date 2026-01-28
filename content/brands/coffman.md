@@ -9,7 +9,7 @@ website: https://www.wm-coffman.com/
 heroImage: /images/resources-article.png
 categories:
   - millwork-and-trim
-logo: /uploads/bayer-built.png
+logo: /uploads/coffman.png
 bullets:
   - Hardwood and iron stair parts
   - Options for traditional and modern staircase designs
