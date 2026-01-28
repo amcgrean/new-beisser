@@ -9,7 +9,7 @@ website: https://www.empireco.com/
 heroImage: /images/resources-article.png
 categories:
   - millwork-and-trim
-logo: ""
+logo: /uploads/empire-logo.jpg
 bullets:
   - Interior trim, casings, and mouldings
   - Profiles in multiple species and styles
