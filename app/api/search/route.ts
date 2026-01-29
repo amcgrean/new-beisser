@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { brands } from "@/app/data/brands";
+import { getBrandEntries } from "@/app/lib/brands";
 import { productCategories } from "@/app/data/categories";
 
 export async function GET(req: Request) {
@@ -11,6 +11,7 @@ export async function GET(req: Request) {
   }
 
   const results: any[] = [];
+  const brands = getBrandEntries();
 
   // Brands
   for (const b of brands) {

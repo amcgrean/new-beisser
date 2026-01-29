@@ -1,44 +1,11 @@
 import Link from "next/link";
+import { getServiceEntries } from "../lib/content";
 
-const services = [
-  {
-    slug: "delivery",
-    title: "Delivery & Pickup",
-    summary:
-      "Coordinated jobsite delivery, will call, and load sequencing to match your schedule.",
-    cta: "Plan delivery",
-  },
-  {
-    slug: "estimating",
-    title: "Estimating & Takeoffs",
-    summary:
-      "Lumber lists, window and door quotes, and engineered wood layouts with clear turnaround times.",
-    cta: "Request an estimating slot",
-  },
-  {
-    slug: "showroom-design",
-    title: "Showroom & Design Support",
-    summary:
-      "Guided window, door, and millwork selections at our Birchwood/Johnston showroom.",
-    cta: "Book a visit",
-  },
-  {
-    slug: "special-orders",
-    title: "Special Orders",
-    summary:
-      "Non-stock products, custom sizes, and coordinated lead times through trusted vendors.",
-    cta: "Start a special order",
-  },
-  {
-    slug: "jobsite-coordination",
-    title: "Jobsite Coordination",
-    summary:
-      "Communication with supers and crews so loads, returns, and service calls stay organized.",
-    cta: "Coordinate a project",
-  },
-];
+export const dynamic = "force-dynamic";
 
 export default function ServicesPage() {
+  const services = getServiceEntries();
+
   return (
     <div className="space-y-6">
       <header className="space-y-2">
@@ -54,14 +21,24 @@ export default function ServicesPage() {
           <Link
             key={service.slug}
             href={`/services/${service.slug}`}
-            className="rounded-lg border bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            className="rounded-lg border bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md block"
           >
+            {service.frontmatter.image && (
+              <div className="mb-3 h-32 w-full overflow-hidden rounded-md bg-slate-100">
+                {/* In a real app, use Next/Image here if possible, or just img tag for now */}
+                <img
+                  src={service.frontmatter.image}
+                  alt={service.frontmatter.title}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            )}
             <div className="text-base font-semibold text-beisserGray">
-              {service.title}
+              {service.frontmatter.title}
             </div>
-            <p className="mt-1 text-slate-600">{service.summary}</p>
+            <p className="mt-1 text-slate-600 line-clamp-2">{service.frontmatter.summary}</p>
             <span className="mt-3 inline-flex text-sm font-semibold text-beisserGreen underline-offset-4 hover:underline">
-              {service.cta}
+              Learn more &rarr;
             </span>
           </Link>
         ))}

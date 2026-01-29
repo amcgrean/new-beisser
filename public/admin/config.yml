@@ -22,6 +22,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Summary", name: "summary", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+    sortable_fields: ["title"]
 
   - name: "community"
     label: "Community & Involvement"
@@ -35,6 +36,7 @@ collections:
       - { label: "Summary", name: "summary", widget: "string", required: false }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+    sortable_fields: ["title"]
 
   - name: "showroom"
     label: "Showroom Page"
@@ -129,6 +131,7 @@ collections:
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Featured", name: "featured", widget: "boolean", required: false, default: false }
       - { label: "Body (Optional)", name: "body", widget: "markdown", required: false }
+    sortable_fields: ["title", "date", "featured"]
 
   - name: "categories"
     label: "Product Categories"
@@ -164,6 +167,7 @@ collections:
           - { label: "Hero Image Added", name: "heroImageAdded", widget: "boolean", required: false, default: false }
           - { label: "Bullets Added", name: "bulletsAdded", widget: "boolean", required: false, default: false }
           - { label: "Body Added", name: "bodyAdded", widget: "boolean", required: false, default: false }
+    sortable_fields: ["name", "updated"]
 
   - name: "brands"
     label: "Brands"
@@ -211,3 +215,31 @@ collections:
           - { label: "Website Added", name: "websiteAdded", widget: "boolean", required: false, default: false }
           - { label: "Short Description Added", name: "summaryAdded", widget: "boolean", required: false, default: false }
           - { label: "Body Added", name: "bodyAdded", widget: "boolean", required: false, default: false }
+    sortable_fields: ["name", "updated"]
+
+  - name: "services"
+    label: "Services"
+    folder: "content/services"
+    create: true
+    extension: "mdx"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "string" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+    sortable_fields: ["title"]
+
+  - name: "for-pros"
+    label: "Pro Resources"
+    folder: "content/for-pros"
+    create: true
+    extension: "mdx"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Page Title", name: "title", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+    sortable_fields: ["title"]

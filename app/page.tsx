@@ -1,38 +1,28 @@
 import Link from "next/link";
 import Image from "next/image";
 import { HomeCarousel } from "./ui/HomeCarousel";
-import { getCategoryEntries } from "./lib/content";
+import { getCategoryEntries, getServiceBySlug } from "./lib/content";
 
-const services = [
-  {
-    title: "Delivery & Pickup",
-    description: "Fleet coverage across Central and Eastern Iowa with staging to match your build order.",
-    href: "/services/delivery",
-  },
-  {
-    title: "Estimating & Takeoffs",
-    description: "Lumber lists, window and door quotes, and engineered wood layouts with clear timelines.",
-    href: "/services/estimating",
-  },
-  {
-    title: "Showroom & Design Support",
-    description: "Guide clients through windows, doors, and millwork at our Birchwood/Johnston showroom.",
-    href: "/services/showroom-design",
-  },
-  {
-    title: "Special Orders",
-    description: "Custom sizes and brand-specific options managed with defined approvals and lead times.",
-    href: "/services/special-orders",
-  },
-  {
-    title: "Jobsite Coordination",
-    description: "Communication with supers and crews so deliveries, returns, and service stay organized.",
-    href: "/services/jobsite-coordination",
-  },
+const FEATURED_SERVICE_SLUGS = [
+  "delivery",
+  "estimating",
+  "showroom-design",
+  "special-orders",
+  "jobsite-coordination",
 ];
 
 export default function HomePage() {
   const categories = getCategoryEntries().slice(0, 9);
+
+  const services = FEATURED_SERVICE_SLUGS.map((slug) => {
+    const entry = getServiceBySlug(slug);
+    if (!entry) return null;
+    return {
+      title: entry.frontmatter.title,
+      description: entry.frontmatter.summary,
+      href: `/services/${slug}`,
+    };
+  }).filter((s): s is NonNullable<typeof s> => s !== null);
 
   return (
     <div className="space-y-12">
@@ -185,6 +175,54 @@ export default function HomePage() {
               </span>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Resources & Guides */}
+      <section className="space-y-4">
+        <div className="flex items-center justify-between gap-3">
+          <h2 className="text-2xl font-semibold text-beisserGray">
+            Contractor Resources
+          </h2>
+          <Link
+            href="/for-pros"
+            className="text-sm font-medium text-beisserGreen hover:underline"
+          >
+            View all resources
+          </Link>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          <Link
+            href="/for-pros/credit"
+            className="group flex flex-col rounded-lg border bg-white p-5 shadow-sm transition hover:shadow-md"
+          >
+            <h3 className="font-semibold text-beisserGray group-hover:text-beisserGreen">
+              Credit Application
+            </h3>
+            <p className="mt-2 text-sm text-slate-600">
+              Apply for a trade account to get terms, statement billing, and online access.
+            </p>
+          </Link>
+          <Link
+            href="/for-pros/resources"
+            className="group flex flex-col rounded-lg border bg-white p-5 shadow-sm transition hover:shadow-md"
+          >
+            <h3 className="font-semibold text-beisserGray group-hover:text-beisserGreen">
+              Technical Guides
+            </h3>
+            <p className="mt-2 text-sm text-slate-600">
+              Span tables, energy code reference sheets, and egress window requirements.
+            </p>
+          </Link>
+          <div className="flex flex-col rounded-lg border bg-slate-50 p-5">
+            <h3 className="font-semibold text-beisserGray">Portal Access</h3>
+            <p className="mt-2 text-sm text-slate-600">
+              Manage invoices and track active orders.
+            </p>
+            <a href="https://beisser.inet.lbm.net/" className="mt-3 text-sm font-semibold text-beisserGreen hover:underline">
+              Login to iNet
+            </a>
+          </div>
         </div>
       </section>
 

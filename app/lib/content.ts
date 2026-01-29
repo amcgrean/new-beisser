@@ -24,6 +24,22 @@ export function getPageMdx(slug: string): MdxEntry | null {
   return { slug, ...result };
 }
 
+export function getPageEntries(): MdxEntry[] {
+  const dir = path.join(process.cwd(), "content", "pages");
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => {
+      const slug = file.replace(/\.mdx$/, "");
+      const filePath = path.join(dir, file);
+      const result = readMdxFile(filePath);
+      return result ? ({ slug, ...result } as MdxEntry) : null;
+    })
+    .filter((entry): entry is MdxEntry => entry !== null)
+    .sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title));
+}
+
 export function getCategoryMdx(slug: string): MdxEntry | null {
   const filePath = path.join(
     process.cwd(),
@@ -106,6 +122,34 @@ export type CmsCategory = {
 };
 
 const CATEGORIES_DIR = path.join(process.cwd(), "content", "categories");
+
+/** SERVICES */
+export function getServiceEntries(): MdxEntry[] {
+  const dir = path.join(process.cwd(), "content", "services");
+  return getMdxSlugs(dir)
+    .map((slug) => {
+      const filePath = path.join(dir, `${slug}.mdx`);
+      const result = readMdxFile(filePath);
+      return result ? ({ slug, ...result } as MdxEntry) : null;
+    })
+    .filter((entry): entry is MdxEntry => entry !== null)
+    .sort((a, b) => a.frontmatter.title.localeCompare(b.frontmatter.title));
+}
+
+export function getServiceBySlug(slug: string): MdxEntry | null {
+  const filePath = path.join(process.cwd(), "content", "services", `${slug}.mdx`);
+  const result = readMdxFile(filePath);
+  if (!result) return null;
+  return { slug, ...result };
+}
+
+/** PRO RESOURCES */
+export function getProResourceEntry(slug: string): MdxEntry | null {
+  const filePath = path.join(process.cwd(), "content", "for-pros", `${slug}.mdx`);
+  const result = readMdxFile(filePath);
+  if (!result) return null;
+  return { slug, ...result };
+}
 
 export function getCategoryEntries(): CmsCategory[] {
   if (!fs.existsSync(CATEGORIES_DIR)) return [];

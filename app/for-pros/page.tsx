@@ -5,27 +5,27 @@ export default function ForProsPage() {
     {
       title: "Customer Portal",
       description: "Secure online access to your account, invoices, and statements via ToolBx.",
-      href: "/for-pros/portal",
+      href: "/for-pros/portal", // Still hardcoded if external/custom tool
     },
     {
-      title: "Credit & Accounts",
-      description: "Apply for a line of credit and manage terms through our online credit application.",
-      href: "/for-pros/credit",
+      title: "Contractor Resources",
+      description: "Downloadable credit apps, tax forms, span tables, and other essential docs.",
+      href: "/for-pros/resources", // Now dynamic!
     },
     {
       title: "Estimating & Takeoffs",
       description: "Partner with our estimating team for lumber lists, window and door packages, and more.",
-      href: "/services/estimating",
+      href: "/services/estimating", // Links to dynamic service
     },
     {
       title: "Delivery & Pickup",
-      description: "Jobsite delivery, will call, and options for coordinating material flow to your projects.",
-      href: "/services/delivery",
+      description: "Jobsite delivery, will call, and options for coordinating material flow.",
+      href: "/services/delivery", // Links to dynamic service
     },
     {
-      title: "Showroom & Design Support",
+      title: "Design Consultation",
       description: "Host client selections at our Birchwood/Johnston showroom with product specialists.",
-      href: "/services/showroom-design",
+      href: "/services/design-consultation", // Links to dynamic service
     },
   ];
 
@@ -34,9 +34,8 @@ export default function ForProsPage() {
       <header className="space-y-2">
         <h1 className="text-2xl font-semibold text-beisserGray">For Pros</h1>
         <p className="text-sm text-slate-600 max-w-2xl">
-          A central hub for builders, remodelers, and contractors who rely on Beisser for consistent material supply,
-          local expertise, and jobsite support. The tiles below show how your key pro tools and services will be
-          organized.
+          A central hub for builders, remodelers, and contractors.
+          Access your tools and key services below.
         </p>
       </header>
       <div className="grid gap-4 sm:grid-cols-2 text-sm">
