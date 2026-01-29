@@ -9,7 +9,7 @@ website: https://www.moistureshield.com/
 heroImage: /images/resources-article.png
 categories:
   - decking-and-exteriors
-logo: "Draft\r\nmoisture-shiled-logo.jpg"
+logo: moisture-shiled-logo.jpg
 bullets:
   - Decking products designed to perform in wet conditions
   - Boards that can be used in high-moisture areas
