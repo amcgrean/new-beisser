@@ -9,7 +9,7 @@ website: https://www.emtek.com/
 heroImage: /images/resources-article.png
 categories:
   - tools-and-fasteners
-logo: /uploads/emtek.png
+logo: emtek.png
 bullets:
   - Decorative hardware for interior and exterior doors
   - Customizable styles, finishes, and lever/knob options
