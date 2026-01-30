@@ -1,109 +1,124 @@
 ﻿<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Beisser Lumber Content Manager</title>
-  </head>
-  <body>
-    <!-- Netlify Identity Widget (required for login UI/flow) -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <!-- Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Beisser Lumber Content Manager</title>
+</head>
 
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
+<body>
+  <!-- Netlify Identity Widget (required for login UI/flow) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <script>
-      // Auto-timestamps + auto completion checklist
-      (function () {
-        function truthy(val) {
-          if (val === null || val === undefined) return false;
-          if (typeof val === "string") return val.trim().length > 0;
-          if (Array.isArray(val)) return val.length > 0;
-          // Immutable.js types sometimes show up; attempt common conversions:
-          if (val && typeof val.size === "number") return val.size > 0;
-          return Boolean(val);
+  <!-- Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
         }
+      });
+    }
+  </script>
 
-        if (!window.CMS) return;
+  <script>
+    // Auto-timestamps + auto completion checklist
+    (function () {
+      function truthy(val) {
+        if (val === null || val === undefined) return false;
+        if (typeof val === "string") return val.trim().length > 0;
+        if (Array.isArray(val)) return val.length > 0;
+        // Immutable.js types sometimes show up; attempt common conversions:
+        if (val && typeof val.size === "number") return val.size > 0;
+        return Boolean(val);
+      }
 
-        window.CMS.registerEventListener({
-          name: "preSave",
-          handler: ({ entry, collection }) => {
-            const collectionName = collection?.get?.("name") || collection?.name;
+      if (!window.CMS) return;
 
-            const shouldHandle =
-              collectionName === "brands" ||
-              collectionName === "categories" ||
-              collectionName === "pages" ||
-              collectionName === "community" ||
-              collectionName === "gallery";
+      window.CMS.registerEventListener({
+        name: "preSave",
+        handler: ({ entry, collection }) => {
+          const collectionName = collection?.get?.("name") || collection?.name;
 
-            if (!shouldHandle) return entry;
+          const shouldHandle =
+            collectionName === "brands" ||
+            collectionName === "categories" ||
+            collectionName === "pages" ||
+            collectionName === "community" ||
+            collectionName === "gallery";
 
-            let data = entry.get("data");
+          if (!shouldHandle) return entry;
 
-            // Always update timestamp (top-level frontmatter "updated")
-            data = data.set("updated", new Date().toISOString());
+          let data = entry.get("data");
 
-            // Brands completion
-            if (collectionName === "brands") {
-              const name = data.get("name");
-              const key = data.get("key");
-              const website = data.get("website");
-              const logo = data.get("logo");
-              const summary = data.get("summary");
-              const body = data.get("body");
+          // Always update timestamp (top-level frontmatter "updated")
+          data = data.set("updated", new Date().toISOString());
 
-              const completion = {
-                nameAdded: truthy(name),
-                keyAdded: truthy(key),
-                websiteAdded: truthy(website),
-                logoAdded: truthy(logo),
-                summaryAdded: truthy(summary),
-                bodyAdded: truthy(body),
-              };
+          // Brands completion
+          if (collectionName === "brands") {
+            const name = data.get("name");
+            const key = data.get("key");
+            const website = data.get("website");
+            const logo = data.get("logo");
+            const summary = data.get("summary");
+            const body = data.get("body");
 
-              data = data.set("completion", completion);
-            }
+            const completion = {
+              nameAdded: truthy(name),
+              keyAdded: truthy(key),
+              websiteAdded: truthy(website),
+              logoAdded: truthy(logo),
+              summaryAdded: truthy(summary),
+              bodyAdded: truthy(body),
+            };
 
-            // Categories completion
-            if (collectionName === "categories") {
-              // Your categories use "name" (per your config), not necessarily "title"
-              const name = data.get("name");
-              const summary = data.get("summary");
-              const description = data.get("description");
-              const heroImage = data.get("heroImage");
-              const bullets = data.get("bullets");
-              const body = data.get("body");
+            // Calculate completeness percentage
+            const totalFields = Object.keys(completion).length;
+            const completedFields = Object.values(completion).filter(Boolean).length;
+            const completeness = totalFields > 0 ? Math.round((completedFields / totalFields) * 100) : 0;
 
-              const completion = {
-                nameAdded: truthy(name),
-                summaryAdded: truthy(summary),
-                descriptionAdded: truthy(description),
-                heroImageAdded: truthy(heroImage),
-                bulletsAdded: truthy(bullets),
-                bodyAdded: truthy(body),
-              };
+            data = data.set("completion", completion);
+            data = data.set("completeness", completeness);
+          }
 
-              data = data.set("completion", completion);
-            }
+          // Categories completion
+          if (collectionName === "categories") {
+            // Your categories use "name" (per your config), not necessarily "title"
+            const name = data.get("name");
+            const summary = data.get("summary");
+            const description = data.get("description");
+            const heroImage = data.get("heroImage");
+            const bullets = data.get("bullets");
+            const body = data.get("body");
 
-            return entry.set("data", data);
-          },
-        });
-      })();
-    </script>
-  </body>
+            const completion = {
+              nameAdded: truthy(name),
+              summaryAdded: truthy(summary),
+              descriptionAdded: truthy(description),
+              heroImageAdded: truthy(heroImage),
+              bulletsAdded: truthy(bullets),
+              bodyAdded: truthy(body),
+            };
+
+            // Calculate completeness percentage
+            const totalFields = Object.keys(completion).length;
+            const completedFields = Object.values(completion).filter(Boolean).length;
+            const completeness = totalFields > 0 ? Math.round((completedFields / totalFields) * 100) : 0;
+
+            data = data.set("completion", completion);
+            data = data.set("completeness", completeness);
+          }
+
+          return entry.set("data", data);
+        },
+      });
+    })();
+  </script>
+</body>
+
 </html>

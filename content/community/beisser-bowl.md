@@ -1,6 +1,7 @@
-﻿---
-title: "Beisser Bowl"
-summary: "A community football tradition celebrating student athletes and local pride."
+---
+title: Beisser Bowl
+summary: A community football tradition celebrating student athletes and local pride.
+updated: '2025-11-18T03:28:53.767Z'
 ---
 
 The **Beisser Bowl** is one of our most recognizable community events—an annual high school football matchup between **Fort Dodge Senior High** and **Dallas Center–Grimes**.

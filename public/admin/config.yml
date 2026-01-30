@@ -170,8 +170,8 @@ collections:
           - { label: "Hero Image Added", name: "heroImageAdded", widget: "boolean", required: false, default: false }
           - { label: "Bullets Added", name: "bulletsAdded", widget: "boolean", required: false, default: false }
           - { label: "Body Added", name: "bodyAdded", widget: "boolean", required: false, default: false }
-    sortable_fields: ["name", "updated"]
-    summary: "{{name}} — Updated: {{updated | date('MMM D, YYYY')}}"
+    sortable_fields: ["name", "updated", "completeness"]
+    summary: "{{name}} — {{completeness}}% Complete — Updated: {{updated | date('MMM D, YYYY')}}"
 
   - name: "brands"
     label: "Brands"
@@ -180,7 +180,7 @@ collections:
     extension: "md"
     format: "frontmatter"
     slug: "{{slug}}"
-    summary: "{{name}} — Updated: {{updated | date('MMM D, YYYY')}}"
+    summary: "{{name}} — {{completeness}}% Complete — Updated: {{updated | date('MMM D, YYYY')}}"
     fields:
       - { label: "Brand Name", name: "name", widget: "string" }
       - { label: "Brand Key", name: "key", widget: "string", required: false, hint: "Short id like 'trex' or 'andersen'." }

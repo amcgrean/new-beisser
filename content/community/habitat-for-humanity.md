@@ -1,6 +1,9 @@
-﻿---
-title: "Habitat for Humanity"
-summary: "Supporting affordable housing through materials, manpower, and community partnership."
+---
+title: Habitat for Humanity
+summary: >-
+  Supporting affordable housing through materials, manpower, and community
+  partnership.
+updated: '2025-11-18T03:29:22.763Z'
 ---
 
 Beisser Lumber regularly supports **Habitat for Humanity** through:

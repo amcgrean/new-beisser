@@ -1,11 +1,12 @@
 ---
 name: Mirage Screens
 summary: Retractable screen systems for doors and large openings.
-description: Retractable screen systems for doors and large openings. At Beisser
-  Lumber, we stock and support Mirage as part of our windows and patio doors
-  offering, helping customers keep views open while still gaining bug protection
-  where it matters.
-website: https://miragescreensystems.com/
+description: >-
+  Retractable screen systems for doors and large openings. At Beisser Lumber, we
+  stock and support Mirage as part of our windows and patio doors offering,
+  helping customers keep views open while still gaining bug protection where it
+  matters.
+website: 'https://miragescreensystems.com/'
 heroImage: /images/resources-article.png
 categories:
   - windows-and-patio-doors
@@ -13,4 +14,14 @@ logo: mirage-screen-systems-logo.png
 bullets:
   - Retractable-screeen solutions for doors and patios
   - Helps maintain views and airflow
+completion:
+  nameAdded: true
+  keyAdded: false
+  websiteAdded: true
+  logoAdded: true
+  summaryAdded: true
+  bodyAdded: false
+completeness: 67
+updated: '2026-01-29T19:16:26.127Z'
 ---
+

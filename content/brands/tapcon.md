@@ -1,11 +1,12 @@
 ---
 name: Tapcon
 summary: Concrete anchors for masonry and concrete fastening.
-description: Concrete anchors for masonry and concrete fastening. At Beisser
-  Lumber, we stock and support Tapcon as part of our fasteners, anchors, and
-  hardware offering, helping pros fasten securely into concrete and block where
-  standard fasteners don’t cut it.
-website: https://www.tapcon.com/
+description: >-
+  Concrete anchors for masonry and concrete fastening. At Beisser Lumber, we
+  stock and support Tapcon as part of our fasteners, anchors, and hardware
+  offering, helping pros fasten securely into concrete and block where standard
+  fasteners don’t cut it.
+website: 'https://www.tapcon.com/'
 heroImage: /images/resources-article.png
 categories:
   - tools-and-fasteners
@@ -13,4 +14,14 @@ logo: tapcon-logo.svg
 bullets:
   - Concrete and masonry fastening solutions
   - Anchors designed for reliable holding strength
+completion:
+  nameAdded: true
+  keyAdded: false
+  websiteAdded: true
+  logoAdded: true
+  summaryAdded: true
+  bodyAdded: false
+completeness: 67
+updated: '2026-01-29T19:16:26.163Z'
 ---
+

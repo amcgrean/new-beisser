@@ -1,11 +1,12 @@
 ---
 name: ODL Glass
-summary: Decorative and clear glass for doors, sidelights, and windows.
-description: Decorative and clear glass for doors, sidelights, and windows. At
-  Beisser Lumber, we stock and support ODL doorglass as part of our interior and
+summary: 'Decorative and clear glass for doors, sidelights, and windows.'
+description: >-
+  Decorative and clear glass for doors, sidelights, and windows. At Beisser
+  Lumber, we stock and support ODL doorglass as part of our interior and
   exterior doors offering, making it easy to add privacy, style, or extra
   daylight to entry and patio doors.
-website: https://www.odl.com/
+website: 'https://www.odl.com/'
 heroImage: /images/resources-article.png
 categories:
   - interior-and-exterior-doors
@@ -13,4 +14,14 @@ logo: odl-logo.png
 bullets:
   - Decorative doorglass for entry doors
   - Clear and textured glass options
+completion:
+  nameAdded: true
+  keyAdded: false
+  websiteAdded: true
+  logoAdded: true
+  summaryAdded: true
+  bodyAdded: false
+completeness: 67
+updated: '2026-01-29T19:16:26.141Z'
 ---
+

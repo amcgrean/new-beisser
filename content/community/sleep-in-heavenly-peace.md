@@ -1,6 +1,7 @@
-﻿---
-title: "Sleep in Heavenly Peace"
-summary: "Helping ensure every child has a safe place to sleep."
+---
+title: Sleep in Heavenly Peace
+summary: Helping ensure every child has a safe place to sleep.
+updated: '2025-11-18T03:29:42.455Z'
 ---
 
 Beisser supports **Sleep in Heavenly Peace**, an organization working to provide beds, bedding, and support services to children in need.
