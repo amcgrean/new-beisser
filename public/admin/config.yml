@@ -22,7 +22,8 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Summary", name: "summary", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
-    sortable_fields: ["title"]
+    sortable_fields: ["title", "updated"]
+    summary: "{{title}} — Updated: {{updated | date('MMM D, YYYY')}}"
 
   - name: "community"
     label: "Community & Involvement"
@@ -36,7 +37,8 @@ collections:
       - { label: "Summary", name: "summary", widget: "string", required: false }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
-    sortable_fields: ["title"]
+    sortable_fields: ["title", "updated"]
+    summary: "{{title}} — Updated: {{updated | date('MMM D, YYYY')}}"
 
   - name: "showroom"
     label: "Showroom Page"
@@ -131,7 +133,8 @@ collections:
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Featured", name: "featured", widget: "boolean", required: false, default: false }
       - { label: "Body (Optional)", name: "body", widget: "markdown", required: false }
-    sortable_fields: ["title", "date", "featured"]
+    sortable_fields: ["title", "date", "featured", "updated"]
+    summary: "{{title}} — Updated: {{updated | date('MMM D, YYYY')}}"
 
   - name: "categories"
     label: "Product Categories"
@@ -176,7 +179,7 @@ collections:
     extension: "md"
     format: "frontmatter"
     slug: "{{slug}}"
-    summary: "{{name}}"
+    summary: "{{name}} — Updated: {{updated | date('MMM D, YYYY')}}"
     fields:
       - { label: "Brand Name", name: "name", widget: "string" }
       - { label: "Brand Key", name: "key", widget: "string", required: false, hint: "Short id like 'trex' or 'andersen'." }
