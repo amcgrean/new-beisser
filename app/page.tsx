@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { HomeCarousel } from "./ui/HomeCarousel";
 import { getCategoryEntries, getServiceBySlug } from "./lib/content";
+import { resources } from "./data/resources";
 
 const FEATURED_SERVICE_SLUGS = [
   "delivery",
@@ -35,13 +36,13 @@ export default function HomePage() {
             Building Materials for Iowa Builders
           </h2>
           <p className="text-sm text-slate-700">
-            Beisser Lumber supplies framing packages, engineered wood, windows and doors, decking, siding, and
-            interior millwork for residential and light commercial projects. We pair product depth with local service
-            teams who understand jobsite realities.
+            We supply framing packages, engineered wood, windows and doors, decking, siding, and interior millwork for
+            residential and light commercial projects. Every order is backed by local branch teams that understand
+            construction sequencing and the documentation your subs need.
           </p>
           <p className="text-sm text-slate-700">
-            With branches in Grimes, Coralville, Fort Dodge, and our Birchwood/Johnston showroom and millwork
-            facility, you get centralized coordination with people who know your market.
+            Branches in Grimes, Coralville, Fort Dodge, and our Birchwood/Johnston showroom keep coverage close to your
+            jobs. We coordinate quotes, deliveries, returns, and service calls so your crews stay moving.
           </p>
           <div className="flex flex-wrap gap-3 pt-1">
             <Link
@@ -62,6 +63,26 @@ export default function HomePage() {
             >
               Explore Services
             </Link>
+          </div>
+          <div className="grid gap-2 rounded-lg border bg-white p-4 shadow-sm sm:grid-cols-2">
+            <div>
+              <div className="text-xs uppercase tracking-[0.18em] text-beisserGreen font-semibold">
+                Who We Serve
+              </div>
+              <p className="text-xs text-slate-700">
+                Professional builders, remodelers, and trade partners who need reliable supply, selection help, and
+                service follow-through.
+              </p>
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-[0.18em] text-beisserGreen font-semibold">
+                How to Start
+              </div>
+              <p className="text-xs text-slate-700">
+                Send plans or material lists, tell us your timing, and we’ll align quotes, delivery windows, and onsite
+                contacts with your schedule.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -178,7 +199,67 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Resources & Guides */}
+      {/* How we keep projects moving */}
+      <section className="grid gap-4 rounded-2xl border bg-white p-6 shadow-sm md:grid-cols-3">
+        <div className="space-y-2">
+          <h3 className="text-lg font-semibold text-beisserGray">Clear Intake</h3>
+          <p className="text-sm text-slate-700">
+            Quotes start with plans, material lists, or scope summaries so we size engineered wood, windows, and doors
+            correctly and confirm timelines up front.
+          </p>
+        </div>
+        <div className="space-y-2">
+          <h3 className="text-lg font-semibold text-beisserGray">Delivery by Phase</h3>
+          <p className="text-sm text-slate-700">
+            Framing, exterior, and trim loads are sequenced with dispatch to match your build order, with will call
+            options when you need quick fills.
+          </p>
+        </div>
+        <div className="space-y-2">
+          <h3 className="text-lg font-semibold text-beisserGray">Documented Follow-Up</h3>
+          <p className="text-sm text-slate-700">
+            Photos, signatures, and service routing keep returns and warranty questions organized. You always know who
+            to contact at the branch handling your job.
+          </p>
+        </div>
+      </section>
+
+      {/* Service area snapshot */}
+      <section className="grid gap-4 rounded-2xl border bg-white p-6 shadow-sm md:grid-cols-3">
+        <div className="space-y-2">
+          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-beisserGreen">
+            Service Area
+          </div>
+          <h3 className="text-lg font-semibold text-beisserGray">Central &amp; Eastern Iowa</h3>
+          <p className="text-sm text-slate-700">
+            Branches in Grimes, Coralville, and Fort Dodge with the Birchwood/Johnston showroom and millwork campus to
+            keep selections and deliveries close to your jobs.
+          </p>
+        </div>
+        <div className="space-y-2">
+          <h4 className="text-sm font-semibold text-beisserGray">How we coordinate</h4>
+          <p className="text-sm text-slate-700">
+            Dedicated dispatch and inside sales contacts per branch, with photos or signatures on delivery when
+            requested.
+          </p>
+        </div>
+        <div className="flex flex-col gap-2">
+          <Link
+            href="/locations"
+            className="inline-flex items-center justify-center rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-800 transition hover:border-beisserGreen hover:text-beisserGreen"
+          >
+            View Locations
+          </Link>
+          <Link
+            href="/request-quote"
+            className="inline-flex items-center justify-center rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-accent"
+          >
+            Start a Quote
+          </Link>
+        </div>
+      </section>
+
+      {/* Resources & Guides - Contractor Resources */}
       <section className="space-y-4">
         <div className="flex items-center justify-between gap-3">
           <h2 className="text-2xl font-semibold text-beisserGray">
@@ -239,6 +320,47 @@ export default function HomePage() {
         <div>
           <div className="text-2xl font-bold text-beisserGray">Pro Support</div>
           <p className="text-sm text-slate-700">Estimating, delivery, and jobsite coordination built for trade timelines.</p>
+        </div>
+      </section>
+
+      {/* Resources */}
+      <section className="space-y-4">
+        <div className="flex items-center justify-between gap-3">
+          <h2 className="text-2xl font-semibold text-beisserGray">
+            Resources &amp; Guides
+          </h2>
+          <Link
+            href="/resources"
+            className="text-sm font-medium text-beisserGreen hover:underline"
+          >
+            View all resources
+          </Link>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {resources.slice(0, 3).map((article) => (
+            <Link
+              key={article.slug}
+              href={`/resources/${article.slug}`}
+              className="flex h-full flex-col overflow-hidden rounded-lg border bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <div className="relative h-32 w-full">
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <div className="text-[11px] uppercase tracking-wide text-slate-500">
+                  {article.category}
+                </div>
+                <div className="text-sm font-semibold text-beisserGray">{article.title}</div>
+                <p className="text-xs text-slate-600 line-clamp-2">{article.summary}</p>
+                <div className="text-[11px] text-slate-400">{article.readTime}</div>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 

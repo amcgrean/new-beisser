@@ -3,9 +3,22 @@ export default function ContactPage() {
     <div className="space-y-4 max-w-xl">
       <h1 className="text-2xl font-semibold text-beisserGray">Contact Us</h1>
       <p className="text-sm text-slate-600">
-        A simple starting point contact form. In production you&apos;ll want to wire this up to your preferred
-        email or CRM system.
+        Reach a branch team for general questions or partnership requests. For pricing or submittals, use the
+        Request a Quote form so we capture the details needed to respond quickly.
       </p>
+      <div className="rounded-lg border bg-white p-3 text-xs text-slate-700">
+        <div className="font-semibold text-beisserGray">Prefer to stop by?</div>
+        <p className="mt-1">
+          Locations in Grimes, Coralville, Fort Dodge, and the Birchwood/Johnston showroom cover Central and Eastern
+          Iowa. See addresses and hours on the locations page.
+        </p>
+        <a
+          href="/locations"
+          className="mt-2 inline-flex text-beisserGreen font-semibold underline-offset-4 hover:underline"
+        >
+          View locations
+        </a>
+      </div>
       <form className="space-y-3 bg-white border rounded-lg p-4">
         <div className="grid gap-3 sm:grid-cols-2">
           <div>
@@ -51,6 +64,9 @@ export default function ContactPage() {
             placeholder="Tell us about your project, question, or request."
           />
         </div>
+        <p className="text-[11px] text-slate-500">
+          A team member will route your note to the right branch. This demo form is not yet connected to a live system.
+        </p>
         <button
           type="button"
           className="px-4 py-2 rounded-md bg-beisserGreen text-white text-sm font-medium hover:bg-emerald-700 transition-colors"
