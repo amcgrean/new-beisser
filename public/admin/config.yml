@@ -171,6 +171,7 @@ collections:
           - { label: "Bullets Added", name: "bulletsAdded", widget: "boolean", required: false, default: false }
           - { label: "Body Added", name: "bodyAdded", widget: "boolean", required: false, default: false }
     sortable_fields: ["name", "updated"]
+    summary: "{{name}} — Updated: {{updated | date('MMM D, YYYY')}}"
 
   - name: "brands"
     label: "Brands"
@@ -232,7 +233,8 @@ collections:
       - { label: "Summary", name: "summary", widget: "string" }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
-    sortable_fields: ["title"]
+    sortable_fields: ["title", "updated"]
+    summary: "{{title}} — Updated: {{updated | date('MMM D, YYYY')}}"
 
   - name: "for-pros"
     label: "Pro Resources"
@@ -245,4 +247,5 @@ collections:
       - { label: "Page Title", name: "title", widget: "string" }
       - { label: "Summary", name: "summary", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
-    sortable_fields: ["title"]
+    sortable_fields: ["title", "updated"]
+    summary: "{{title}} — Updated: {{updated | date('MMM D, YYYY')}}"
