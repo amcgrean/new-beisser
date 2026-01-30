@@ -19,6 +19,11 @@ const BRANDS_DIR = path.join(process.cwd(), "content", "brands");
 const HERO_PLACEHOLDER = "/images/resources-article.png";
 const LOGO_PLACEHOLDER = "/images/resources-article.png";
 
+const ensurePath = (path: string) => {
+  if (!path || path.startsWith("/") || path.startsWith("http")) return path;
+  return `/uploads/${path}`;
+};
+
 function normalizeBrand(data: any, slug: string): Brand {
   return {
     slug,
@@ -27,8 +32,8 @@ function normalizeBrand(data: any, slug: string): Brand {
     description: String(data.description ?? data.summary ?? ""),
     categories: Array.isArray(data.categories) ? data.categories.map(String) : [],
     website: String(data.website ?? ""),
-    heroImage: String(data.heroImage ?? HERO_PLACEHOLDER),
-    logo: String(data.logo ?? LOGO_PLACEHOLDER),
+    heroImage: ensurePath(String(data.heroImage ?? HERO_PLACEHOLDER)),
+    logo: ensurePath(String(data.logo ?? LOGO_PLACEHOLDER)),
     bullets: Array.isArray(data.bullets) ? data.bullets.map(String) : [],
   };
 }
