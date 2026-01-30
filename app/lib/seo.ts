@@ -1,8 +1,8 @@
-﻿import { brands } from "@/app/data/brands";
-import { productCategories } from "@/app/data/categories";
+﻿import { getBrandBySlug } from "@/app/lib/brands";
+import { getCategoryBySlug } from "@/app/lib/content";
 
 export function generateBrandMetadata(slug: string) {
-  const brand = brands.find((b) => b.slug === slug);
+  const brand = getBrandBySlug(slug);
 
   if (!brand) return {};
 
@@ -27,16 +27,16 @@ export function generateBrandMetadata(slug: string) {
 
 
 export function generateCategoryMetadata(slug: string) {
-  const cat = productCategories.find((c) => c.slug === slug);
+  const cat = getCategoryBySlug(slug);
 
   if (!cat) return {};
 
   return {
     title: `${cat.name} | Beisser Lumber`,
-    description: cat.description,
+    description: cat.description || cat.summary,
     openGraph: {
       title: cat.name,
-      description: cat.description,
+      description: cat.description || cat.summary,
       images: [{ url: cat.heroImage }],
     },
   };

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import type { Brand } from "@/app/data/brands";
+import type { Brand } from "@/app/lib/brands";
 
 type ProductCategory = {
   slug: string;
@@ -30,8 +30,8 @@ export function ProductCategoryGrid({ categories, brands }: Props) {
     selectedBrand == null
       ? categories
       : categories.filter((cat) =>
-          selectedBrand.categories?.includes(cat.slug)
-        );
+        selectedBrand.categories?.includes(cat.slug)
+      );
 
   return (
     <div className="space-y-4">
