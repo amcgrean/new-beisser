@@ -1,20 +1,17 @@
 ---
-name: Weyerhaeuser
-summary: 'Engineered wood, lumber, and building materials.'
-description: >-
-  Engineered wood, lumber, and building materials. At Beisser Lumber, we stock
-  and support Weyerhaeuser as part of our engineered wood products and lumber
-  and panel products offering, helping pros rely on consistent, well-documented
-  structural solutions.
-website: 'https://www.weyerhaeuser.com/'
 heroImage: /images/resources-article.png
-logo: /Logos/Engineered Wood Products/Weyerhaeuser Logo.jfif
+name: Weyerhaeuser
+website: https://www.weyerhaeuser.com/
 categories:
   - engineered-wood-products
   - lumber-and-panels
+logo: weyerhaeuser-logo.png
+summary: Engineered wood, lumber, and building materials.
+completeness: 67
 bullets:
-  - 'Engineered wood I-joists, beams, and more'
+  - Engineered wood I-joists, beams, and more
   - Lumber and panel products for many applications
+updated: 2025-12-19T22:00:32.347Z
 completion:
   nameAdded: true
   keyAdded: false
@@ -22,7 +19,8 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-completeness: 67
-updated: '2025-12-19T22:00:32.347Z'
+description: Engineered wood, lumber, and building materials. At Beisser Lumber,
+  we stock and support Weyerhaeuser as part of our engineered wood products and
+  lumber and panel products offering, helping pros rely on consistent,
+  well-documented structural solutions.
 ---
-
