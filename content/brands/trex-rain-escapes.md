@@ -4,7 +4,7 @@ name: Trex Rain Escapes
 website: https://trexrainescape.com/
 categories:
   - decking-and-exteriors
-logo: /uploads/trex-rain-escape-logo.png
+logo: /uploads/trex-tainescape-logo.png
 summary: An under-deck drainage system for dry space below decks.
 completeness: 67
 bullets:
