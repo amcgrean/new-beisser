@@ -1,18 +1,16 @@
 ---
-name: Kwikset
-summary: Residential locksets and door hardware.
-description: >-
-  Residential locksets and door hardware. At Beisser Lumber, we stock and
-  support Kwikset as part of our fasteners, anchors, and hardware offering,
-  providing dependable lock solutions for everyday residential projects.
-website: 'https://www.kwikset.com/'
 heroImage: /images/resources-article.png
-logo: /Logos/Door Hardware/Kwikset Logo.jfif
+name: Kwikset
+website: https://www.kwikset.com/
 categories:
   - tools-and-fasteners
+logo: kwikset.jpg
+summary: Residential locksets and door hardware.
+completeness: 67
 bullets:
   - Locksets for a variety of residential door types
   - Mechanical and electronic lock options
+updated: 2025-12-19T22:00:32.401Z
 completion:
   nameAdded: true
   keyAdded: false
@@ -20,7 +18,7 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-completeness: 67
-updated: '2025-12-19T22:00:32.401Z'
+description: Residential locksets and door hardware. At Beisser Lumber, we stock
+  and support Kwikset as part of our fasteners, anchors, and hardware offering,
+  providing dependable lock solutions for everyday residential projects.
 ---
-
