@@ -1,19 +1,16 @@
 ---
-name: Solar Seal
-summary: 'Sealants used for roofing, siding, and other exterior applications.'
-description: >-
-  Sealants used for roofing, siding, and other exterior applications. At Beisser
-  Lumber, we stock and support Solar Seal as part of our fasteners, anchors, and
-  hardware offering, helping manage tough exterior sealing conditions on roofs
-  and walls.
-website: 'http://www.npcsealants.com/'
 heroImage: /images/resources-article.png
-logo: /Logos/Siding/Solar Seal Logo.png
+name: Solar Seal
+website: http://www.npcsealants.com/
 categories:
   - tools-and-fasteners
+logo: npc-sealant-logo.png
+summary: Sealants used for roofing, siding, and other exterior applications.
+completeness: 67
 bullets:
   - Sealant for challenging exterior conditions
   - Used where flexibility and adhesion matter
+updated: 2025-12-19T22:00:32.387Z
 completion:
   nameAdded: true
   keyAdded: false
@@ -21,7 +18,8 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-completeness: 67
-updated: '2025-12-19T22:00:32.387Z'
+description: Sealants used for roofing, siding, and other exterior applications.
+  At Beisser Lumber, we stock and support Solar Seal as part of our fasteners,
+  anchors, and hardware offering, helping manage tough exterior sealing
+  conditions on roofs and walls.
 ---
-
