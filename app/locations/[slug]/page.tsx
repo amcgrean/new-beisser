@@ -14,9 +14,20 @@ export default function LocationDetailPage({ params }: { params: Params }) {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     name: `Beisser Lumber — ${location.name}`,
-    address: { "@type": "PostalAddress", streetAddress: location.addressLine1 || "[Address TBD — confirm with branch]", addressLocality: location.city, addressRegion: "IA", postalCode: location.zip },
-    telephone: location.phone || "[Phone TBD]",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: location.addressLine1,
+      addressLocality: location.city,
+      addressRegion: "IA",
+      postalCode: location.zip,
+      addressCountry: "US",
+    },
+    telephone: location.phone,
     url: `https://beisserlumber.com/locations/${location.slug}`,
+    openingHoursSpecification: [
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "07:30", closes: "17:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: location.slug === "grimes" ? "07:00" : "08:00", closes: "12:00" },
+    ],
     speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".entity-definition", ".faq-answer"] },
   };
 
@@ -25,16 +36,21 @@ export default function LocationDetailPage({ params }: { params: Params }) {
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Locations", href: "/locations" }, { label: location.name }]} />
       <header className="space-y-2">
         <h1 className="text-3xl font-bold text-slate-900">Beisser Lumber — {location.name}</h1>
-        <p className="entity-definition max-w-2xl text-sm text-slate-700">Branch support for contractors, remodelers, and homeowners in {location.city}, IA.</p>
+        <p className="entity-definition max-w-2xl text-sm text-slate-700">Branch support for contractors, remodelers, and homeowners in {location.city}, Iowa.</p>
       </header>
 
       <section className="grid gap-5 rounded-xl border bg-white p-5 shadow-sm md:grid-cols-2">
         <div className="space-y-2 text-sm text-slate-700">
-          <div><strong>Address:</strong> {location.addressLine1 || "[Address TBD — confirm with branch]"}, {location.city}, IA {location.zip}</div>
-          <div><strong>Phone:</strong> <PhoneLink phone={location.phone || "[Phone TBD]"} branch={location.slug} className="text-[#1B4F8A] underline" /></div>
-          <div><strong>Hours:</strong> Call for current hours</div>
+          <div><strong>Address:</strong> {location.addressLine1}, {location.city}, {location.state} {location.zip}</div>
+          <div><strong>Phone:</strong> <PhoneLink phone={location.phone} branch={location.slug} className="text-[#1B4F8A] underline" /></div>
+          <div><strong>Hours:</strong> {location.hoursWeekday} • {location.hoursSaturday} • {location.hoursSundayNote}</div>
+          {location.notes?.length ? <ul className="list-inside list-disc space-y-1 pt-2">{location.notes.map((note) => <li key={note}>{note}</li>)}</ul> : null}
         </div>
-        <div id={`map-${location.slug}`} className="min-h-40 rounded-lg border border-dashed border-slate-300 bg-slate-50 p-4 text-sm text-slate-600">Map embed placeholder</div>
+        <div className="rounded-lg border bg-slate-50 p-4 text-sm text-slate-600">
+          <div className="font-semibold text-slate-900">Map & Directions</div>
+          <p className="mt-2">Use the branch address above for GPS directions, or open the location in Google Maps.</p>
+          {location.mapUrl ? <a href={location.mapUrl} target="_blank" rel="noreferrer" className="mt-3 inline-flex text-[#1B4F8A] underline">Open map</a> : null}
+        </div>
       </section>
 
       <div className="flex flex-wrap gap-3">

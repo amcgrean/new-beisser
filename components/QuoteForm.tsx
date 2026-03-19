@@ -5,6 +5,13 @@ import { FormEvent, useEffect, useMemo, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
 import { readOrCreateAttribution } from "@/lib/utm";
 
+const branchLabels: Record<string, string> = {
+  grimes: "Grimes (Main Yard)",
+  coralville: "Coralville",
+  "fort-dodge": "Fort Dodge",
+  "birchwood-johnston": "Birchwood / Johnston (Showroom)",
+};
+
 const branchPhones: Record<string, string> = {
   grimes: "(515) 986-4422",
   coralville: "(319) 545-7120",
@@ -12,9 +19,23 @@ const branchPhones: Record<string, string> = {
   "birchwood-johnston": "(515) 986-4422",
 };
 
+const productCategories = [
+  "Decking & Railing",
+  "Doors",
+  "Engineered Wood Products",
+  "Building Envelope & Accessories",
+  "Lumber & Panels",
+  "Siding",
+  "Stair Parts",
+  "Millwork",
+  "Windows & Patio Doors",
+  "Hardware & Screws",
+  "Other",
+];
+
 export default function QuoteForm({ source, initialBranch }: { source: string; initialBranch: string }) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-  const [branch, setBranch] = useState(initialBranch);
+  const [branch, setBranch] = useState(initialBranch in branchPhones ? initialBranch : "grimes");
   const [attribution, setAttribution] = useState({ utm_source: "", utm_medium: "", referrer: "", landing_page: "" });
 
   useEffect(() => {
@@ -22,6 +43,7 @@ export default function QuoteForm({ source, initialBranch }: { source: string; i
   }, []);
 
   const branchPhone = useMemo(() => branchPhones[branch] ?? branchPhones.grimes, [branch]);
+  const branchLabel = useMemo(() => branchLabels[branch] ?? branchLabels.grimes, [branch]);
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -38,6 +60,7 @@ export default function QuoteForm({ source, initialBranch }: { source: string; i
       trackEvent("quote_form_submit", { branch: String(payload.branch || ""), project_type: String(payload.project_type || ""), source_page: window.location.pathname });
       setStatus("success");
       event.currentTarget.reset();
+      setBranch(initialBranch in branchPhones ? initialBranch : "grimes");
       setTimeout(() => setStatus("idle"), 5000);
       return;
     }
@@ -61,20 +84,28 @@ export default function QuoteForm({ source, initialBranch }: { source: string; i
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
           <label className="text-sm">Branch
-            <select name="branch" className="mt-1 w-full rounded-md border px-3 py-2" defaultValue={branch} onChange={(e) => setBranch(e.target.value)}>
-              <option value="grimes">Grimes</option><option value="coralville">Coralville</option><option value="fort-dodge">Fort Dodge</option><option value="birchwood-johnston">Birchwood-Johnston</option>
+            <select name="branch" className="mt-1 w-full rounded-md border px-3 py-2" value={branch} onChange={(e) => setBranch(e.target.value)}>
+              <option value="grimes">Grimes (Main Yard)</option>
+              <option value="coralville">Coralville</option>
+              <option value="fort-dodge">Fort Dodge</option>
+              <option value="birchwood-johnston">Birchwood / Johnston (Showroom)</option>
             </select>
           </label>
           <label className="text-sm">Project Type
-            <select name="project_type" className="mt-1 w-full rounded-md border px-3 py-2"><option>Residential New Construction</option><option>Residential Remodel</option><option>Commercial-Multi-Family</option><option>Decking-Exterior</option><option>Other</option></select>
+            <select name="project_type" className="mt-1 w-full rounded-md border px-3 py-2"><option>Residential New Construction</option><option>Residential Remodel</option><option>Commercial / Multifamily</option><option>Addition</option><option>Deck Replacement</option><option>Other</option></select>
           </label>
         </div>
         <label className="block text-sm">Product Category
-          <select name="product_category" className="mt-1 w-full rounded-md border px-3 py-2"><option>Lumber</option><option>Decking</option><option>Siding</option><option>Windows</option><option>Doors</option><option>Engineered Wood</option><option>Millwork</option><option>Roofing</option><option>Weatherization</option><option>Other</option></select>
+          <select name="product_category" className="mt-1 w-full rounded-md border px-3 py-2">
+            {productCategories.map((category) => <option key={category}>{category}</option>)}
+          </select>
         </label>
-        <label className="block text-sm">Project Description<textarea name="project_description" className="mt-1 min-h-[120px] w-full rounded-md border px-3 py-2" /></label>
+        <label id="plans" className="block text-sm">Project Description<textarea name="project_description" className="mt-1 min-h-[120px] w-full rounded-md border px-3 py-2" /></label>
+        <div className="rounded-lg border border-dashed bg-slate-50 p-3 text-sm text-slate-600">
+          Upload plans: use the description field to note that plans are attached once form file handling is connected. This anchor preserves the old-site “Upload Plans” path in navigation.
+        </div>
         <button type="submit" disabled={status === "submitting"} className="rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]">{status === "submitting" ? "Submitting..." : "Submit Quote Request"}</button>
-        {status === "success" ? <p className="rounded-md border border-green-200 bg-green-50 p-3 text-sm text-green-700">Your request has been sent to our {branch} team. We'll follow up within 1 business day. Need immediate help? Call {branchPhone}.</p> : null}
+        {status === "success" ? <p className="rounded-md border border-green-200 bg-green-50 p-3 text-sm text-green-700">Your request has been sent to our {branchLabel} team. We&apos;ll follow up within 1 business day. Need immediate help? Call {branchPhone}.</p> : null}
         {status === "error" ? <p className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">We could not submit your request right now. Please call {branchPhone} and we can help immediately.</p> : null}
       </form>
       <p className="text-xs text-slate-600">Need immediate help? <Link href="/contact" className="text-[#1B4F8A] underline">Contact your branch team</Link>.</p>

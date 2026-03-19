@@ -6,23 +6,28 @@ import BrandViewTracker from "@/components/BrandViewTracker";
 import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
 import { getBrandBySlug, getBrandEntries } from "@/app/lib/brands";
 
-const waveOneSlugs = ["trex", "james-hardie", "lp-smartside", "andersen", "weyerhaeuser"];
+const waveOneSlugs = ["trex", "james-hardie", "lp-smartside", "andersen", "weyerhaeuser", "gerkin", "sierra-pacific"];
 
 const brandCategoryLinks: Record<string, string> = {
-  trex: "/products/decking",
-  fiberon: "/products/decking",
+  trex: "/products/decking-railing",
+  fiberon: "/products/decking-railing",
+  timbertech: "/products/decking-railing",
   "james-hardie": "/products/siding",
   "lp-smartside": "/products/siding",
-  andersen: "/products/windows",
-  weyerhaeuser: "/products/engineered-wood",
+  andersen: "/products/windows-patio-doors",
+  gerkin: "/products/windows-patio-doors",
+  "sierra-pacific": "/products/windows-patio-doors",
+  weyerhaeuser: "/products/engineered-wood-products",
 };
 
 const brandNearestLocation: Record<string, string> = {
   trex: "/locations/grimes",
-  "james-hardie": "/locations/coralville",
+  "james-hardie": "/locations/grimes",
   "lp-smartside": "/locations/grimes",
-  andersen: "/locations/birchwood",
-  weyerhaeuser: "/locations/fort-dodge",
+  andersen: "/locations/birchwood-johnston",
+  gerkin: "/locations/birchwood-johnston",
+  "sierra-pacific": "/locations/birchwood-johnston",
+  weyerhaeuser: "/locations/grimes",
 };
 
 export function generateStaticParams() {
@@ -44,6 +49,7 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
 
   const categoryLink = brandCategoryLinks[brand.slug] ?? "/products";
   const locationLink = brandNearestLocation[brand.slug] ?? "/locations";
+  const retailerLabel = brand.slug === "andersen" ? "Official Andersen Retailer" : brand.slug === "sierra-pacific" ? "Official Sierra Pacific Retailer" : brand.slug === "gerkin" ? "Iowa-Based Manufacturer Partner" : "Brand Partner";
 
   return (
     <div className="space-y-8">
@@ -51,19 +57,17 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Brands", href: "/brands" }, { label: brand.name }]} />
 
       <header className="space-y-3">
-        <h1 className="text-3xl font-bold text-beisserGray">{brand.name} at Beisser Lumber — Authorized Iowa Dealer</h1>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1B4F8A]">{retailerLabel}</p>
+        <h1 className="text-3xl font-bold text-beisserGray">{brand.name} at Beisser Lumber</h1>
         <p className="max-w-3xl text-sm text-slate-700">
-          Beisser Lumber carries {brand.name} products at select Iowa locations. Contact your nearest branch or request
-          a quote for current availability, lead times, and pricing.
+          {brand.slug === "andersen" ? "Beisser Lumber is an official Andersen retailer with access to Andersen product lines, parts, and custom design support for Iowa projects." : brand.description}
         </p>
       </header>
 
       <section className="rounded-xl border bg-white p-5 shadow-sm">
         <h2 className="text-xl font-semibold text-slate-900">Products We Carry</h2>
         <ul className="mt-3 list-inside list-disc space-y-1 text-sm text-slate-700">
-          <li>Core {brand.name} product lines for builder and remodeler projects</li>
-          <li>Special-order options based on plan requirements and finish preferences</li>
-          <li>Accessory and companion products coordinated through Beisser teams</li>
+          {brand.bullets?.length ? brand.bullets.map((bullet) => <li key={bullet}>{bullet}</li>) : <li>Core {brand.name} product lines for builder and remodeler projects</li>}
         </ul>
       </section>
 

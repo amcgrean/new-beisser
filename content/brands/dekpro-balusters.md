@@ -3,7 +3,7 @@ heroImage: /images/resources-article.png
 name: DekPro Balusters
 website: http://www.dekpromfg.com/aluminum-balusters.html?utm_source=BeisserLumber
 categories:
-  - decking-and-exteriors
+  - decking-railing
 logo: dekpro-logo.jpg
 summary: Aluminum railing and baluster systems for decks and exteriors.
 completeness: 67

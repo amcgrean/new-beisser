@@ -12,7 +12,7 @@ website: 'https://www.timbertech.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/Decking & Railing/TimberTech Logo.png
 categories:
-  - decking-and-exteriors
+  - decking-railing
 bullets:
   - PVC and composite decking options
   - Color and texture choices for many designs

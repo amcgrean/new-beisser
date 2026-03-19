@@ -15,7 +15,7 @@ export default function ProductsPage() {
         </p>
         <div className="flex flex-wrap gap-3 text-sm">
           <Link
-            href="/request-quote"
+            href="/quote"
             className="inline-flex rounded-md bg-brand-green px-3 py-2 font-semibold text-white hover:bg-brand-accent"
           >
             Request a Quote

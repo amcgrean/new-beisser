@@ -9,8 +9,8 @@ description: >-
 website: 'https://www.tremcosealants.com/'
 heroImage: /images/resources-article.png
 categories:
-  - siding-and-exterior-trim
-  - roofing
+  - siding
+  - building-envelope-accessories
 logo: tremco-vulkem-logo.png
 bullets:
   - Sealants for joints and transitions

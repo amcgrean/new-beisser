@@ -10,7 +10,7 @@ website: 'https://www.veluxusa.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/Windows/Velux Logo.png
 categories:
-  - windows-and-patio-doors
+  - windows-patio-doors
 bullets:
   - Roof windows and skylights for added daylight
   - Sun tunnels for smaller or interior rooms

@@ -9,7 +9,7 @@ description: >-
 website: 'https://fypon.com/'
 heroImage: /images/resources-article.png
 categories:
-  - millwork-and-trim
+  - millwork
 logo: fypon-logo.jpg
 bullets:
   - Low-maintenance decorative millwork

@@ -9,7 +9,7 @@ description: >-
 website: 'https://www.stalliondoors.com/'
 heroImage: /images/resources-article.png
 categories:
-  - interior-and-exterior-doors
+  - doors
 logo: stallion-doors-logo.jpg
 bullets:
   - Interior and exterior door collections

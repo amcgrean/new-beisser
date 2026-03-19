@@ -3,7 +3,7 @@ heroImage: /images/resources-article.png
 name: Cedar
 website: ""
 categories:
-  - lumber-and-panels
+  - lumber-panels
 logo: bluelinx-logo.jpg
 summary: Natural wood known for its durability and resistance to decay.
 completeness: 50

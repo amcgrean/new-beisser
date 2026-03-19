@@ -9,7 +9,7 @@ description: >-
 website: 'https://www.everlastsiding.com/'
 heroImage: /images/resources-article.png
 categories:
-  - siding-and-exterior-trim
+  - siding
 logo: everlast-logo.png
 bullets:
   - Advanced composite siding with minimal maintenance

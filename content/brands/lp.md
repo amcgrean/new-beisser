@@ -10,7 +10,7 @@ website: 'https://lpcorp.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/Siding/LP Logo.png
 categories:
-  - siding-and-exterior-trim
+  - siding
   - engineered-wood-products
 bullets:
   - Engineered wood siding and trim systems

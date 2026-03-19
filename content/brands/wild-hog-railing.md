@@ -9,7 +9,7 @@ description: >-
 website: 'https://wildhograiling.com/'
 heroImage: /images/resources-article.png
 categories:
-  - decking-and-exteriors
+  - decking-railing
 logo: wild-hog-railing-logo.png
 bullets:
   - Welded wire railing panels for decks and stairs

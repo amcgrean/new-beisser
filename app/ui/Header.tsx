@@ -7,30 +7,35 @@ import { trackEvent } from "@/lib/analytics";
 
 const primaryNav = [
   { href: "/products", label: "Products" },
-  { href: "/brands", label: "Brands" },
-  { href: "/pros", label: "For Pros" },
+  { href: "/services", label: "Services" },
+  { href: "/pros", label: "Pros" },
   { href: "/blog", label: "Resources" },
   { href: "/locations", label: "Locations" },
   { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const secondaryNav = [
-  { href: "/products/decking", label: "Decking" },
-  { href: "/products/siding", label: "Siding" },
-  { href: "/products/windows", label: "Windows & Doors" },
-  { href: "/products/engineered-wood", label: "EWP" },
-  { href: "/services/estimating", label: "Estimating & Takeoffs" },
-  { href: "/team", label: "Team" },
+  { href: "/products/decking-railing", label: "Decking & Railing" },
+  { href: "/products/windows-patio-doors", label: "Windows & Patio Doors" },
+  { href: "/products/engineered-wood-products", label: "Engineered Wood Products" },
+  { href: "/products/hardware-screws", label: "Hardware & Screws" },
+  { href: "/services/design", label: "Design" },
+  { href: "/services/estimating", label: "Estimating" },
+  { href: "/services/installation", label: "Installation" },
+  { href: "/service-request", label: "Service Request" },
 ];
 
-type ProUtilityLink = { href: string; label: string; external?: boolean; eventName?: string };
+type UtilityLink = { href: string; label: string; external?: boolean; eventName?: string };
 
-const proUtilityLinks: ProUtilityLink[] = [
+const utilityLinks: UtilityLink[] = [
+  { href: "https://www.nuvo.credit/app/beisserlumber", label: "Credit Application", external: true, eventName: "credit_application_click" },
+  { href: "https://beisserlumber.com/ar-login", label: "Account / AR Portal Sign In", external: true, eventName: "portal_click" },
+  { href: "https://beisserlumber.com/ar-login", label: "Pay Invoice", external: true, eventName: "portal_click" },
   { href: "/quote", label: "Request a Quote" },
-  { href: "https://pro.beisserlumber.com", label: "Pay Invoice / Account", external: true, eventName: "portal_click" },
   { href: "/quote#plans", label: "Upload Plans" },
   { href: "/contact", label: "Contact Your Rep" },
-] as const;
+];
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -50,8 +55,8 @@ export function Header() {
     <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="bg-[#1B4F8A] text-white">
         <div className="main-container flex min-h-9 items-center justify-between py-1.5 text-xs font-medium">
-          <div className="hidden items-center gap-5 md:flex">
-            {proUtilityLinks.map((link) => (
+          <div className="hidden items-center gap-5 md:flex md:flex-wrap">
+            {utilityLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
@@ -65,7 +70,9 @@ export function Header() {
             ))}
           </div>
           <div className="md:hidden">
-            <Link href="https://pro.beisserlumber.com" target="_blank" rel="noreferrer" className="font-semibold text-white hover:underline" onClick={() => trackEvent("portal_click")}>Pro Account</Link>
+            <Link href="/quote" className="font-semibold text-white hover:underline" onClick={close}>
+              Request a Quote
+            </Link>
           </div>
         </div>
       </div>
@@ -77,13 +84,17 @@ export function Header() {
         </Link>
 
         <nav className="hidden md:flex flex-wrap gap-4 text-sm">
-          {primaryNav.map((link) => (<Link key={link.href} href={link.href} className="text-slate-700 transition-colors hover:text-brand-green">{link.label}</Link>))}
+          {primaryNav.map((link) => (
+            <Link key={link.href} href={link.href} className="text-slate-700 transition-colors hover:text-brand-green">
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         <div className="flex items-center gap-2">
           <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-brand-accent sm:hidden">Quote</Link>
           <div className="hidden items-center gap-2 sm:flex">
-            <Link href="/locations" className="hidden lg:inline-flex rounded-md border border-slate-200 px-3 py-2 text-sm text-slate-700 transition-colors hover:border-brand-accent hover:text-brand-green">Locations</Link>
+            <Link href="/service-request" className="hidden lg:inline-flex rounded-md border border-slate-200 px-3 py-2 text-sm text-slate-700 transition-colors hover:border-brand-accent hover:text-brand-green">Service Request</Link>
             <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-3 py-2 text-sm text-white transition-colors hover:bg-brand-accent">Request a Quote</Link>
           </div>
           <button type="button" className="inline-flex md:hidden items-center justify-center rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((v) => !v)}>{open ? "Close" : "Menu"}</button>
@@ -96,7 +107,9 @@ export function Header() {
           <div className="fixed left-0 right-0 top-[109px] z-30 border-b border-slate-200 bg-white shadow-lg">
             <nav className="main-container py-4">
               <ul className="grid grid-cols-1 gap-2">
-                <li><Link href="https://pro.beisserlumber.com" target="_blank" rel="noreferrer" onClick={close} className="block rounded-md bg-[#1B4F8A] px-3 py-2 text-base font-semibold text-white">Pro Account</Link></li>
+                {utilityLinks.map((link) => (
+                  <li key={link.label}><Link href={link.href} target={link.external ? "_blank" : undefined} rel={link.external ? "noreferrer" : undefined} onClick={close} className="block rounded-md px-3 py-2 text-base font-medium text-slate-800 hover:bg-slate-50">{link.label}</Link></li>
+                ))}
                 {primaryNav.map((link) => (<li key={link.href}><Link href={link.href} onClick={close} className="block rounded-md px-3 py-2 text-base font-medium text-slate-800 hover:bg-slate-50">{link.label}</Link></li>))}
                 {secondaryNav.map((link) => (<li key={link.href}><Link href={link.href} onClick={close} className="block rounded-md px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50">{link.label}</Link></li>))}
               </ul>

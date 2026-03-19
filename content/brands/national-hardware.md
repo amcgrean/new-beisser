@@ -10,7 +10,7 @@ website: 'https://www.national-hardware.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/Door Hardware/National Hardware Logo.png
 categories:
-  - tools-and-fasteners
+  - hardware-screws
 bullets:
   - General hardware for many applications
   - 'Gate, barn door, and specialty items'

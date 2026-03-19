@@ -3,7 +3,7 @@ heroImage: /images/resources-article.png
 name: Cedar Carsiding
 website: ""
 categories:
-  - lumber-and-panels
+  - lumber-panels
 logo: bluelinx-logo.jpg
 summary: Tongue-and-groove cedar siding products for a classic interior or
   exterior look.

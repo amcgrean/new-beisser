@@ -10,7 +10,7 @@ website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png
 categories:
-  - lumber-and-panels
+  - lumber-panels
 bullets:
   - Commonly used as sheathing and subfloors
   - Engineered panel for structural applications

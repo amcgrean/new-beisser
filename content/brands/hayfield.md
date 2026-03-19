@@ -10,7 +10,7 @@ website: 'https://hayfieldwindows.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/Windows/Hayfield Logo.jfif
 categories:
-  - windows-and-patio-doors
+  - windows-patio-doors
 bullets:
   - Window and patio door lines built for Midwest climates
   - New construction and replacement series

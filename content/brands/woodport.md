@@ -9,7 +9,7 @@ description: >-
 website: 'https://woodportdoors.com/'
 heroImage: /images/resources-article.png
 categories:
-  - interior-and-exterior-doors
+  - doors
 logo: woodport-doors.png
 bullets:
   - Wood doors for interior and exterior openings

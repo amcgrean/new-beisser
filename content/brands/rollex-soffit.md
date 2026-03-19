@@ -10,7 +10,7 @@ website: 'https://www.rollex.com/products'
 heroImage: /images/resources-article.png
 logo: /Logos/Siding/Rollex Soffit Logo.jpg
 categories:
-  - siding-and-exterior-trim
+  - siding
 bullets:
   - Aluminum soffit and trim products
   - Works with many siding systems

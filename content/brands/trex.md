@@ -12,7 +12,7 @@ website: 'https://www.trex.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/Decking & Railing/Trex Logo.jfif
 categories:
-  - decking-and-exteriors
+  - decking-railing
 bullets:
   - Composite decking options for a range of budgets
   - Coordinating railing and accessories

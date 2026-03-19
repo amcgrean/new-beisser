@@ -65,7 +65,7 @@ export default function DeliveryPage() {
           Ready to schedule a delivery or pickup? Send details and our dispatch team will confirm timing.
         </div>
         <Link
-          href="/request-quote"
+          href="/quote"
           className="inline-flex rounded-md bg-brand-green px-3 py-2 text-sm font-semibold text-white hover:bg-brand-accent"
         >
           Schedule Delivery

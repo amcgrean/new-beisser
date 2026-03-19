@@ -3,7 +3,7 @@ heroImage: /images/resources-article.png
 name: Solar Seal
 website: http://www.npcsealants.com/
 categories:
-  - tools-and-fasteners
+  - hardware-screws
 logo: npc-sealant-logo.png
 summary: Sealants used for roofing, siding, and other exterior applications.
 completeness: 67

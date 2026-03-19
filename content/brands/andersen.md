@@ -3,14 +3,13 @@ heroImage: /images/resources-article.png
 name: Andersen
 website: 'https://www.andersenwindows.com/'
 categories:
-  - windows-and-patio-doors
+  - windows-patio-doors
 logo: /uploads/andersen-windows-doors.jpg
-summary: >-
-  Windows and doors with multiple series for different budgets and performance
-  needs.
+summary: Official Andersen retailer with access to 100 Series, A Series, and E Series windows and patio doors.
 bullets:
-  - Recognizable name for homeowners and builders
-  - New construction and replacement options
+  - Official Andersen retailer
+  - 100 Series made with Fibrex composite material
+  - A Series and E Series options with extensive customization
 completion:
   nameAdded: true
   keyAdded: false
@@ -18,12 +17,7 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-description: >-
-  Windows and doors with multiple series for different budgets and performance
-  needs. At Beisser Lumber, we stock and support Andersen as part of our windows
-  and patio doors offering, helping Iowa builders compare series, dial in
-  performance, and work with our team to keep projects moving on schedule.
+description: Beisser Lumber is an official Andersen retailer with access to Andersen's full product line, parts, and custom design services. Customers can compare 100 Series Fibrex composite products along with A Series and E Series options for Iowa new construction and remodel work.
 completeness: 67
-updated: '2026-01-29T19:16:26.003Z'
+updated: '2026-03-19T00:00:00.000Z'
 ---
-

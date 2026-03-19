@@ -10,7 +10,7 @@ website: 'https://www.hy-lite.com/Hy-lite-US-Block-Windows-Welcome.cfm'
 heroImage: /images/resources-article.png
 logo: /Logos/Windows/Hylite Windows Logo.svg
 categories:
-  - windows-and-patio-doors
+  - windows-patio-doors
 bullets:
   - Block windows for privacy and daylight
   - Decorative and functional acrylic window units

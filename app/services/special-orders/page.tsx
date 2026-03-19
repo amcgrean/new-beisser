@@ -71,7 +71,7 @@ export default function SpecialOrdersPage() {
           Start a special order request and we will confirm availability, lead times, and next steps.
         </div>
         <Link
-          href="/request-quote"
+          href="/quote"
           className="inline-flex rounded-md bg-brand-green px-3 py-2 text-sm font-semibold text-white hover:bg-brand-accent"
         >
           Start a Request

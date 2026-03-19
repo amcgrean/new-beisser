@@ -9,7 +9,7 @@ description: >-
 website: 'https://miragescreensystems.com/'
 heroImage: /images/resources-article.png
 categories:
-  - windows-and-patio-doors
+  - windows-patio-doors
 logo: mirage-screen-systems-logo.png
 bullets:
   - Retractable-screeen solutions for doors and patios

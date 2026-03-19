@@ -10,8 +10,8 @@ website: 'https://www.jeld-wen.com/en-us'
 heroImage: /images/resources-article.png
 logo: /Logos/Windows/Jeld-wen Logo.png
 categories:
-  - windows-and-patio-doors
-  - interior-and-exterior-doors
+  - windows-patio-doors
+  - doors
 bullets:
   - Multiple window and door series in different materials
   - Options for both new construction and replacement

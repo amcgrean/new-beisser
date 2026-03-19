@@ -9,7 +9,7 @@ description: >-
 website: 'https://weathershield.com/'
 heroImage: /images/resources-article.png
 categories:
-  - windows-and-patio-doors
+  - windows-patio-doors
 logo: weathershield-logo.png
 bullets:
   - 'Wood, vinyl, and clad window and door products'

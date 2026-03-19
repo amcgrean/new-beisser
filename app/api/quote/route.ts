@@ -5,7 +5,6 @@ const branchEmails: Record<string, string | undefined> = {
   coralville: process.env.QUOTE_EMAIL_CORALVILLE,
   "fort-dodge": process.env.QUOTE_EMAIL_FORT_DODGE,
   "birchwood-johnston": process.env.QUOTE_EMAIL_BIRCHWOOD,
-  birchwood: process.env.QUOTE_EMAIL_BIRCHWOOD,
 };
 
 const branchPhones: Record<string, string> = {
@@ -13,7 +12,13 @@ const branchPhones: Record<string, string> = {
   coralville: "(319) 545-7120",
   "fort-dodge": "(515) 573-4166",
   "birchwood-johnston": "(515) 986-4422",
-  birchwood: "(515) 986-4422",
+};
+
+const branchLabels: Record<string, string> = {
+  grimes: "Grimes (Main Yard)",
+  coralville: "Coralville",
+  "fort-dodge": "Fort Dodge",
+  "birchwood-johnston": "Birchwood / Johnston (Showroom)",
 };
 
 export async function POST(req: Request) {
@@ -28,12 +33,13 @@ export async function POST(req: Request) {
 
     const resendApiKey = process.env.RESEND_API_KEY;
     const fromEmail = process.env.RESEND_FROM_EMAIL;
-    const centralCc = process.env.QUOTE_EMAIL_CENTRAL;
+    const centralCc = process.env.QUOTE_EMAIL_CC;
 
     if (!resendApiKey || !fromEmail) {
       return NextResponse.json({ error: "Missing email provider environment config." }, { status: 500 });
     }
 
+    const branchName = branchLabels[branch] ?? branchLabels.grimes;
     const summary = `
 Quote request received.
 
@@ -41,7 +47,7 @@ Name: ${body.name}
 Company: ${body.company || ""}
 Email: ${body.email}
 Phone: ${body.phone || ""}
-Branch: ${body.branch}
+Branch: ${branchName}
 Project type: ${body.project_type || ""}
 Product category: ${body.product_category || ""}
 Project description: ${body.project_description || ""}
@@ -63,7 +69,7 @@ Source page: ${body.source_page || ""}
         to: [to],
         cc: centralCc ? [centralCc] : undefined,
         reply_to: body.email,
-        subject: `New quote request — ${body.branch}`,
+        subject: `New quote request — ${branchName}`,
         text: summary,
       }),
     });
@@ -78,12 +84,12 @@ Source page: ${body.source_page || ""}
         from: fromEmail,
         to: [body.email],
         reply_to: to,
-        subject: `Your quote request has been received — Beisser Lumber ${body.branch}`,
-        text: `Thanks for contacting Beisser Lumber.\n\nWe received your quote request and will be in touch within 1 business day.\n\nBranch: ${body.branch}\nBranch phone: ${branchPhones[branch] ?? "(515) 986-4422"}\n\nSummary:\n${summary}`,
+        subject: `Your quote request has been received — ${branchName}`,
+        text: `Thanks for contacting Beisser Lumber.\n\nWe received your quote request and will be in touch within 1 business day.\n\nBranch: ${branchName}\nBranch phone: ${branchPhones[branch] ?? branchPhones.grimes}\n\nSummary:\n${summary}`,
       }),
     });
 
-    return NextResponse.json({ ok: true, branchPhone: branchPhones[branch] ?? "(515) 986-4422" });
+    return NextResponse.json({ ok: true, branchPhone: branchPhones[branch] ?? branchPhones.grimes });
   } catch {
     return NextResponse.json({ error: "Unable to submit quote request." }, { status: 500 });
   }

@@ -8,7 +8,7 @@ description: >-
 website: 'http://www.camofasteners.com/'
 heroImage: /images/resources-article.png
 categories:
-  - tools-and-fasteners
+  - hardware-screws
 logo: /uploads/camo-fasteners.png
 bullets:
   - Hidden fastening systems for composite and wood decking

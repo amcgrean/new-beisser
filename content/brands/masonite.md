@@ -3,7 +3,7 @@ heroImage: /images/resources-article.png
 name: Masonite
 website: https://www.masonite.com/
 categories:
-  - interior-and-exterior-doors
+  - doors
 logo: /uploads/masonite.jpg
 summary: Interior and exterior doors available in many panel, glass, and
   material options.

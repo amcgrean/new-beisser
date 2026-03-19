@@ -9,7 +9,7 @@ description: >-
 website: 'https://www.tapcon.com/'
 heroImage: /images/resources-article.png
 categories:
-  - tools-and-fasteners
+  - hardware-screws
 logo: tapcon-logo.svg
 bullets:
   - Concrete and masonry fastening solutions

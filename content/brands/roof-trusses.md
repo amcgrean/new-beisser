@@ -10,7 +10,7 @@ website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png
 categories:
-  - trusses-and-components
+  - engineered-wood-products
 bullets:
   - Truss designs tailored to the roof plan
   - Speeds installation and helps ensure consistency

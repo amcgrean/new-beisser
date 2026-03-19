@@ -10,7 +10,7 @@ website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png
 categories:
-  - millwork-and-trim
+  - millwork
 bullets:
   - Popular for painted trim and millwork
   - Consistent appearance for clean details

@@ -11,7 +11,7 @@ heroImage: /images/resources-article.png
 logo: /images/resources-article.png
 categories:
   - engineered-wood-products
-  - trusses-and-components
+  - engineered-wood-products
 bullets:
   - Floor truss systems engineered to spec
   - Help manage long spans and service runs

@@ -12,7 +12,7 @@ const articleContent: Record<string, string[]> = {
   ],
   "lumber-and-building-material-basics": [
     "Dimensional lumber is referenced by nominal sizes (2x4, 2x6) with species and grades that influence strength and appearance.",
-    "Panels like OSB and plywood come in different thicknesses, spans, and exposure ratings; pairing them with the right fasteners matters for code and performance.",
+    "Panels like OSB and plywood come in different thicknesses, spans, and exposure ratings; pairing them with the right screws and connectors matters for code and performance.",
     "Engineered wood (LVL, LSL, I-joists) allows longer spans with predictable performance. Layouts should be reviewed alongside HVAC and plumbing to avoid conflicts.",
   ],
   "delivery-expectations-for-iowa-jobsites": [

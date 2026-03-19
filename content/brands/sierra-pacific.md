@@ -1,19 +1,16 @@
 ---
 name: Sierra Pacific
-summary: Wood and clad-wood windows and doors with a focus on design and performance.
-description: >-
-  Wood and clad-wood windows and doors with a focus on design and performance.
-  At Beisser Lumber, we stock and support Sierra Pacific as part of our windows
-  and patio doors offering, helping Iowa builders bring higher-end window
-  packages to life with showroom support and millwork expertise.
+summary: Official Sierra Pacific retailer with all-wood, aluminum-covered wood, vinyl, and H3 composite options.
+description: Beisser Lumber is an official Sierra Pacific retailer with access to Sierra Pacific's full product lineup, parts, and custom design support. Product lines include aluminum-covered wood, all-wood, vinyl, and H3 composite systems that blend aluminum, vinyl, and real-wood performance.
 website: 'https://www.sierrapacificwindows.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/Windows/Sierra Pacific Logo.png
 categories:
-  - windows-and-patio-doors
+  - windows-patio-doors
 bullets:
-  - Wood and clad-wood window systems
-  - Architectural and custom solutions for premium projects
+  - Official Sierra Pacific retailer
+  - Aluminum-covered wood, all-wood, vinyl, and H3 composite lines
+  - Parts and custom design support through Beisser
 completion:
   nameAdded: true
   keyAdded: false
@@ -22,6 +19,5 @@ completion:
   summaryAdded: true
   bodyAdded: false
 completeness: 67
-updated: '2025-12-19T22:00:32.157Z'
+updated: '2026-03-19T00:00:00.000Z'
 ---
-

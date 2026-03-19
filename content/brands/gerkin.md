@@ -1,19 +1,16 @@
 ---
 name: Gerkin
-summary: Window and door products for residential and light commercial projects.
-description: >-
-  Window and door products for residential and light commercial projects. At
-  Beisser Lumber, we stock and support Gerkin as part of our windows and patio
-  doors offering, giving our customers a reliable, performance-focused option
-  backed by local service and jobsite support.
+summary: Iowa-based manufacturer of vinyl windows, storm windows, and patio doors.
+description: Gerkin is an Iowa-based manufacturer and a meaningful differentiator in Beisser Lumber's window offering. Beisser supports Gerkin vinyl windows, storm windows, and patio doors for customers who want energy-efficient products with a strong regional connection.
 website: 'https://www.gerkin.com/'
 heroImage: /images/resources-article.png
 categories:
-  - windows-and-patio-doors
+  - windows-patio-doors
 logo: gerkin-logo.jpg
 bullets:
-  - Vinyl and aluminum window options
-  - Products suited for regional performance expectations
+  - Iowa-based manufacturer
+  - Vinyl windows, storm windows, and patio doors
+  - Strong energy-efficiency positioning for Iowa projects
 completion:
   nameAdded: true
   keyAdded: false
@@ -22,6 +19,5 @@ completion:
   summaryAdded: true
   bodyAdded: false
 completeness: 67
-updated: '2026-01-29T19:16:26.094Z'
+updated: '2026-03-19T00:00:00.000Z'
 ---
-

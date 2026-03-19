@@ -3,7 +3,7 @@ heroImage: /images/resources-article.png
 name: Cedar Decking
 website: ""
 categories:
-  - lumber-and-panels
+  - lumber-panels
 logo: bluelinx-logo.jpg
 summary: Natural cedar boards used for decks and outdoor structures.
 completeness: 50

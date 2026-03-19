@@ -10,7 +10,7 @@ website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png
 categories:
-  - millwork-and-trim
+  - millwork
 bullets:
   - Traditional hardwood choice for interiors
   - 'Used in stairs, trim, and other finishes'

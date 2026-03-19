@@ -10,7 +10,7 @@ website: 'https://www.schlage.com/en/home.html'
 heroImage: /images/resources-article.png
 logo: /Logos/Door Hardware/Schalge.png
 categories:
-  - tools-and-fasteners
+  - hardware-screws
 bullets:
   - Lock and hardware solutions for many door types
   - Mechanical and smart lock options

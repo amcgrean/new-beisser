@@ -9,7 +9,7 @@ description: >-
 website: 'https://www.wm-coffman.com/'
 heroImage: /images/resources-article.png
 categories:
-  - millwork-and-trim
+  - millwork
 logo: /uploads/coffman.png
 bullets:
   - Hardwood and iron stair parts
