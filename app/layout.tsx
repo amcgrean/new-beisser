@@ -1,14 +1,29 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "./ui/Header";
 import { Footer } from "./ui/Footer";
 import Script from "next/script";
 
-
 export const metadata: Metadata = {
   title: "Beisser Lumber | Building Materials for Iowa Builders",
   description:
     "Family- and employee-owned building materials supplier serving Iowa builders since 1953.",
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  name: "Beisser Lumber",
+  description:
+    "Iowa's largest family-owned lumberyard, selling lumber, engineered wood, decking, siding, doors, and windows to contractors and homeowners.",
+  url: "https://beisserlumber.com",
+  logo: "https://beisserlumber.com/logo.png",
+  foundingDate: "1953",
+  areaServed: { "@type": "State", name: "Iowa" },
+  sameAs: [
+    "https://www.facebook.com/beisserlumber",
+    "https://www.linkedin.com/company/beisser-lumber",
+  ],
 };
 
 export default function RootLayout({
@@ -24,12 +39,18 @@ export default function RootLayout({
           <div className="main-container">{children}</div>
         </main>
         <Footer />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+
         <Script
-  src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-  strategy="afterInteractive"
-/>
-    <Script id="netlify-identity-handler" strategy="afterInteractive">
-      {`
+          src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+          strategy="afterInteractive"
+        />
+        <Script id="netlify-identity-handler" strategy="afterInteractive">
+          {`
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on('init', (user) => {
             // If we arrived here with a recovery/invite token, open the modal
@@ -40,8 +61,7 @@ export default function RootLayout({
           });
         }
       `}
-    </Script>
-
+        </Script>
       </body>
     </html>
   );

@@ -64,8 +64,8 @@ export const locations: Location[] = [
     image: "/locations/fort-dodge.jpg",
   },
   {
-    slug: "birchwood-showroom",
-    name: "Showroom & Millwork",
+    slug: "birchwood",
+    name: "Birchwood / Johnston Showroom",
     addressLine1: "7901 Birchwood Court",
     city: "Johnston",
     state: "IA",

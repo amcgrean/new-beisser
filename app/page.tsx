@@ -12,6 +12,21 @@ const FEATURED_SERVICE_SLUGS = [
   "jobsite-coordination",
 ];
 
+const homeCategoryHref: Record<string, string> = {
+  "windows-and-patio-doors": "/products/windows",
+};
+
+const partnerBrands = [
+  "Trex",
+  "James Hardie",
+  "LP SmartSide",
+  "Andersen Windows",
+  "Weyerhaeuser",
+  "Fiberon",
+  "TimberTech",
+  "Simpson Strong-Tie",
+];
+
 export default function HomePage() {
   const categories = getCategoryEntries().slice(0, 9);
 
@@ -29,137 +44,63 @@ export default function HomePage() {
     <div className="space-y-12">
       <HomeCarousel />
 
-      {/* Quick intro */}
+      <section id="about" className="rounded-xl border border-[#1B4F8A]/20 bg-[#D6E4F0] p-5 text-sm text-[#1a1a1a]">
+        Beisser Lumber is Iowa’s largest family-owned lumberyard, selling lumber, engineered wood, decking, siding,
+        doors, and windows to contractors and homeowners across Central and Eastern Iowa. We operate four locations —
+        Grimes, Coralville, Fort Dodge, and our Birchwood/Johnston showroom — and offer delivery, takeoff services,
+        and pro account pricing.
+      </section>
+
       <section className="grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1.2fr)] items-start">
         <div className="space-y-4">
-          <h2 className="text-3xl font-bold text-beisserGray">
-            Building Materials for Iowa Builders
-          </h2>
+          <h2 className="text-3xl font-bold text-beisserGray">Building Materials for Iowa Builders</h2>
           <p className="text-sm text-slate-700">
             We supply framing packages, engineered wood, windows and doors, decking, siding, and interior millwork for
-            residential and light commercial projects. Every order is backed by local branch teams that understand
-            construction sequencing and the documentation your subs need.
-          </p>
-          <p className="text-sm text-slate-700">
-            Branches in Grimes, Coralville, Fort Dodge, and our Birchwood/Johnston showroom keep coverage close to your
-            jobs. We coordinate quotes, deliveries, returns, and service calls so your crews stay moving.
+            residential and light commercial projects.
           </p>
           <div className="flex flex-wrap gap-3 pt-1">
-            <Link
-              href="/request-quote"
-              className="inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-accent"
-            >
+            <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-accent">
               Request a Quote
             </Link>
-            <Link
-              href="/products"
-              className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-beisserGreen hover:text-beisserGreen"
-            >
+            <Link href="/products" className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-beisserGreen hover:text-beisserGreen">
               View Products
             </Link>
-            <Link
-              href="/services"
-              className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-beisserGreen hover:text-beisserGreen"
-            >
-              Explore Services
-            </Link>
-          </div>
-          <div className="grid gap-2 rounded-lg border bg-white p-4 shadow-sm sm:grid-cols-2">
-            <div>
-              <div className="text-xs uppercase tracking-[0.18em] text-beisserGreen font-semibold">
-                Who We Serve
-              </div>
-              <p className="text-xs text-slate-700">
-                Professional builders, remodelers, and trade partners who need reliable supply, selection help, and
-                service follow-through.
-              </p>
-            </div>
-            <div>
-              <div className="text-xs uppercase tracking-[0.18em] text-beisserGreen font-semibold">
-                How to Start
-              </div>
-              <p className="text-xs text-slate-700">
-                Send plans or material lists, tell us your timing, and we’ll align quotes, delivery windows, and onsite
-                contacts with your schedule.
-              </p>
-            </div>
           </div>
         </div>
 
         <div className="grid gap-3 text-sm text-slate-700">
           <div className="rounded-lg border bg-white p-4 shadow-sm">
             <h3 className="font-semibold text-beisserGray">Pro-Ready Supply</h3>
-            <p className="mt-1 text-xs text-slate-600">
-              Framing lumber, engineered wood, weatherization, and fasteners backed by dispatch teams who know your job
-              timelines.
-            </p>
+            <p className="mt-1 text-xs text-slate-600">Reliable inventory and scheduling support across Central and Eastern Iowa.</p>
           </div>
           <div className="rounded-lg border bg-white p-4 shadow-sm">
-            <h3 className="font-semibold text-beisserGray">
-              Showroom &amp; Millwork
-            </h3>
-            <p className="mt-1 text-xs text-slate-600">
-              Windows, doors, trim, and stair parts displayed for homeowner selections with specialist support.
-            </p>
-            <Link
-              href="/showroom"
-              className="mt-2 inline-block text-xs font-medium text-beisserGreen hover:underline"
-            >
-              Explore the showroom
-            </Link>
-          </div>
-          <div className="rounded-lg border bg-white p-4 shadow-sm">
-            <h3 className="font-semibold text-beisserGray">Built for Pros</h3>
-            <p className="mt-1 text-xs text-slate-600">
-              Request quotes, coordinate deliveries, and access your account online through our pro tools.
-            </p>
-            <Link
-              href="/for-pros"
-              className="mt-2 inline-block text-xs font-medium text-beisserGreen hover:underline"
-            >
-              See pro resources
-            </Link>
+            <h3 className="font-semibold text-beisserGray">Showroom &amp; Millwork</h3>
+            <p className="mt-1 text-xs text-slate-600">Meet with specialists at Birchwood/Johnston for windows, doors, and trim selections.</p>
           </div>
         </div>
       </section>
 
-      {/* Products & services overview */}
       <section className="space-y-4">
         <div className="flex items-center justify-between gap-3">
-          <h2 className="text-2xl font-semibold text-beisserGray">
-            Product Categories
-          </h2>
-          <Link
-            href="/products"
-            className="text-sm font-medium text-beisserGreen hover:underline"
-          >
-            View all categories
-          </Link>
+          <h2 className="text-2xl font-semibold text-beisserGray">Product Categories</h2>
+          <Link href="/products" className="text-sm font-medium text-beisserGreen hover:underline">View all categories</Link>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((cat) => {
             const hero = cat.heroImage ?? "/placeholders/category.jpg";
+            const href = homeCategoryHref[cat.slug] ?? `/products/${cat.slug}`;
             return (
               <Link
                 key={cat.slug}
-                href={`/products/${cat.slug}`}
+                href={href}
                 className="group flex flex-col overflow-hidden rounded-lg border bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
               >
                 <div className="relative h-36 w-full overflow-hidden">
-                  <Image
-                    src={hero}
-                    alt={cat.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                  <Image src={hero} alt={cat.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="flex flex-1 flex-col gap-1 p-4">
-                  <h3 className="text-sm font-semibold text-beisserGray">
-                    {cat.name}
-                  </h3>
-                  <p className="text-xs text-slate-600 line-clamp-2">
-                    {cat.summary ?? cat.description}
-                  </p>
+                  <h3 className="text-sm font-semibold text-beisserGray">{cat.name}</h3>
+                  <p className="text-xs text-slate-600 line-clamp-2">{cat.summary ?? cat.description}</p>
                 </div>
               </Link>
             );
@@ -167,226 +108,49 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services snapshot */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold text-beisserGray">Brand Partners</h2>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {partnerBrands.map((brand) => (
+            <div key={brand} className="rounded-lg border bg-white px-4 py-5 text-center text-sm font-semibold text-[#1B4F8A] shadow-sm">
+              {brand}
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="space-y-4">
         <div className="flex items-center justify-between gap-3">
-          <h2 className="text-2xl font-semibold text-beisserGray">
-            Services for Builders
-          </h2>
-          <Link
-            href="/services"
-            className="text-sm font-medium text-beisserGreen hover:underline"
-          >
-            View all services
-          </Link>
+          <h2 className="text-2xl font-semibold text-beisserGray">Services for Builders</h2>
+          <Link href="/services" className="text-sm font-medium text-beisserGreen hover:underline">View all services</Link>
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-sm">
           {services.map((service) => (
-            <Link
-              key={service.href}
-              href={service.href}
-              className="rounded-lg border bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-            >
-              <div className="text-base font-semibold text-beisserGray">
-                {service.title}
-              </div>
+            <Link key={service.href} href={service.href} className="rounded-lg border bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+              <div className="text-base font-semibold text-beisserGray">{service.title}</div>
               <p className="mt-1 text-slate-600">{service.description}</p>
-              <span className="mt-2 inline-flex text-sm font-semibold text-beisserGreen underline-offset-4 hover:underline">
-                Learn more
-              </span>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* How we keep projects moving */}
-      <section className="grid gap-4 rounded-2xl border bg-white p-6 shadow-sm md:grid-cols-3">
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold text-beisserGray">Clear Intake</h3>
-          <p className="text-sm text-slate-700">
-            Quotes start with plans, material lists, or scope summaries so we size engineered wood, windows, and doors
-            correctly and confirm timelines up front.
-          </p>
-        </div>
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold text-beisserGray">Delivery by Phase</h3>
-          <p className="text-sm text-slate-700">
-            Framing, exterior, and trim loads are sequenced with dispatch to match your build order, with will call
-            options when you need quick fills.
-          </p>
-        </div>
-        <div className="space-y-2">
-          <h3 className="text-lg font-semibold text-beisserGray">Documented Follow-Up</h3>
-          <p className="text-sm text-slate-700">
-            Photos, signatures, and service routing keep returns and warranty questions organized. You always know who
-            to contact at the branch handling your job.
-          </p>
-        </div>
-      </section>
-
-      {/* Service area snapshot */}
-      <section className="grid gap-4 rounded-2xl border bg-white p-6 shadow-sm md:grid-cols-3">
-        <div className="space-y-2">
-          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-beisserGreen">
-            Service Area
-          </div>
-          <h3 className="text-lg font-semibold text-beisserGray">Central &amp; Eastern Iowa</h3>
-          <p className="text-sm text-slate-700">
-            Branches in Grimes, Coralville, and Fort Dodge with the Birchwood/Johnston showroom and millwork campus to
-            keep selections and deliveries close to your jobs.
-          </p>
-        </div>
-        <div className="space-y-2">
-          <h4 className="text-sm font-semibold text-beisserGray">How we coordinate</h4>
-          <p className="text-sm text-slate-700">
-            Dedicated dispatch and inside sales contacts per branch, with photos or signatures on delivery when
-            requested.
-          </p>
-        </div>
-        <div className="flex flex-col gap-2">
-          <Link
-            href="/locations"
-            className="inline-flex items-center justify-center rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-800 transition hover:border-beisserGreen hover:text-beisserGreen"
-          >
-            View Locations
-          </Link>
-          <Link
-            href="/request-quote"
-            className="inline-flex items-center justify-center rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-accent"
-          >
-            Start a Quote
-          </Link>
-        </div>
-      </section>
-
-      {/* Resources & Guides - Contractor Resources */}
       <section className="space-y-4">
         <div className="flex items-center justify-between gap-3">
-          <h2 className="text-2xl font-semibold text-beisserGray">
-            Contractor Resources
-          </h2>
-          <Link
-            href="/for-pros"
-            className="text-sm font-medium text-beisserGreen hover:underline"
-          >
-            View all resources
-          </Link>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          <Link
-            href="/for-pros/credit"
-            className="group flex flex-col rounded-lg border bg-white p-5 shadow-sm transition hover:shadow-md"
-          >
-            <h3 className="font-semibold text-beisserGray group-hover:text-beisserGreen">
-              Credit Application
-            </h3>
-            <p className="mt-2 text-sm text-slate-600">
-              Apply for a trade account to get terms, statement billing, and online access.
-            </p>
-          </Link>
-          <Link
-            href="/for-pros/resources"
-            className="group flex flex-col rounded-lg border bg-white p-5 shadow-sm transition hover:shadow-md"
-          >
-            <h3 className="font-semibold text-beisserGray group-hover:text-beisserGreen">
-              Technical Guides
-            </h3>
-            <p className="mt-2 text-sm text-slate-600">
-              Span tables, energy code reference sheets, and egress window requirements.
-            </p>
-          </Link>
-          <div className="flex flex-col rounded-lg border bg-slate-50 p-5">
-            <h3 className="font-semibold text-beisserGray">Portal Access</h3>
-            <p className="mt-2 text-sm text-slate-600">
-              Manage invoices and track active orders.
-            </p>
-            <a href="https://beisser.inet.lbm.net/" className="mt-3 text-sm font-semibold text-beisserGreen hover:underline">
-              Login to iNet
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust signals */}
-      <section className="grid gap-4 rounded-2xl border bg-slate-50 p-6 md:grid-cols-3">
-        <div>
-          <div className="text-2xl font-bold text-beisserGray">70+ years</div>
-          <p className="text-sm text-slate-700">Family- and employee-owned since 1953, serving Iowa builders.</p>
-        </div>
-        <div>
-          <div className="text-2xl font-bold text-beisserGray">Showroom &amp; Millwork</div>
-          <p className="text-sm text-slate-700">Largest regional showroom for windows, doors, trim, and hardware.</p>
-        </div>
-        <div>
-          <div className="text-2xl font-bold text-beisserGray">Pro Support</div>
-          <p className="text-sm text-slate-700">Estimating, delivery, and jobsite coordination built for trade timelines.</p>
-        </div>
-      </section>
-
-      {/* Resources */}
-      <section className="space-y-4">
-        <div className="flex items-center justify-between gap-3">
-          <h2 className="text-2xl font-semibold text-beisserGray">
-            Resources &amp; Guides
-          </h2>
-          <Link
-            href="/resources"
-            className="text-sm font-medium text-beisserGreen hover:underline"
-          >
-            View all resources
-          </Link>
+          <h2 className="text-2xl font-semibold text-beisserGray">Resources &amp; Guides</h2>
+          <Link href="/resources" className="text-sm font-medium text-beisserGreen hover:underline">View all resources</Link>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {resources.slice(0, 3).map((article) => (
-            <Link
-              key={article.slug}
-              href={`/resources/${article.slug}`}
-              className="flex h-full flex-col overflow-hidden rounded-lg border bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-            >
+            <Link key={article.slug} href={`/resources/${article.slug}`} className="flex h-full flex-col overflow-hidden rounded-lg border bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
               <div className="relative h-32 w-full">
-                <Image
-                  src={article.image}
-                  alt={article.title}
-                  fill
-                  className="object-cover"
-                />
+                <Image src={article.image} alt={article.title} fill className="object-cover" />
               </div>
               <div className="flex flex-1 flex-col gap-1 p-3">
-                <div className="text-[11px] uppercase tracking-wide text-slate-500">
-                  {article.category}
-                </div>
+                <div className="text-[11px] uppercase tracking-wide text-slate-500">{article.category}</div>
                 <div className="text-sm font-semibold text-beisserGray">{article.title}</div>
                 <p className="text-xs text-slate-600 line-clamp-2">{article.summary}</p>
-                <div className="text-[11px] text-slate-400">{article.readTime}</div>
               </div>
             </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Simple gallery teaser */}
-      <section className="space-y-4">
-        <div className="flex items-center justify-between gap-3">
-          <h2 className="text-2xl font-semibold text-beisserGray">
-            Project & Product Gallery
-          </h2>
-          <Link
-            href="/gallery"
-            className="text-sm font-medium text-beisserGreen hover:underline"
-          >
-            View full gallery
-          </Link>
-        </div>
-        <div className="grid gap-3 grid-cols-2 md:grid-cols-4">
-          {[
-            "https://images.unsplash.com/photo-1519710889899-4fbb2a9a5214?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1600607687920-4e2a5345c9bc?auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80",
-          ].map((src) => (
-            <div key={src} className="relative h-28 overflow-hidden rounded-lg">
-              <Image src={src} alt="" fill className="object-cover" />
-            </div>
           ))}
         </div>
       </section>
