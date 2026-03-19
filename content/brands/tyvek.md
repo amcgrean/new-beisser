@@ -9,8 +9,8 @@ description: >-
 website: 'https://www.dupont.com/brands/tyvek.html'
 heroImage: /images/resources-article.png
 categories:
-  - siding-and-exterior-trim
-  - housewrap-and-weatherization
+  - siding
+  - building-envelope-accessories
 logo: tyvek-logo.png
 bullets:
   - Housewrap used beneath siding systems

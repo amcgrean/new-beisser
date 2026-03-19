@@ -10,7 +10,7 @@ website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png
 categories:
-  - trusses-and-components
+  - engineered-wood-products
 bullets:
   - Pre-built wall panels delivered to site
   - Helps reduce on-site framing time and waste

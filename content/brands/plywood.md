@@ -9,7 +9,7 @@ website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png
 categories:
-  - lumber-and-panels
+  - lumber-panels
 bullets:
   - Panel products for structural and non-structural uses
   - 'Used as subfloor, wall, and roof sheathing'

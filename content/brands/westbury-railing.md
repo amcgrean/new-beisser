@@ -9,7 +9,7 @@ description: >-
 website: 'https://www.diggerspecialties.com/products/railing/westbury-aluminum-railing/'
 heroImage: /images/resources-article.png
 categories:
-  - decking-and-exteriors
+  - decking-railing
 logo: westbury-railing-logo.png
 bullets:
   - Aluminum railing in multiple styles and colors

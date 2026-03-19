@@ -9,7 +9,7 @@ description: >-
 website: 'https://www.ljsmith.com/'
 heroImage: /images/resources-article.png
 categories:
-  - millwork-and-trim
+  - millwork
 logo: lj-smith-logo.svg
 bullets:
   - Wood and iron stair part collections

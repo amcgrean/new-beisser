@@ -5,7 +5,7 @@ import { Footer } from "./ui/Footer";
 import Script from "next/script";
 
 const siteTitle = "Beisser Lumber — Iowa's Largest Family-Owned Lumberyard";
-const siteDescription = "Building materials for contractors and homeowners across Central and Eastern Iowa. Four locations, job site delivery, pro account pricing.";
+const siteDescription = "Iowa's largest family-owned lumberyard, established in 1953. Selling lumber, engineered wood, decking, siding, doors, and windows to contractors and homeowners across Central and Eastern Iowa.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://beisserlumber.com"),
@@ -31,17 +31,20 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
   name: "Beisser Lumber",
-  description: "Iowa's largest family-owned lumberyard, selling lumber, engineered wood, decking, siding, doors, and windows to contractors and homeowners.",
+  legalName: "Beisser Lumber Company",
+  foundingDate: "1953",
+  foundingLocation: "Fort Dodge, Iowa",
+  description: siteDescription,
+  slogan: "Iowa's Largest Family-Owned Lumberyard",
   url: "https://beisserlumber.com",
   logo: "https://beisserlumber.com/logo.png",
-  foundingDate: "1953",
-  areaServed: { "@type": "State", name: "Iowa" },
-  sameAs: ["https://www.facebook.com/beisserlumber", "https://www.linkedin.com/company/beisser-lumber"],
-  // "aggregateRating": {
-  //   "@type": "AggregateRating",
-  //   "ratingValue": "X.X",
-  //   "reviewCount": "XXX"
-  // }
+  telephone: "(515) 986-4422",
+  areaServed: {
+    "@type": "State",
+    name: "Iowa",
+    description: "Central and Eastern Iowa including Des Moines metro, Iowa City/Coralville, Fort Dodge, and surrounding communities",
+  },
+  sameAs: ["https://www.facebook.com/beisserlumber", "https://www.linkedin.com/company/beisser-lumber-co."],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

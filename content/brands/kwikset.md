@@ -3,7 +3,7 @@ heroImage: /images/resources-article.png
 name: Kwikset
 website: https://www.kwikset.com/
 categories:
-  - tools-and-fasteners
+  - hardware-screws
 logo: kwikset.jpg
 summary: Residential locksets and door hardware.
 completeness: 67

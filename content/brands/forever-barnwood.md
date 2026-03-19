@@ -10,7 +10,7 @@ website: 'https://foreverbarnwood.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/MIllwork/Forever Barnwood Logo.jfif
 categories:
-  - millwork-and-trim
+  - millwork
 bullets:
   - Products inspired by reclaimed barnwood
   - Options for interior accent walls and details

@@ -8,7 +8,7 @@ description: >-
 website: 'https://www.empireco.com/'
 heroImage: /images/resources-article.png
 categories:
-  - millwork-and-trim
+  - millwork
 logo: /uploads/empire-logo.jpg
 bullets:
   - 'Interior trim, casings, and mouldings'

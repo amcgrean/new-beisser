@@ -6,17 +6,19 @@ import { doorsFAQs } from "./doors";
 import { engineeredWoodFAQs } from "./engineered-wood";
 import { lumberFAQs } from "./lumber";
 import { millworkFAQs } from "./millwork";
-import { roofingFAQs } from "./roofing";
 import { weatherizationFAQs } from "./weatherization";
+import { stairPartsFAQs } from "./stairParts";
+import { hardwareScrewsFAQs } from "./hardwareScrews";
 
 export const productFaqsBySlug: Record<string, FAQItem[]> = {
-  decking: deckingFAQs,
+  "decking-railing": deckingFAQs,
   siding: sidingFAQs,
-  windows: windowsFAQs,
+  "windows-patio-doors": windowsFAQs,
   doors: doorsFAQs,
-  "engineered-wood": engineeredWoodFAQs,
-  lumber: lumberFAQs,
+  "engineered-wood-products": engineeredWoodFAQs,
+  "lumber-panels": lumberFAQs,
   millwork: millworkFAQs,
-  roofing: roofingFAQs,
-  weatherization: weatherizationFAQs,
+  "building-envelope-accessories": weatherizationFAQs,
+  "stair-parts": stairPartsFAQs,
+  "hardware-screws": hardwareScrewsFAQs,
 };

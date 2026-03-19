@@ -9,7 +9,7 @@ description: >-
 website: 'https://www.moistureshield.com/'
 heroImage: /images/resources-article.png
 categories:
-  - decking-and-exteriors
+  - decking-railing
 logo: moisture-shiled-logo.jpg
 bullets:
   - Decking products designed to perform in wet conditions

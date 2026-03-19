@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Articles and guides for Iowa builders and homeowners from the Beisser Lumber team.",
 };
 
-const categories = ["All", "Decking", "Siding", "Windows & Doors", "EWP", "General"];
+const categories = ["All", "Decking", "Siding", "General"];
 
 export default function BlogIndexPage({ searchParams }: { searchParams?: { category?: string } }) {
   const selected = searchParams?.category || "All";

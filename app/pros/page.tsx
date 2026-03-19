@@ -1,31 +1,18 @@
 import Link from "next/link";
 
 const pages = [
-  {
-    href: "/pros/commercial-multifamily",
-    title: "Commercial & Multi-Family Builders",
-  },
-  {
-    href: "/pros/residential-builders",
-    title: "Residential Builders",
-  },
-  {
-    href: "/pros/remodelers",
-    title: "Remodelers",
-  },
-  {
-    href: "/pros/trades-specialty",
-    title: "Trades & Specialty Contractors",
-  },
+  { href: "/pros/commercial-multifamily", title: "Commercial & Multi-Family Builders" },
+  { href: "/pros/residential-builders", title: "Residential Builders" },
+  { href: "/pros/remodelers", title: "Remodelers" },
+  { href: "/pros/trades-specialty", title: "Trades & Specialty Contractors" },
 ];
 
 export default function ProsIndexPage() {
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-bold text-slate-900">For Pros at Beisser Lumber</h1>
+      <h1 className="text-3xl font-bold text-slate-900">Pros at Beisser Lumber</h1>
       <p className="max-w-3xl text-sm text-slate-700">
-        Explore pro-focused pages for different builder and contractor audiences. Each page includes product paths,
-        quote access, and a place for customer testimonial content.
+        Explore audience-specific pages for remodelers, residential builders, commercial teams, and specialty trades. Each page connects product categories, Beisser services, and quote pathways that match how your team buys.
       </p>
 
       <div className="grid gap-4 md:grid-cols-2">

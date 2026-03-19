@@ -12,7 +12,7 @@ website: 'https://www.thermatru.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/Doors/Therma-Tru.png
 categories:
-  - interior-and-exterior-doors
+  - doors
 bullets:
   - Entry door systems with a wide range of styles
   - Engineered for weather resistance and durability

@@ -10,33 +10,18 @@ export async function GET(req: Request) {
     return NextResponse.json({ results: [] });
   }
 
-  const results: any[] = [];
+  const results: { title: string; url: string; image: string; type: string }[] = [];
   const brands = getBrandEntries();
 
-  // Brands
   for (const b of brands) {
     if (b.name.toLowerCase().includes(q)) {
-      results.push({
-        title: b.name,
-        url: `/brands/${b.slug}`,
-        image: b.logo,
-        type: "Brand",
-      });
+      results.push({ title: b.name, url: `/brands/${b.slug}`, image: b.logo, type: "Brand" });
     }
   }
 
-  // Categories
   for (const c of productCategories) {
-    if (
-      c.name.toLowerCase().includes(q) ||
-      c.description.toLowerCase().includes(q)
-    ) {
-      results.push({
-        title: c.name,
-        url: `/products/${c.slug}`,
-        image: c.heroImage,
-        type: "Product Category",
-      });
+    if (c.name.toLowerCase().includes(q) || c.description.toLowerCase().includes(q)) {
+      results.push({ title: c.name, url: `/products/${c.slug}`, image: c.heroImage, type: "Product Category" });
     }
   }
 

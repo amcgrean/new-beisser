@@ -10,7 +10,7 @@ website: 'https://www.ferche.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/MIllwork/Ferche Millwork Logo.png
 categories:
-  - millwork-and-trim
+  - millwork
 bullets:
   - Custom and standard hardwood mouldings
   - Stain-grade solutions for higher-end interiors

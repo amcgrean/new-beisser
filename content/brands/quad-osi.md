@@ -3,8 +3,8 @@ heroImage: /images/resources-article.png
 name: Quad OSI
 website: https://www.ositough.com/en.html
 categories:
-  - tools-and-fasteners
-  - siding-and-exterior-trim
+  - hardware-screws
+  - siding
 logo: quad-osi-logo.png
 summary: Professional sealants and adhesives for siding and exterior work.
 completeness: 67

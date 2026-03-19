@@ -10,7 +10,7 @@ website: 'https://www.viwintech.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/Windows/ViWinTech Logo.png
 categories:
-  - windows-and-patio-doors
+  - windows-patio-doors
 bullets:
   - Vinyl windows for new construction and replacement
   - Multiple styles and configurations available

@@ -9,7 +9,7 @@ description: >-
 website: 'https://www.hilti.com/'
 heroImage: /images/resources-article.png
 categories:
-  - tools-and-fasteners
+  - hardware-screws
 logo: hilti.png
 bullets:
   - Professional tools and fastening systems

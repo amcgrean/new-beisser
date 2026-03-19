@@ -9,7 +9,7 @@ description: >-
 website: 'https://www.odl.com/'
 heroImage: /images/resources-article.png
 categories:
-  - interior-and-exterior-doors
+  - doors
 logo: odl-logo.png
 bullets:
   - Decorative doorglass for entry doors

@@ -3,7 +3,7 @@ heroImage: /images/resources-article.png
 name: Midwest Iron Doors
 website: https://midwestirondoors.com/
 categories:
-  - interior-and-exterior-doors
+  - doors
 logo: midwest-iron-doors-logo.jpg
 summary: Decorative and secure iron door packages.
 completeness: 67

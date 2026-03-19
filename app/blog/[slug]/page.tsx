@@ -70,7 +70,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
 
       <SocialShareButtons title={String(article.frontmatter.title)} />
 
-      <RelatedLinks links={[{ href: "/products/decking", label: "Explore product categories", description: "Browse Beisser product categories tied to this guide." }, { href: "/quote", label: "Request a material quote", description: "Get branch-routed pricing for your project." }]} />
+      <RelatedLinks links={[{ href: "/products/decking-railing", label: "Explore product categories", description: "Browse Beisser product categories tied to this guide." }, { href: "/quote", label: "Request a material quote", description: "Get branch-routed pricing for your project." }]} />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />

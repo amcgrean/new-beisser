@@ -10,7 +10,7 @@ website: 'https://www.jeld-wen.com/en-us/search?query=pivot%20door&tab=products'
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png
 categories:
-  - interior-and-exterior-doors
+  - doors
 bullets:
   - Large-format pivot entry doors
   - Modern look for higher-end homes and projects

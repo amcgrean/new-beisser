@@ -68,7 +68,7 @@ export default function JobsiteCoordinationPage() {
           how your team works.
         </div>
         <Link
-          href="/request-quote"
+          href="/quote"
           className="inline-flex rounded-md bg-brand-green px-3 py-2 text-sm font-semibold text-white hover:bg-brand-accent"
         >
           Set Up Coordination

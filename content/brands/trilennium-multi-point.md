@@ -9,7 +9,7 @@ description: >-
 website: 'https://www.enduraproducts.com/trilennium-multi-point-locking-system/'
 heroImage: /images/resources-article.png
 categories:
-  - tools-and-fasteners
+  - hardware-screws
 logo: trilennium-by-endura.png
 bullets:
   - Multi-point locks for hinged entry doors

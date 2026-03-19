@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-import FAQSection from "@/components/FAQSection";
+import FAQSection, { FAQ } from "@/components/FAQSection";
 import RelatedLinks, { RelatedLinkItem } from "@/components/RelatedLinks";
 import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
 import { MdxContent } from "@/app/ui/MdxContent";
@@ -10,41 +10,54 @@ import { getCategoryEntries, getCategoryMdx, getCategoryBySlug } from "@/app/lib
 import { getBrandEntries } from "@/app/lib/brands";
 import { productFaqsBySlug } from "@/app/data/faqs";
 
-type PageProps = {
-  params: { slug: string };
-};
-
 const slugAliases: Record<string, string> = {
-  decking: "decking-and-exteriors",
-  siding: "siding-and-exterior-trim",
-  windows: "windows-and-patio-doors",
-  doors: "interior-and-exterior-doors",
+  decking: "decking-railing",
+  "decking-and-exteriors": "decking-railing",
+  windows: "windows-patio-doors",
+  "windows-and-patio-doors": "windows-patio-doors",
+  doors: "doors",
+  "interior-and-exterior-doors": "doors",
+  siding: "siding",
+  "siding-and-exterior-trim": "siding",
+  lumber: "lumber-panels",
+  "lumber-and-panels": "lumber-panels",
+  millwork: "millwork",
+  "millwork-and-trim": "millwork",
   "engineered-wood": "engineered-wood-products",
-  lumber: "lumber-and-panels",
-  millwork: "millwork-and-trim",
-  roofing: "roofing",
-  weatherization: "housewrap-and-weatherization",
+  "building-envelope": "building-envelope-accessories",
+  weatherization: "building-envelope-accessories",
+  "hardware-and-screws": "hardware-screws",
 };
 
 const internalLinksByCategory: Record<string, RelatedLinkItem[]> = {
-  decking: [
-    { href: "/brands/trex", label: "Browse Trex products at Beisser", description: "Compare Trex decking lines available through Beisser branches." },
-    { href: "/brands/fiberon", label: "See Fiberon decking options", description: "Review Fiberon offerings and request current lead times." },
-    { href: "/pros/residential-builders", label: "Pro account pricing for builders", description: "See builder-focused support and account options." },
+  "decking-railing": [
+    { href: "/brands/trex", label: "Browse Trex products at Beisser", description: "Compare Trex decking and request a quote for your Iowa project." },
+    { href: "/blog/iowa-decking-comparison-guide", label: "Read our Iowa decking guide", description: "Compare wood, composite, and PVC decking for Iowa conditions." },
     { href: "/quote", label: "Request a material quote", description: "Get branch-routed pricing for your next deck project." },
   ],
   siding: [
-    { href: "/brands/james-hardie", label: "James Hardie at Beisser Lumber", description: "Explore Hardie siding support at Beisser." },
+    { href: "/brands/james-hardie", label: "James Hardie at Beisser Lumber", description: "Explore James Hardie support at Beisser." },
     { href: "/brands/lp-smartside", label: "LP SmartSide dealer in Iowa", description: "See LP SmartSide options from Beisser Lumber." },
-    { href: "/quote", label: "Request a material quote", description: "Start a siding quote with your nearest branch." },
+    { href: "/blog/james-hardie-vs-lp-smartside-iowa", label: "Compare Hardie and LP for Iowa", description: "Read an Iowa-focused siding comparison guide." },
   ],
-  "engineered-wood": [
-    { href: "/pros/commercial-multifamily", label: "Commercial and multi-family projects", description: "See EWP support for larger project scopes." },
-    { href: "/quote", label: "Request a material quote", description: "Get engineered wood pricing and lead-time guidance." },
+  "engineered-wood-products": [
+    { href: "/pros/commercial-multifamily", label: "Commercial and multifamily support", description: "See how Beisser supports larger EWP scopes and panelized walls." },
+    { href: "/services/estimating", label: "Estimating support", description: "Coordinate engineered packages with takeoffs and dedicated support." },
+  ],
+  "windows-patio-doors": [
+    { href: "/brands/gerkin", label: "Gerkin at Beisser", description: "See Beisser's Iowa-based Gerkin window offering." },
+    { href: "/brands/andersen", label: "Andersen at Beisser", description: "Review Andersen support through an official retailer." },
+    { href: "/brands/sierra-pacific", label: "Sierra Pacific at Beisser", description: "Explore premium Sierra Pacific window and patio door options." },
   ],
 };
 
-export default function ProductCategoryPage({ params }: PageProps) {
+const schemaTypeByCategory: Record<string, string> = {
+  "windows-patio-doors": "OfferCatalog",
+  "engineered-wood-products": "OfferCatalog",
+  "decking-railing": "OfferCatalog",
+};
+
+export default function ProductCategoryPage({ params }: { params: { slug: string } }) {
   const requestedSlug = params.slug;
   const canonicalSlug = slugAliases[requestedSlug] ?? requestedSlug;
 
@@ -55,13 +68,19 @@ export default function ProductCategoryPage({ params }: PageProps) {
   const allBrands = getBrandEntries();
   const categoryBrands = allBrands.filter((b) => (b.categories ?? []).includes(category.slug));
   const heroSrc = category.heroImage ?? "/placeholders/category.jpg";
-  const mdxBody = (categoryMdx?.frontmatter?.body as string | undefined) ?? categoryMdx?.content;
+  const mdxBody = categoryMdx?.content;
   const description = category.description ?? category.summary ?? "";
   const subcategories = category.subcategories ?? [];
+  const faqs: FAQ[] = productFaqsBySlug[canonicalSlug] ?? [];
+  const relatedLinks = internalLinksByCategory[canonicalSlug] ?? [{ href: "/quote", label: "Request a material quote", description: "Share your plans and get branch-routed pricing." }];
 
-  const faqSlug = Object.keys(slugAliases).find((k) => slugAliases[k] === canonicalSlug) ?? requestedSlug;
-  const faqs = productFaqsBySlug[faqSlug] ?? [];
-  const relatedLinks = internalLinksByCategory[faqSlug] ?? [{ href: "/quote", label: "Request a material quote", description: "Share your plans and get branch-routed pricing." }];
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": schemaTypeByCategory[canonicalSlug] ?? "CollectionPage",
+    name: category.name,
+    description,
+    url: `https://beisserlumber.com/products/${canonicalSlug}`,
+  };
 
   return (
     <div className="space-y-8">
@@ -72,8 +91,8 @@ export default function ProductCategoryPage({ params }: PageProps) {
           <h1 className="text-3xl font-bold text-beisserGray">{category.name} at Beisser Lumber</h1>
           <p className="max-w-2xl text-sm text-slate-700">{description}</p>
           <p className="max-w-2xl text-sm text-slate-700">
-            Beisser Lumber supports builders and homeowners with product options, estimating help, and coordinated
-            delivery schedules across Iowa branches.
+            Beisser Lumber supports builders and homeowners with product comparisons, branch-level guidance, estimating help,
+            and coordinated delivery schedules across Iowa.
           </p>
           {subcategories.length > 0 && (
             <ul className="list-inside list-disc space-y-1 text-sm text-slate-700">
@@ -88,7 +107,7 @@ export default function ProductCategoryPage({ params }: PageProps) {
 
       {categoryMdx && mdxBody ? (
         <section className="space-y-3 rounded-xl border bg-white p-4 shadow-sm">
-          <h2 className="text-xl font-semibold text-beisserGray">{(categoryMdx.frontmatter.title as string) ?? category.name}</h2>
+          <h2 className="text-xl font-semibold text-beisserGray">{category.name}</h2>
           <MdxContent content={mdxBody} />
         </section>
       ) : null}
@@ -108,11 +127,12 @@ export default function ProductCategoryPage({ params }: PageProps) {
 
       <section className="rounded-xl border bg-slate-50 p-4">
         <p className="text-sm text-slate-700">Need pricing for this category? We can quote by plan set, takeoff, or material list.</p>
-        <Link href={`/quote?category=${requestedSlug}`} className="mt-3 inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]">Request a Quote</Link>
+        <Link href={`/quote?category=${canonicalSlug}`} className="mt-3 inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]">Request a Quote</Link>
       </section>
 
       <RelatedLinks links={relatedLinks} />
-      <FAQSection title={`${category.name} FAQs`} faqs={faqs} category={faqSlug} />
+      <FAQSection title={`${category.name} FAQs`} faqs={faqs} category={canonicalSlug} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     </div>
   );
 }

@@ -9,7 +9,7 @@ description: >-
 website: 'https://azekco.com/'
 heroImage: /images/resources-article.png
 categories:
-  - decking-and-exteriors
+  - decking-railing
 logo: /uploads/azek-exteriors.png
 bullets:
   - Capped PVC decking resistant to moisture and staining

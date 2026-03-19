@@ -3,7 +3,7 @@ heroImage: /images/resources-article.png
 name: Bronze Star Screws
 website: https://www.westernbuildingsupply.com
 categories:
-  - tools-and-fasteners
+  - hardware-screws
 logo: btcf_logo.png
 summary: Exterior screws and fasteners designed for decking and outdoor projects.
 completeness: 67

@@ -9,8 +9,8 @@ description: >-
 website: 'https://www.andersenwindows.com/'
 heroImage: /images/resources-article.png
 categories:
-  - tools-and-fasteners
-  - windows-and-patio-doors
+  - hardware-screws
+  - windows-patio-doors
 logo: /uploads/andersen-windows-doors.jpg
 bullets:
   - Locking and operating hardware matched to Andersen products

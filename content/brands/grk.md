@@ -10,7 +10,7 @@ website: 'https://www.grkfasteners.com/'
 heroImage: /images/resources-article.png
 logo: '/Logos/Fasteners, Screws, Hardware/GRK logo.png'
 categories:
-  - tools-and-fasteners
+  - hardware-screws
 bullets:
   - Structural fasteners engineered for demanding applications
   - 'Used in framing, decks, and remodeling'

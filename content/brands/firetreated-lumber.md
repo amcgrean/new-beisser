@@ -10,7 +10,7 @@ website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png
 categories:
-  - lumber-and-panels
+  - lumber-panels
 bullets:
   - Treated to meet fire rating requirements
   - Used where code requires fire-retardant materials

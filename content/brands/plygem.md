@@ -9,7 +9,7 @@ description: >-
 website: 'https://www.plygem.com/'
 heroImage: /images/resources-article.png
 categories:
-  - windows-and-patio-doors
+  - windows-patio-doors
 logo: plygem-logo.jpg
 bullets:
   - Vinyl window and patio door options

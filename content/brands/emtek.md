@@ -9,7 +9,7 @@ description: >-
 website: 'https://www.emtek.com/'
 heroImage: /images/resources-article.png
 categories:
-  - tools-and-fasteners
+  - hardware-screws
 logo: emtek.png
 bullets:
   - Decorative hardware for interior and exterior doors

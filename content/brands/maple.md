@@ -10,7 +10,7 @@ website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png
 categories:
-  - millwork-and-trim
+  - millwork
 bullets:
   - Stain-grade hardwood for interiors
   - 'Used in trim, cabinetry, and finishes'

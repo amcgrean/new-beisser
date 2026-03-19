@@ -10,7 +10,7 @@ website: 'https://www.fastenmaster.com/'
 heroImage: /images/resources-article.png
 logo: '/Logos/Fasteners, Screws, Hardware/Fastenmaster Logo.png'
 categories:
-  - tools-and-fasteners
+  - hardware-screws
 bullets:
   - Fastening solutions for decking and framing
   - Engineered for strength and code compliance
