@@ -2,21 +2,17 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-import FAQSection, { FAQ } from "@/components/FAQSection";
+import FAQSection from "@/components/FAQSection";
+import RelatedLinks, { RelatedLinkItem } from "@/components/RelatedLinks";
 import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
 import { MdxContent } from "@/app/ui/MdxContent";
-import {
-  getCategoryEntries,
-  getCategoryMdx,
-  getCategoryBySlug,
-} from "@/app/lib/content";
+import { getCategoryEntries, getCategoryMdx, getCategoryBySlug } from "@/app/lib/content";
 import { getBrandEntries } from "@/app/lib/brands";
+import { productFaqsBySlug } from "@/app/data/faqs";
 
 type PageProps = {
   params: { slug: string };
 };
-
-const placeholderAnswer = "[Answer pending — sales team review]";
 
 const slugAliases: Record<string, string> = {
   decking: "decking-and-exteriors",
@@ -30,75 +26,22 @@ const slugAliases: Record<string, string> = {
   weatherization: "housewrap-and-weatherization",
 };
 
-const faqBySlug: Record<string, FAQ[]> = {
+const internalLinksByCategory: Record<string, RelatedLinkItem[]> = {
   decking: [
-    "What decking brands does Beisser carry?",
-    "Difference between Trex, Fiberon, and TimberTech?",
-    "Best composite for Iowa freeze/thaw climate?",
-    "Do you offer deck material takeoffs?",
-    "Can I see samples?",
-    "Do you deliver to job sites?",
-  ].map((question) => ({ question, answer: placeholderAnswer })),
+    { href: "/brands/trex", label: "Browse Trex products at Beisser", description: "Compare Trex decking lines available through Beisser branches." },
+    { href: "/brands/fiberon", label: "See Fiberon decking options", description: "Review Fiberon offerings and request current lead times." },
+    { href: "/pros/residential-builders", label: "Pro account pricing for builders", description: "See builder-focused support and account options." },
+    { href: "/quote", label: "Request a material quote", description: "Get branch-routed pricing for your next deck project." },
+  ],
   siding: [
-    "What siding brands do you carry?",
-    "Hardie vs LP SmartSide difference?",
-    "Is Beisser an authorized Hardie dealer?",
-    "Best siding for Iowa climate?",
-    "Can you estimate siding quantity?",
-    "Pre-primed or pre-finished options?",
-  ].map((question) => ({ question, answer: placeholderAnswer })),
-  windows: [
-    "What window brands do you carry?",
-    "Do you have a window showroom?",
-    "Can I get custom sizes?",
-    "Do you install windows?",
-    "Lead time on special orders?",
-    "Andersen 100 vs 400 vs E-Series?",
-  ].map((question) => ({ question, answer: placeholderAnswer })),
-  doors: [
-    "What door brands do you carry?",
-    "Pre-hung exterior doors in stock?",
-    "Can I see samples at Birchwood?",
-    "What info for custom door order?",
-    "Do you sell hardware packages?",
-    "Fiberglass vs steel vs wood for Iowa?",
-  ].map((question) => ({ question, answer: placeholderAnswer })),
+    { href: "/brands/james-hardie", label: "James Hardie at Beisser Lumber", description: "Explore Hardie siding support at Beisser." },
+    { href: "/brands/lp-smartside", label: "LP SmartSide dealer in Iowa", description: "See LP SmartSide options from Beisser Lumber." },
+    { href: "/quote", label: "Request a material quote", description: "Start a siding quote with your nearest branch." },
+  ],
   "engineered-wood": [
-    "Do you carry LVL beams?",
-    "LVL vs LSL vs PSL?",
-    "I-joists and floor systems?",
-    "Value engineering on EWP packages?",
-    "Lead times for commercial packages?",
-    "Engineered vs dimensional lumber?",
-  ].map((question) => ({ question, answer: placeholderAnswer })),
-  lumber: [
-    "What lumber grades do you stock?",
-    "Do you deliver to job sites?",
-    "Can I order by the piece?",
-    "Pressure-treated options?",
-    "What panel products do you carry?",
-  ].map((question) => ({ question, answer: placeholderAnswer })),
-  millwork: [
-    "Do you stock primed interior trim?",
-    "Can I order custom stair parts?",
-    "Do you have a millwork showroom?",
-    "What trim profiles are in stock?",
-    "Can you pull a complete trim package?",
-  ].map((question) => ({ question, answer: placeholderAnswer })),
-  roofing: [
-    "What roofing brands do you carry?",
-    "Do you stock accessories (ice shield, underlayment, etc.)?",
-    "Can you deliver to the jobsite?",
-    "Synthetic vs felt underlayment for Iowa?",
-    "Do you do roofing takeoffs?",
-  ].map((question) => ({ question, answer: placeholderAnswer })),
-  weatherization: [
-    "What housewrap brands do you carry?",
-    "ZIP System vs traditional housewrap?",
-    "Do you stock fluid-applied WRBs?",
-    "What do you recommend for Iowa new construction?",
-    "Do you carry flashing tapes?",
-  ].map((question) => ({ question, answer: placeholderAnswer })),
+    { href: "/pros/commercial-multifamily", label: "Commercial and multi-family projects", description: "See EWP support for larger project scopes." },
+    { href: "/quote", label: "Request a material quote", description: "Get engineered wood pricing and lead-time guidance." },
+  ],
 };
 
 export default function ProductCategoryPage({ params }: PageProps) {
@@ -117,19 +60,14 @@ export default function ProductCategoryPage({ params }: PageProps) {
   const subcategories = category.subcategories ?? [];
 
   const faqSlug = Object.keys(slugAliases).find((k) => slugAliases[k] === canonicalSlug) ?? requestedSlug;
-  const faqs = faqBySlug[faqSlug] ?? [];
+  const faqs = productFaqsBySlug[faqSlug] ?? [];
+  const relatedLinks = internalLinksByCategory[faqSlug] ?? [{ href: "/quote", label: "Request a material quote", description: "Share your plans and get branch-routed pricing." }];
 
   return (
     <div className="space-y-8">
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Products", href: "/products" },
-          { label: category.name },
-        ]}
-      />
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Products", href: "/products" }, { label: category.name }]} />
 
-      <section className="grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1.4fr)] items-start">
+      <section className="grid gap-8 items-start lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1.4fr)]">
         <div className="space-y-4">
           <h1 className="text-3xl font-bold text-beisserGray">{category.name} at Beisser Lumber</h1>
           <p className="max-w-2xl text-sm text-slate-700">{description}</p>
@@ -138,16 +76,13 @@ export default function ProductCategoryPage({ params }: PageProps) {
             delivery schedules across Iowa branches.
           </p>
           {subcategories.length > 0 && (
-            <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
-              {subcategories.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
+            <ul className="list-inside list-disc space-y-1 text-sm text-slate-700">
+              {subcategories.map((item) => (<li key={item}>{item}</li>))}
             </ul>
           )}
         </div>
-
         <div className="relative h-64 overflow-hidden rounded-2xl border bg-slate-100 shadow-sm sm:h-72 lg:h-80">
-          <Image src={heroSrc} alt={category.name} fill className="object-cover" />
+          <Image src={heroSrc} alt={category.name} fill className="object-cover" priority />
         </div>
       </section>
 
@@ -163,11 +98,7 @@ export default function ProductCategoryPage({ params }: PageProps) {
           <h2 className="text-xl font-semibold text-beisserGray">Relevant Brands</h2>
           <div className="flex flex-wrap gap-2">
             {categoryBrands.map((brand) => (
-              <Link
-                key={brand.slug}
-                href={`/brands/${brand.slug}`}
-                className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:border-[#1B4F8A] hover:text-[#1B4F8A]"
-              >
+              <Link key={brand.slug} href={`/brands/${brand.slug}`} className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:border-[#1B4F8A] hover:text-[#1B4F8A]">
                 {brand.name}
               </Link>
             ))}
@@ -177,15 +108,11 @@ export default function ProductCategoryPage({ params }: PageProps) {
 
       <section className="rounded-xl border bg-slate-50 p-4">
         <p className="text-sm text-slate-700">Need pricing for this category? We can quote by plan set, takeoff, or material list.</p>
-        <Link
-          href={`/quote?category=${requestedSlug}`}
-          className="mt-3 inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]"
-        >
-          Request a Quote
-        </Link>
+        <Link href={`/quote?category=${requestedSlug}`} className="mt-3 inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]">Request a Quote</Link>
       </section>
 
-      {faqs.length > 0 ? <FAQSection title={`${category.name} FAQs`} faqs={faqs} /> : null}
+      <RelatedLinks links={relatedLinks} />
+      <FAQSection title={`${category.name} FAQs`} faqs={faqs} category={faqSlug} />
     </div>
   );
 }

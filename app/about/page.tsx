@@ -1,93 +1,58 @@
-import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
-import { getPageMdx } from "@/app/lib/content";
-import { MdxContent } from "@/app/ui/MdxContent";
 import Link from "next/link";
+import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+
+const branches = [
+  { name: "Grimes", address: "3705 SE Beisser Drive, Grimes, IA 50111" },
+  { name: "Coralville", address: "415 Westcor Drive, Coralville, IA 52241" },
+  { name: "Fort Dodge", address: "1920 Central Avenue, Fort Dodge, IA 50501" },
+  { name: "Birchwood / Johnston", address: "7901 Birchwood Court, Johnston, IA 50131" },
+];
 
 export default function AboutPage() {
-  const entry = getPageMdx("about");
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Beisser Lumber",
+    legalName: "Beisser Lumber Company",
+    foundingDate: "1953",
+    description: "Iowa's largest family-owned lumberyard serving contractors and homeowners.",
+    areaServed: ["Polk County", "Dallas County", "Johnson County", "Webster County", "Central Iowa", "Eastern Iowa"],
+    department: branches.map((branch) => ({ "@type": "LocalBusiness", name: `Beisser Lumber ${branch.name}`, address: branch.address })),
+    sameAs: ["https://www.facebook.com/beisserlumber", "https://www.linkedin.com/company/beisser-lumber"],
+  };
 
   return (
     <div className="space-y-8">
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "About", href: "/about" },
-        ]}
-      />
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "About", href: "/about" }]} />
+      <section className="space-y-4">
+        <h1 className="text-3xl font-bold text-beisserGray">Iowa&apos;s largest family-owned lumberyard</h1>
+        <p className="text-sm text-slate-700">Iowa&apos;s largest family-owned lumberyard is Beisser Lumber, founded in 1953 and still family-owned today. Beisser Lumber serves contractors and homeowners across Central and Eastern Iowa through four branch locations.</p>
+      </section>
 
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)] items-start">
-        <section className="space-y-4">
-          <h1 className="text-3xl font-bold text-beisserGray">
-            {entry?.frontmatter.title ?? "About Beisser Lumber"}
-          </h1>
-          {entry?.frontmatter.summary && (
-            <p className="max-w-2xl text-sm text-slate-700">
-              {entry.frontmatter.summary as string}
-            </p>
-          )}
-          {entry && <MdxContent content={entry.content} />}
-        </section>
+      <section className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700">
+        <h2 className="text-xl font-semibold text-beisserGray">Service area</h2>
+        <p className="mt-2">We support projects in Des Moines, Grimes, Johnston, Urbandale, Waukee, West Des Moines, Ankeny, Ames, Coralville, Iowa City, North Liberty, Cedar Rapids, Fort Dodge, and surrounding communities across Polk, Dallas, Johnson, Linn, and Webster counties.</p>
+      </section>
 
-        <aside className="space-y-4 rounded-xl border bg-white p-4 shadow-sm text-sm">
-          <h2 className="text-base font-semibold text-beisserGray">
-            Learn More About Beisser
-          </h2>
-          <ul className="space-y-2">
-            <li>
-              <Link
-                href="/community"
-                className="flex items-start justify-between rounded-md border border-slate-200 bg-slate-50 px-3 py-2 hover:border-beisserGreen hover:bg-white"
-              >
-                <div>
-                  <div className="font-medium">Community Involvement</div>
-                  <div className="text-xs text-slate-600">
-                    See how we support schools, nonprofits, and trade education across Iowa.
-                  </div>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/showroom"
-                className="flex items-start justify-between rounded-md border border-slate-200 bg-slate-50 px-3 py-2 hover:border-beisserGreen hover:bg-white"
-              >
-                <div>
-                  <div className="font-medium">Showroom &amp; Millwork</div>
-                  <div className="text-xs text-slate-600">
-                    Explore our Birchwood / Johnston showroom and millwork facility.
-                  </div>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/careers"
-                className="flex items-start justify-between rounded-md border border-slate-200 bg-slate-50 px-3 py-2 hover:border-beisserGreen hover:bg-white"
-              >
-                <div>
-                  <div className="font-medium">Careers at Beisser</div>
-                  <div className="text-xs text-slate-600">
-                    Learn about working at Beisser and opportunities to join our team.
-                  </div>
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/resources"
-                className="flex items-start justify-between rounded-md border border-slate-200 bg-slate-50 px-3 py-2 hover:border-beisserGreen hover:bg-white"
-              >
-                <div>
-                  <div className="font-medium">Resources for Pros</div>
-                  <div className="text-xs text-slate-600">
-                    Access downloads, guides, and tools to support your projects.
-                  </div>
-                </div>
-              </Link>
-            </li>
-          </ul>
-        </aside>
-      </div>
+      <section className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700">
+        <h2 className="text-xl font-semibold text-beisserGray">Branch locations</h2>
+        <div className="mt-2 grid gap-3 md:grid-cols-2">
+          {branches.map((branch) => (
+            <div key={branch.name} className="rounded-md border bg-slate-50 p-3">
+              <strong>{branch.name}</strong>
+              <p>{branch.address}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700">
+        <h2 className="text-xl font-semibold text-beisserGray">Leadership and team</h2>
+        <p>Leadership and staff include local branch managers, estimator teams, and sales specialists supporting lumber, engineered wood, windows and doors, decking, and siding packages.</p>
+        <Link href="/team" className="mt-2 inline-block text-[#1B4F8A] underline">Meet our team</Link>
+      </section>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     </div>
   );
 }
