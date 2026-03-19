@@ -219,3 +219,19 @@ export function getCategoryBySlug(slug: string): CmsCategory | null {
     updated: data.updated ? String(data.updated) : undefined,
   } satisfies CmsCategory;
 }
+
+/** BLOG */
+export function getBlogEntry(slug: string): MdxEntry | null {
+  const filePath = path.join(process.cwd(), "content", "blog", `${slug}.mdx`);
+  const result = readMdxFile(filePath);
+  if (!result) return null;
+  return { slug, ...result };
+}
+
+export function getBlogEntries(): MdxEntry[] {
+  const dir = path.join(process.cwd(), "content", "blog");
+  return getMdxSlugs(dir)
+    .map((slug) => getBlogEntry(slug))
+    .filter((entry): entry is MdxEntry => entry !== null)
+    .sort((a, b) => String(b.frontmatter.date).localeCompare(String(a.frontmatter.date)));
+}

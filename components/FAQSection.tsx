@@ -1,6 +1,7 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId, useMemo, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 export interface FAQ {
   question: string;
@@ -10,16 +11,20 @@ export interface FAQ {
 export interface FAQSectionProps {
   title: string;
   faqs: FAQ[];
+  category?: string;
 }
 
-export default function FAQSection({ title, faqs }: FAQSectionProps) {
+export default function FAQSection({ title, faqs, category = "general" }: FAQSectionProps) {
+  const visibleFAQs = useMemo(() => faqs.filter((f) => f.answer && f.answer.trim().length > 0), [faqs]);
   const baseId = useId();
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(visibleFAQs.length > 0 ? 0 : null);
+
+  if (visibleFAQs.length === 0) return null;
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
+    mainEntity: visibleFAQs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -34,7 +39,7 @@ export default function FAQSection({ title, faqs }: FAQSectionProps) {
       <h2 className="text-2xl font-semibold text-slate-900">{title}</h2>
 
       <div className="space-y-2">
-        {faqs.map((faq, index) => {
+        {visibleFAQs.map((faq, index) => {
           const panelId = `${baseId}-panel-${index}`;
           const buttonId = `${baseId}-button-${index}`;
           const isOpen = openIndex === index;
@@ -48,7 +53,13 @@ export default function FAQSection({ title, faqs }: FAQSectionProps) {
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm font-semibold text-[#1B4F8A]"
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  onClick={() => {
+                    const next = isOpen ? null : index;
+                    setOpenIndex(next);
+                    if (next !== null) {
+                      trackEvent("faq_expand", { question: faq.question, category });
+                    }
+                  }}
                 >
                   <span>{faq.question}</span>
                   <span aria-hidden="true" className="text-base">{isOpen ? "−" : "+"}</span>
@@ -58,7 +69,7 @@ export default function FAQSection({ title, faqs }: FAQSectionProps) {
                 id={panelId}
                 role="region"
                 aria-labelledby={buttonId}
-                className={`${isOpen ? "block" : "hidden"} border-t border-slate-200 bg-slate-100 px-4 py-3 text-sm text-slate-700`}
+                className={`${isOpen ? "block" : "hidden"} faq-answer border-t border-slate-200 bg-slate-100 px-4 py-3 text-sm text-slate-700`}
               >
                 {faq.answer}
               </div>

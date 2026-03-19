@@ -1,10 +1,29 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import FAQSection, { FAQ } from "@/components/FAQSection";
+import RelatedLinks from "@/components/RelatedLinks";
+import BrandViewTracker from "@/components/BrandViewTracker";
 import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
 import { getBrandBySlug, getBrandEntries } from "@/app/lib/brands";
 
 const waveOneSlugs = ["trex", "james-hardie", "lp-smartside", "andersen", "weyerhaeuser"];
+
+const brandCategoryLinks: Record<string, string> = {
+  trex: "/products/decking",
+  fiberon: "/products/decking",
+  "james-hardie": "/products/siding",
+  "lp-smartside": "/products/siding",
+  andersen: "/products/windows",
+  weyerhaeuser: "/products/engineered-wood",
+};
+
+const brandNearestLocation: Record<string, string> = {
+  trex: "/locations/grimes",
+  "james-hardie": "/locations/coralville",
+  "lp-smartside": "/locations/grimes",
+  andersen: "/locations/birchwood",
+  weyerhaeuser: "/locations/fort-dodge",
+};
 
 export function generateStaticParams() {
   const all = getBrandEntries().map((b) => b.slug);
@@ -17,21 +36,19 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
   if (!brand) return notFound();
 
   const faqs: FAQ[] = [
-    { question: `What ${brand.name} products are available from Beisser Lumber?`, answer: "[Answer pending — sales team review]" },
-    { question: `Can I request current pricing for ${brand.name}?`, answer: "[Answer pending — sales team review]" },
-    { question: `Do all Beisser locations stock ${brand.name}?`, answer: "[Answer pending — sales team review]" },
-    { question: `Can your team help with ${brand.name} takeoffs and package planning?`, answer: "[Answer pending — sales team review]" },
+    { question: `What ${brand.name} products are available from Beisser Lumber?`, answer: "" },
+    { question: `Can I request current pricing for ${brand.name}?`, answer: "" },
+    { question: `Do all Beisser locations stock ${brand.name}?`, answer: "" },
+    { question: `Can your team help with ${brand.name} takeoffs and package planning?`, answer: "" },
   ];
+
+  const categoryLink = brandCategoryLinks[brand.slug] ?? "/products";
+  const locationLink = brandNearestLocation[brand.slug] ?? "/locations";
 
   return (
     <div className="space-y-8">
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Brands", href: "/brands" },
-          { label: brand.name },
-        ]}
-      />
+      <BrandViewTracker brandName={brand.name} />
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Brands", href: "/brands" }, { label: brand.name }]} />
 
       <header className="space-y-3">
         <h1 className="text-3xl font-bold text-beisserGray">{brand.name} at Beisser Lumber — Authorized Iowa Dealer</h1>
@@ -43,32 +60,27 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
 
       <section className="rounded-xl border bg-white p-5 shadow-sm">
         <h2 className="text-xl font-semibold text-slate-900">Products We Carry</h2>
-        <ul className="mt-3 list-disc list-inside space-y-1 text-sm text-slate-700">
+        <ul className="mt-3 list-inside list-disc space-y-1 text-sm text-slate-700">
           <li>Core {brand.name} product lines for builder and remodeler projects</li>
           <li>Special-order options based on plan requirements and finish preferences</li>
           <li>Accessory and companion products coordinated through Beisser teams</li>
         </ul>
       </section>
 
-      <section className="rounded-xl border bg-white p-5 shadow-sm">
-        <h2 className="text-xl font-semibold text-slate-900">Why Buy {brand.name} from Beisser</h2>
-        <ul className="mt-3 list-disc list-inside space-y-1 text-sm text-slate-700">
-          <li>Local branch support for pricing, product selection, and schedule planning</li>
-          <li>Material coordination across lumber, millwork, and exterior packages</li>
-          <li>Delivery options aligned with your project timeline across Iowa</li>
-        </ul>
-      </section>
-
       <div className="flex flex-wrap gap-3">
-        <Link href={`/quote?brand=${brand.slug}`} className="inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]">
-          Request a {brand.name} Quote
-        </Link>
-        <Link href="/locations" className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-[#1B4F8A] hover:text-[#1B4F8A]">
-          Find a Location
-        </Link>
+        <Link href={`/quote?brand=${brand.slug}`} className="inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]">Request a {brand.name} Quote</Link>
+        <Link href="/locations" className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-[#1B4F8A] hover:text-[#1B4F8A]">Find a Location</Link>
       </div>
 
-      <FAQSection title={`${brand.name} FAQs`} faqs={faqs} />
+      <RelatedLinks
+        links={[
+          { href: categoryLink, label: "View related product category", description: `Browse the product category tied to ${brand.name}.` },
+          { href: locationLink, label: "Visit our nearest showroom", description: "Connect with a local Beisser branch for product support." },
+          { href: "/quote", label: "Request a material quote", description: "Get branch-routed pricing and lead-time guidance." },
+        ]}
+      />
+
+      <FAQSection title={`${brand.name} FAQs`} faqs={faqs} category={brand.slug} />
     </div>
   );
 }
