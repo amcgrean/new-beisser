@@ -119,6 +119,8 @@ export type CmsCategory = {
   useCases?: string[];
   materials?: string[];
   body?: string; // if you ever need frontmatter body
+  teamWorkflow?: Record<string, any>;
+  updated?: string;
 };
 
 const CATEGORIES_DIR = path.join(process.cwd(), "content", "categories");
@@ -181,6 +183,8 @@ export function getCategoryEntries(): CmsCategory[] {
           ? data.materials.map(String)
           : [],
         body: data.body ? String(data.body) : undefined,
+        teamWorkflow: (data as any).teamWorkflow ?? undefined,
+        updated: data.updated ? String(data.updated) : undefined,
       } satisfies CmsCategory;
     })
     .sort((a, b) => a.name.localeCompare(b.name));
@@ -211,5 +215,7 @@ export function getCategoryBySlug(slug: string): CmsCategory | null {
       ? data.materials.map(String)
       : [],
     body: data.body ? String(data.body) : undefined,
+    teamWorkflow: (data as any).teamWorkflow ?? undefined,
+    updated: data.updated ? String(data.updated) : undefined,
   } satisfies CmsCategory;
 }
