@@ -12,6 +12,8 @@ export type Brand = {
   heroImage: string;
   logo: string;
   bullets: string[];
+  teamWorkflow?: Record<string, any>;
+  updated?: string;
 };
 
 const BRANDS_DIR = path.join(process.cwd(), "content", "brands");
@@ -35,6 +37,8 @@ function normalizeBrand(data: any, slug: string): Brand {
     heroImage: ensurePath(String(data.heroImage ?? HERO_PLACEHOLDER)),
     logo: ensurePath(String(data.logo ?? LOGO_PLACEHOLDER)),
     bullets: Array.isArray(data.bullets) ? data.bullets.map(String) : [],
+    teamWorkflow: data.teamWorkflow ?? undefined,
+    updated: data.updated ? String(data.updated) : undefined,
   };
 }
 

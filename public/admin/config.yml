@@ -22,6 +22,64 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Summary", name: "summary", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Team Workflow"
+        name: "teamWorkflow"
+        widget: "object"
+        required: false
+        hint: "Internal implementation tracking used by managers and editors."
+        fields:
+          - label: "Review Status"
+            name: "reviewStatus"
+            widget: "select"
+            default: "not_started"
+            required: false
+            hint: "Set current state so dashboard shows this entry in the right queue."
+            options:
+              - { label: "Not Started", value: "not_started" }
+              - { label: "In Review", value: "in_review" }
+              - { label: "Blocked", value: "blocked" }
+              - { label: "Approved", value: "approved" }
+          - { label: "Entry Owner", name: "owner", widget: "string", required: false, hint: "Who owns implementation for this page/section." }
+          - { label: "Review Due Date", name: "dueDate", widget: "datetime", required: false, hint: "Target date to complete review and clear to-dos." }
+          - { label: "Internal Notes", name: "internalNotes", widget: "text", required: false, hint: "General notes for internal team only (not public)." }
+          - label: "Manager Comments"
+            name: "managerComments"
+            widget: "list"
+            required: false
+            hint: "Use for review feedback. Add one item per comment thread."
+            fields:
+              - { label: "Section", name: "section", widget: "string", required: false, hint: "Example: Hero, Brands grid, Community cards." }
+              - { label: "Author", name: "author", widget: "string", required: false }
+              - { label: "Comment", name: "comment", widget: "text" }
+              - { label: "Date", name: "date", widget: "datetime", required: false }
+          - label: "To-Do List"
+            name: "todoList"
+            widget: "list"
+            required: false
+            hint: "Track implementation tasks for this specific entry."
+            fields:
+              - { label: "Task", name: "task", widget: "string" }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                default: "todo"
+                options:
+                  - { label: "To Do", value: "todo" }
+                  - { label: "In Progress", value: "in_progress" }
+                  - { label: "Done", value: "done" }
+              - { label: "Assignee", name: "assignee", widget: "string", required: false }
+              - { label: "Due Date", name: "dueDate", widget: "datetime", required: false }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+          - label: "Section Notes"
+            name: "sectionNotes"
+            widget: "list"
+            required: false
+            hint: "Per-section implementation notes (e.g., Brands, Community, Footer)."
+            fields:
+              - { label: "Section Name", name: "section", widget: "string" }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+              - { label: "Open Questions", name: "openQuestions", widget: "text", required: false }
     sortable_fields: ["title", "updated"]
     summary: "{{title}} — Updated: {{updated | date('MMM D, YYYY')}}"
 
@@ -37,6 +95,64 @@ collections:
       - { label: "Summary", name: "summary", widget: "string", required: false }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Team Workflow"
+        name: "teamWorkflow"
+        widget: "object"
+        required: false
+        hint: "Internal implementation tracking used by managers and editors."
+        fields:
+          - label: "Review Status"
+            name: "reviewStatus"
+            widget: "select"
+            default: "not_started"
+            required: false
+            hint: "Set current state so dashboard shows this entry in the right queue."
+            options:
+              - { label: "Not Started", value: "not_started" }
+              - { label: "In Review", value: "in_review" }
+              - { label: "Blocked", value: "blocked" }
+              - { label: "Approved", value: "approved" }
+          - { label: "Entry Owner", name: "owner", widget: "string", required: false, hint: "Who owns implementation for this page/section." }
+          - { label: "Review Due Date", name: "dueDate", widget: "datetime", required: false, hint: "Target date to complete review and clear to-dos." }
+          - { label: "Internal Notes", name: "internalNotes", widget: "text", required: false, hint: "General notes for internal team only (not public)." }
+          - label: "Manager Comments"
+            name: "managerComments"
+            widget: "list"
+            required: false
+            hint: "Use for review feedback. Add one item per comment thread."
+            fields:
+              - { label: "Section", name: "section", widget: "string", required: false, hint: "Example: Hero, Brands grid, Community cards." }
+              - { label: "Author", name: "author", widget: "string", required: false }
+              - { label: "Comment", name: "comment", widget: "text" }
+              - { label: "Date", name: "date", widget: "datetime", required: false }
+          - label: "To-Do List"
+            name: "todoList"
+            widget: "list"
+            required: false
+            hint: "Track implementation tasks for this specific entry."
+            fields:
+              - { label: "Task", name: "task", widget: "string" }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                default: "todo"
+                options:
+                  - { label: "To Do", value: "todo" }
+                  - { label: "In Progress", value: "in_progress" }
+                  - { label: "Done", value: "done" }
+              - { label: "Assignee", name: "assignee", widget: "string", required: false }
+              - { label: "Due Date", name: "dueDate", widget: "datetime", required: false }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+          - label: "Section Notes"
+            name: "sectionNotes"
+            widget: "list"
+            required: false
+            hint: "Per-section implementation notes (e.g., Brands, Community, Footer)."
+            fields:
+              - { label: "Section Name", name: "section", widget: "string" }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+              - { label: "Open Questions", name: "openQuestions", widget: "text", required: false }
     sortable_fields: ["title", "updated"]
     summary: "{{title}} — Updated: {{updated | date('MMM D, YYYY')}}"
 
@@ -133,6 +249,64 @@ collections:
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Featured", name: "featured", widget: "boolean", required: false, default: false }
       - { label: "Body (Optional)", name: "body", widget: "markdown", required: false }
+
+      - label: "Team Workflow"
+        name: "teamWorkflow"
+        widget: "object"
+        required: false
+        hint: "Internal implementation tracking used by managers and editors."
+        fields:
+          - label: "Review Status"
+            name: "reviewStatus"
+            widget: "select"
+            default: "not_started"
+            required: false
+            hint: "Set current state so dashboard shows this entry in the right queue."
+            options:
+              - { label: "Not Started", value: "not_started" }
+              - { label: "In Review", value: "in_review" }
+              - { label: "Blocked", value: "blocked" }
+              - { label: "Approved", value: "approved" }
+          - { label: "Entry Owner", name: "owner", widget: "string", required: false, hint: "Who owns implementation for this page/section." }
+          - { label: "Review Due Date", name: "dueDate", widget: "datetime", required: false, hint: "Target date to complete review and clear to-dos." }
+          - { label: "Internal Notes", name: "internalNotes", widget: "text", required: false, hint: "General notes for internal team only (not public)." }
+          - label: "Manager Comments"
+            name: "managerComments"
+            widget: "list"
+            required: false
+            hint: "Use for review feedback. Add one item per comment thread."
+            fields:
+              - { label: "Section", name: "section", widget: "string", required: false, hint: "Example: Hero, Brands grid, Community cards." }
+              - { label: "Author", name: "author", widget: "string", required: false }
+              - { label: "Comment", name: "comment", widget: "text" }
+              - { label: "Date", name: "date", widget: "datetime", required: false }
+          - label: "To-Do List"
+            name: "todoList"
+            widget: "list"
+            required: false
+            hint: "Track implementation tasks for this specific entry."
+            fields:
+              - { label: "Task", name: "task", widget: "string" }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                default: "todo"
+                options:
+                  - { label: "To Do", value: "todo" }
+                  - { label: "In Progress", value: "in_progress" }
+                  - { label: "Done", value: "done" }
+              - { label: "Assignee", name: "assignee", widget: "string", required: false }
+              - { label: "Due Date", name: "dueDate", widget: "datetime", required: false }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+          - label: "Section Notes"
+            name: "sectionNotes"
+            widget: "list"
+            required: false
+            hint: "Per-section implementation notes (e.g., Brands, Community, Footer)."
+            fields:
+              - { label: "Section Name", name: "section", widget: "string" }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+              - { label: "Open Questions", name: "openQuestions", widget: "text", required: false }
     sortable_fields: ["title", "date", "featured", "updated"]
     summary: "{{title}} — Updated: {{updated | date('MMM D, YYYY')}}"
 
@@ -159,6 +333,64 @@ collections:
 
       - { label: "Last Updated", name: "updated", widget: "datetime", required: false }
 
+
+      - label: "Team Workflow"
+        name: "teamWorkflow"
+        widget: "object"
+        required: false
+        hint: "Internal implementation tracking used by managers and editors."
+        fields:
+          - label: "Review Status"
+            name: "reviewStatus"
+            widget: "select"
+            default: "not_started"
+            required: false
+            hint: "Set current state so dashboard shows this entry in the right queue."
+            options:
+              - { label: "Not Started", value: "not_started" }
+              - { label: "In Review", value: "in_review" }
+              - { label: "Blocked", value: "blocked" }
+              - { label: "Approved", value: "approved" }
+          - { label: "Entry Owner", name: "owner", widget: "string", required: false, hint: "Who owns implementation for this page/section." }
+          - { label: "Review Due Date", name: "dueDate", widget: "datetime", required: false, hint: "Target date to complete review and clear to-dos." }
+          - { label: "Internal Notes", name: "internalNotes", widget: "text", required: false, hint: "General notes for internal team only (not public)." }
+          - label: "Manager Comments"
+            name: "managerComments"
+            widget: "list"
+            required: false
+            hint: "Use for review feedback. Add one item per comment thread."
+            fields:
+              - { label: "Section", name: "section", widget: "string", required: false, hint: "Example: Hero, Brands grid, Community cards." }
+              - { label: "Author", name: "author", widget: "string", required: false }
+              - { label: "Comment", name: "comment", widget: "text" }
+              - { label: "Date", name: "date", widget: "datetime", required: false }
+          - label: "To-Do List"
+            name: "todoList"
+            widget: "list"
+            required: false
+            hint: "Track implementation tasks for this specific entry."
+            fields:
+              - { label: "Task", name: "task", widget: "string" }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                default: "todo"
+                options:
+                  - { label: "To Do", value: "todo" }
+                  - { label: "In Progress", value: "in_progress" }
+                  - { label: "Done", value: "done" }
+              - { label: "Assignee", name: "assignee", widget: "string", required: false }
+              - { label: "Due Date", name: "dueDate", widget: "datetime", required: false }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+          - label: "Section Notes"
+            name: "sectionNotes"
+            widget: "list"
+            required: false
+            hint: "Per-section implementation notes (e.g., Brands, Community, Footer)."
+            fields:
+              - { label: "Section Name", name: "section", widget: "string" }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+              - { label: "Open Questions", name: "openQuestions", widget: "text", required: false }
       - label: "Completion Checklist"
         name: "completion"
         widget: "object"
@@ -219,6 +451,64 @@ collections:
           - { label: "Website Added", name: "websiteAdded", widget: "boolean", required: false, default: false }
           - { label: "Short Description Added", name: "summaryAdded", widget: "boolean", required: false, default: false }
           - { label: "Body Added", name: "bodyAdded", widget: "boolean", required: false, default: false }
+
+      - label: "Team Workflow"
+        name: "teamWorkflow"
+        widget: "object"
+        required: false
+        hint: "Internal implementation tracking used by managers and editors."
+        fields:
+          - label: "Review Status"
+            name: "reviewStatus"
+            widget: "select"
+            default: "not_started"
+            required: false
+            hint: "Set current state so dashboard shows this entry in the right queue."
+            options:
+              - { label: "Not Started", value: "not_started" }
+              - { label: "In Review", value: "in_review" }
+              - { label: "Blocked", value: "blocked" }
+              - { label: "Approved", value: "approved" }
+          - { label: "Entry Owner", name: "owner", widget: "string", required: false, hint: "Who owns implementation for this page/section." }
+          - { label: "Review Due Date", name: "dueDate", widget: "datetime", required: false, hint: "Target date to complete review and clear to-dos." }
+          - { label: "Internal Notes", name: "internalNotes", widget: "text", required: false, hint: "General notes for internal team only (not public)." }
+          - label: "Manager Comments"
+            name: "managerComments"
+            widget: "list"
+            required: false
+            hint: "Use for review feedback. Add one item per comment thread."
+            fields:
+              - { label: "Section", name: "section", widget: "string", required: false, hint: "Example: Hero, Brands grid, Community cards." }
+              - { label: "Author", name: "author", widget: "string", required: false }
+              - { label: "Comment", name: "comment", widget: "text" }
+              - { label: "Date", name: "date", widget: "datetime", required: false }
+          - label: "To-Do List"
+            name: "todoList"
+            widget: "list"
+            required: false
+            hint: "Track implementation tasks for this specific entry."
+            fields:
+              - { label: "Task", name: "task", widget: "string" }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                default: "todo"
+                options:
+                  - { label: "To Do", value: "todo" }
+                  - { label: "In Progress", value: "in_progress" }
+                  - { label: "Done", value: "done" }
+              - { label: "Assignee", name: "assignee", widget: "string", required: false }
+              - { label: "Due Date", name: "dueDate", widget: "datetime", required: false }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+          - label: "Section Notes"
+            name: "sectionNotes"
+            widget: "list"
+            required: false
+            hint: "Per-section implementation notes (e.g., Brands, Community, Footer)."
+            fields:
+              - { label: "Section Name", name: "section", widget: "string" }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+              - { label: "Open Questions", name: "openQuestions", widget: "text", required: false }
     sortable_fields: ["name", "updated"]
 
   - name: "services"
@@ -233,6 +523,64 @@ collections:
       - { label: "Summary", name: "summary", widget: "string" }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Team Workflow"
+        name: "teamWorkflow"
+        widget: "object"
+        required: false
+        hint: "Internal implementation tracking used by managers and editors."
+        fields:
+          - label: "Review Status"
+            name: "reviewStatus"
+            widget: "select"
+            default: "not_started"
+            required: false
+            hint: "Set current state so dashboard shows this entry in the right queue."
+            options:
+              - { label: "Not Started", value: "not_started" }
+              - { label: "In Review", value: "in_review" }
+              - { label: "Blocked", value: "blocked" }
+              - { label: "Approved", value: "approved" }
+          - { label: "Entry Owner", name: "owner", widget: "string", required: false, hint: "Who owns implementation for this page/section." }
+          - { label: "Review Due Date", name: "dueDate", widget: "datetime", required: false, hint: "Target date to complete review and clear to-dos." }
+          - { label: "Internal Notes", name: "internalNotes", widget: "text", required: false, hint: "General notes for internal team only (not public)." }
+          - label: "Manager Comments"
+            name: "managerComments"
+            widget: "list"
+            required: false
+            hint: "Use for review feedback. Add one item per comment thread."
+            fields:
+              - { label: "Section", name: "section", widget: "string", required: false, hint: "Example: Hero, Brands grid, Community cards." }
+              - { label: "Author", name: "author", widget: "string", required: false }
+              - { label: "Comment", name: "comment", widget: "text" }
+              - { label: "Date", name: "date", widget: "datetime", required: false }
+          - label: "To-Do List"
+            name: "todoList"
+            widget: "list"
+            required: false
+            hint: "Track implementation tasks for this specific entry."
+            fields:
+              - { label: "Task", name: "task", widget: "string" }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                default: "todo"
+                options:
+                  - { label: "To Do", value: "todo" }
+                  - { label: "In Progress", value: "in_progress" }
+                  - { label: "Done", value: "done" }
+              - { label: "Assignee", name: "assignee", widget: "string", required: false }
+              - { label: "Due Date", name: "dueDate", widget: "datetime", required: false }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+          - label: "Section Notes"
+            name: "sectionNotes"
+            widget: "list"
+            required: false
+            hint: "Per-section implementation notes (e.g., Brands, Community, Footer)."
+            fields:
+              - { label: "Section Name", name: "section", widget: "string" }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+              - { label: "Open Questions", name: "openQuestions", widget: "text", required: false }
     sortable_fields: ["title", "updated"]
     summary: "{{title}} — Updated: {{updated | date('MMM D, YYYY')}}"
 
@@ -247,5 +595,63 @@ collections:
       - { label: "Page Title", name: "title", widget: "string" }
       - { label: "Summary", name: "summary", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+
+      - label: "Team Workflow"
+        name: "teamWorkflow"
+        widget: "object"
+        required: false
+        hint: "Internal implementation tracking used by managers and editors."
+        fields:
+          - label: "Review Status"
+            name: "reviewStatus"
+            widget: "select"
+            default: "not_started"
+            required: false
+            hint: "Set current state so dashboard shows this entry in the right queue."
+            options:
+              - { label: "Not Started", value: "not_started" }
+              - { label: "In Review", value: "in_review" }
+              - { label: "Blocked", value: "blocked" }
+              - { label: "Approved", value: "approved" }
+          - { label: "Entry Owner", name: "owner", widget: "string", required: false, hint: "Who owns implementation for this page/section." }
+          - { label: "Review Due Date", name: "dueDate", widget: "datetime", required: false, hint: "Target date to complete review and clear to-dos." }
+          - { label: "Internal Notes", name: "internalNotes", widget: "text", required: false, hint: "General notes for internal team only (not public)." }
+          - label: "Manager Comments"
+            name: "managerComments"
+            widget: "list"
+            required: false
+            hint: "Use for review feedback. Add one item per comment thread."
+            fields:
+              - { label: "Section", name: "section", widget: "string", required: false, hint: "Example: Hero, Brands grid, Community cards." }
+              - { label: "Author", name: "author", widget: "string", required: false }
+              - { label: "Comment", name: "comment", widget: "text" }
+              - { label: "Date", name: "date", widget: "datetime", required: false }
+          - label: "To-Do List"
+            name: "todoList"
+            widget: "list"
+            required: false
+            hint: "Track implementation tasks for this specific entry."
+            fields:
+              - { label: "Task", name: "task", widget: "string" }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                default: "todo"
+                options:
+                  - { label: "To Do", value: "todo" }
+                  - { label: "In Progress", value: "in_progress" }
+                  - { label: "Done", value: "done" }
+              - { label: "Assignee", name: "assignee", widget: "string", required: false }
+              - { label: "Due Date", name: "dueDate", widget: "datetime", required: false }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+          - label: "Section Notes"
+            name: "sectionNotes"
+            widget: "list"
+            required: false
+            hint: "Per-section implementation notes (e.g., Brands, Community, Footer)."
+            fields:
+              - { label: "Section Name", name: "section", widget: "string" }
+              - { label: "Notes", name: "notes", widget: "text", required: false }
+              - { label: "Open Questions", name: "openQuestions", widget: "text", required: false }
     sortable_fields: ["title", "updated"]
     summary: "{{title}} — Updated: {{updated | date('MMM D, YYYY')}}"
