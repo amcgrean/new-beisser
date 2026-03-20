@@ -47,7 +47,7 @@ export function Footer() {
             <li><Link href="/service-request" className={footerLink}>Service Request</Link></li>
             <li><Link href="/quote" className={footerLink}>Request a Quote</Link></li>
             <li><a href="https://www.nuvo.credit/app/beisserlumber" target="_blank" rel="noreferrer" className={footerLink}>Credit Application</a></li>
-            <li><a href="https://beisserlumber.com/ar-login" target="_blank" rel="noreferrer" className={footerLink}>Account / AR Portal Sign In</a></li>
+            <li><a href="https://pro.beisserlumber.com" target="_blank" rel="noreferrer" className={footerLink}>Account / AR Portal Sign In</a></li>
           </ul>
         </div>
 
@@ -58,10 +58,13 @@ export function Footer() {
             <li><Link href="/pros" className={footerLink}>Pros</Link></li>
             <li><Link href="/careers" className={footerLink}>Careers</Link></li>
             <li><Link href="/contact" className={footerLink}>Contact</Link></li>
-            <li><Link href="/privacy" className={footerLink}>Privacy Policy</Link></li>
+            <li><Link href="/privacy-policy" className={footerLink}>Privacy Policy</Link></li>
+            <li><Link href="/resources/literature" className={footerLink}>Literature &amp; Spec Sheets</Link></li>
           </ul>
           <div className="mt-4 space-y-1 text-slate-300">
             <a href="https://www.facebook.com/beisserlumber" target="_blank" rel="noreferrer" className={footerLink}>Facebook</a>
+            <a href="https://www.instagram.com/beisserlumber" target="_blank" rel="noreferrer" className={footerLink}>Instagram</a>
+            <a href="https://twitter.com/beisserlumber" target="_blank" rel="noreferrer" className={footerLink}>Twitter / X</a>
             <a href="https://www.linkedin.com/company/beisser-lumber-co." target="_blank" rel="noreferrer" className={footerLink}>LinkedIn</a>
           </div>
         </div>

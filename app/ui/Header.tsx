@@ -30,8 +30,8 @@ type UtilityLink = { href: string; label: string; external?: boolean; eventName?
 
 const utilityLinks: UtilityLink[] = [
   { href: "https://www.nuvo.credit/app/beisserlumber", label: "Credit Application", external: true, eventName: "credit_application_click" },
-  { href: "https://beisserlumber.com/ar-login", label: "Account / AR Portal Sign In", external: true, eventName: "portal_click" },
-  { href: "https://beisserlumber.com/ar-login", label: "Pay Invoice", external: true, eventName: "portal_click" },
+  { href: "https://pro.beisserlumber.com", label: "Account / AR Portal Sign In", external: true, eventName: "portal_click" },
+  { href: "https://pro.beisserlumber.com", label: "Pay Invoice", external: true, eventName: "portal_click" },
   { href: "/quote", label: "Request a Quote" },
   { href: "/quote#plans", label: "Upload Plans" },
   { href: "/contact", label: "Contact Your Rep" },

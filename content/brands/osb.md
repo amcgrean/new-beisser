@@ -1,27 +1,15 @@
 ---
 name: OSB
-summary: Oriented strand board used widely as an engineered wood panel product.
-description: >-
-  Oriented strand board used widely as an engineered wood panel product. At
-  Beisser Lumber, we stock and support OSB as part of our lumber and panel
-  products offering, helping builders meet structural needs for walls, roofs,
-  and floors with reliable panel options.
+summary: Weyerhaeuser OSB for wall and roof sheathing applications.
+description: Beisser Lumber carries Weyerhaeuser OSB in thicknesses from 7/16 inch through 3/4 inch for common wall and roof sheathing applications. Fire-treatment options are available when project requirements call for them.
 website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png
 categories:
   - lumber-panels
 bullets:
-  - Commonly used as sheathing and subfloors
-  - Engineered panel for structural applications
-completion:
-  nameAdded: true
-  keyAdded: false
-  websiteAdded: false
-  logoAdded: true
-  summaryAdded: true
-  bodyAdded: false
-completeness: 50
-updated: '2025-12-19T22:00:32.318Z'
+  - Weyerhaeuser OSB
+  - 7/16 inch through 3/4 inch thicknesses
+  - Wall and roof sheathing applications with fire-treatment options available
+updated: '2026-03-20T00:00:00.000Z'
 ---
-

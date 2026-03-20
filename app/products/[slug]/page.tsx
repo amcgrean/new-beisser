@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,6 +10,7 @@ import { MdxContent } from "@/app/ui/MdxContent";
 import { getCategoryEntries, getCategoryMdx, getCategoryBySlug } from "@/app/lib/content";
 import { getBrandEntries } from "@/app/lib/brands";
 import { productFaqsBySlug } from "@/app/data/faqs";
+import { generateCategoryMetadata } from "@/app/lib/seo";
 
 const slugAliases: Record<string, string> = {
   decking: "decking-railing",
@@ -32,13 +34,18 @@ const slugAliases: Record<string, string> = {
 const internalLinksByCategory: Record<string, RelatedLinkItem[]> = {
   "decking-railing": [
     { href: "/brands/trex", label: "Browse Trex products at Beisser", description: "Compare Trex decking and request a quote for your Iowa project." },
-    { href: "/blog/iowa-decking-comparison-guide", label: "Read our Iowa decking guide", description: "Compare wood, composite, and PVC decking for Iowa conditions." },
+    { href: "/tools/deck-visualizer", label: "Try the deck visualizer", description: "Preview decking colors and railing combinations before you buy. Aaron: confirm final visualizer URL before launch." },
     { href: "/quote", label: "Request a material quote", description: "Get branch-routed pricing for your next deck project." },
   ],
   siding: [
     { href: "/brands/james-hardie", label: "James Hardie at Beisser Lumber", description: "Explore James Hardie support at Beisser." },
     { href: "/brands/lp-smartside", label: "LP SmartSide dealer in Iowa", description: "See LP SmartSide options from Beisser Lumber." },
     { href: "/blog/james-hardie-vs-lp-smartside-iowa", label: "Compare Hardie and LP for Iowa", description: "Read an Iowa-focused siding comparison guide." },
+  ],
+  doors: [
+    { href: "/products/doors/interior-doors", label: "Interior door options", description: "See interior door lines, styles, and package support." },
+    { href: "/products/doors/exterior-doors", label: "Exterior entry systems", description: "Compare fiberglass, steel, wood, and specialty exterior doors." },
+    { href: "/products/doors/door-hardware", label: "Door hardware & locksets", description: "Review Schlage-focused hardware support and keying services." },
   ],
   "engineered-wood-products": [
     { href: "/pros/commercial-multifamily", label: "Commercial and multifamily support", description: "See how Beisser supports larger EWP scopes and panelized walls." },
@@ -57,6 +64,10 @@ const schemaTypeByCategory: Record<string, string> = {
   "decking-railing": "OfferCatalog",
 };
 
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  return generateCategoryMetadata(slugAliases[params.slug] ?? params.slug);
+}
+
 export default function ProductCategoryPage({ params }: { params: { slug: string } }) {
   const requestedSlug = params.slug;
   const canonicalSlug = slugAliases[requestedSlug] ?? requestedSlug;
@@ -73,6 +84,16 @@ export default function ProductCategoryPage({ params }: { params: { slug: string
   const subcategories = category.subcategories ?? [];
   const faqs: FAQ[] = productFaqsBySlug[canonicalSlug] ?? [];
   const relatedLinks = internalLinksByCategory[canonicalSlug] ?? [{ href: "/quote", label: "Request a material quote", description: "Share your plans and get branch-routed pricing." }];
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://beisserlumber.com/" },
+      { "@type": "ListItem", position: 2, name: "Products", item: "https://beisserlumber.com/products" },
+      { "@type": "ListItem", position: 3, name: category.name, item: `https://beisserlumber.com/products/${canonicalSlug}` },
+    ],
+  };
 
   const schema = {
     "@context": "https://schema.org",
@@ -133,6 +154,7 @@ export default function ProductCategoryPage({ params }: { params: { slug: string
       <RelatedLinks links={relatedLinks} />
       <FAQSection title={`${category.name} FAQs`} faqs={faqs} category={canonicalSlug} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </div>
   );
 }

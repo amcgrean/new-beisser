@@ -1,11 +1,7 @@
 ---
-name: Jeld Wen
-summary: Windows and doors for residential and light commercial projects.
-description: >-
-  Windows and doors for residential and light commercial projects. At Beisser
-  Lumber, we stock and support Jeld-Wen as part of our windows and patio doors
-  and interior and exterior doors offering, making it easier for builders to
-  keep window and door packages under one roof.
+name: JELD-WEN
+summary: Interior, exterior, and specialty door lines including IWP pivot-door options.
+description: JELD-WEN gives Beisser customers access to interior, exterior, and specialty door solutions, including IWP pivot-door options. Beisser supports these lines as part of coordinated window and door packages for Iowa builders and remodelers.
 website: 'https://www.jeld-wen.com/en-us'
 heroImage: /images/resources-article.png
 logo: /Logos/Windows/Jeld-wen Logo.png
@@ -13,16 +9,8 @@ categories:
   - windows-patio-doors
   - doors
 bullets:
-  - Multiple window and door series in different materials
+  - Interior and exterior door lines
+  - JELD-WEN IWP and pivot-door options
   - Options for both new construction and replacement
-completion:
-  nameAdded: true
-  keyAdded: false
-  websiteAdded: true
-  logoAdded: true
-  summaryAdded: true
-  bodyAdded: false
-completeness: 67
-updated: '2025-12-19T22:00:32.152Z'
+updated: '2026-03-20T00:00:00.000Z'
 ---
-

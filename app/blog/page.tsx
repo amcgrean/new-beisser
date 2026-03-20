@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { getBlogEntries } from "@/app/lib/content";
+import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Building Resources & Guides | Beisser Lumber Iowa",
+  title: "Building Resources & Guides | Beisser Lumber",
   description: "Articles and guides for Iowa builders and homeowners from the Beisser Lumber team.",
 };
 
@@ -13,9 +14,18 @@ export default function BlogIndexPage({ searchParams }: { searchParams?: { categ
   const selected = searchParams?.category || "All";
   const entries = getBlogEntries();
   const filtered = selected === "All" ? entries : entries.filter((e) => e.frontmatter.category === selected);
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://beisserlumber.com/" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://beisserlumber.com/blog" },
+    ],
+  };
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
       <header className="space-y-2">
         <h1 className="text-3xl font-bold text-beisserGray">Building resources and guides</h1>
         <p className="text-sm text-slate-700">Insights from the Beisser team for projects across Iowa.</p>
@@ -40,6 +50,7 @@ export default function BlogIndexPage({ searchParams }: { searchParams?: { categ
           </article>
         ))}
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </div>
   );
 }

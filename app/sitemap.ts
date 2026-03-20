@@ -24,6 +24,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services/estimating",
     "/services/installation",
     "/blog",
+    "/privacy-policy",
+    "/resources",
+    "/resources/literature",
+    "/tools/deck-visualizer",
+    "/products/doors/interior-doors",
+    "/products/doors/exterior-doors",
+    "/products/doors/door-hardware",
   ];
 
   const productRoutes = getCategoryEntries().map((category) => `/products/${category.slug}`);

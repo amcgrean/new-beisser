@@ -4,7 +4,7 @@ import { Header } from "./ui/Header";
 import { Footer } from "./ui/Footer";
 import Script from "next/script";
 
-const siteTitle = "Beisser Lumber — Iowa's Largest Family-Owned Lumberyard";
+const siteTitle = "Iowa's Largest Family-Owned Lumberyard | Beisser Lumber";
 const siteDescription = "Iowa's largest family-owned lumberyard, established in 1953. Selling lumber, engineered wood, decking, siding, doors, and windows to contractors and homeowners across Central and Eastern Iowa.";
 
 export const metadata: Metadata = {
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Beisser Lumber",
-    description: "Iowa's largest family-owned lumberyard.",
+    title: siteTitle,
+    description: siteDescription,
     images: ["/og-default.svg"],
   },
 };
@@ -44,7 +44,12 @@ const organizationSchema = {
     name: "Iowa",
     description: "Central and Eastern Iowa including Des Moines metro, Iowa City/Coralville, Fort Dodge, and surrounding communities",
   },
-  sameAs: ["https://www.facebook.com/beisserlumber", "https://www.linkedin.com/company/beisser-lumber-co."],
+  sameAs: [
+    "https://www.facebook.com/beisserlumber",
+    "https://www.instagram.com/beisserlumber",
+    "https://twitter.com/beisserlumber",
+    "https://www.linkedin.com/company/beisser-lumber-co.",
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

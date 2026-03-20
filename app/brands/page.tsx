@@ -1,11 +1,26 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { productCategories } from "@/app/data/categories";
 import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
 import { getBrandEntries } from "@/app/lib/brands";
 
+export const metadata: Metadata = {
+  title: "Brand Partners | Beisser Lumber",
+  description: "Explore brand partners carried by Beisser Lumber across windows, doors, siding, decking, lumber, millwork, and hardware categories.",
+};
+
 export default function BrandsPage() {
   const brands = getBrandEntries();
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://beisserlumber.com/" },
+      { "@type": "ListItem", position: 2, name: "Brands", item: "https://beisserlumber.com/brands" },
+    ],
+  };
+
   return (
     <div className="space-y-8">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Brands", href: "/brands" }]} />
@@ -41,6 +56,7 @@ export default function BrandsPage() {
           );
         })}
       </div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </div>
   );
 }
