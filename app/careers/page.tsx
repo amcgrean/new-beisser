@@ -1,9 +1,26 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
 import { jobs } from "@/app/data/jobs";
 
+export const metadata: Metadata = {
+  title: "Careers at Beisser Lumber | Beisser Lumber",
+  description: "Explore careers at Beisser Lumber across operations, sales, delivery, estimating, showroom support, and manufacturing in Iowa.",
+};
+
 export default function CareersPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://beisserlumber.com/" },
+      { "@type": "ListItem", position: 2, name: "Careers", item: "https://beisserlumber.com/careers" },
+    ],
+  };
+
   return (
     <div className="space-y-6 max-w-4xl">
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Careers" }]} />
       <header className="space-y-2">
         <h1 className="text-2xl font-semibold text-beisserGray">Work at Beisser Lumber</h1>
         <p className="text-sm text-slate-600">
@@ -23,7 +40,7 @@ export default function CareersPage() {
       <section className="rounded-lg border bg-white p-5 shadow-sm text-sm text-slate-700">
         <h2 className="text-lg font-semibold text-beisserGray mb-3">Current Openings</h2>
         {jobs.length === 0 ? (
-          <p>No openings are published yet. Aaron can add roles in <code>data/jobs.ts</code> when hiring is active.</p>
+          <p>No openings are published yet. Aaron can add roles in <code>app/data/jobs.ts</code> when hiring is active.</p>
         ) : (
           <ul className="space-y-3">
             {jobs.map((job) => (
@@ -49,10 +66,11 @@ export default function CareersPage() {
         </div>
         <div className="rounded-lg border bg-white p-5 shadow-sm">
           <h2 className="text-lg font-semibold text-beisserGray mb-2">Apply</h2>
-          <p className="text-slate-700">Send your resume to <a href="mailto:CONTACT_EMAIL" className="text-[#1B4F8A] underline">CONTACT_EMAIL</a> or replace this placeholder with the team&apos;s preferred hiring workflow.</p>
+          <p className="text-slate-700">Aaron will replace the contact workflow here once the preferred hiring inbox or process is finalized.</p>
           <p className="mt-2 text-xs text-slate-500">{/* JobPosting schema stub ready to activate once real openings are added. */}</p>
         </div>
       </section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </div>
   );
 }

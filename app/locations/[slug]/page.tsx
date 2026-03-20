@@ -1,10 +1,16 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { locations } from "@/app/data/locations";
 import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
 import PhoneLink from "@/components/PhoneLink";
+import { generateLocationMetadata } from "@/app/lib/seo";
 
 type Params = { slug: string };
+
+export function generateMetadata({ params }: { params: Params }): Metadata {
+  return generateLocationMetadata(params.slug);
+}
 
 export default function LocationDetailPage({ params }: { params: Params }) {
   const location = locations.find((l) => l.slug === params.slug);
@@ -29,6 +35,16 @@ export default function LocationDetailPage({ params }: { params: Params }) {
       { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: location.slug === "grimes" ? "07:00" : "08:00", closes: "12:00" },
     ],
     speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", ".entity-definition", ".faq-answer"] },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://beisserlumber.com/" },
+      { "@type": "ListItem", position: 2, name: "Locations", item: "https://beisserlumber.com/locations" },
+      { "@type": "ListItem", position: 3, name: location.name, item: `https://beisserlumber.com/locations/${location.slug}` },
+    ],
   };
 
   return (
@@ -59,6 +75,7 @@ export default function LocationDetailPage({ params }: { params: Params }) {
       </div>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </div>
   );
 }

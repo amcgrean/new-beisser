@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import FAQSection, { FAQ } from "@/components/FAQSection";
@@ -5,6 +6,7 @@ import RelatedLinks from "@/components/RelatedLinks";
 import BrandViewTracker from "@/components/BrandViewTracker";
 import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
 import { getBrandBySlug, getBrandEntries } from "@/app/lib/brands";
+import { generateBrandMetadata } from "@/app/lib/seo";
 
 const waveOneSlugs = ["trex", "james-hardie", "lp-smartside", "andersen", "weyerhaeuser", "gerkin", "sierra-pacific"];
 
@@ -18,6 +20,7 @@ const brandCategoryLinks: Record<string, string> = {
   gerkin: "/products/windows-patio-doors",
   "sierra-pacific": "/products/windows-patio-doors",
   weyerhaeuser: "/products/engineered-wood-products",
+  schlage: "/products/doors/door-hardware",
 };
 
 const brandNearestLocation: Record<string, string> = {
@@ -28,12 +31,17 @@ const brandNearestLocation: Record<string, string> = {
   gerkin: "/locations/birchwood-johnston",
   "sierra-pacific": "/locations/birchwood-johnston",
   weyerhaeuser: "/locations/grimes",
+  schlage: "/locations/birchwood-johnston",
 };
 
 export function generateStaticParams() {
   const all = getBrandEntries().map((b) => b.slug);
   const merged = Array.from(new Set([...all, ...waveOneSlugs]));
   return merged.map((slug) => ({ slug }));
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  return generateBrandMetadata(params.slug);
 }
 
 export default function BrandPage({ params }: { params: { slug: string } }) {
@@ -49,7 +57,27 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
 
   const categoryLink = brandCategoryLinks[brand.slug] ?? "/products";
   const locationLink = brandNearestLocation[brand.slug] ?? "/locations";
-  const retailerLabel = brand.slug === "andersen" ? "Official Andersen Retailer" : brand.slug === "sierra-pacific" ? "Official Sierra Pacific Retailer" : brand.slug === "gerkin" ? "Iowa-Based Manufacturer Partner" : "Brand Partner";
+  const retailerLabel = brand.slug === "andersen"
+    ? "Official Andersen Retailer"
+    : brand.slug === "sierra-pacific"
+      ? "Official Sierra Pacific Retailer"
+      : brand.slug === "gerkin"
+        ? "Iowa-Based Manufacturer Partner"
+        : brand.slug === "james-hardie"
+          ? "Authorized James Hardie Dealer"
+          : brand.slug === "schlage"
+            ? "Preferred Schlage Dealer"
+            : "Brand Partner";
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://beisserlumber.com/" },
+      { "@type": "ListItem", position: 2, name: "Brands", item: "https://beisserlumber.com/brands" },
+      { "@type": "ListItem", position: 3, name: brand.name, item: `https://beisserlumber.com/brands/${brand.slug}` },
+    ],
+  };
 
   return (
     <div className="space-y-8">
@@ -60,7 +88,9 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1B4F8A]">{retailerLabel}</p>
         <h1 className="text-3xl font-bold text-beisserGray">{brand.name} at Beisser Lumber</h1>
         <p className="max-w-3xl text-sm text-slate-700">
-          {brand.slug === "andersen" ? "Beisser Lumber is an official Andersen retailer with access to Andersen product lines, parts, and custom design support for Iowa projects." : brand.description}
+          {brand.slug === "andersen"
+            ? "Beisser Lumber is an official Andersen retailer with access to Andersen product lines, parts, and custom design support for Iowa projects."
+            : brand.description}
         </p>
       </header>
 
@@ -85,6 +115,7 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
       />
 
       <FAQSection title={`${brand.name} FAQs`} faqs={faqs} category={brand.slug} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </div>
   );
 }

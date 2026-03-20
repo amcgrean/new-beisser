@@ -1,10 +1,9 @@
 import type { FAQItem } from "./types";
 
 export const weatherizationFAQs: FAQItem[] = [
-  { question: "What building-envelope and WRB brands does Beisser carry?", answer: "" },
-  { question: "Do you stock ZIP System panels and tape?", answer: "" },
-  { question: "Does Beisser carry fluid-applied weather barriers?", answer: "" },
-  { question: "What weatherization products perform best in Iowa?", answer: "" },
-  { question: "Do you carry flashing tapes and sealants?", answer: "" },
-  { question: "Can your team help spec a complete envelope package?", answer: "" },
+  { question: "What housewrap brands does Beisser carry?", answer: "" },
+  { question: "Does Beisser stock ZIP System sheathing and tape?", answer: "" },
+  { question: "What insulation products does Beisser carry?", answer: "" },
+  { question: "What weatherization products work best for Iowa new construction?", answer: "" },
+  { question: "Does Beisser carry flashing, sill pan, and window/door rough opening products?", answer: "" },
 ];

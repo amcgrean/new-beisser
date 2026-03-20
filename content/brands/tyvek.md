@@ -1,11 +1,7 @@
 ---
-name: Tyvek
-summary: Housewrap products for managing air and moisture in walls.
-description: >-
-  Housewrap products for managing air and moisture in walls. At Beisser Lumber,
-  we stock and support Tyvek as part of our siding and exterior trim and
-  housewrap and weatherization systems offering, helping Iowa builders protect
-  wall assemblies before the siding ever goes on.
+name: DuPont Tyvek
+summary: Industry-standard housewrap and flashing systems for managing air and moisture in wall assemblies.
+description: DuPont Tyvek products help Iowa builders protect wall assemblies from wind and exterior moisture while still allowing vapor to escape from the interior side of the assembly. Beisser supports Tyvek housewrap and accessory systems as part of complete building-envelope packages.
 website: 'https://www.dupont.com/brands/tyvek.html'
 heroImage: /images/resources-article.png
 categories:
@@ -13,16 +9,8 @@ categories:
   - building-envelope-accessories
 logo: tyvek-logo.png
 bullets:
-  - Housewrap used beneath siding systems
-  - Helps protect walls from moisture intrusion
-completion:
-  nameAdded: true
-  keyAdded: false
-  websiteAdded: true
-  logoAdded: true
-  summaryAdded: true
-  bodyAdded: false
-completeness: 67
-updated: '2026-01-29T19:16:26.189Z'
+  - HomeWrap and CommercialWrap options
+  - Helps protect sheathing and insulation from moisture intrusion
+  - Supports air- and moisture-management strategies beneath siding systems
+updated: '2026-03-20T00:00:00.000Z'
 ---
-

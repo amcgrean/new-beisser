@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import ProAudiencePage from "../pro-template";
+
+// breadcrumb schema handled in ProAudiencePage
+export const metadata: Metadata = {
+  title: "Residential Builders | Beisser Lumber",
+  description: "Residential builder support from Beisser Lumber with design, estimating, dedicated reps, and jobsite delivery across Iowa.",
+};
 
 export default function ResidentialBuildersPage() {
   return (
     <ProAudiencePage
+      breadcrumbLabel="Residential Builders"
+      path="/pros/residential-builders"
       h1="Residential Builders — Building Materials from Beisser Lumber"
       intro="Beisser gives residential builders a wide product selection backed by in-house services, dedicated sales support, and delivery coordination that keeps materials aligned to the build schedule."
       body={[

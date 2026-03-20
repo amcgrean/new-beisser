@@ -1,0 +1,341 @@
+app/showroom/page.tsx:type FeatureItem = { code: string; title: string; text: string };
+app/showroom/page.tsx-type HoursItem = { day: string; time: string };
+--
+app/blog/[slug]/page.tsx:    title: String(article.frontmatter.seoTitle ?? article.frontmatter.title),
+app/blog/[slug]/page.tsx:    description: String(article.frontmatter.metaDescription ?? article.frontmatter.excerpt ?? ""),
+app/blog/[slug]/page.tsx-    openGraph: {
+app/blog/[slug]/page.tsx:      title: String(article.frontmatter.seoTitle ?? article.frontmatter.title),
+app/blog/[slug]/page.tsx:      description: String(article.frontmatter.metaDescription ?? article.frontmatter.excerpt ?? ""),
+app/blog/[slug]/page.tsx-      type: "article",
+--
+app/blog/[slug]/page.tsx:      <RelatedLinks links={[{ href: "/products/decking-railing", label: "Explore product categories", description: "Browse Beisser product categories tied to this guide." }, { href: "/quote", label: "Request a material quote", description: "Get branch-routed pricing for your project." }]} />
+app/blog/[slug]/page.tsx-
+--
+app/blog/page.tsx:  title: "Building Resources & Guides | Beisser Lumber",
+app/blog/page.tsx:  description: "Articles and guides for Iowa builders and homeowners from the Beisser Lumber team.",
+app/blog/page.tsx-};
+--
+app/contact/page.tsx:  title: "Contact Beisser Lumber | Beisser Lumber",
+app/contact/page.tsx:  description: "Contact Beisser Lumber for branch support, quotes, service requests, credit applications, and account portal access.",
+app/contact/page.tsx-};
+--
+app/brands/[slug]/page.tsx:          { href: categoryLink, label: "View related product category", description: `Browse the product category tied to ${brand.name}.` },
+app/brands/[slug]/page.tsx:          { href: locationLink, label: "Visit our nearest showroom", description: "Connect with a local Beisser branch for product support." },
+app/brands/[slug]/page.tsx:          { href: "/quote", label: "Request a material quote", description: "Get branch-routed pricing and lead-time guidance." },
+app/brands/[slug]/page.tsx-        ]}
+--
+app/brands/page.tsx:  title: "Brand Partners | Beisser Lumber",
+app/brands/page.tsx:  description: "Explore brand partners carried by Beisser Lumber across windows, doors, siding, decking, lumber, millwork, and hardware categories.",
+app/brands/page.tsx-};
+--
+app/tools/deck-visualizer/page.tsx:  title: "Deck Visualizer | Beisser Lumber",
+app/tools/deck-visualizer/page.tsx:  description: "Placeholder deck visualizer landing page for Beisser Lumber. Aaron: replace with the confirmed visualizer destination before launch.",
+app/tools/deck-visualizer/page.tsx-};
+--
+app/gallery/page.tsx:  title: string;
+app/gallery/page.tsx-  caption: string;
+--
+app/gallery/page.tsx:        title: (fm.title as string) ?? e.slug,
+app/gallery/page.tsx-        caption: (fm.caption as string) ?? "",
+--
+app/resources/literature/page.tsx:  title: "Product Literature & Spec Sheets | Beisser Lumber",
+app/resources/literature/page.tsx:  description: "Download product brochures, spec sheets, installation guides, and warranty references for brands carried by Beisser Lumber.",
+app/resources/literature/page.tsx-};
+--
+app/locations/page.tsx:  title: "Beisser Lumber Locations | Beisser Lumber",
+app/locations/page.tsx:  description: "Visit Beisser Lumber locations in Grimes, Coralville, Fort Dodge, and Johnston for lumberyard, showroom, and contractor support.",
+app/locations/page.tsx-};
+--
+app/layout.tsx:  title: siteTitle,
+app/layout.tsx:  description: siteDescription,
+app/layout.tsx-  openGraph: {
+--
+app/layout.tsx:    title: siteTitle,
+app/layout.tsx:    description: siteDescription,
+app/layout.tsx-    images: [{ url: "/og-default.svg", width: 1200, height: 630 }],
+--
+app/layout.tsx:    title: siteTitle,
+app/layout.tsx:    description: siteDescription,
+app/layout.tsx-    images: ["/og-default.svg"],
+--
+app/layout.tsx:  description: siteDescription,
+app/layout.tsx-  slogan: "Iowa's Largest Family-Owned Lumberyard",
+--
+app/layout.tsx:    description: "Central and Eastern Iowa including Des Moines metro, Iowa City/Coralville, Fort Dodge, and surrounding communities",
+app/layout.tsx-  },
+--
+app/pros/remodelers/page.tsx:  title: "Remodelers | Beisser Lumber",
+app/pros/remodelers/page.tsx:  description: "See how Beisser Lumber supports Iowa remodelers with profile matching, custom doors, visualizers, and product selection help.",
+app/pros/remodelers/page.tsx-};
+--
+app/pros/commercial-multifamily/page.tsx:  title: "Commercial & Multi-Family Builders | Beisser Lumber",
+app/pros/commercial-multifamily/page.tsx:  description: "Commercial and multifamily support from Beisser Lumber, including estimating, wall panelization, and engineered wood solutions.",
+app/pros/commercial-multifamily/page.tsx-};
+--
+app/pros/trades-specialty/page.tsx:  title: "Trades & Specialty Contractors | Beisser Lumber",
+app/pros/trades-specialty/page.tsx:  description: "Beisser Lumber support for deck builders, siding crews, framers, and specialty trades with hardware, envelope products, and branch service.",
+app/pros/trades-specialty/page.tsx-};
+--
+app/pros/page.tsx:  { href: "/pros/commercial-multifamily", title: "Commercial & Multi-Family Builders" },
+app/pros/page.tsx:  { href: "/pros/residential-builders", title: "Residential Builders" },
+app/pros/page.tsx:  { href: "/pros/remodelers", title: "Remodelers" },
+app/pros/page.tsx:  { href: "/pros/trades-specialty", title: "Trades & Specialty Contractors" },
+app/pros/page.tsx-];
+--
+app/pros/page.tsx:  title: "Pros | Beisser Lumber",
+app/pros/page.tsx:  description: "Audience-specific Beisser Lumber pages for residential builders, remodelers, commercial teams, and specialty trades across Iowa.",
+app/pros/page.tsx-};
+--
+app/pros/pro-template.tsx:      <RelatedLinks links={[{ href: "/products/decking-railing", label: "Decking & railing products", description: "See exterior products relevant to pro projects." }, { href: "/products/siding", label: "Siding systems", description: "Compare siding packages and support options." }, { href: "/products/engineered-wood-products", label: "Engineered wood products", description: "Explore EWP framing and structural options." }, { href: "/quote", label: "Request a material quote", description: "Start a branch-routed quote for your project." }]} />
+app/pros/pro-template.tsx-
+--
+app/pros/residential-builders/page.tsx:  title: "Residential Builders | Beisser Lumber",
+app/pros/residential-builders/page.tsx:  description: "Residential builder support from Beisser Lumber with design, estimating, dedicated reps, and jobsite delivery across Iowa.",
+app/pros/residential-builders/page.tsx-};
+--
+app/products/[slug]/page.tsx:    { href: "/brands/trex", label: "Browse Trex products at Beisser", description: "Compare Trex decking and request a quote for your Iowa project." },
+app/products/[slug]/page.tsx:    { href: "/tools/deck-visualizer", label: "Try the deck visualizer", description: "Preview decking colors and railing combinations before you buy. Aaron: confirm final visualizer URL before launch." },
+app/products/[slug]/page.tsx-  ],
+--
+app/products/[slug]/page.tsx:    { href: "/brands/james-hardie", label: "James Hardie at Beisser Lumber", description: "Explore James Hardie support at Beisser." },
+app/products/[slug]/page.tsx:    { href: "/brands/lp-smartside", label: "LP SmartSide dealer in Iowa", description: "See LP SmartSide options from Beisser Lumber." },
+app/products/[slug]/page.tsx:    { href: "/blog/james-hardie-vs-lp-smartside-iowa", label: "Compare Hardie and LP for Iowa", description: "Read an Iowa-focused siding comparison guide." },
+app/products/[slug]/page.tsx-  ],
+--
+app/products/[slug]/page.tsx:    { href: "/products/doors/interior-doors", label: "Interior door options", description: "See interior door lines, styles, and package support." },
+app/products/[slug]/page.tsx:    { href: "/products/doors/exterior-doors", label: "Exterior entry systems", description: "Compare fiberglass, steel, wood, and specialty exterior doors." },
+app/products/[slug]/page.tsx:    { href: "/products/doors/door-hardware", label: "Door hardware & locksets", description: "Review Schlage-focused hardware support and keying services." },
+app/products/[slug]/page.tsx-  ],
+--
+app/products/[slug]/page.tsx:    { href: "/pros/commercial-multifamily", label: "Commercial and multifamily support", description: "See how Beisser supports larger EWP scopes and panelized walls." },
+app/products/[slug]/page.tsx:    { href: "/services/estimating", label: "Estimating support", description: "Coordinate engineered packages with takeoffs and dedicated support." },
+app/products/[slug]/page.tsx-  ],
+--
+app/products/[slug]/page.tsx:    { href: "/brands/gerkin", label: "Gerkin at Beisser", description: "See Beisser's Iowa-based Gerkin window offering." },
+app/products/[slug]/page.tsx:    { href: "/brands/andersen", label: "Andersen at Beisser", description: "Review Andersen support through an official retailer." },
+app/products/[slug]/page.tsx:    { href: "/brands/sierra-pacific", label: "Sierra Pacific at Beisser", description: "Explore premium Sierra Pacific window and patio door options." },
+app/products/[slug]/page.tsx-  ],
+--
+app/products/[slug]/page.tsx:  const relatedLinks = internalLinksByCategory[canonicalSlug] ?? [{ href: "/quote", label: "Request a material quote", description: "Share your plans and get branch-routed pricing." }];
+app/products/[slug]/page.tsx-
+--
+app/products/doors/door-hardware/page.tsx:  title: "Door Hardware — Iowa Contractors & Homeowners | Beisser Lumber",
+app/products/doors/door-hardware/page.tsx:  description: "Door hardware, locksets, and keying services from Beisser Lumber, including preferred Schlage dealer support for Iowa builders and homeowners.",
+app/products/doors/door-hardware/page.tsx-};
+--
+app/products/doors/door-hardware/page.tsx:    description: "Door hardware and locksets from Beisser Lumber with keying support and package coordination.",
+app/products/doors/door-hardware/page.tsx-    url: "https://beisserlumber.com/products/doors/door-hardware",
+--
+app/products/doors/interior-doors/page.tsx:  title: "Interior Doors — Iowa Contractors & Homeowners | Beisser Lumber",
+app/products/doors/interior-doors/page.tsx:  description: "Interior doors from Beisser Lumber featuring Lynden, JELD-WEN, Masonite, Wood Port, Bayer Built, and custom door-shop support in Iowa.",
+app/products/doors/interior-doors/page.tsx-};
+--
+app/products/doors/interior-doors/page.tsx:    description: "Interior door packages from Beisser Lumber for new construction and remodel projects across Iowa.",
+app/products/doors/interior-doors/page.tsx-    url: "https://beisserlumber.com/products/doors/interior-doors",
+--
+app/products/doors/exterior-doors/page.tsx:  title: "Exterior Doors — Iowa Contractors & Homeowners | Beisser Lumber",
+app/products/doors/exterior-doors/page.tsx:  description: "Exterior entry doors from Beisser Lumber featuring Therma-Tru, Masonite, Andersen, Sierra Pacific, JELD-WEN, iron doors, and specialty entry systems.",
+app/products/doors/exterior-doors/page.tsx-};
+--
+app/products/doors/exterior-doors/page.tsx:    description: "Exterior door packages from Beisser Lumber for Iowa homes and commercial projects.",
+app/products/doors/exterior-doors/page.tsx-    url: "https://beisserlumber.com/products/doors/exterior-doors",
+--
+app/products/page.tsx:  title: "Building Materials Products | Beisser Lumber",
+app/products/page.tsx:  description: "Browse Beisser Lumber product categories for Iowa builders and homeowners, including lumber, windows, doors, siding, decking, and hardware.",
+app/products/page.tsx-};
+--
+app/page.tsx:  title: "Iowa's Largest Family-Owned Lumberyard | Beisser Lumber",
+app/page.tsx:  description: "Iowa's largest family-owned lumberyard, established in 1953. Selling lumber, engineered wood, decking, siding, doors, and windows to contractors and homeowners across Central and Eastern Iowa.",
+app/page.tsx-};
+--
+app/page.tsx:  { title: "Design", description: "In-house design support with 25+ years of experience creating stock and custom plans.", href: "/services/design" },
+app/page.tsx:  { title: "Estimating", description: "Commercial and residential takeoffs with support teams across windows, decking, and EWP.", href: "/services/estimating" },
+app/page.tsx:  { title: "Installation", description: "Installed sales, window service and warranty work, and wall-panel delivery ready to install.", href: "/services/installation" },
+app/page.tsx-];
+--
+app/careers/page.tsx:  title: "Careers at Beisser Lumber | Beisser Lumber",
+app/careers/page.tsx:  description: "Explore careers at Beisser Lumber across operations, sales, delivery, estimating, showroom support, and manufacturing in Iowa.",
+app/careers/page.tsx-};
+--
+app/for-pros/page.tsx:      title: "Customer Portal",
+app/for-pros/page.tsx:      description: "Secure online access to your account, invoices, and statements through Beisser's online portal.",
+app/for-pros/page.tsx-      href: "https://pro.beisserlumber.com",
+--
+app/for-pros/page.tsx:      title: "Contractor Resources",
+app/for-pros/page.tsx:      description: "Downloadable credit apps, tax forms, span tables, and other essential docs.",
+app/for-pros/page.tsx-      href: "/for-pros/resources",
+--
+app/for-pros/page.tsx:      title: "Estimating & Takeoffs",
+app/for-pros/page.tsx:      description: "Partner with our estimating team for lumber lists, window and door packages, and more.",
+app/for-pros/page.tsx-      href: "/services/estimating",
+--
+app/for-pros/page.tsx:      title: "Delivery & Pickup",
+app/for-pros/page.tsx:      description: "Jobsite delivery, will call, and options for coordinating material flow.",
+app/for-pros/page.tsx-      href: "/services/delivery",
+--
+app/for-pros/page.tsx:      title: "Design Consultation",
+app/for-pros/page.tsx:      description: "Host client selections at our Birchwood/Johnston showroom with product specialists.",
+app/for-pros/page.tsx-      href: "/services/design-consultation",
+--
+app/lib/seo.ts:    title: `${brand.name} Dealer in Iowa | Beisser Lumber`,
+app/lib/seo.ts-    description,
+--
+app/lib/seo.ts:      title: `${brand.name} Dealer in Iowa | Beisser Lumber`,
+app/lib/seo.ts-      description,
+--
+app/lib/seo.ts:    title: `${cat.name} — Iowa Contractors & Homeowners | Beisser Lumber`,
+app/lib/seo.ts:    description: cat.description || cat.summary,
+app/lib/seo.ts-    openGraph: {
+app/lib/seo.ts:      title: `${cat.name} — Iowa Contractors & Homeowners | Beisser Lumber`,
+app/lib/seo.ts:      description: cat.description || cat.summary,
+app/lib/seo.ts-      images: [{ url: cat.heroImage || defaultOgImage }],
+--
+app/lib/seo.ts:    title: `Beisser Lumber ${location.city} — Lumberyard & Building Materials`,
+app/lib/seo.ts:    description: `Visit Beisser Lumber in ${location.city}, Iowa for lumber, building materials, contractor support, and branch services.`,
+app/lib/seo.ts-    openGraph: {
+app/lib/seo.ts:      title: `Beisser Lumber ${location.city} — Lumberyard & Building Materials`,
+app/lib/seo.ts:      description: `Visit Beisser Lumber in ${location.city}, Iowa for lumber, building materials, contractor support, and branch services.`,
+app/lib/seo.ts-      images: [{ url: location.image || defaultOgImage }],
+--
+app/lib/seo.ts:    title: "Beisser Lumber Johnston — Lumberyard & Building Materials",
+app/lib/seo.ts:    description:
+app/lib/seo.ts-      "Explore the Beisser Lumber Birchwood / Johnston showroom for windows, doors, millwork, and design support.",
+--
+app/lib/content.ts:        description: data.description ? String(data.description) : undefined,
+app/lib/content.ts-        tagline: data.tagline ? String(data.tagline) : undefined,
+--
+app/lib/content.ts:    description: data.description ? String(data.description) : undefined,
+app/lib/content.ts-    tagline: data.tagline ? String(data.tagline) : undefined,
+--
+app/lib/brands.ts:  description: string;
+app/lib/brands.ts-  categories: string[];
+--
+app/lib/brands.ts:    description: String(data.description ?? data.summary ?? ""),
+app/lib/brands.ts-    categories: Array.isArray(data.categories) ? data.categories.map(String) : [],
+--
+app/lib/dashboard.ts:    title: string;
+app/lib/dashboard.ts-    type: "Brand" | "Category" | "Community" | "Gallery" | "Page" | "Service";
+--
+app/lib/dashboard.ts:            title: brand.name,
+app/lib/dashboard.ts-            type: "Brand",
+--
+app/lib/dashboard.ts:            title: cat.name,
+app/lib/dashboard.ts-            type: "Category",
+--
+app/lib/dashboard.ts:            title: fm.title || entry.slug,
+app/lib/dashboard.ts-            type: "Community",
+--
+app/lib/dashboard.ts:            title: fm.title || entry.slug,
+app/lib/dashboard.ts-            type: "Gallery",
+--
+app/lib/dashboard.ts:            title: fm.title || entry.slug,
+app/lib/dashboard.ts-            type: "Page",
+--
+app/lib/dashboard.ts:            title: fm.title || entry.slug,
+app/lib/dashboard.ts-            type: "Service",
+--
+app/services/page.tsx:  { href: "/services/design", title: "Design", summary: "In-house design support with 25+ years of experience, from stock blueprints to custom floor plans." },
+app/services/page.tsx:  { href: "/services/estimating", title: "Estimating", summary: "Commercial and residential takeoffs with dedicated sales-rep and specialist support." },
+app/services/page.tsx:  { href: "/services/installation", title: "Installation", summary: "Installed sales, window service and warranty work, and wall-panel delivery ready to install." },
+app/services/page.tsx-];
+--
+app/api/search/route.ts:  const results: { title: string; url: string; image: string; type: string }[] = [];
+app/api/search/route.ts-  const brands = getBrandEntries();
+--
+app/api/search/route.ts:      results.push({ title: b.name, url: `/brands/${b.slug}`, image: b.logo, type: "Brand" });
+app/api/search/route.ts-    }
+--
+app/api/search/route.ts:      results.push({ title: c.name, url: `/products/${c.slug}`, image: c.heroImage, type: "Product Category" });
+app/api/search/route.ts-    }
+--
+app/api/quote/route.ts:Project description: ${body.project_description || ""}
+app/api/quote/route.ts-UTM source: ${body.utm_source || ""}
+--
+app/about/page.tsx:  title: "About Beisser Lumber — Iowa's Largest Family-Owned Lumberyard Since 1953",
+app/about/page.tsx:  description: "Learn about Beisser Lumber, Iowa's largest family-owned lumberyard since 1953, with four locations, a custom door shop, and statewide contractor support.",
+app/about/page.tsx-};
+--
+app/about/page.tsx:    description:
+app/about/page.tsx-      "Iowa's largest family-owned lumberyard, established in 1953. Selling lumber, engineered wood, decking, siding, doors, and windows to contractors and homeowners across Central and Eastern Iowa.",
+--
+app/about/page.tsx:      description:
+app/about/page.tsx-        "Central and Eastern Iowa including Des Moines metro, Iowa City/Coralville, Fort Dodge, and surrounding communities",
+--
+app/privacy-policy/page.tsx:  title: "Privacy Policy | Beisser Lumber",
+app/privacy-policy/page.tsx:  description: "Read Beisser Lumber's privacy policy covering quote form information, website analytics, and privacy questions.",
+app/privacy-policy/page.tsx-};
+--
+app/data/resources.ts:  title: string;
+app/data/resources.ts-  category: string;
+--
+app/data/resources.ts:    title: "How to Request a Materials Quote",
+app/data/resources.ts-    category: "Working With Us",
+--
+app/data/resources.ts:    title: "Lumber & Building Material Basics",
+app/data/resources.ts-    category: "Products",
+--
+app/data/resources.ts:    title: "Delivery Expectations for Iowa Jobsites",
+app/data/resources.ts-    category: "Jobsite Tips",
+--
+app/data/resources.ts:    title: "Door & Window Terminology",
+app/data/resources.ts-    category: "Products",
+--
+app/data/products.ts:  description: string;
+app/data/products.ts-  image: string;
+--
+app/data/products.ts:  { slug: "gerkin-vinyl-windows", name: "Gerkin Vinyl Windows", category: "windows-patio-doors", summary: "Iowa-based vinyl window solutions with energy-efficient options.", description: "Gerkin vinyl windows supported through Beisser for new construction, remodel, and replacement work.", image: "https://images.unsplash.com/photo-1600607687920-4e2a5345c9bc?auto=format&fit=crop&w=1200&q=80", badges: ["Iowa-Based"] },
+app/data/products.ts:  { slug: "andersen-window-series", name: "Andersen Window Series", category: "windows-patio-doors", summary: "100 Series, A Series, and E Series options as an official Andersen retailer.", description: "Beisser supports Andersen parts, custom design services, and full product-line quoting.", image: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=1200&q=80", badges: ["Official Retailer"] },
+app/data/products.ts:  { slug: "sierra-pacific-windows", name: "Sierra Pacific Windows", category: "windows-patio-doors", summary: "All-wood, aluminum-covered wood, vinyl, and H3 composite products.", description: "Premium Sierra Pacific window and patio door options available through Beisser.", image: "https://images.unsplash.com/photo-1519710884009-22a691530a12?auto=format&fit=crop&w=1200&q=80", badges: ["Custom Design"] },
+app/data/products.ts:  { slug: "custom-door-packages", name: "Custom Door Packages", category: "doors", summary: "Interior and exterior doors coordinated through Beisser's Grimes door shop.", description: "Door packages with glass, hardware, and trim support for Iowa jobs.", image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80", badges: ["Door Shop"] },
+app/data/products.ts:  { slug: "decking-packages", name: "Decking Packages", category: "decking-railing", summary: "Composite, capped composite, and treated decking packages.", description: "Deck boards, screws, fascia, and accessory support for Iowa decks.", image: "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1200&q=80", badges: ["Low Maintenance"] },
+app/data/products.ts:  { slug: "railing-systems", name: "Railing Systems", category: "decking-railing", summary: "Aluminum, mesh, composite, and specialty railing systems.", description: "Railing options coordinated with deck board selections and layout needs.", image: "https://images.unsplash.com/photo-1523419409543-3e4f83b9b4c9?auto=format&fit=crop&w=1200&q=80", badges: ["Safety & Style"] },
+app/data/products.ts:  { slug: "james-hardie-siding", name: "James Hardie Siding Packages", category: "siding", summary: "Fiber cement siding and trim packages for Iowa exteriors.", description: "Authorized James Hardie dealer support through Beisser Lumber.", image: "https://images.unsplash.com/photo-1570129476766-47cbb58fc0c6?auto=format&fit=crop&w=1200&q=80", badges: ["Authorized Dealer"] },
+app/data/products.ts:  { slug: "lp-smartside-packages", name: "LP SmartSide Packages", category: "siding", summary: "Engineered wood siding and trim packages.", description: "LP SmartSide solutions for new construction and remodel applications.", image: "https://images.unsplash.com/photo-1570129476766-47cbb58fc0c6?auto=format&fit=crop&w=1200&q=80", badges: ["Jobsite Tough"] },
+app/data/products.ts:  { slug: "stair-systems", name: "Stair Systems", category: "stair-parts", summary: "Treads, rails, balusters, and accessory components.", description: "Coordinated stair systems supported through the showroom and branch teams.", image: "https://images.unsplash.com/photo-1469796466635-455ede028aca?auto=format&fit=crop&w=1200&q=80", badges: ["Customizable"] },
+app/data/products.ts:  { slug: "interior-trim-packages", name: "Interior Trim Packages", category: "millwork", summary: "Base, casing, crown, and specialty profiles for finish packages.", description: "Millwork packages tied to your plan set and finish selections.", image: "https://images.unsplash.com/photo-1595526114035-45c97e22c8c6?auto=format&fit=crop&w=1200&q=80", badges: ["Coordinated"] },
+app/data/products.ts:  { slug: "framing-lumber", name: "Framing Lumber Packages", category: "lumber-panels", summary: "Dimensional lumber packages pulled to plan.", description: "Framing packages and core materials for residential and commercial work.", image: "https://images.unsplash.com/photo-1581091012184-5c1dba05f949?auto=format&fit=crop&w=1200&q=80", badges: ["Core Material"] },
+app/data/products.ts:  { slug: "engineered-beams", name: "Weyerhaeuser Engineered Beams", category: "engineered-wood-products", summary: "LVL, LSL, PSL, and treated beams.", description: "Weyerhaeuser engineered beam options with layout and quote support.", image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80", badges: ["Engineered"] },
+app/data/products.ts:  { slug: "components-division-panels", name: "Components Division Wall Panels", category: "engineered-wood-products", summary: "Custom-designed wall panelization in a climate-controlled facility.", description: "Panelized wall systems for commercial and residential projects, delivered ready to install.", image: "https://images.unsplash.com/photo-1600566752381-7885b82c0f87?auto=format&fit=crop&w=1200&q=80", badges: ["Differentiator"] },
+app/data/products.ts:  { slug: "envelope-accessories", name: "Envelope Accessories", category: "building-envelope-accessories", summary: "Housewrap, flashing tapes, and sealants for complete wall systems.", description: "Accessory products matched to windows, doors, siding, and transition details.", image: "https://images.unsplash.com/photo-1600585154203-aaefe2734275?auto=format&fit=crop&w=1200&q=80", badges: ["Envelope"] },
+app/data/products.ts:  { slug: "hardware-and-screws", name: "Hardware & Screws", category: "hardware-screws", summary: "Structural screws, anchors, and builder hardware.", description: "Hardware support for decks, framing, siding, and specialty applications.", image: "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1200&q=80", badges: ["Jobsite Essentials"] },
+app/data/products.ts-];
+--
+app/data/jobs.ts:  title: string;
+app/data/jobs.ts-  location: string;
+--
+app/data/categories.ts:  description: string;
+app/data/categories.ts-  heroImage: string;
+--
+app/data/categories.ts:    description: "Beisser Lumber helps Iowa builders and homeowners compare decking boards, railing systems, screws, hardware, and accessory packages built for Midwest weather.",
+app/data/categories.ts-    heroImage: "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1600&q=80",
+--
+app/data/categories.ts:    description: "With a Grimes custom door shop and showroom support, Beisser coordinates complete door packages for Iowa new construction and remodel work.",
+app/data/categories.ts-    heroImage: "https://images.unsplash.com/photo-1505842465776-3d90f6163101?auto=format&fit=crop&w=1600&q=80",
+--
+app/data/categories.ts:    description: "Beisser supplies Weyerhaeuser beams, trusses, OSB, floor systems, and wall panelization through its Components Division.",
+app/data/categories.ts-    heroImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
+--
+app/data/categories.ts:    description: "Beisser helps Iowa builders match WRBs, tapes, flashings, and sealants to siding, windows, and door assemblies.",
+app/data/categories.ts-    heroImage: "https://images.unsplash.com/photo-1600585154203-aaefe2734275?auto=format&fit=crop&w=1600&q=80",
+--
+app/data/categories.ts:    description: "Beisser supplies core framing materials and panel products for jobs across Central and Eastern Iowa.",
+app/data/categories.ts-    heroImage: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8c?auto=format&fit=crop&w=1600&q=80",
+--
+app/data/categories.ts:    description: "Beisser supports Iowa siding packages with James Hardie and LP SmartSide plus the trim and accessory pieces that complete the wall assembly.",
+app/data/categories.ts-    heroImage: "https://images.unsplash.com/photo-1570129476766-47cbb58fc0c6?auto=format&fit=crop&w=1600&q=80",
+--
+app/data/categories.ts:    description: "Beisser helps coordinate stair parts with millwork and finish selections for new homes and remodeling work.",
+app/data/categories.ts-    heroImage: "https://images.unsplash.com/photo-1469796466635-455ede028aca?auto=format&fit=crop&w=1600&q=80",
+--
+app/data/categories.ts:    description: "Beisser's millwork offering supports practical trim packages, custom details, and historical profile matching for Iowa projects.",
+app/data/categories.ts-    heroImage: "https://images.unsplash.com/photo-1595526114035-45c97e22c8c6?auto=format&fit=crop&w=1600&q=80",
+--
+app/data/categories.ts:    description: "Beisser is an official retailer for Gerkin, Andersen, and Sierra Pacific windows and patio doors, helping Iowa customers compare vinyl, composite, wood, and clad options.",
+app/data/categories.ts-    heroImage: "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1600&q=80",
+--
+app/data/categories.ts:    description: "Beisser helps contractors match hardware and screws to framing, decking, siding, and specialty applications.",
+app/data/categories.ts-    heroImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80",
+--
+app/dashboard/layout.tsx:    title: "Beisser Internal Dashboard",
+app/dashboard/layout.tsx:    description: "Content management and implementation workflow dashboard",
+app/dashboard/layout.tsx-    robots: "noindex, nofollow",

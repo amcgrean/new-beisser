@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
 import { locations } from "@/app/data/locations";
+
+export const metadata: Metadata = {
+  title: "About Beisser Lumber — Iowa's Largest Family-Owned Lumberyard Since 1953",
+  description: "Learn about Beisser Lumber, Iowa's largest family-owned lumberyard since 1953, with four locations, a custom door shop, and statewide contractor support.",
+};
 
 const history = [
   "Founded in 1953 in Fort Dodge, Iowa.",
@@ -43,7 +49,18 @@ export default function AboutPage() {
     telephone: "(515) 986-4422",
     sameAs: [
       "https://www.facebook.com/beisserlumber",
+      "https://www.instagram.com/beisserlumber",
+      "https://twitter.com/beisserlumber",
       "https://www.linkedin.com/company/beisser-lumber-co.",
+    ],
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://beisserlumber.com/" },
+      { "@type": "ListItem", position: 2, name: "About", item: "https://beisserlumber.com/about" },
     ],
   };
 
@@ -108,6 +125,7 @@ export default function AboutPage() {
       </section>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </div>
   );
 }

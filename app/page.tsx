@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { HomeCarousel } from "./ui/HomeCarousel";
 import { getCategoryEntries } from "./lib/content";
 import { locations } from "./data/locations";
 import TestimonialSection from "@/components/TestimonialSection";
+
+export const metadata: Metadata = {
+  title: "Iowa's Largest Family-Owned Lumberyard | Beisser Lumber",
+  description: "Iowa's largest family-owned lumberyard, established in 1953. Selling lumber, engineered wood, decking, siding, doors, and windows to contractors and homeowners across Central and Eastern Iowa.",
+};
 
 const featuredServiceCards = [
   { title: "Design", description: "In-house design support with 25+ years of experience creating stock and custom plans.", href: "/services/design" },
