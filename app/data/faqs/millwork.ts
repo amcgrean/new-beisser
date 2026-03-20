@@ -1,10 +1,9 @@
 import type { FAQItem } from "./types";
 
 export const millworkFAQs: FAQItem[] = [
-  { question: "What interior trim and millwork lines does Beisser carry?", answer: "" },
-  { question: "Can I order custom moulding and stair parts?", answer: "" },
-  { question: "Do you prefinish or pre-prime millwork products?", answer: "" },
-  { question: "Can Beisser create complete trim packages by plan?", answer: "" },
-  { question: "Does the Birchwood showroom include millwork displays?", answer: "" },
-  { question: "Do you stock common trim profiles for quick pickup?", answer: "" },
+  { question: "What wood species does Beisser stock for interior trim?", answer: "" },
+  { question: "Can Beisser match historical trim profiles for a remodel?", answer: "" },
+  { question: "What millwork profiles does Beisser keep in stock vs. special order?", answer: "" },
+  { question: "Does Beisser carry primed MDF trim?", answer: "" },
+  { question: "How quickly can Beisser get a special-order trim profile?", answer: "" },
 ];

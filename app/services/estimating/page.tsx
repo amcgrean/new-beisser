@@ -16,6 +16,8 @@ export default function EstimatingServicePage() {
         <p>Beisser offers commercial and residential estimating backed by full takeoff services. That includes practical support for builders who need one team to help organize lumber, windows, decking, siding, and engineered wood into a quote-ready package.</p>
         <p>Customers are paired with a dedicated sales representative and support team, with product-line specialists available in windows, decking, engineered wood products, and other major categories. That coordination helps reduce missed scope items and makes it easier to compare alternates before a project is released.</p>
         <p>Whether you are bidding a house, an addition, or a larger commercial package, Beisser's estimating team focuses on clear takeoffs, practical substitutions, and package planning tied to real-world branch support.</p>
+        <h2 className="text-base font-semibold text-slate-900 pt-2">Wall Panels &amp; Components Division</h2>
+        <p>Beisser's Components Division adds panelized wall production to the estimating and supply chain. With 15+ years of wall-panel experience, the division builds panels in a climate-controlled environment — custom-designed for any application from interior walls to finished exterior assemblies. The turnkey product arrives ready to install, reducing framing time and coordination overhead on commercial and residential projects alike.</p>
       </div>
       <FAQSection title="Estimating FAQs" faqs={faqs} category="estimating" />
       <QuoteCTA title="Need a takeoff or material package?" body="Send your plans or project details and our estimating team will route the request to the right Beisser branch." />

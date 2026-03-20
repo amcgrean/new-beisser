@@ -99,7 +99,7 @@ export default async function DashboardPage() {
 
                                 <div className="flex flex-wrap items-center gap-4">
                                     <span className="text-xs text-slate-500">Owner: {item.reviewer || "Unassigned"}</span>
-                                    <a href={item.cmsLink} target="_blank" className="rounded-md bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50">
+                                    <a href={item.cmsLink} target="_blank" rel="noopener noreferrer" className="rounded-md bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50">
                                         Open in CMS →
                                     </a>
                                 </div>

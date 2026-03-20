@@ -39,6 +39,11 @@ const nextConfig = {
       { source: "/products/lumber", destination: "/products/lumber-panels", permanent: true },
       { source: "/products/weatherization", destination: "/products/building-envelope-accessories", permanent: true },
       { source: "/products/fasteners", destination: "/products/hardware-screws", permanent: true },
+      // Hash-based anchor redirects — note: fragment is client-side only, so these
+      // redirect the base path as a best-effort for old CMS anchor links.
+      { source: "/professionals", destination: "/pros", permanent: true },
+      { source: "/professionals/remodelers", destination: "/pros/remodelers", permanent: true },
+      { source: "/professionals/commercial", destination: "/pros/commercial-multifamily", permanent: true },
     ];
   },
 };

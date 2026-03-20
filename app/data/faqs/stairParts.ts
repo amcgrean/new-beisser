@@ -1,10 +1,9 @@
 import type { FAQItem } from "./types";
 
 export const stairPartsFAQs: FAQItem[] = [
-  { question: "What stair-part brands does Beisser carry?", answer: "" },
-  { question: "Can I coordinate stair parts with millwork selections?", answer: "" },
-  { question: "Do you stock both wood and iron baluster options?", answer: "" },
-  { question: "Can the Birchwood / Johnston showroom help with stair selections?", answer: "" },
-  { question: "Does Beisser quote complete stair systems?", answer: "" },
-  { question: "Can Beisser help match stair parts for remodel projects?", answer: "" },
+  { question: "What stair part styles does Beisser carry?", answer: "" },
+  { question: "Does Beisser stock horizontal tube balusters?", answer: "" },
+  { question: "Can Beisser supply stair parts for a historical home remodel?", answer: "" },
+  { question: "What's the difference between a baluster and a newel post?", answer: "" },
+  { question: "Does Beisser offer stair design assistance?", answer: "" },
 ];

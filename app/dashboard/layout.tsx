@@ -1,7 +1,4 @@
 import Link from "next/link";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
     title: "Beisser Internal Dashboard",
@@ -11,7 +8,7 @@ export const metadata = {
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
     return (
-        <div className={`min-h-screen bg-slate-50 ${inter.className} text-slate-900`}>
+        <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
             <header className="sticky top-0 z-30 border-b bg-white shadow-sm">
                 <div className="mx-auto flex h-16 max-w-7xl items-center px-6 lg:px-10">
                     <Link href="/dashboard" className="text-xl font-bold tracking-tight text-slate-900 hover:text-blue-600">
@@ -29,6 +26,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                         <a
                             href="/admin/"
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="rounded-md bg-slate-900 px-4 py-2 text-white hover:bg-slate-800"
                             title="Open Netlify CMS for editing content, workflow comments, and tasks."
                         >

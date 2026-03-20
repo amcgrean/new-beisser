@@ -10,4 +10,7 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
 Sitemap: https://beisserlumber.com/sitemap.xml
