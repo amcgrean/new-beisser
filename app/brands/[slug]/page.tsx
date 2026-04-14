@@ -19,6 +19,7 @@ const brandCategoryLinks: Record<string, string> = {
   andersen: "/products/windows-patio-doors",
   gerkin: "/products/windows-patio-doors",
   "sierra-pacific": "/products/windows-patio-doors",
+  marvin: "/products/windows-patio-doors",
   weyerhaeuser: "/products/engineered-wood-products",
   schlage: "/products/doors/door-hardware",
 };
@@ -30,6 +31,7 @@ const brandNearestLocation: Record<string, string> = {
   andersen: "/locations/birchwood-johnston",
   gerkin: "/locations/birchwood-johnston",
   "sierra-pacific": "/locations/birchwood-johnston",
+  marvin: "/locations/birchwood-johnston",
   weyerhaeuser: "/locations/grimes",
   schlage: "/locations/birchwood-johnston",
 };

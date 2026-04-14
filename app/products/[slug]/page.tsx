@@ -52,9 +52,9 @@ const internalLinksByCategory: Record<string, RelatedLinkItem[]> = {
     { href: "/services/estimating", label: "Estimating support", description: "Coordinate engineered packages with takeoffs and dedicated support." },
   ],
   "windows-patio-doors": [
-    { href: "/brands/gerkin", label: "Gerkin at Beisser", description: "See Beisser's Iowa-based Gerkin window offering." },
+    { href: "/brands/marvin", label: "Marvin Windows at Beisser", description: "Browse Marvin window and door options available through Beisser." },
     { href: "/brands/andersen", label: "Andersen at Beisser", description: "Review Andersen support through an official retailer." },
-    { href: "/brands/sierra-pacific", label: "Sierra Pacific at Beisser", description: "Explore premium Sierra Pacific window and patio door options." },
+    { href: "/brands/gerkin", label: "Gerkin at Beisser", description: "See Beisser's Iowa-based Gerkin window offering." },
   ],
 };
 

@@ -17,7 +17,7 @@ const featuredServiceCards = [
   { title: "Installation", description: "Installed sales, window service and warranty work, and wall-panel delivery ready to install.", href: "/services/installation" },
 ];
 
-const partnerBrands = ["Gerkin", "Andersen", "Sierra Pacific", "Weyerhaeuser", "Trex", "James Hardie", "LP SmartSide", "FastenMaster"];
+const partnerBrands = ["Marvin", "Gerkin", "Andersen", "Sierra Pacific", "Weyerhaeuser", "Trex", "James Hardie", "LP SmartSide"];
 
 export default function HomePage() {
   const categories = getCategoryEntries();
