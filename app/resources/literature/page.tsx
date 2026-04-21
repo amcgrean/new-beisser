@@ -49,7 +49,7 @@ export default function LiteraturePage() {
         <p className="max-w-3xl text-sm text-slate-700">Download brochures, spec sheets, and installation guides for the products we carry.</p>
       </header>
 
-      <section className="rounded-xl border bg-[#D6E4F0] p-5 text-sm text-slate-800">
+      <section className="rounded-xl border bg-brand-green/10 p-5 text-sm text-slate-800">
         <p>Looking for a specific document? Call your branch — we can email any current spec sheet or brochure directly.</p>
       </section>
 
@@ -72,7 +72,7 @@ export default function LiteraturePage() {
                       <td className="py-2 pr-4 font-medium text-slate-800">{brand}</td>
                       <td className="py-2 pr-4 text-slate-700">{document}</td>
                       <td className="py-2 text-slate-700">
-                        {href.startsWith("http") ? <a href={href} target="_blank" rel="noreferrer" className="text-[#1B4F8A] underline">Open link</a> : href}
+                        {href.startsWith("http") ? <a href={href} target="_blank" rel="noreferrer" className="text-brand-green underline">Open link</a> : href}
                       </td>
                     </tr>
                   ))}

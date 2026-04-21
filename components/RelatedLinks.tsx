@@ -17,9 +17,9 @@ export default function RelatedLinks({ links }: { links: RelatedLinkItem[] }) {
           <Link
             key={`${link.href}-${link.label}`}
             href={link.href}
-            className="rounded-lg border border-slate-200 bg-slate-50 p-3 transition hover:border-[#1B4F8A] hover:bg-white"
+            className="rounded-lg border border-slate-200 bg-slate-50 p-3 transition hover:border-brand-green hover:bg-white"
           >
-            <div className="text-sm font-semibold text-[#1B4F8A]">{link.label}</div>
+            <div className="text-sm font-semibold text-brand-green">{link.label}</div>
             <p className="mt-1 text-xs text-slate-600">{link.description}</p>
           </Link>
         ))}

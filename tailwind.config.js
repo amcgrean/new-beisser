@@ -11,6 +11,7 @@ module.exports = {
         // Canonical brand tokens (use these going forward)
         brand: {
           green: "#006834", // official Forest Green (PMS 349 C)
+          greenDark: "#00522a", // hover/pressed state for primary green
           accent: "#9E8635", // official Brown/Gold (PMS 7754 C)
 
           // Useful neutrals for UI (keep consistent)

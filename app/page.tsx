@@ -27,7 +27,7 @@ export default function HomePage() {
     <div className="space-y-12">
       <HomeCarousel />
 
-      <section id="about" className="entity-definition rounded-xl border border-[#1B4F8A]/20 bg-[#D6E4F0] p-5 text-sm text-[#1a1a1a]">
+      <section id="about" className="entity-definition rounded-xl border border-brand-green/20 bg-brand-green/10 p-5 text-sm text-[#1a1a1a]">
         <h1 className="text-2xl font-bold text-beisserGray">Iowa&apos;s Largest Family-Owned Lumberyard Since 1953</h1>
         <p className="mt-2">Beisser Lumber serves contractors and homeowners across Central and Eastern Iowa from Grimes, Coralville, Fort Dodge, and the Birchwood / Johnston showroom. We support lumber, engineered wood, decking, siding, doors, windows, estimating, and jobsite delivery across Iowa.</p>
       </section>
@@ -48,7 +48,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-beisserGray">Building Materials for Iowa Builders</h2>
           <p className="text-sm text-slate-700">We supply lumber, engineered wood, windows, doors, decking, siding, millwork, stair parts, and hardware for residential, remodel, commercial, and specialty-trade projects.</p>
           <div className="flex flex-wrap gap-3 pt-1">
-            <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-accent">Request a Quote</Link>
+            <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark">Request a Quote</Link>
             <Link href="/products" className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-beisserGreen hover:text-beisserGreen">View Products</Link>
             <Link href="/services/estimating" className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-beisserGreen hover:text-beisserGreen">Estimating services</Link>
             <Link href="/service-request" className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-beisserGreen hover:text-beisserGreen">Service request</Link>
@@ -71,7 +71,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="space-y-4"><h2 className="text-2xl font-semibold text-beisserGray">Brand Partners</h2><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{partnerBrands.map((brand) => <div key={brand} className="rounded-lg border bg-white px-4 py-5 text-center text-sm font-semibold text-[#1B4F8A] shadow-sm">{brand}</div>)}</div></section>
+      <section className="space-y-4"><h2 className="text-2xl font-semibold text-beisserGray">Brand Partners</h2><div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{partnerBrands.map((brand) => <div key={brand} className="rounded-lg border bg-white px-4 py-5 text-center text-sm font-semibold text-brand-green shadow-sm">{brand}</div>)}</div></section>
 
       <section className="space-y-4">
         <div className="flex items-center justify-between gap-3"><h2 className="text-2xl font-semibold text-beisserGray">Services for Builders</h2><Link href="/services" className="text-sm font-medium text-beisserGreen hover:underline">View all services</Link></div>

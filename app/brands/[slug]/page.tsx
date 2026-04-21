@@ -87,7 +87,7 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Brands", href: "/brands" }, { label: brand.name }]} />
 
       <header className="space-y-3">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1B4F8A]">{retailerLabel}</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-green">{retailerLabel}</p>
         <h1 className="text-3xl font-bold text-beisserGray">{brand.name} at Beisser Lumber</h1>
         <p className="max-w-3xl text-sm text-slate-700">
           {brand.slug === "andersen"
@@ -104,8 +104,8 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
       </section>
 
       <div className="flex flex-wrap gap-3">
-        <Link href={`/quote?brand=${brand.slug}`} className="inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]">Request a {brand.name} Quote</Link>
-        <Link href="/locations" className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-[#1B4F8A] hover:text-[#1B4F8A]">Find a Location</Link>
+        <Link href={`/quote?brand=${brand.slug}`} className="inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark">Request a {brand.name} Quote</Link>
+        <Link href="/locations" className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-brand-green hover:text-brand-green">Find a Location</Link>
       </div>
 
       <RelatedLinks

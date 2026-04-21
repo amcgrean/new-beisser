@@ -104,11 +104,11 @@ export default function QuoteForm({ source, initialBranch }: { source: string; i
         <div className="rounded-lg border border-dashed bg-slate-50 p-3 text-sm text-slate-600">
           Upload plans: use the description field to note that plans are attached once form file handling is connected. This anchor preserves the old-site “Upload Plans” path in navigation.
         </div>
-        <button type="submit" disabled={status === "submitting"} className="rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]">{status === "submitting" ? "Submitting..." : "Submit Quote Request"}</button>
+        <button type="submit" disabled={status === "submitting"} className="rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark">{status === "submitting" ? "Submitting..." : "Submit Quote Request"}</button>
         {status === "success" ? <p className="rounded-md border border-green-200 bg-green-50 p-3 text-sm text-green-700">Your request has been sent to our {branchLabel} team. We&apos;ll follow up within 1 business day. Need immediate help? Call {branchPhone}.</p> : null}
         {status === "error" ? <p className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">We could not submit your request right now. Please call {branchPhone} and we can help immediately.</p> : null}
       </form>
-      <p className="text-xs text-slate-600">Need immediate help? <Link href="/contact" className="text-[#1B4F8A] underline">Contact your branch team</Link>.</p>
+      <p className="text-xs text-slate-600">Need immediate help? <Link href="/contact" className="text-brand-green underline">Contact your branch team</Link>.</p>
     </>
   );
 }

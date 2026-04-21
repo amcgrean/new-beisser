@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
 
       <section className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700 space-y-3">
         <h2 className="text-xl font-semibold text-beisserGray">Questions</h2>
-        <p>If you have questions about privacy or information submitted through this site, please contact Beisser Lumber at <a className="text-[#1B4F8A] underline" href="tel:5159864422">(515) 986-4422</a>.</p>
+        <p>If you have questions about privacy or information submitted through this site, please contact Beisser Lumber at <a className="text-brand-green underline" href="tel:5159864422">(515) 986-4422</a>.</p>
       </section>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </div>

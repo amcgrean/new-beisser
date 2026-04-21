@@ -56,7 +56,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
       <ArticleReadTracker articleTitle={String(article.frontmatter.title)} category={String(article.frontmatter.category)} />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: String(article.frontmatter.title) }]} />
       <header className="space-y-2">
-        <p className="text-xs uppercase tracking-[0.14em] text-[#1B4F8A]">{String(article.frontmatter.category)}</p>
+        <p className="text-xs uppercase tracking-[0.14em] text-brand-green">{String(article.frontmatter.category)}</p>
         <h1 className="text-3xl font-bold text-beisserGray">{String(article.frontmatter.title)}</h1>
         <p className="text-sm text-slate-600">{String(article.frontmatter.author)} • {String(article.frontmatter.date)}</p>
       </header>
@@ -65,7 +65,7 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
 
       <section className="rounded-xl border bg-slate-50 p-4">
         <h2 className="text-base font-semibold">Need materials for your project?</h2>
-        <Link href="/quote" className="mt-2 inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white">Request a Quote →</Link>
+        <Link href="/quote" className="mt-2 inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white">Request a Quote →</Link>
       </section>
 
       <SocialShareButtons title={String(article.frontmatter.title)} />

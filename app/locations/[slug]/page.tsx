@@ -58,20 +58,20 @@ export default function LocationDetailPage({ params }: { params: Params }) {
       <section className="grid gap-5 rounded-xl border bg-white p-5 shadow-sm md:grid-cols-2">
         <div className="space-y-2 text-sm text-slate-700">
           <div><strong>Address:</strong> {location.addressLine1}, {location.city}, {location.state} {location.zip}</div>
-          <div><strong>Phone:</strong> <PhoneLink phone={location.phone} branch={location.slug} className="text-[#1B4F8A] underline" /></div>
+          <div><strong>Phone:</strong> <PhoneLink phone={location.phone} branch={location.slug} className="text-brand-green underline" /></div>
           <div><strong>Hours:</strong> {location.hoursWeekday} • {location.hoursSaturday} • {location.hoursSundayNote}</div>
           {location.notes?.length ? <ul className="list-inside list-disc space-y-1 pt-2">{location.notes.map((note) => <li key={note}>{note}</li>)}</ul> : null}
         </div>
         <div className="rounded-lg border bg-slate-50 p-4 text-sm text-slate-600">
           <div className="font-semibold text-slate-900">Map & Directions</div>
           <p className="mt-2">Use the branch address above for GPS directions, or open the location in Google Maps.</p>
-          {location.mapUrl ? <a href={location.mapUrl} target="_blank" rel="noreferrer" className="mt-3 inline-flex text-[#1B4F8A] underline">Open map</a> : null}
+          {location.mapUrl ? <a href={location.mapUrl} target="_blank" rel="noreferrer" className="mt-3 inline-flex text-brand-green underline">Open map</a> : null}
         </div>
       </section>
 
       <div className="flex flex-wrap gap-3">
-        <Link href={`/quote?branch=${location.slug}`} className="inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]">Request a Quote at This Branch</Link>
-        <Link href={`/contact?branch=${location.slug}`} className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold hover:border-[#1B4F8A] hover:text-[#1B4F8A]">Contact This Branch</Link>
+        <Link href={`/quote?branch=${location.slug}`} className="inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark">Request a Quote at This Branch</Link>
+        <Link href={`/contact?branch=${location.slug}`} className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold hover:border-brand-green hover:text-brand-green">Contact This Branch</Link>
       </div>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />

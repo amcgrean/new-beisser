@@ -53,7 +53,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="bg-[#1B4F8A] text-white">
+      <div className="bg-brand-green text-white">
         <div className="main-container flex min-h-9 items-center justify-between py-1.5 text-xs font-medium">
           <div className="hidden items-center gap-5 md:flex md:flex-wrap">
             {utilityLinks.map((link) => (
@@ -92,10 +92,10 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-brand-accent sm:hidden">Quote</Link>
+          <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-brand-greenDark sm:hidden">Quote</Link>
           <div className="hidden items-center gap-2 sm:flex">
-            <Link href="/service-request" className="hidden lg:inline-flex rounded-md border border-slate-200 px-3 py-2 text-sm text-slate-700 transition-colors hover:border-brand-accent hover:text-brand-green">Service Request</Link>
-            <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-3 py-2 text-sm text-white transition-colors hover:bg-brand-accent">Request a Quote</Link>
+            <Link href="/service-request" className="hidden lg:inline-flex rounded-md border border-slate-200 px-3 py-2 text-sm text-slate-700 transition-colors hover:border-brand-green hover:text-brand-green">Service Request</Link>
+            <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-3 py-2 text-sm text-white transition-colors hover:bg-brand-greenDark">Request a Quote</Link>
           </div>
           <button type="button" className="inline-flex md:hidden items-center justify-center rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((v) => !v)}>{open ? "Close" : "Menu"}</button>
         </div>

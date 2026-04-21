@@ -27,8 +27,8 @@ export default function ServicesPage() {
       <div className="rounded-xl border bg-slate-50 p-4 text-sm">
         <div className="font-semibold text-beisserGray">Need a quick next step?</div>
         <div className="mt-2 flex flex-wrap gap-3">
-          <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-3 py-2 text-white font-medium hover:bg-brand-accent">Request a Quote</Link>
-          <Link href="/service-request" className="inline-flex rounded-md border border-slate-300 px-3 py-2 font-medium hover:border-brand-accent hover:text-brand-green">Service Request</Link>
+          <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-3 py-2 text-white font-medium hover:bg-brand-greenDark">Request a Quote</Link>
+          <Link href="/service-request" className="inline-flex rounded-md border border-slate-300 px-3 py-2 font-medium hover:border-brand-green hover:text-brand-green">Service Request</Link>
         </div>
       </div>
     </div>

@@ -58,6 +58,17 @@ Use when the full-color primary logo is not appropriate:
 - Do **NOT** apply drop shadows or other shading treatments.
 - Do **NOT** rearrange the logo elements from the intended layout.
 
+## Off-brand colors (do NOT use)
+
+The following hex values have appeared in the codebase as de-facto "primary"
+colors. They are **not brand colors** and must not be reintroduced:
+
+- `#1B4F8A` — navy blue
+- `#163f6e` — darker navy (was used as hover for the above)
+- `#D6E4F0` — pale blue
+
+Use the Forest Green / Forest Green Dark / Brown-Gold / neutrals palette only.
+
 ---
 
 ## Brand colors
@@ -68,11 +79,19 @@ Primary brand colors reflect the materials and blue-collar mentality:
 - RGB: 0 / 104 / 52
 - Hex: **#006834**
 - Pantone: PMS 349 C
+- Tailwind token: `brand-green`
+
+### Forest Green Dark (Primary hover/pressed)
+- Hex: **#00522a**
+- Tailwind token: `brand-greenDark`
+- Usage: hover/pressed state for primary green buttons and links. Do NOT use `brand-accent` (brown) as a hover state for primary green — that reads as a bug, not feedback.
 
 ### Brown / Gold (Accent)
 - RGB: 158 / 134 / 53
 - Hex: **#9E8635**
 - Pantone: PMS 7754 C
+- Tailwind token: `brand-accent`
+- Usage: secondary accents and small decorative highlights only. Sparingly.
 
 > Note: Use Green as the primary UI identity color (header accents, buttons, links).
 > Use Brown as a secondary accent (highlights, secondary button, small decorative accents).

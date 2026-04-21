@@ -60,7 +60,7 @@ export default function LocationsPage() {
                 </ul>
               ) : null}
             </div>
-            <Link href={`/locations/${loc.slug}`} className="inline-flex rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium hover:border-[#1B4F8A] hover:text-[#1B4F8A]">
+            <Link href={`/locations/${loc.slug}`} className="inline-flex rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium hover:border-brand-green hover:text-brand-green">
               View Branch Details
             </Link>
           </section>
