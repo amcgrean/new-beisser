@@ -17,7 +17,7 @@ export default function QuoteCTA({
       <p className="mt-2 text-sm text-slate-700">{body}</p>
       <Link
         href={href}
-        className="mt-3 inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]"
+        className="mt-3 inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark"
       >
         {ctaLabel}
       </Link>

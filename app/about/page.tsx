@@ -119,7 +119,7 @@ export default function AboutPage() {
         <p className="mt-2">
           Just before Beisser&apos;s 70th anniversary, Kim Beisser passed the presidency to his son-in-law Dave Ling, continuing the family-owned legacy while expanding the company&apos;s reach across Central and Eastern Iowa.
         </p>
-        <Link href="/careers" className="mt-3 inline-flex text-[#1B4F8A] underline">
+        <Link href="/careers" className="mt-3 inline-flex text-brand-green underline">
           Explore careers at Beisser Lumber
         </Link>
       </section>

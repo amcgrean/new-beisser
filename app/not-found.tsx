@@ -10,7 +10,7 @@ export default function NotFound() {
         <Link href="/products/siding" className="rounded-md border px-3 py-2">Siding</Link>
         <Link href="/products/windows-patio-doors" className="rounded-md border px-3 py-2">Windows &amp; Patio Doors</Link>
       </div>
-      <Link href="/quote" className="inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white">Request a Quote</Link>
+      <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white">Request a Quote</Link>
       <p className="text-xs text-slate-600">Need help now? Grimes: (515) 986-4422 • Coralville: (319) 545-7120 • Fort Dodge: (515) 573-4166 • Birchwood / Johnston: (515) 986-4422</p>
     </div>
   );

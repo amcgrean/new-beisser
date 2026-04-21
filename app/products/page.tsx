@@ -30,7 +30,7 @@ export default function ProductsPage() {
           categories, see brand coverage, and request pricing when you are ready.
         </p>
         <div className="flex flex-wrap gap-3 text-sm">
-          <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-3 py-2 font-semibold text-white hover:bg-brand-accent">Request a Quote</Link>
+          <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-3 py-2 font-semibold text-white hover:bg-brand-greenDark">Request a Quote</Link>
           <Link href="/services" className="inline-flex rounded-md border border-slate-300 px-3 py-2 font-semibold text-slate-700 hover:border-beisserGreen hover:text-beisserGreen">View Services</Link>
         </div>
       </header>

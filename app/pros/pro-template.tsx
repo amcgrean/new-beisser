@@ -43,17 +43,17 @@ export default function ProAudiencePage({ h1, intro, body, highlights, breadcrum
       <section className="rounded-xl border bg-white p-5 shadow-sm">
         <h2 className="text-xl font-semibold text-slate-900">Relevant Product Paths</h2>
         <div className="mt-3 flex flex-wrap gap-2">
-          <Link href="/products/lumber-panels" className="rounded-md border px-3 py-1.5 text-sm hover:border-[#1B4F8A] hover:text-[#1B4F8A]">Lumber &amp; Panels</Link>
-          <Link href="/products/engineered-wood-products" className="rounded-md border px-3 py-1.5 text-sm hover:border-[#1B4F8A] hover:text-[#1B4F8A]">Engineered Wood Products</Link>
-          <Link href="/products/windows-patio-doors" className="rounded-md border px-3 py-1.5 text-sm hover:border-[#1B4F8A] hover:text-[#1B4F8A]">Windows &amp; Patio Doors</Link>
-          <Link href="/products/doors" className="rounded-md border px-3 py-1.5 text-sm hover:border-[#1B4F8A] hover:text-[#1B4F8A]">Doors</Link>
-          <Link href="/products/decking-railing" className="rounded-md border px-3 py-1.5 text-sm hover:border-[#1B4F8A] hover:text-[#1B4F8A]">Decking &amp; Railing</Link>
+          <Link href="/products/lumber-panels" className="rounded-md border px-3 py-1.5 text-sm hover:border-brand-green hover:text-brand-green">Lumber &amp; Panels</Link>
+          <Link href="/products/engineered-wood-products" className="rounded-md border px-3 py-1.5 text-sm hover:border-brand-green hover:text-brand-green">Engineered Wood Products</Link>
+          <Link href="/products/windows-patio-doors" className="rounded-md border px-3 py-1.5 text-sm hover:border-brand-green hover:text-brand-green">Windows &amp; Patio Doors</Link>
+          <Link href="/products/doors" className="rounded-md border px-3 py-1.5 text-sm hover:border-brand-green hover:text-brand-green">Doors</Link>
+          <Link href="/products/decking-railing" className="rounded-md border px-3 py-1.5 text-sm hover:border-brand-green hover:text-brand-green">Decking &amp; Railing</Link>
         </div>
       </section>
 
       <RelatedLinks links={[{ href: "/products/decking-railing", label: "Decking & railing products", description: "See exterior products relevant to pro projects." }, { href: "/products/siding", label: "Siding systems", description: "Compare siding packages and support options." }, { href: "/products/engineered-wood-products", label: "Engineered wood products", description: "Explore EWP framing and structural options." }, { href: "/quote", label: "Request a material quote", description: "Start a branch-routed quote for your project." }]} />
 
-      <div className="flex flex-wrap gap-3"><Link href="/quote" className="inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]">Request a Quote</Link></div>
+      <div className="flex flex-wrap gap-3"><Link href="/quote" className="inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark">Request a Quote</Link></div>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />

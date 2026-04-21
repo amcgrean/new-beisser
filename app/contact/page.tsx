@@ -45,10 +45,10 @@ export default function ContactPage() {
       <div className="rounded-lg border bg-white p-4 text-xs text-slate-700 shadow-sm">
         <div className="font-semibold text-beisserGray">Need a different workflow?</div>
         <div className="mt-2 flex flex-wrap gap-3">
-          <Link href="/quote" className="text-[#1B4F8A] underline">Request a Quote</Link>
-          <Link href="/service-request" className="text-[#1B4F8A] underline">Submit a Service Request</Link>
-          <a href="https://www.nuvo.credit/app/beisserlumber" target="_blank" rel="noreferrer" className="text-[#1B4F8A] underline">Credit Application</a>
-          <a href="https://pro.beisserlumber.com" target="_blank" rel="noreferrer" className="text-[#1B4F8A] underline">Account / AR Portal Sign In</a>
+          <Link href="/quote" className="text-brand-green underline">Request a Quote</Link>
+          <Link href="/service-request" className="text-brand-green underline">Submit a Service Request</Link>
+          <a href="https://www.nuvo.credit/app/beisserlumber" target="_blank" rel="noreferrer" className="text-brand-green underline">Credit Application</a>
+          <a href="https://pro.beisserlumber.com" target="_blank" rel="noreferrer" className="text-brand-green underline">Account / AR Portal Sign In</a>
         </div>
       </div>
 

@@ -64,7 +64,7 @@ export default function ServiceRequestForm() {
         </select>
       </label>
       <label className="block text-sm">Description *<textarea required name="description" className="mt-1 min-h-[140px] w-full rounded-md border px-3 py-2" /></label>
-      <button type="submit" disabled={status === "submitting"} className="rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]">{status === "submitting" ? "Submitting..." : "Submit Service Request"}</button>
+      <button type="submit" disabled={status === "submitting"} className="rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark">{status === "submitting" ? "Submitting..." : "Submit Service Request"}</button>
       {status === "success" ? <p className="rounded-md border border-green-200 bg-green-50 p-3 text-sm text-green-700">Your request has been sent. If you need immediate help, call {branchPhones[branch]}.</p> : null}
       {status === "error" ? <p className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">We could not submit your service request. Please call {branchPhones[branch]}.</p> : null}
     </form>

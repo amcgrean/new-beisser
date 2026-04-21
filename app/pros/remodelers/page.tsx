@@ -32,7 +32,7 @@ export default function RemodelersPage() {
           <h2 className="text-xl font-semibold text-slate-900">Visualize Your Deck</h2>
           <p className="mt-2">Not sure what composite decking will look like on your home? Use our deck visualizer to try different colors and styles before you buy.</p>
           <p className="mt-2 text-xs text-slate-500">Aaron: update the placeholder link below once the final visualizer URL is confirmed.</p>
-          <Link href="/tools/deck-visualizer" className="mt-3 inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]">Open the Deck Visualizer</Link>
+          <Link href="/tools/deck-visualizer" className="mt-3 inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark">Open the Deck Visualizer</Link>
         </section>
       )}
     />

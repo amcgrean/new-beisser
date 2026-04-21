@@ -44,7 +44,7 @@ export default function DoorHardwarePage() {
           <li>Additional options include Kwikset, Emtek, Trilennium multi-point, and Andersen hardware packages.</li>
         </ul>
       </section>
-      <Link href="/quote?category=doors" className="inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]">Request Door Hardware Pricing</Link>
+      <Link href="/quote?category=doors" className="inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark">Request Door Hardware Pricing</Link>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
     </div>

@@ -34,7 +34,7 @@ export default function ProsIndexPage() {
 
       <div className="grid gap-4 md:grid-cols-2">
         {pages.map((page) => (
-          <Link key={page.href} href={page.href} className="rounded-lg border bg-white p-4 text-sm font-semibold text-[#1B4F8A] shadow-sm hover:shadow-md">
+          <Link key={page.href} href={page.href} className="rounded-lg border bg-white p-4 text-sm font-semibold text-brand-green shadow-sm hover:shadow-md">
             {page.title}
           </Link>
         ))}

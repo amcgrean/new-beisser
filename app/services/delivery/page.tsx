@@ -66,7 +66,7 @@ export default function DeliveryPage() {
         </div>
         <Link
           href="/quote"
-          className="inline-flex rounded-md bg-brand-green px-3 py-2 text-sm font-semibold text-white hover:bg-brand-accent"
+          className="inline-flex rounded-md bg-brand-green px-3 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark"
         >
           Schedule Delivery
         </Link>

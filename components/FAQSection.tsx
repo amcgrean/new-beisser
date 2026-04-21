@@ -52,7 +52,7 @@ export default function FAQSection({ title, faqs, category = "general" }: FAQSec
                   type="button"
                   aria-expanded={isOpen}
                   aria-controls={panelId}
-                  className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm font-semibold text-[#1B4F8A]"
+                  className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm font-semibold text-brand-green"
                   onClick={() => {
                     const next = isOpen ? null : index;
                     setOpenIndex(next);

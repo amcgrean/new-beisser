@@ -33,7 +33,7 @@ export default function BlogIndexPage({ searchParams }: { searchParams?: { categ
 
       <div className="flex flex-wrap gap-2">
         {categories.map((category) => (
-          <Link key={category} href={category === "All" ? "/blog" : `/blog?category=${encodeURIComponent(category)}`} className={`rounded-full border px-3 py-1 text-xs ${selected === category ? "bg-[#1B4F8A] text-white" : "bg-white"}`}>
+          <Link key={category} href={category === "All" ? "/blog" : `/blog?category=${encodeURIComponent(category)}`} className={`rounded-full border px-3 py-1 text-xs ${selected === category ? "bg-brand-green text-white" : "bg-white"}`}>
             {category}
           </Link>
         ))}
@@ -46,7 +46,7 @@ export default function BlogIndexPage({ searchParams }: { searchParams?: { categ
             <h2 className="mt-1 text-base font-semibold text-beisserGray">{article.frontmatter.title}</h2>
             <p className="mt-1 text-xs text-slate-500">{article.frontmatter.date}</p>
             <p className="mt-2 text-sm text-slate-700">{article.frontmatter.excerpt}</p>
-            <Link href={`/blog/${article.slug}`} className="mt-3 inline-block text-sm font-semibold text-[#1B4F8A] hover:underline">Read more →</Link>
+            <Link href={`/blog/${article.slug}`} className="mt-3 inline-block text-sm font-semibold text-brand-green hover:underline">Read more →</Link>
           </article>
         ))}
       </div>

@@ -138,7 +138,7 @@ export default function ProductCategoryPage({ params }: { params: { slug: string
           <h2 className="text-xl font-semibold text-beisserGray">Relevant Brands</h2>
           <div className="flex flex-wrap gap-2">
             {categoryBrands.map((brand) => (
-              <Link key={brand.slug} href={`/brands/${brand.slug}`} className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:border-[#1B4F8A] hover:text-[#1B4F8A]">
+              <Link key={brand.slug} href={`/brands/${brand.slug}`} className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:border-brand-green hover:text-brand-green">
                 {brand.name}
               </Link>
             ))}
@@ -148,7 +148,7 @@ export default function ProductCategoryPage({ params }: { params: { slug: string
 
       <section className="rounded-xl border bg-slate-50 p-4">
         <p className="text-sm text-slate-700">Need pricing for this category? We can quote by plan set, takeoff, or material list.</p>
-        <Link href={`/quote?category=${canonicalSlug}`} className="mt-3 inline-flex rounded-md bg-[#1B4F8A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#163f6e]">Request a Quote</Link>
+        <Link href={`/quote?category=${canonicalSlug}`} className="mt-3 inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark">Request a Quote</Link>
       </section>
 
       <RelatedLinks links={relatedLinks} />
