@@ -27,31 +27,34 @@ export default function LocationsPage() {
   };
 
   return (
-    <div className="space-y-8">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Locations" }]} />
-      <header className="space-y-2">
-        <h1 className="text-3xl font-bold text-slate-900">Beisser Lumber Locations</h1>
-        <p className="max-w-2xl text-sm text-slate-700">
-          Visit our Iowa branches in Grimes, Coralville, Fort Dodge, and the Birchwood / Johnston showroom.
-        </p>
-      </header>
+    <div className="space-y-16">
+      <div>
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Locations" }]} />
+        <header className="mt-4 space-y-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-green">Locations</p>
+          <h1 className="text-4xl font-bold leading-tight text-brand-ink sm:text-5xl">Beisser Lumber locations</h1>
+          <p className="max-w-2xl text-base text-slate-700">
+            Visit our Iowa branches in Grimes, Coralville, Fort Dodge, and the Birchwood / Johnston showroom.
+          </p>
+        </header>
+      </div>
 
-      <section className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700">
-        <h2 className="text-xl font-semibold text-beisserGray">All branch addresses</h2>
-        <ul className="mt-3 list-inside list-disc space-y-1">
+      <section className="section-band bg-brand-mist py-12">
+        <h2 className="text-2xl font-semibold text-brand-ink sm:text-3xl">All branch addresses</h2>
+        <ul className="mt-4 grid gap-x-8 gap-y-2 text-sm text-slate-700 sm:grid-cols-2">
           {branchAddresses.map((address) => <li key={address}>{address}</li>)}
         </ul>
       </section>
 
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2">
         {locations.map((loc) => (
-          <section key={loc.slug} className="rounded-lg border bg-white p-5 shadow-sm space-y-3">
-            <h2 className="text-xl font-semibold text-slate-900">{loc.name}</h2>
+          <section key={loc.slug} className="space-y-4 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+            <h2 className="text-xl font-semibold text-brand-ink">{loc.name}</h2>
             <div className="text-sm text-slate-700">
               <div>{loc.addressLine1}</div>
               <div>{loc.city}, {loc.state} {loc.zip}</div>
               <div className="mt-1">{loc.phone}</div>
-              <div className="mt-1">{loc.hoursWeekday}</div>
+              <div className="mt-2">{loc.hoursWeekday}</div>
               <div>{loc.hoursSaturday}</div>
               <div>{loc.hoursSundayNote}</div>
               {loc.notes?.length ? (
@@ -60,7 +63,7 @@ export default function LocationsPage() {
                 </ul>
               ) : null}
             </div>
-            <Link href={`/locations/${loc.slug}`} className="inline-flex rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium hover:border-brand-green hover:text-brand-green">
+            <Link href={`/locations/${loc.slug}`} className="inline-flex items-center rounded-md border border-brand-green px-4 py-2 text-sm font-semibold text-brand-green transition-colors hover:bg-brand-green hover:text-white">
               View Branch Details
             </Link>
           </section>

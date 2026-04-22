@@ -9,7 +9,7 @@ export default function PortalPage() {
         href="https://pro.beisserlumber.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex px-4 py-2 rounded-md bg-beisserGreen text-white text-sm font-medium hover:bg-emerald-700 transition-colors"
+        className="inline-flex px-4 py-2 rounded-md bg-brand-green text-white text-sm font-semibold hover:bg-brand-greenDark transition-colors"
       >
         Open Customer Portal
       </a>

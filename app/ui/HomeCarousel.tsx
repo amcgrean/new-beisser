@@ -60,8 +60,8 @@ export function HomeCarousel() {
   };
 
   return (
-    <section className="mb-10">
-      <div className="relative h-[260px] overflow-hidden rounded-2xl border bg-slate-900 text-white shadow-lg sm:h-[320px] lg:h-[380px]">
+    <section>
+      <div className="relative h-[260px] overflow-hidden rounded-2xl border border-slate-200 bg-brand-ink text-white shadow-lg sm:h-[320px] lg:h-[380px]">
         <Image
           src={current.image}
           alt={current.headline}
@@ -71,25 +71,25 @@ export function HomeCarousel() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/45 to-black/5" />
         <div className="relative z-10 flex h-full flex-col justify-center gap-4 px-6 py-6 sm:px-10 lg:px-14">
-          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-200">
+          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-white/85">
             Beisser Lumber Company
           </div>
-          <h1 className="max-w-xl text-2xl font-bold sm:text-3xl lg:text-4xl">
+          <h2 className="max-w-xl text-2xl font-bold leading-tight sm:text-3xl lg:text-4xl">
             {current.headline}
-          </h1>
-          <p className="max-w-xl text-sm text-slate-100 sm:text-base">
+          </h2>
+          <p className="max-w-xl text-sm text-white/90 sm:text-base">
             {current.subheadline}
           </p>
           <div className="mt-2 flex items-center gap-3">
             <Link
               href={current.ctaHref}
-              className="inline-flex rounded-md bg-beisserGreen px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-emerald-700"
+              className="inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-greenDark"
             >
               {current.ctaLabel}
             </Link>
             <Link
               href="/locations"
-              className="hidden text-sm font-medium text-emerald-100 underline-offset-4 hover:underline sm:inline-flex"
+              className="hidden text-sm font-medium text-white underline-offset-4 hover:underline sm:inline-flex"
             >
               View Locations
             </Link>

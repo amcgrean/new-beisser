@@ -9,3 +9,29 @@ body {
 .main-container {
   @apply max-w-6xl mx-auto px-4;
 }
+
+@layer base {
+  /* Headings lean slightly tight — Montserrat reads better as a display face
+     with negative tracking at larger sizes, closer to Gotham's geometric feel. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.01em;
+  }
+  h1 {
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* Full-bleed band that breaks out of .main-container while keeping its
+     inner content aligned to the container's max-width. Use sparingly for
+     hero/image bands. */
+  .section-band {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
+  }
+}

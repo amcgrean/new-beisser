@@ -7,6 +7,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        // Montserrat is our documented Gotham substitute (brand/brand_guide.md).
+        // Loaded via next/font/local in app/fonts.ts, which sets --font-montserrat.
+        sans: [
+          "var(--font-montserrat)",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
+      },
       colors: {
         // Canonical brand tokens (use these going forward)
         brand: {

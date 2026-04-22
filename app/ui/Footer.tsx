@@ -2,14 +2,15 @@ import Link from "next/link";
 import { locations } from "@/app/data/locations";
 
 const footerLink = "transition-colors hover:text-brand-accent";
+const footerHeading = "mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-white";
 
 export function Footer() {
   return (
-    <footer className="mt-8 border-t border-slate-800 bg-slate-900 text-slate-100">
-      <div className="main-container grid gap-8 py-10 text-sm md:grid-cols-4">
-        <div className="space-y-3">
-          <div className="mb-1 text-base font-semibold">Beisser Lumber</div>
-          <p className="text-slate-400">Iowa&apos;s Largest Family-Owned Lumberyard Since 1953</p>
+    <footer className="mt-16 border-t border-slate-800 bg-brand-ink text-slate-100">
+      <div className="main-container grid gap-10 py-12 text-sm md:grid-cols-4">
+        <div className="space-y-4">
+          <div className="text-lg font-bold text-white">Beisser Lumber</div>
+          <p className="text-sm text-slate-400">Iowa&apos;s Largest Family-Owned Lumberyard Since 1953</p>
           <div className="space-y-3 text-slate-300">
             {locations.map((location) => (
               <address key={location.slug} className="not-italic">
@@ -23,7 +24,7 @@ export function Footer() {
         </div>
 
         <div>
-          <div className="mb-2 font-semibold">Products</div>
+          <div className={footerHeading}>Products</div>
           <ul className="space-y-1 text-slate-300">
             <li><Link href="/products/decking-railing" className={footerLink}>Decking &amp; Railing</Link></li>
             <li><Link href="/products/doors" className={footerLink}>Doors</Link></li>
@@ -39,7 +40,7 @@ export function Footer() {
         </div>
 
         <div>
-          <div className="mb-2 font-semibold">Services</div>
+          <div className={footerHeading}>Services</div>
           <ul className="space-y-1 text-slate-300">
             <li><Link href="/services/design" className={footerLink}>Design</Link></li>
             <li><Link href="/services/estimating" className={footerLink}>Estimating</Link></li>
@@ -52,7 +53,7 @@ export function Footer() {
         </div>
 
         <div>
-          <div className="mb-2 font-semibold">Company</div>
+          <div className={footerHeading}>Company</div>
           <ul className="space-y-1 text-slate-300">
             <li><Link href="/about" className={footerLink}>About</Link></li>
             <li><Link href="/pros" className={footerLink}>Pros</Link></li>
@@ -61,7 +62,7 @@ export function Footer() {
             <li><Link href="/privacy-policy" className={footerLink}>Privacy Policy</Link></li>
             <li><Link href="/resources/literature" className={footerLink}>Literature &amp; Spec Sheets</Link></li>
           </ul>
-          <div className="mt-4 space-y-1 text-slate-300">
+          <div className="mt-5 flex flex-col gap-1 text-slate-300">
             <a href="https://www.facebook.com/beisserlumber" target="_blank" rel="noreferrer" className={footerLink}>Facebook</a>
             <a href="https://www.instagram.com/beisserlumber" target="_blank" rel="noreferrer" className={footerLink}>Instagram</a>
             <a href="https://twitter.com/beisserlumber" target="_blank" rel="noreferrer" className={footerLink}>Twitter / X</a>
