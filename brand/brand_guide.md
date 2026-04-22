@@ -110,8 +110,45 @@ Primary brand colors reflect the materials and blue-collar mentality:
   - Gotham Medium
   - Gotham Black
 
-> Website note: If Gotham isn’t licensed/available for web use, choose the closest web-safe substitute
-> (Codex should document the chosen substitute and keep it consistent across the site).
+### Website typeface — Gotham substitute
+
+Gotham is not licensed for web use on this property, so the website uses
+**Montserrat** (SIL OFL, free for commercial use) as the documented substitute.
+Rationale:
+
+- Geometric sans-serif with similar proportions and x-height to Gotham —
+  closer visual match than Inter or DM Sans for headline weight and feel.
+- Well-supported across browsers, ships via `next/font/local` from
+  self-hosted `.woff2` files in `/public/fonts/`. This keeps the build
+  hermetic (no network access required) and avoids the `next/font/google`
+  path.
+- Weights loaded: **400 / 500 / 600 / 700**. Use 700 for hero headlines,
+  600 for section heads, 500 for secondary emphasis, 400 for body copy.
+
+Implementation:
+
+- Loader: `app/fonts.ts` (`next/font/local`, exposes `--font-montserrat`).
+- Tailwind: `fontFamily.sans` in `tailwind.config.js` resolves to the
+  CSS variable, so `font-sans` and the default browser stack both pick up
+  Montserrat.
+- Applied on `<html>` / `<body>` in `app/layout.tsx`.
+
+### Type scale (website)
+
+Use Tailwind utilities — do not introduce arbitrary pixel sizes.
+
+| Role            | Class                        | Notes                                      |
+|-----------------|------------------------------|--------------------------------------------|
+| Hero H1         | `text-4xl sm:text-5xl` + `font-bold`       | Used once per page.            |
+| Section H2      | `text-2xl sm:text-3xl` + `font-semibold`   | Section heads.                 |
+| Sub H3 / card   | `text-lg` or `text-base` + `font-semibold` | Card titles, sub-sections.     |
+| Body            | `text-base` or `text-sm` + `text-slate-700`| Paragraphs and card body copy. |
+| Eyebrow         | `text-xs font-semibold uppercase tracking-[0.18em] text-brand-green` | Above H1 / section heads. |
+| Small / meta    | `text-xs text-slate-500/600` | Timestamps, footnotes.                     |
+
+Headings apply slightly tight letter-spacing (`-0.01em`; `-0.02em` on H1)
+via `app/globals.css` to keep Montserrat feeling closer to Gotham's
+geometric rhythm at display sizes.
 
 ---
 

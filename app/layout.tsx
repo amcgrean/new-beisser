@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "./ui/Header";
 import { Footer } from "./ui/Footer";
 import Script from "next/script";
+import { montserrat } from "./fonts";
 
 const siteTitle = "Iowa's Largest Family-Owned Lumberyard | Beisser Lumber";
 const siteDescription = "Iowa's largest family-owned lumberyard, established in 1953. Selling lumber, engineered wood, decking, siding, doors, and windows to contractors and homeowners across Central and Eastern Iowa.";
@@ -56,8 +57,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   return (
-    <html lang="en">
-      <body className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
+    <html lang="en" className={montserrat.variable}>
+      <body className="flex min-h-screen flex-col bg-slate-50 font-sans text-slate-900 antialiased">
         <Header />
         <main className="flex-1 py-8">
           <div className="main-container">{children}</div>

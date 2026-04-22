@@ -8,29 +8,37 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="space-y-6">
-      <header className="space-y-2">
-        <h1 className="text-3xl font-bold text-beisserGray">Services</h1>
-        <p className="text-sm text-slate-700 max-w-3xl">Beisser offers design, estimating, and installation-related support that connects material selection, project planning, and after-sale follow-through.</p>
+    <div className="space-y-16">
+      <header className="space-y-4">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-green">Services</p>
+        <h1 className="text-4xl font-bold leading-tight text-brand-ink sm:text-5xl">Services for builders</h1>
+        <p className="max-w-3xl text-base text-slate-700">
+          Beisser offers design, estimating, and installation-related support that connects material selection, project planning, and after-sale follow-through.
+        </p>
       </header>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
-          <Link key={service.href} href={service.href} className="rounded-lg border bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md block">
-            <div className="text-base font-semibold text-beisserGray">{service.title}</div>
-            <p className="mt-1 text-slate-600">{service.summary}</p>
-            <span className="mt-3 inline-flex text-sm font-semibold text-beisserGreen underline-offset-4 hover:underline">Learn more &rarr;</span>
+          <Link key={service.href} href={service.href} className="group block rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-brand-green/40 hover:shadow-md">
+            <div className="text-lg font-semibold text-brand-ink">{service.title}</div>
+            <p className="mt-2 text-sm text-slate-600">{service.summary}</p>
+            <span className="mt-4 inline-flex text-sm font-semibold text-brand-green underline-offset-4 group-hover:underline">Learn more →</span>
           </Link>
         ))}
       </div>
 
-      <div className="rounded-xl border bg-slate-50 p-4 text-sm">
-        <div className="font-semibold text-beisserGray">Need a quick next step?</div>
-        <div className="mt-2 flex flex-wrap gap-3">
-          <Link href="/quote" className="inline-flex rounded-md bg-brand-green px-3 py-2 text-white font-medium hover:bg-brand-greenDark">Request a Quote</Link>
-          <Link href="/service-request" className="inline-flex rounded-md border border-slate-300 px-3 py-2 font-medium hover:border-brand-green hover:text-brand-green">Service Request</Link>
+      <section className="section-band bg-brand-mist py-12">
+        <div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] md:items-center">
+          <div>
+            <h2 className="text-2xl font-semibold text-brand-ink sm:text-3xl">Need a quick next step?</h2>
+            <p className="mt-2 text-sm text-slate-700">Send us plans or a service request and we&apos;ll get the right team on it.</p>
+          </div>
+          <div className="flex flex-wrap gap-4 md:justify-end">
+            <Link href="/quote" className="inline-flex items-center rounded-md bg-brand-green px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-greenDark">Request a Quote</Link>
+            <Link href="/service-request" className="inline-flex items-center rounded-md border border-brand-green px-5 py-3 text-sm font-semibold text-brand-green transition-colors hover:bg-brand-green hover:text-white">Service Request</Link>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
