@@ -133,7 +133,7 @@ This is what's already in the repo. **Read these files before redesigning anythi
 - `/contact` — `app/contact/page.tsx`
 - `/products` and `/products/[slug]` — index + 10 category dynamic pages. Aliases handled in `app/products/[slug]/page.tsx` `slugAliases` (do not change).
 - `/products/doors/{interior-doors,exterior-doors,door-hardware}` — three door sub-pages.
-- `/brands/[slug]` — brand detail dynamic page (no `/brands` index yet — you'll be adding one).
+- `/brands` and `/brands/[slug]` — index plus brand detail dynamic page. The index currently emits a `BreadcrumbList` JSON-LD script; preserve it during the restyle.
 - `/services` and `/services/[slug]` — index plus detail pages for `design`, `estimating`, `installation`, `delivery`, `jobsite-coordination`, `special-orders`.
 - `/pros` and 4 audience pages: `commercial-multifamily`, `residential-builders`, `remodelers`, `trades-specialty` — all using `app/pros/pro-template.tsx`.
 - `/locations` and `/locations/[slug]` — index plus 4 branch detail pages.
@@ -434,15 +434,15 @@ Keep the `speakableSchema` JSON-LD `<script>` at the bottom of the page unchange
 
 Audit these three pages. Apply the same hero pattern as the category detail (eyebrow + H1 + image right) and use shared cards for the door-style/hardware-line listings. Keep all copy and schema as-is.
 
-### 5.5 Brands index (NEW: `app/brands/page.tsx`)
+### 5.5 Brands index (`app/brands/page.tsx`)
 
-This route doesn't exist yet — create it.
+This route already exists. **Restyle in place — keep the existing `metadata`, the `BreadcrumbList` JSON-LD script at the bottom, and the data flow through `getBrandEntries()` + `productCategories` cross-link.** Do not delete or reshape the schema.
 
-- Breadcrumbs (Home → Brands).
-- Header block: eyebrow "Brands" + H1 "Brands we stock" + supporting paragraph ("Beisser Lumber carries brand partners across decking, siding, windows, doors, EWP, and more. Explore each brand's lines and request a branch-routed quote.").
+- Breadcrumbs (Home → Brands) — already wired.
+- Header block: eyebrow "Brands" + H1 (keep existing "Brands We Carry" copy) + supporting paragraph (keep existing copy verbatim).
 - Filter strip (no JS dependency — pure anchor-based): tabs that filter to a category (`#all`, `#decking-railing`, `#siding`, `#windows-patio-doors`, `#doors`, `#engineered-wood-products`, etc.) by rendering separate grouped lists. Or render all brands in one alphabetical grid and let the user `Cmd+F`. Pick the simpler version unless there's a strong reason — the brand list is 60+ items. Recommended: alphabetical grid with a sticky letter-jump A–Z header at top.
-- Grid: 4-up at `lg:`, 2-up at `md:`. Each tile = brand logo (with text fallback) + brand name + `<Link>` to `/brands/{slug}`. `h-32` tiles, logos `h-12 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100`.
-- Keep no schema injection (not needed for an index of this type).
+- Grid: 4-up at `lg:`, 2-up at `md:`. Each tile = brand logo (with text fallback) + brand name + `<Link>` to `/brands/{slug}`. `h-32` tiles, logos `h-12 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100`. Keep the "Common Categories" cross-link sub-block from the current implementation; restyle it inside the tile rather than removing it.
+- **Preserve the `breadcrumbSchema` JSON-LD `<script>` injection at the bottom of the page** — it's currently emitted and is schema-locked per §2 hard constraints.
 
 ### 5.6 Brand detail (`app/brands/[slug]/page.tsx`)
 
