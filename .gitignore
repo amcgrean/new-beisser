@@ -24,3 +24,6 @@ pnpm-debug.log*
 Thumbs.db
 .vs/
 .vscode/
+
+# Source decks and raw assets (internal; this repo is public)
+source-assets/
