@@ -32,7 +32,7 @@ No site pages have been changed yet. This is the proposal.
 3. **Homepage:** all three carousel slides and all product category cards use Unsplash stock.
 4. **About:** the page has no images, and the schema lists `numberOfEmployees` as a minimum of 50.
 5. **Delivery:** the page shows a generic unbranded truck that looks AI-generated, when we have real Beisser trucks.
-6. **Location share previews:** `lib/seo.ts` uses each location's image for social sharing. Coralville's is a "Timber Titan of the month" employee graphic, and Birchwood's is a 225px magazine cover.
+6. **Location share previews:** `app/lib/seo.ts` uses each location's image for social sharing. Coralville's is a "Timber Titan of the month" employee graphic, and Birchwood's is a 225px magazine cover.
 
 ## Page-by-page plan
 
