@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
 import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
@@ -10,9 +11,10 @@ type ProPageProps = {
   breadcrumbLabel: string;
   path: string;
   extraSection?: React.ReactNode;
+  image?: { src: string; alt: string; width: number; height: number };
 };
 
-export default function ProAudiencePage({ h1, intro, body, highlights, breadcrumbLabel, path, extraSection }: ProPageProps) {
+export default function ProAudiencePage({ h1, intro, body, highlights, breadcrumbLabel, path, extraSection, image }: ProPageProps) {
   const speakableSchema = {"@context": "https://schema.org", "@type": "WebPage", speakable: {"@type": "SpeakableSpecification", cssSelector: ["h1", ".entity-definition", ".faq-answer"]}};
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -29,6 +31,9 @@ export default function ProAudiencePage({ h1, intro, body, highlights, breadcrum
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Pros", href: "/pros" }, { label: breadcrumbLabel }]} />
       <h1 className="text-3xl font-bold text-slate-900">{h1}</h1>
       <p className="entity-definition max-w-3xl text-sm text-slate-700">{intro}</p>
+      {image ? (
+        <Image src={image.src} alt={image.alt} width={image.width} height={image.height} priority className="h-56 w-full rounded-xl object-cover md:h-72" />
+      ) : null}
       <section className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700">
         <div className="space-y-3">
           {body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}

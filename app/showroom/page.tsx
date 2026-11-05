@@ -6,6 +6,7 @@ import { getGalleryEntries } from "@/app/lib/content";
 type GalleryItem = { src: string; alt: string };
 type FeatureItem = { code: string; title: string; text: string };
 type HoursItem = { day: string; time: string };
+type StatItem = { value: string; label: string };
 
 export default function ShowroomPage() {
   const entry = getPageMdx("showroom");
@@ -24,6 +25,7 @@ export default function ShowroomPage() {
 
   const gallery = (fm.gallery as GalleryItem[] | undefined) ?? [];
   const features = (fm.features as FeatureItem[] | undefined) ?? [];
+  const stats = (fm.stats as StatItem[] | undefined) ?? [];
   const visit = fm.visit as
     | {
         addressLine1?: string;
@@ -106,7 +108,7 @@ export default function ShowroomPage() {
         <section className="space-y-4">
           <h2 className="text-xl font-bold text-beisserGray">Gallery</h2>
           <p className="text-sm text-slate-600">
-            Swap these placeholders with your best showroom photos.
+            Inside our Birchwood / Johnston location, including the grand opening.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {gallery.map((img, idx) => (
@@ -117,6 +119,21 @@ export default function ShowroomPage() {
                 className="rounded-xl w-full h-40 md:h-48 object-cover"
                 loading="lazy"
               />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* STATS */}
+      {stats.length > 0 && (
+        <section className="space-y-4">
+          <h2 className="text-xl font-bold text-beisserGray">Showroom by the Numbers</h2>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+            {stats.map((stat) => (
+              <div key={stat.label} className="rounded-xl border bg-white p-4">
+                <div className="text-2xl font-extrabold text-beisserGreen">{stat.value}</div>
+                <div className="mt-1 text-sm text-slate-700">{stat.label}</div>
+              </div>
             ))}
           </div>
         </section>

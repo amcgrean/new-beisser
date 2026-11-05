@@ -2,7 +2,24 @@
 
 Source: Beisser overview deck, 3 Nov 2026 (18 slides, 56 images).
 
-No site pages have been changed yet. This is the proposal.
+## Done (5 Nov 2026)
+
+Only "ready" photos were used, and none of the open questions below were decided in the copy.
+
+- **Careers:** team photo replaces the blank header. Added "What's important to us", two more photos and 165 employees, and removed the "Aaron will..." placeholder text.
+- **About:** added a stats strip, mission and vision, history photos, the founders medallion and the LBM Top 100 award. Added "$2,500 and one employee" to the history, and set the schema employee count to 165.
+- **Showroom:** stock photos replaced with web-sized showroom and grand opening photos. Added "Showroom by the Numbers", noted 56,000 sq ft, and removed the "Swap these placeholders" line.
+- **Delivery:** real truck photos plus an "Our Fleet" section. The `delivery.mdx` image was swapped too.
+- **Homepage carousel:** slides 1 and 2 were broken (their Unsplash photos return 404) and now use the flatbed and showroom photos. Slide 3 is still stock.
+- **Community:** `community/[slug]` can now show an `images` list from frontmatter. Beisser Bowl and Habitat pages have photos.
+- **Gallery:** added 6 entries, fixed the missing leading slash, and pointed both old entries at web-sized copies (the after-hours original was 10 MB).
+- **Commercial & multifamily:** `pro-template.tsx` takes an optional `image`, and the page uses the multifamily delivery photo.
+- **Locations:** building sizes added to `notes`.
+- **Installation:** installed sales scope and the 7 installed-sales trucks.
+
+Still to do: everything under "Open questions" and "Needs OK", the Drake Relays story, real Coralville and showroom product photos, and a full-size file of the flatbed photo for the homepage.
+
+The rest of this doc is the original proposal.
 
 ## Where the files are
 
