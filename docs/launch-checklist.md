@@ -79,15 +79,16 @@ Owner: **Sales**. File: `app/data/testimonials.ts`.
 
 `<TestimonialSection>` filters empty quotes, so the block currently doesn't render at all. First real quote unblocks the homepage social-proof section.
 
-### 2d. Brand logos — 7 of 78 brands have PNGs
+### 2d. Brand logos — DONE; brand hero images are the real gap
 
-Owner: **Sales** (delivers files) / **Dev** (drops in + updates MDX frontmatter). Repo has 78 brand markdown files in `content/brands/` and 7 brand PNGs in `public/images/` (`andersen, marvin, masonite, pella, thermatru, timbertech, trex`).
+Correction (2026-11-06): all 78 `content/brands/*.md` files have a `logo:` that resolves to a file under `public/Logos/` or `public/uploads/` — verified by script. The earlier "7 of 78" count only looked at `public/images/brand-*.png`. No logo work is needed.
 
-- [ ] `public/images/brands/` directory needs to be created and populated with the remaining ~71 brand PNGs.
-- [ ] Update `logo:` frontmatter in each `content/brands/*.md` to point at the delivered PNG (currently falls back to `/images/resources-article.png` per `app/lib/brands.ts:22`, which reads as broken).
-- [~] Waves: brand pages for the "wave one" set (`trex, james-hardie, lp-smartside, andersen, weyerhaeuser, gerkin, sierra-pacific` — see `app/brands/[slug]/page.tsx`) are priority.
+What *is* a placeholder is each brand's `heroImage: /images/resources-article.png` (the same generic article graphic on every brand page).
 
-**Verify:** visit `/brands/andersen`, `/brands/marvin`, `/brands/trex` etc. — logo card should show a real logo, not the placeholder resources image.
+- [x] Brand logos present for all 78 brands.
+- [~] Brand `heroImage` — replace with a product or lifestyle photo per brand. PIP has photos for most stocked brands (`pip_product_images`, see `docs/agility-sync-plan.md`); Phase 1 of that plan drives this from PIP rather than by hand.
+
+**Verify:** visit `/brands/andersen`, `/brands/trex`, `/brands/schlage` — logo renders; hero is still generic until Phase 1.
 
 ### 2e. Showroom gallery photos
 
@@ -108,11 +109,12 @@ Owner: **Sales / Aaron**. Referenced in `content/pages/showroom.mdx` but not del
 - [ ] Update `app/products/[slug]/page.tsx` (line ~38, `internalLinksByCategory`).
 - [ ] Update `app/pros/remodelers/page.tsx` (line ~35).
 
-### 3b. Literature PDFs
+### 3b. Literature PDFs — DONE (public vendor docs)
 
-Owner: **Aaron**. Any confirmed PDFs replace placeholder text in `app/resources/literature/page.tsx`.
+`/resources/literature` now renders `app/data/literature.json`: 217 public vendor documents from PIP (install guides, spec sheets, CAD, warranties, catalogs for Lynden, L.J. Smith, Schlage, Kwikset, Dexter, Emtek, Hager, National Hardware, Endura, Front Line, ODL, JELD-WEN, Metrie, Ferche) plus "request from your branch" rows for brands with no public document yet.
 
-- [~] Replace literature-page placeholder text with real PDF links (not blocking launch).
+- [x] Real links for every brand PIP has documents for.
+- [~] Brands still request-only: Gerkin, Andersen, Sierra Pacific, Therma-Tru, Trex, TimberTech, Deckorators, James Hardie, Rollex, Weyerhaeuser, Tyvek, ZIP, Dow, Simpson, FastenMaster, Empire, Coffman. Add to PIP `pip_vendor_documents` and regenerate (Phase 1 of `docs/agility-sync-plan.md` automates this).
 
 ### 3c. WordPress URL audit + redirect confirmation
 
