@@ -38,6 +38,7 @@ export default function DeliveryPage() {
         <h2 className="text-lg font-semibold text-beisserGray">Our Fleet</h2>
         <p className="text-sm text-slate-700">
           We handle about 65,000 orders a year, and more than 80% of them are delivered. Our drivers and yard crews work to one standard: On-Time and In-Full.
+          Nearly all of our deliveries are in Iowa, and we also ship into neighboring states for larger projects.
         </p>
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           {fleet.map((item) => (

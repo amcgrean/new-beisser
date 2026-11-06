@@ -17,7 +17,7 @@ const history = [
   "Opened the custom door shop in Grimes in January 2004 in a 26,500-square-foot facility that now produces thousands of doors monthly.",
   "Expanded to Coralville in 2005.",
   "Added Engineered Wood Products in partnership with Weyerhaeuser in 2017, which has become one of Beisser's most extensive service lines.",
-  "Kim Beisser passed the presidency to his son-in-law Dave Ling just before the company's 70th anniversary.",
+  "Kim Beisser passed the presidency to his son-in-law Dave Ling just before the company's 70th anniversary. Dave now leads Beisser as CEO.",
 ];
 
 const stats = [
@@ -179,7 +179,7 @@ export default function AboutPage() {
       <section className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700">
         <h2 className="text-xl font-semibold text-beisserGray">Leadership transition and next chapter</h2>
         <p className="mt-2">
-          Just before Beisser&apos;s 70th anniversary, Kim Beisser passed the presidency to his son-in-law Dave Ling, continuing the family-owned legacy while expanding the company&apos;s reach across Central and Eastern Iowa.
+          Just before Beisser&apos;s 70th anniversary, Kim Beisser passed the presidency to his son-in-law Dave Ling, continuing the family-owned legacy. Dave now leads the company as CEO, expanding Beisser&apos;s reach across Central and Eastern Iowa.
         </p>
         <Link href="/careers" className="mt-3 inline-flex text-brand-green underline">
           Explore careers at Beisser Lumber
