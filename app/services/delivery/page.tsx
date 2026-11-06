@@ -1,4 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
+
+const fleet = [
+  { value: "34", label: "Delivery trucks" },
+  { value: "35", label: "Forklifts" },
+  { value: "15", label: "Piggyback forklifts" },
+  { value: "7", label: "Installed sales trucks" },
+];
 
 const deliveryTips = [
   "Share gate codes, onsite contacts, and preferred drop locations with your dispatcher.",
@@ -20,6 +28,26 @@ export default function DeliveryPage() {
           Central and Eastern Iowa with drivers who know the sites, the loads, and the timelines.
         </p>
       </header>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Image src="/images/company/delivery-flatbed-home.jpg" alt="Beisser Lumber flatbed truck delivering a material package to a home" width={743} height={423} className="h-56 w-full rounded-xl object-cover" priority />
+        <Image src="/images/company/delivery-andersen-box-truck.jpg" alt="Beisser Lumber box truck with Andersen windows branding" width={756} height={946} className="h-56 w-full rounded-xl object-cover object-[center_40%]" />
+      </div>
+
+      <section className="space-y-3 rounded-xl border bg-white p-4 shadow-sm">
+        <h2 className="text-lg font-semibold text-beisserGray">Our Fleet</h2>
+        <p className="text-sm text-slate-700">
+          We handle about 65,000 orders a year, and more than 80% of them are delivered. Our drivers and yard crews work to one standard: On-Time and In-Full.
+        </p>
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+          {fleet.map((item) => (
+            <div key={item.label} className="rounded-lg border bg-slate-50 p-3 text-center">
+              <div className="text-2xl font-bold text-beisserGreen">{item.value}</div>
+              <div className="text-xs text-slate-600">{item.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="grid gap-6 md:grid-cols-2">
         <div className="space-y-3 rounded-xl border bg-white p-4 shadow-sm">

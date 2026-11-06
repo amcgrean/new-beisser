@@ -12,6 +12,7 @@ export default function CommercialMultifamilyPage() {
     <ProAudiencePage
       breadcrumbLabel="Commercial & Multi-Family Builders"
       path="/pros/commercial-multifamily"
+      image={{ src: "/images/company/delivery-multifamily-jobsite.jpg", alt: "Beisser Lumber delivery of wrapped lumber packages to a multifamily jobsite", width: 776, height: 384 }}
       h1="Commercial & Multi-Family Builders — Building Materials from Beisser Lumber"
       intro="Beisser Lumber supports commercial and multifamily work with estimating, engineered wood, and a Components Division built around wall panelization and installation-ready delivery."
       body={[

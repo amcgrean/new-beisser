@@ -14,8 +14,7 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    image:
-      "https://images.unsplash.com/photo-1512914890250-353c97c9e7e2?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/company/delivery-flatbed-home.jpg",
     headline: "Building Materials for Iowa Builders",
     subheadline:
       "Framing lumber, engineered wood, windows, doors, siding, and jobsite support for residential and light commercial work.",
@@ -23,8 +22,7 @@ const slides: Slide[] = [
     ctaHref: "/products",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1519710889899-4fbb2a9a5214?auto=format&fit=crop&w=1600&q=80",
+    image: "/images/company/showroom-stair-display.jpg",
     headline: "Largest Millwork Showroom in the Region",
     subheadline:
       "Windows, doors, and trim displays for guided homeowner selections with documentation ready for your quotes.",

@@ -14,6 +14,7 @@ export default function InstallationServicePage() {
       <h1 className="text-3xl font-bold text-slate-900">Installation</h1>
       <div className="space-y-4 rounded-xl border bg-white p-5 text-sm text-slate-700 shadow-sm">
         <p>Beisser&apos;s installation-related services include an installed sales program, support for window service and warranty work on existing windows, and coordinated delivery for wall panels that arrive ready to install.</p>
+        <p>Our installed sales team handles doors, windows, and some decking, with seven trucks dedicated to installed sales.</p>
         <p>That matters for builders and service teams who need support after the initial sale, whether the project involves a service issue, a warranty question, or field coordination tied to a larger package. Instead of leaving customers to navigate the manufacturer alone, Beisser helps route service needs through the right contacts.</p>
         <p>On the structural side, wall panel delivery is designed to make framing more efficient. Panels are coordinated before shipment so crews can receive a turnkey product and keep installation moving once materials land on site.</p>
       </div>
