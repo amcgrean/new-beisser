@@ -26,7 +26,7 @@ export default function ProductsPage() {
         <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Products" }]} />
         <header className="mt-4 space-y-4">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-green">Products</p>
-          <h1 className="text-4xl font-bold leading-tight text-brand-ink sm:text-5xl">Building materials for Iowa builders</h1>
+          <h1 className="text-4xl font-bold leading-tight text-ink-1 sm:text-5xl">Building materials for Iowa builders</h1>
           <p className="max-w-3xl text-base text-slate-700">
             Materials, components, and systems for residential and light commercial projects across Iowa. Browse
             categories, see brand coverage, and request pricing when you are ready.
@@ -49,7 +49,7 @@ export default function ProductsPage() {
                 <Image src={heroSrc} alt={cat.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
               </div>
               <div className="flex flex-1 flex-col gap-2 p-6">
-                <h2 className="text-lg font-semibold text-brand-ink">{cat.name}</h2>
+                <h2 className="text-lg font-semibold text-ink-1">{cat.name}</h2>
                 {desc ? (
                   <p className="text-sm text-slate-600">
                     {desc.slice(0, 90)}

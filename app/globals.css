@@ -2,36 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-slate-50 text-slate-900;
-}
-
-.main-container {
-  @apply max-w-6xl mx-auto px-4;
-}
-
 @layer base {
-  /* Headings lean slightly tight — Montserrat reads better as a display face
+  html,
+  body {
+    /* .section-band reaches 50vw past the container, and 100vw includes the
+       scrollbar, so without this the page scrolls sideways by the scrollbar
+       width. `clip` (not `hidden`) keeps the sticky header working. */
+    overflow-x: clip;
+  }
+
+  body {
+    @apply bg-canvas text-ink-2;
+  }
+
+  /* Headings lean slightly tight - Montserrat reads better as a display face
      with negative tracking at larger sizes, closer to Gotham's geometric feel. */
   h1,
   h2,
   h3,
   h4 {
     letter-spacing: -0.01em;
+    text-wrap: balance;
   }
   h1 {
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
   }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.brand.500");
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+.main-container {
+  @apply mx-auto max-w-content px-4 sm:px-6;
 }
 
 @layer components {
   /* Full-bleed band that breaks out of .main-container while keeping its
-     inner content aligned to the container's max-width. Use sparingly for
-     hero/image bands. */
+     inner content aligned to the container's max-width. Use for hero and
+     image bands. */
   .section-band {
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     padding-left: calc(50vw - 50%);
     padding-right: calc(50vw - 50%);
+  }
+
+  /* Small uppercase label above a heading. Gold text uses the accent ink
+     (6.6:1 on white); gold-500 itself is too light for small text. */
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-brand-500;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md px-5 py-3 text-sm font-semibold transition-colors;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 text-white hover:bg-brand-600;
+  }
+  .btn-secondary {
+    @apply btn border border-line-strong bg-canvas text-ink-1 hover:border-brand-500 hover:text-brand-500;
+  }
+  .btn-on-dark {
+    @apply btn bg-white text-brand-600 hover:bg-brand-50;
+  }
+  .btn-outline-on-dark {
+    @apply btn border border-white/60 text-white hover:bg-white/10;
   }
 }
