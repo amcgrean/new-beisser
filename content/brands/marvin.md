@@ -1,7 +1,7 @@
 ---
 name: Marvin
 summary: Premium windows and doors with extensive customization options for Iowa new construction and remodel projects.
-description: Marvin Windows and Doors is available through Beisser Lumber for Iowa contractors and homeowners. Known for broad product lines and custom capabilities, Marvin is part of Beisser's full window offering alongside Gerkin, Andersen, Sierra Pacific, and other lines — all on display at our Johnston showroom.
+description: Marvin Windows and Doors is available through Beisser Lumber for Iowa contractors and homeowners. Known for broad product lines and custom capabilities, Marvin is part of Beisser's full window offering alongside Gerkin, Andersen, Sierra Pacific, and other lines, all on display at our Johnston showroom.
 website: 'https://www.marvin.com/'
 heroImage: /images/resources-article.png
 categories:

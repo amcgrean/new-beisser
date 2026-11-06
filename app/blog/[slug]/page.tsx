@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getBlogEntries, getBlogEntry } from "@/app/lib/content";
 import { MdxContent } from "@/app/ui/MdxContent";
-import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import { PageHeader } from "@/app/ui/PageHeader";
 import RelatedLinks from "@/components/RelatedLinks";
 import ArticleReadTracker from "@/components/ArticleReadTracker";
 import SocialShareButtons from "@/components/SocialShareButtons";
@@ -52,25 +52,33 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
   };
 
   return (
-    <article className="space-y-6">
+    <article>
       <ArticleReadTracker articleTitle={String(article.frontmatter.title)} category={String(article.frontmatter.category)} />
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: String(article.frontmatter.title) }]} />
-      <header className="space-y-2">
-        <p className="text-xs uppercase tracking-[0.14em] text-brand-green">{String(article.frontmatter.category)}</p>
-        <h1 className="text-3xl font-bold text-beisserGray">{String(article.frontmatter.title)}</h1>
-        <p className="text-sm text-slate-600">{String(article.frontmatter.author)} • {String(article.frontmatter.date)}</p>
-      </header>
+      <PageHeader
+        eyebrow={String(article.frontmatter.category)}
+        title={String(article.frontmatter.title)}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Resources", href: "/blog" }, { label: String(article.frontmatter.title) }]}
+      >
+        <p className="text-sm text-ink-4">{String(article.frontmatter.author)} · {String(article.frontmatter.date)}</p>
+      </PageHeader>
 
-      <MdxContent content={article.content} />
+      <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_18rem]">
+        <div className="space-y-10">
+          <MdxContent content={article.content} />
+          <SocialShareButtons title={String(article.frontmatter.title)} />
+        </div>
+        <aside className="lg:sticky lg:top-28 lg:self-start">
+          <div className="card-muted p-6">
+            <h2 className="text-base font-semibold text-ink-1">Need materials for your project?</h2>
+            <p className="mt-2 text-sm text-ink-3">Send your plans or a material list and the right branch will price it.</p>
+            <Link href="/quote" className="btn-primary mt-4 w-full">Request a Quote</Link>
+          </div>
+        </aside>
+      </div>
 
-      <section className="rounded-xl border bg-slate-50 p-4">
-        <h2 className="text-base font-semibold">Need materials for your project?</h2>
-        <Link href="/quote" className="mt-2 inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white">Request a Quote →</Link>
-      </section>
-
-      <SocialShareButtons title={String(article.frontmatter.title)} />
-
-      <RelatedLinks links={[{ href: "/products/decking-railing", label: "Explore product categories", description: "Browse Beisser product categories tied to this guide." }, { href: "/quote", label: "Request a material quote", description: "Get branch-routed pricing for your project." }]} />
+      <div className="mt-16">
+        <RelatedLinks links={[{ href: "/products/decking-railing", label: "Explore product categories", description: "Browse Beisser product categories tied to this guide." }, { href: "/quote", label: "Request a material quote", description: "Get branch-routed pricing for your project." }]} />
+      </div>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />

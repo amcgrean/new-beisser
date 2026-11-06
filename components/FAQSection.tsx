@@ -2,6 +2,7 @@
 
 import { useId, useMemo, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { ChevronDown } from "@/app/ui/icons";
 
 export interface FAQ {
   question: string;
@@ -35,24 +36,24 @@ export default function FAQSection({ title, faqs, category = "general" }: FAQSec
   };
 
   return (
-    <section className="space-y-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-      <h2 className="text-2xl font-semibold text-slate-900">{title}</h2>
+    <section className="space-y-6">
+      <h2 className="section-title">{title}</h2>
 
-      <div className="space-y-2">
+      <div className="divide-y divide-line border-y border-line">
         {visibleFAQs.map((faq, index) => {
           const panelId = `${baseId}-panel-${index}`;
           const buttonId = `${baseId}-button-${index}`;
           const isOpen = openIndex === index;
 
           return (
-            <div key={faq.question} className="overflow-hidden rounded-lg border border-slate-200">
+            <div key={faq.question}>
               <h3>
                 <button
                   id={buttonId}
                   type="button"
                   aria-expanded={isOpen}
                   aria-controls={panelId}
-                  className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm font-semibold text-brand-green"
+                  className="flex w-full items-center justify-between gap-4 py-4 text-left text-base font-semibold text-ink-1 transition-colors hover:text-brand-500"
                   onClick={() => {
                     const next = isOpen ? null : index;
                     setOpenIndex(next);
@@ -62,14 +63,14 @@ export default function FAQSection({ title, faqs, category = "general" }: FAQSec
                   }}
                 >
                   <span>{faq.question}</span>
-                  <span aria-hidden="true" className="text-base">{isOpen ? "−" : "+"}</span>
+                  <ChevronDown size={20} aria-hidden className={`shrink-0 text-brand-500 transition-transform ${isOpen ? "rotate-180" : ""}`} />
                 </button>
               </h3>
               <div
                 id={panelId}
                 role="region"
                 aria-labelledby={buttonId}
-                className={`${isOpen ? "block" : "hidden"} faq-answer border-t border-slate-200 bg-slate-100 px-4 py-3 text-sm text-slate-700`}
+                className={`${isOpen ? "block" : "hidden"} faq-answer max-w-prose pb-5 text-ink-3`}
               >
                 {faq.answer}
               </div>

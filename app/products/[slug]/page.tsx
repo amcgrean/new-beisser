@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 
 import FAQSection, { FAQ } from "@/components/FAQSection";
 import RelatedLinks, { RelatedLinkItem } from "@/components/RelatedLinks";
-import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import { PageHeader, CtaBand } from "@/app/ui/PageHeader";
 import { MdxContent } from "@/app/ui/MdxContent";
 import { getCategoryEntries, getCategoryMdx, getCategoryBySlug } from "@/app/lib/content";
 import { getBrandEntries } from "@/app/lib/brands";
 import { productFaqsBySlug } from "@/app/data/faqs";
 import { generateCategoryMetadata } from "@/app/lib/seo";
+import { mainPhone } from "@/app/data/navigation";
+import { Phone } from "@/app/ui/icons";
 
 const slugAliases: Record<string, string> = {
   decking: "decking-railing",
@@ -78,7 +79,9 @@ export default function ProductCategoryPage({ params }: { params: { slug: string
   const categoryMdx = getCategoryMdx(category.slug);
   const allBrands = getBrandEntries();
   const categoryBrands = allBrands.filter((b) => (b.categories ?? []).includes(category.slug));
-  const heroSrc = category.heroImage ?? "/placeholders/category.jpg";
+  // Only our own photos go in the header. Placeholders and remote stock images
+  // (several do not match their category) are skipped until real photos arrive.
+  const heroSrc = category.heroImage && category.heroImage.startsWith("/") && !category.heroImage.startsWith("/placeholders/") ? category.heroImage : null;
   const mdxBody = categoryMdx?.content;
   const description = category.description ?? category.summary ?? "";
   const subcategories = category.subcategories ?? [];
@@ -104,55 +107,69 @@ export default function ProductCategoryPage({ params }: { params: { slug: string
   };
 
   return (
-    <div className="space-y-8">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Products", href: "/products" }, { label: category.name }]} />
+    <div>
+      <PageHeader
+        eyebrow="Products"
+        title={`${category.name} at Beisser Lumber`}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Products", href: "/products" }, { label: category.name }]}
+        image={heroSrc ? { src: heroSrc, alt: category.name, width: 1600, height: 1200 } : undefined}
+        lead={
+          <>
+            <p>{description}</p>
+            <p className="text-base">
+              Beisser Lumber supports builders and homeowners with product comparisons, branch-level guidance, estimating help,
+              and coordinated delivery schedules across Iowa.
+            </p>
+          </>
+        }
+        actions={
+          <>
+            <Link href={`/quote?category=${canonicalSlug}`} className="btn-primary">Request a Quote</Link>
+            <a href={mainPhone.href} className="btn-secondary"><Phone size={16} /> {mainPhone.label}</a>
+          </>
+        }
+      />
 
-      <section className="grid gap-8 items-start lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1.4fr)]">
-        <div className="space-y-4">
-          <h1 className="text-3xl font-bold text-beisserGray">{category.name} at Beisser Lumber</h1>
-          <p className="max-w-2xl text-sm text-slate-700">{description}</p>
-          <p className="max-w-2xl text-sm text-slate-700">
-            Beisser Lumber supports builders and homeowners with product comparisons, branch-level guidance, estimating help,
-            and coordinated delivery schedules across Iowa.
-          </p>
-          {subcategories.length > 0 && (
-            <ul className="list-inside list-disc space-y-1 text-sm text-slate-700">
-              {subcategories.map((item) => (<li key={item}>{item}</li>))}
-            </ul>
-          )}
-        </div>
-        <div className="relative h-64 overflow-hidden rounded-2xl border bg-slate-100 shadow-sm sm:h-72 lg:h-80">
-          <Image src={heroSrc} alt={category.name} fill className="object-cover" priority />
-        </div>
-      </section>
-
-      {categoryMdx && mdxBody ? (
-        <section className="space-y-3 rounded-xl border bg-white p-4 shadow-sm">
-          <h2 className="text-xl font-semibold text-beisserGray">{category.name}</h2>
-          <MdxContent content={mdxBody} />
-        </section>
-      ) : null}
-
-      {categoryBrands.length > 0 ? (
-        <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-beisserGray">Relevant Brands</h2>
-          <div className="flex flex-wrap gap-2">
-            {categoryBrands.map((brand) => (
-              <Link key={brand.slug} href={`/brands/${brand.slug}`} className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:border-brand-green hover:text-brand-green">
-                {brand.name}
-              </Link>
-            ))}
+      <div className="space-y-16">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem]">
+          <div>
+            {categoryMdx && mdxBody ? <MdxContent content={mdxBody} /> : null}
           </div>
-        </section>
-      ) : null}
 
-      <section className="rounded-xl border bg-slate-50 p-4">
-        <p className="text-sm text-slate-700">Need pricing for this category? We can quote by plan set, takeoff, or material list.</p>
-        <Link href={`/quote?category=${canonicalSlug}`} className="mt-3 inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark">Request a Quote</Link>
-      </section>
+          <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
+            {subcategories.length > 0 && (
+              <div className="card-muted p-6">
+                <h2 className="text-base font-semibold text-ink-1">In this category</h2>
+                <ul className="bullets mt-3 text-sm text-ink-3">
+                  {subcategories.map((item) => (<li key={item}>{item}</li>))}
+                </ul>
+              </div>
+            )}
+            {categoryBrands.length > 0 ? (
+              <div className="card-muted p-6">
+                <h2 className="text-base font-semibold text-ink-1">Brands we carry</h2>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {categoryBrands.map((brand) => (
+                    <Link key={brand.slug} href={`/brands/${brand.slug}`} className="chip">
+                      {brand.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+            <div className="card p-6">
+              <h2 className="text-base font-semibold text-ink-1">Need pricing?</h2>
+              <p className="mt-2 text-sm text-ink-3">We can quote by plan set, takeoff, or material list.</p>
+              <Link href={`/quote?category=${canonicalSlug}`} className="btn-primary mt-4 w-full">Request a Quote</Link>
+            </div>
+          </aside>
+        </div>
 
-      <RelatedLinks links={relatedLinks} />
-      <FAQSection title={`${category.name} FAQs`} faqs={faqs} category={canonicalSlug} />
+        <RelatedLinks links={relatedLinks} />
+        <FAQSection title={`${category.name} FAQs`} faqs={faqs} category={canonicalSlug} />
+      </div>
+
+      <CtaBand primary={{ href: `/quote?category=${canonicalSlug}`, label: "Request a Quote" }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </div>

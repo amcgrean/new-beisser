@@ -84,4 +84,92 @@
   .btn-outline-on-dark {
     @apply btn border border-white/60 text-white hover:bg-white/10;
   }
+
+  /* Shared building blocks for inner pages. */
+  .page-title {
+    @apply text-3xl font-bold leading-tight text-ink-1 sm:text-4xl;
+  }
+  .lead {
+    @apply max-w-3xl text-base leading-relaxed text-ink-3 sm:text-lg;
+  }
+  .section-title {
+    @apply text-2xl font-semibold text-ink-1;
+  }
+  .card {
+    @apply rounded-lg border border-line bg-canvas shadow-card;
+  }
+  .card-muted {
+    @apply rounded-lg border border-line-soft bg-surface-1;
+  }
+  .text-link {
+    @apply font-semibold text-brand-500 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500;
+  }
+  .field {
+    @apply mt-1 w-full rounded-md border border-line-strong bg-canvas px-3 py-2 text-ink-1 placeholder:text-ink-5 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-md border border-line-strong bg-canvas px-3 py-1.5 text-sm font-medium text-ink-2 transition-colors hover:border-brand-500 hover:text-brand-500;
+  }
+  .bullets {
+    @apply list-disc space-y-1.5 pl-5 marker:text-brand-400;
+  }
+}
+
+/* Long-form copy from MDX (product categories, articles, page bodies). The
+   site has no typography plugin, so these restore heading sizes, list
+   markers and link styling that preflight removes. */
+@layer components {
+  .prose-beisser {
+    @apply max-w-prose text-base leading-relaxed text-ink-3;
+  }
+  .prose-beisser > * + * {
+    @apply mt-4;
+  }
+  .prose-beisser > :first-child {
+    @apply mt-0;
+  }
+  .prose-beisser > h2 {
+    @apply mt-10 text-2xl font-semibold text-ink-1;
+  }
+  .prose-beisser > h3 {
+    @apply mt-8 text-xl font-semibold text-ink-1;
+  }
+  .prose-beisser > h4 {
+    @apply mt-6 text-lg font-semibold text-ink-1;
+  }
+  .prose-beisser > h2 + *,
+  .prose-beisser > h3 + *,
+  .prose-beisser > h4 + * {
+    @apply mt-3;
+  }
+  .prose-beisser ul {
+    @apply list-disc space-y-1.5 pl-5 marker:text-brand-400;
+  }
+  .prose-beisser ol {
+    @apply list-decimal space-y-1.5 pl-5 marker:text-ink-4;
+  }
+  .prose-beisser a:not([class]) {
+    @apply font-semibold text-brand-500 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500;
+  }
+  .prose-beisser strong {
+    @apply font-semibold text-ink-1;
+  }
+  .prose-beisser blockquote {
+    @apply border-l-2 border-gold-500 pl-4 italic text-ink-2;
+  }
+  .prose-beisser table {
+    @apply w-full border-collapse text-sm;
+  }
+  .prose-beisser th {
+    @apply border-b border-line-strong px-3 py-2 text-left font-semibold text-ink-1;
+  }
+  .prose-beisser td {
+    @apply border-b border-line px-3 py-2 align-top;
+  }
+  .prose-beisser hr {
+    @apply my-10 border-line;
+  }
+  .prose-beisser img {
+    @apply rounded-lg;
+  }
 }

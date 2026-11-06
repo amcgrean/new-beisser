@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { locations } from "@/app/data/locations";
-import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import { PageHeader, CtaBand } from "@/app/ui/PageHeader";
+import { Clock, MapPin, Phone } from "@/app/ui/icons";
 
-
-const branchAddresses = [
-  "3705 SE Beisser Drive, Grimes, IA 50111",
-  "415 Westcor Drive, Coralville, IA 52241",
-  "1920 Central Avenue, Fort Dodge, IA 50501",
-  "7901 Birchwood Court, Johnston, IA 50131",
-];
 
 export const metadata: Metadata = {
   title: "Beisser Lumber Locations | Beisser Lumber",
@@ -27,48 +21,46 @@ export default function LocationsPage() {
   };
 
   return (
-    <div className="space-y-16">
-      <div>
-        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Locations" }]} />
-        <header className="mt-4 space-y-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-green">Locations</p>
-          <h1 className="text-4xl font-bold leading-tight text-ink-1 sm:text-5xl">Beisser Lumber locations</h1>
-          <p className="max-w-2xl text-base text-slate-700">
-            Visit our Iowa branches in Grimes, Coralville, Fort Dodge, and the Birchwood / Johnston showroom.
-          </p>
-        </header>
-      </div>
-
-      <section className="section-band bg-brand-mist py-12">
-        <h2 className="text-2xl font-semibold text-ink-1 sm:text-3xl">All branch addresses</h2>
-        <ul className="mt-4 grid gap-x-8 gap-y-2 text-sm text-slate-700 sm:grid-cols-2">
-          {branchAddresses.map((address) => <li key={address}>{address}</li>)}
-        </ul>
-      </section>
+    <div>
+      <PageHeader
+        eyebrow="Locations"
+        title="Beisser Lumber locations"
+        lead="Visit our Iowa branches in Grimes, Coralville, Fort Dodge, and the Birchwood / Johnston showroom."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Locations" }]}
+      />
 
       <div className="grid gap-6 md:grid-cols-2">
         {locations.map((loc) => (
-          <section key={loc.slug} className="space-y-4 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+          <section key={loc.slug} className="card flex flex-col p-6">
             <h2 className="text-xl font-semibold text-ink-1">{loc.name}</h2>
-            <div className="text-sm text-slate-700">
-              <div>{loc.addressLine1}</div>
-              <div>{loc.city}, {loc.state} {loc.zip}</div>
-              <div className="mt-1">{loc.phone}</div>
-              <div className="mt-2">{loc.hoursWeekday}</div>
-              <div>{loc.hoursSaturday}</div>
-              <div>{loc.hoursSundayNote}</div>
-              {loc.notes?.length ? (
-                <ul className="mt-2 list-inside list-disc space-y-1 text-xs text-slate-600">
-                  {loc.notes.map((note) => <li key={note}>{note}</li>)}
-                </ul>
-              ) : null}
+            <div className="mt-4 space-y-3 text-ink-3">
+              <p className="flex gap-3">
+                <MapPin size={18} className="mt-1 shrink-0 text-brand-500" />
+                <span>{loc.addressLine1}<br />{loc.city}, {loc.state} {loc.zip}</span>
+              </p>
+              <p className="flex gap-3">
+                <Phone size={18} className="mt-1 shrink-0 text-brand-500" />
+                <a href={`tel:${loc.phone.replace(/[^\d]/g, "")}`} className="text-link">{loc.phone}</a>
+              </p>
+              <p className="flex gap-3">
+                <Clock size={18} className="mt-1 shrink-0 text-brand-500" />
+                <span>{loc.hoursWeekday}<br />{loc.hoursSaturday}<br />{loc.hoursSundayNote}</span>
+              </p>
             </div>
-            <Link href={`/locations/${loc.slug}`} className="inline-flex items-center rounded-md border border-brand-green px-4 py-2 text-sm font-semibold text-brand-green transition-colors hover:bg-brand-green hover:text-white">
-              View Branch Details
-            </Link>
+            {loc.notes?.length ? (
+              <ul className="bullets mt-4 text-sm text-ink-4">
+                {loc.notes.map((note) => <li key={note}>{note}</li>)}
+              </ul>
+            ) : null}
+            <div className="mt-auto flex flex-wrap gap-3 pt-6">
+              <Link href={`/locations/${loc.slug}`} className="btn-secondary">Branch details</Link>
+              {loc.mapUrl ? <a href={loc.mapUrl} target="_blank" rel="noreferrer" className="btn-secondary">Directions</a> : null}
+            </div>
           </section>
         ))}
       </div>
+
+      <CtaBand />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </div>
   );

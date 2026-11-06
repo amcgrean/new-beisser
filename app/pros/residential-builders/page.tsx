@@ -12,7 +12,7 @@ export default function ResidentialBuildersPage() {
     <ProAudiencePage
       breadcrumbLabel="Residential Builders"
       path="/pros/residential-builders"
-      h1="Residential Builders — Building Materials from Beisser Lumber"
+      h1="Residential Builders: Building Materials from Beisser Lumber"
       intro="Beisser gives residential builders a wide product selection backed by in-house services, dedicated sales support, and delivery coordination that keeps materials aligned to the build schedule."
       body={[
         "Residential builders get the benefit of both breadth and service at Beisser Lumber: a wide selection of products backed by high-quality customer support.",

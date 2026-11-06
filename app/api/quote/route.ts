@@ -69,7 +69,7 @@ Source page: ${body.source_page || ""}
         to: [to],
         cc: centralCc ? [centralCc] : undefined,
         reply_to: body.email,
-        subject: `New quote request — ${branchName}`,
+        subject: `New quote request: ${branchName}`,
         text: summary,
       }),
     });
@@ -84,7 +84,7 @@ Source page: ${body.source_page || ""}
         from: fromEmail,
         to: [body.email],
         reply_to: to,
-        subject: `Your quote request has been received — ${branchName}`,
+        subject: `Your quote request has been received: ${branchName}`,
         text: `Thanks for contacting Beisser Lumber.\n\nWe received your quote request and will be in touch within 1 business day.\n\nBranch: ${branchName}\nBranch phone: ${branchPhones[branch] ?? branchPhones.grimes}\n\nSummary:\n${summary}`,
       }),
     });
