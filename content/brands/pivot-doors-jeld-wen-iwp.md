@@ -8,7 +8,7 @@ description: >-
   specialty units correctly.
 website: 'https://www.jeld-wen.com/en-us/search?query=pivot%20door&tab=products'
 heroImage: /images/resources-article.png
-logo: /images/resources-article.png
+logo: /Logos/Doors/Jeld-Wen.jpg
 categories:
   - doors
 bullets:

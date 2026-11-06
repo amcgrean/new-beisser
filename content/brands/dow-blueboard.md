@@ -4,7 +4,7 @@ summary: Closed-cell foam insulation for below-grade, wall, and roof application
 description: Dow BlueBoard insulation is a closed-cell foam insulation used in residential and commercial applications where energy efficiency, moisture resistance, and durability matter.
 website: 'https://www.dupont.com/'
 heroImage: /images/resources-article.png
-logo: /images/resources-article.png
+logo: '/Logos/Building Accesories/Dow Logo.png'
 categories:
   - building-envelope-accessories
 bullets:

@@ -87,9 +87,9 @@ Check these before publishing. All come from the deck unless noted.
 
 1. **"Largest" claim:** the site says "Iowa's largest family-owned lumberyard". The deck says "largest independently owned lumber dealer in our market". Which is the approved wording?
 2. **"Certified engineers":** the deck says 5 on staff. "Engineer" can imply a licensed PE, so confirm the credential before publishing.
-3. **Dave Ling's title:** the site says president, and the magazine quote says CEO.
+3. **Dave Ling's title:** settled. Aaron confirmed Dave is CEO (5 Nov 2026), and the About page now says so.
 4. **"400+ years":** the site credits sales staff, and the magazine sidebar says building trades combined.
-5. **Service area:** the site says Central and Eastern Iowa, and the deck adds all bordering states and farther on larger jobs.
+5. **Service area:** partly settled. 2022 sales-tax notes say 98-99% of sales are in Iowa, with the rest in MN, IL, NE and MO. The delivery page now says "nearly all" deliveries are in Iowa, with neighboring states on larger projects. A current per-state count would need an Agility query on ship-to state.
 6. **Age wording:** "73 years" and "165 employees" will go out of date. "Since 1953" doesn't.
 
 ## Needs OK before use
