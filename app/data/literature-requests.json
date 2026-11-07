@@ -1,0 +1,44 @@
+{
+  "note": "Documents the branch emails on request: brands with no public document in PIP yet. Rows disappear from here once PIP carries the vendor's documents (then they arrive through app/data/pip/literature.json).",
+  "sections": [
+    { "category": "Windows & Patio Doors", "brands": [
+      { "brand": "Gerkin Windows", "docs": ["Vinyl Window Brochure", "Vinyl Patio Door Brochure", "Aluminum Window Brochure", "Storm Door Brochure"] },
+      { "brand": "Andersen Windows", "docs": ["100 Series Window & Patio Brochure", "200 Series Window Brochure", "A Series Window Brochure"] },
+      { "brand": "Sierra Pacific", "docs": ["Brand Guide", "Vinyl Window & Patio Door Brochure", "H3 Window Brochure"] }
+    ]},
+    { "category": "Doors", "brands": [
+      { "brand": "Therma-Tru", "docs": ["Entry Door Catalog"] }
+    ]},
+    { "category": "Decking & Railing", "brands": [
+      { "brand": "Trex", "docs": ["Decking Brochure"] },
+      { "brand": "TimberTech", "docs": ["Decking Guide"] },
+      { "brand": "Deckorators", "docs": ["Railing Catalog"] }
+    ]},
+    { "category": "Siding", "brands": [
+      { "brand": "LP SmartSide", "docs": ["Product Catalog"] },
+      { "brand": "James Hardie", "docs": ["Product Catalog"] },
+      { "brand": "Rollex", "docs": ["Soffit & Trim Guide"] }
+    ]},
+    { "category": "Lumber & Panels", "brands": [
+      { "brand": "Weyerhaeuser", "docs": ["OSB and Panel Information", "Framing Lumber & Sheathing Guide"] }
+    ]},
+    { "category": "Engineered Wood Products", "brands": [
+      { "brand": "Weyerhaeuser", "docs": ["LVL / LSL / PSL Guide", "Floor System Guide"] }
+    ]},
+    { "category": "Building Envelope & Accessories", "brands": [
+      { "brand": "DuPont Tyvek", "docs": ["Housewrap & Flashing Guide"] },
+      { "brand": "ZIP System", "docs": ["Sheathing & Tape Guide"] },
+      { "brand": "Dow", "docs": ["BlueBoard Insulation Literature"] }
+    ]},
+    { "category": "Hardware & Screws", "brands": [
+      { "brand": "Simpson Strong-Tie", "docs": ["Connector Catalog"] },
+      { "brand": "FastenMaster", "docs": ["Structural Fastener Guide"] }
+    ]},
+    { "category": "Millwork", "brands": [
+      { "brand": "Empire Moulding & Millwork", "docs": ["Millwork Catalog"] }
+    ]},
+    { "category": "Stair Parts", "brands": [
+      { "brand": "Coffman", "docs": ["Stair Systems Guide"] }
+    ]}
+  ]
+}

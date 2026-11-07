@@ -1,0 +1,2186 @@
+{
+  "vendors": [
+    {
+      "vendor": "Fiberon",
+      "brand": "Fiberon",
+      "category": "Decking & Railing",
+      "docs": [
+        {
+          "title": "Decking Terms Glossary",
+          "type": "brochure",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/mx2tntri4a/Deck-Speak-Glossary.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Homeowner Deck Guide",
+          "type": "brochure",
+          "url": "https://outdoorsandsecurity.widen.net/s/m8lb7jnfhw/24_fib_deck_homeowner_guide",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Wildwood Cladding Brochure",
+          "type": "brochure",
+          "url": "https://outdoorsandsecurity.widen.net/s/npdt7xjgf6/lit_clad_brochure_wildwood-composite-cladding",
+          "appliesTo": null
+        },
+        {
+          "title": "Wildwood Composite Cladding Brochure",
+          "type": "brochure",
+          "url": "https://fiberon.widen.net/s/npdt7xjgf6/lit_clad_brochure_wildwood-composite-cladding",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Capped Composite Decking Care and Maintenance",
+          "type": "care_guide",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/kzavbwpmck/fiberon-care-maintenance-mkt-lit-care-maintenance.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Cladding Care and Maintenance",
+          "type": "care_guide",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/wnq9rvgcb2/fiberon-cladding-care-and-maintenance-fib-0380-lit.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "General Care and Maintenance - Wildwood Cladding",
+          "type": "care_guide",
+          "url": "https://fiberon.widen.net/s/62xhfklp8s/cladding-care-and-maintenance_wildwood_2021",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Product Guide",
+          "type": "catalog",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/2kaw95txe7/O26-778100---2027-Fiberon-Product-Guide_PAGES.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Cladding - 3-Part Architectural Specification (Word document)",
+          "type": "csi_spec",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/ru9zcclcsk/fiberon-cladding-architectural-specification-WORD.doc",
+          "appliesTo": null
+        },
+        {
+          "title": "Cladding –3-Part Architectural Specification (pdf)",
+          "type": "csi_spec",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/1zn0fbeefx/fiberon-cladding-architectural-specification.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Decking - 3-Part Architectural Specification (Word document)",
+          "type": "csi_spec",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/sgmldy0nkd/FIberon-Decking-Architectural-SpecificationWORD.doc",
+          "appliesTo": null
+        },
+        {
+          "title": "Decking - 3-Part Architectural Specification (pdf)",
+          "type": "csi_spec",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/yk7um8iotf/FIberon-Decking-Architectural-Specification.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Wildwood Cladding Guide Specification Document",
+          "type": "csi_spec",
+          "url": "https://outdoorsandsecurity.widen.net/s/mtddwqn95s/fiberon-wildwood-cladding-guide-spec",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon ADA Handrail Installation",
+          "type": "install_guide",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/j2cdqnzzkg/fiberon-ada-installation.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon ArmorGuard Classic Railing Installation",
+          "type": "install_guide",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/68xg1zrmdf/ArmorGuard_Classic_Railing_Install-Instructions.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon ArmorGuard Deluxe Railing Installation",
+          "type": "install_guide",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/zhyceeuvjy/ArmorGuard_Deluxe_Railing_2020_Install-Instructions.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon ArmorGuard Post Sleeve Surface Mount Kit Installation",
+          "type": "install_guide",
+          "url": "https://outdoorsandsecurity.widen.net/s/nkrsmhrzj6/lit_armorguard_surface-mount-kit-install",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon ArmorGuard Regency Railing Installation - Round Metal Balusters",
+          "type": "install_guide",
+          "url": "https://outdoorsandsecurity.widen.net/s/qscsvjbnlk/armorguard-regency-railing-installation-round-metal",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon ArmorGuard Regency Railing Installation - Square Composite Balusters",
+          "type": "install_guide",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/poi2qnm3dy/armorguard-regency-railing-installation-square.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Brio Railing 6 ft. & 8 ft. Installation - Round Metal Balusters",
+          "type": "install_guide",
+          "url": "https://outdoorsandsecurity.widen.net/s/wvttbbr8k2/brio-rhythm-railing_round-balusters_-instructions",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Brio Railing 6 ft. & 8 ft. Installation- Square Composite Baluster",
+          "type": "install_guide",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/d9ddnszqj9/Brio-Railing_Square-Balusters_-Instructions.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon CitySide Railing 6 ft. & 8 ft. Installation",
+          "type": "install_guide",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/4sje9mxlbu/Fiberon-CitySide-Aluminum-Railing-Instructions.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon CountrySide Railing 6 ft. & 8 ft. Installation",
+          "type": "install_guide",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/wd5hxr8zfe/CountrySide-Railing-Instructions_EN-FR-SP.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Wildwood Cladding Installation Instructions",
+          "type": "install_guide",
+          "url": "https://outdoorsandsecurity.widen.net/s/qbdrkf8pj8/lit_clad_wildwood-cladding-installation-instructions",
+          "appliesTo": null
+        },
+        {
+          "title": "PE Decking and Fastener Instructions",
+          "type": "install_guide",
+          "url": "https://outdoorsandsecurity.widen.net/s/c2schrfsv5/fib_pe_decking--fastener-instructions",
+          "appliesTo": null
+        },
+        {
+          "title": "PVC Decking and Fastener Installation Instructions",
+          "type": "install_guide",
+          "url": "https://outdoorsandsecurity.widen.net/s/dd2lvcdfnx/22_fib_pvc_decking-instructions",
+          "appliesTo": null
+        },
+        {
+          "title": "Wildwood Cladding - Installation Instructions",
+          "type": "install_guide",
+          "url": "https://fiberon.widen.net/s/qbdrkf8pj8/lit_clad_wildwood-cladding-installation-instructions",
+          "appliesTo": null
+        },
+        {
+          "title": "SDS - Fiberon ArmorGuard Decking",
+          "type": "sds",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/blrcrs9tev/SDS--Fiberon---ArmorGuard---PE-Composite-Decking-4-6-23.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "SDS - Fiberon Concordia Decking",
+          "type": "sds",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/sbrqqqyumr/msds-fiberon-horizon-decking.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "SDS - Fiberon Deck Cleaner",
+          "type": "sds",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/hdh63n7iv2/msds-fiberon-deck-cleaner.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "SDS - Fiberon Good Life Decking",
+          "type": "sds",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/igajiuwtr3/msds-fiberon-goodlife-decking.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "SDS - Fiberon Good Life FR Decking",
+          "type": "sds",
+          "url": "https://outdoorsandsecurity.widen.net/s/llqkmpbwkl/sds---fiberon-good-life---pe--fr-composite-decking-10-30-2023",
+          "appliesTo": null
+        },
+        {
+          "title": "SDS - Fiberon Paramount Decking",
+          "type": "sds",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/sa1qaisnac/msds-fiberon-paramount-decking.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "SDS - Fiberon Sanctuary Decking",
+          "type": "sds",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/iziyhr27uh/SDS--Fiberon---Sanctuary---PE-Composite-Decking-4-6-23.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "SDS - Fiberon Sanctuary FR Decking",
+          "type": "sds",
+          "url": "https://outdoorsandsecurity.widen.net/s/hc8fvksqhm/sds---fiberon-sanctuary-pe-fr-composite-decking-10-30-2023",
+          "appliesTo": null
+        },
+        {
+          "title": "SDS - Fiberon Veranda Decking",
+          "type": "sds",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/iklnuh4t1i/SDS--Fiberon---Veranda---PE-Composite-Decking-4-6-23.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "SDS - Fiberon Wildwood Composite Cladding",
+          "type": "sds",
+          "url": "https://outdoorsandsecurity.widen.net/s/sssp8mjkcd/sds---fiberon-wildwood---pe-composite-cladding-10-30-23",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Decking Physical & Mechanical Properties",
+          "type": "spec_sheet",
+          "url": "https://outdoorsandsecurity.widen.net/s/s25rkwrfkx/lit_physical-and-mechanical-properties_22",
+          "appliesTo": null
+        },
+        {
+          "title": "Starborn Fastener Color Cross-Reference Guide - Fiberon",
+          "type": "spec_sheet",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/lol5w9oans/Starborn-Fastener-Color-Guide_Fiberon.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Wildwood Cladding - Technical Data Sheet",
+          "type": "spec_sheet",
+          "url": "https://fiberon.widen.net/s/vllbqwwlhw/lit_cladding_wildwood_technical-data-sheet",
+          "appliesTo": null
+        },
+        {
+          "title": "Wildwood Cladding Submittal Package (zip)",
+          "type": "spec_sheet",
+          "url": "https://outdoorsandsecurity.widen.net/content/hobug8n4t7/original/wildwood-submittal-package.zip",
+          "appliesTo": null
+        },
+        {
+          "title": "California Proposition 65 and Fiberon Products",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/s/rjrgwxqlqv/fiberon_california_proposition_65_letter_aug28_2018",
+          "appliesTo": null
+        },
+        {
+          "title": "Concordia Horizon Decking - Technical Bulletin - Cutting and Drilling",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/rivt4z2jgi/horizon-decking-cutting-drilling-fib-0094-lit.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Concordia Horizon Decking - Technical Bulletin - PermaTech",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/ne90jfrspd/horizon-decking-permatech-fib-0096-lit.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Concordia Horizon Decking - Technical Bulletin - Surface Adherence Submersion Test",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/imviweaedy/horizon-decking-surface-adherence-submersion-fib-0057-lit.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Capped Decking - Technical Bulletin - Static Electricity",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/m4e5a1esfj/static-electricity-capped-decking-fib-0315-lit.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Decking - Technical Bulletin - Cleaning mold on capped and uncapped decking",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/dp8w8flyzl/cleaning-mold-on-capped-uncapped-decking-fib-0214-lit.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Decking - Technical Bulletin - Decking Storage and Handling",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/s/zqtqvltxld/fiberon-technical-bulletin-21-1-decking-storage-and-handling-03-12-2021-final",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Decking - Technical Bulletin - PFAS RM",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/s/qnvtpzfv9p/fiberon-technical-bulletin-23-2-pfas-rm-_5.15.2023",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Decking - Technical Bulletin - Scratch and Chip Repair",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/s/nwqcrz9fdw/fiberon-technical-bulletin-22-4-scratch-and-chip-repair-10-12-2022-final",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Decking - Technical Bulletin - Side Angled Fastening Systems",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/evxihe7rnn/sideangled-fastening-systems-fib-0205-lit.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Decking - Technical Bulletin - Tips for Sleeper Installation",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/sehm0nvhn0/tips-for-sleeper-installation-fib-0325-lit.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Decking - Technical Bulletin - Use of Dexerdry with Fiberon Decking",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/s/3wnf70jw3g",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Fasteners - Technical Bulletin - Top Loading Fasteners",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/s/2zdr2jj78p/fiberon-technical-bulletin-21-2-top-loading-fasteners-08-17-2021-final",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Railing - Technical Bulletin - ADA Handrail Components",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/s/pnpsclztxj/technicial-bulletin_20-1_ada-handrail-components_4.30.20_final",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon WPC Decking - Technical Bulletin - Spacing and Gap",
+          "type": "tech_bulletin",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/sg8bxi7tdx/fiberon-decking-spacing-gap-fib-0062-lit.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Wildwood Cladding - Best Practices: Storage and Handling",
+          "type": "tech_bulletin",
+          "url": "https://fiberon.widen.net/s/dxxfkltgxh/lit_clad_storage-and-handling-best-practices",
+          "appliesTo": null
+        },
+        {
+          "title": "Wildwood Packaging Change",
+          "type": "tech_bulletin",
+          "url": "https://fiberon.widen.net/s/z6zhjhwfk7/fiberon-technical-bulletin-22-1-wildwood-cladding-package-updates-03-14-2022-final",
+          "appliesTo": null
+        },
+        {
+          "title": "Approved Fiberon decking for Wildland Urban Interface (WUI)",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/s/tq685btwjm/fiberon-fire-rated-decking-sell-sheet",
+          "appliesTo": null
+        },
+        {
+          "title": "Environmental Product Declaration - Composite Cladding",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/s/cbwhzb2lfz/scs-epd-08200_fiber-composites_wildwood-cladding_100322",
+          "appliesTo": null
+        },
+        {
+          "title": "Environmental Product Declaration - Composite Decking",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/s/scrbqfbf6r/scs-epd-07180_fiberon_082622",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Cladding: NFPA 268 Ignition Resistance Testing Report",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/op4cdmjt3q/Cladding-Ignitability-Testing-Report_APPROVED.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Cladding: Texas Department of Insurance Product Evaluation (TDI-MC18)",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/hrc7uzyavo/tdi_mc18.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Decking: Texas Department of Insurance Product Evaluation (TDI-MC20)",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/s/tmpgp6cbsw/tdi-mc20-2025",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Good Life Decking California WUI Fire Listing",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/zeoyt2xx4v/2045-0500GoodLifeDeckingWUI.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Paramount Decking California WUI Fire Listing",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/btuuofu3kf/2045-0008ParamountDeckingWUI.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Promenade Decking California WUI Fire Listing",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/bfh1xv77dv/2045-0503PromenadeDeckingWUI.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Sanctuary Decking California WUI Fire Listing",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/nczicyu8ak/2045-0502SanctuaryDeckingWUI.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Wildwood Cladding California WUI Fire Listing",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/s/tttxbddgtz/2045-0504wildwoodcladdingwui",
+          "appliesTo": null
+        },
+        {
+          "title": "ICC-ES Evaluation Report Fiberon CitySide Aluminum Railing: ESR-4945",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/s/v8pvbdrfzp/esr-4945-fiberon-cityside-railing",
+          "appliesTo": null
+        },
+        {
+          "title": "ICC-ES Evaluation Report Fiberon Cladding ESR-4944",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/cvvtqublvz/_ESR-4944-072222.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ICC-ES Evaluation Report Fiberon Composite Railing ESR-4943",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/s/fkbhktjmgr/esr-4943-fiberon-railing",
+          "appliesTo": null
+        },
+        {
+          "title": "ICC-ES Evaluation Report Fiberon Decking ESR-4947",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/s/tfznjtw8qq/esr-4947-fiberon-decking-feb-2025_todd-kippel",
+          "appliesTo": null
+        },
+        {
+          "title": "Life Cycle Assessment of Wildwood Cladding",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/s/fhrhcnbblc/scs_rpt_fibercomposites_wildwood-cladding_091522_f",
+          "appliesTo": null
+        },
+        {
+          "title": "Recycled Content Certification – Composite Decking and Cladding",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/s/rvn68fpvgg/fibercomposites_2021_scs-rc-06376_s",
+          "appliesTo": null
+        },
+        {
+          "title": "Wildwood Cladding - Environmental Product Declaration",
+          "type": "test_report",
+          "url": "https://outdoorsandsecurity.widen.net/s/tlf82vd9mg/scs-epd-08200_fiber-composites_wildwood-cladding_100322",
+          "appliesTo": null
+        },
+        {
+          "title": "Wildwood Cladding California WUI Fire Listing",
+          "type": "test_report",
+          "url": "https://cdn.shopify.com/s/files/1/0626/3563/8999/files/LicenseBMLLINGLISTNEW-wildwood_cladding.pdf?v=1782236383",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Commercial Limited Warranty",
+          "type": "warranty",
+          "url": "https://fiberon.widen.net/s/rzxfbddhzv/2021_fiberon-commercial-limited-warranty",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Residential Limited Warranty",
+          "type": "warranty",
+          "url": "https://outdoorsandsecurity.widen.net/s/jctmfrlvwc/us-english_fiberon-residential-limited-warranty",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Warranty Claim Checklist",
+          "type": "warranty",
+          "url": "https://outdoorsandsecurity.widen.net/view/pdf/t0w7eiuork/Warranty-Checklist.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Fiberon Wildwood Composite Cladding Limited Warranty",
+          "type": "warranty",
+          "url": "https://fiberon.widen.net/s/6dqlmfxpcr/21_fiberon-cladding-limited-warranty_final",
+          "appliesTo": null
+        }
+      ]
+    },
+    {
+      "vendor": "Lockgeniuses Inc",
+      "brand": "Dexter",
+      "category": "Door Hardware",
+      "docs": [
+        {
+          "title": "J-Series (J10/J40/J54) Knob/Lever Door Prep Template",
+          "type": "install_guide",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/installation-manuals/T00-0000R14.pdf",
+          "appliesTo": "Dexter J-series levers"
+        },
+        {
+          "title": "J-Series (J10/J40/J54) Knob/Lever Installation Instructions",
+          "type": "install_guide",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/installation-manuals/T00-0000R14-F.pdf",
+          "appliesTo": "Dexter J-series levers (Corona, Seville, Solstice, Stratus)"
+        },
+        {
+          "title": "J-Series Deadbolt (JD60/JD62) Door Prep Template",
+          "type": "install_guide",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/installation-manuals/P515-642.pdf",
+          "appliesTo": "JD60 deadbolt"
+        },
+        {
+          "title": "J-Series Deadbolt (JD60/JD62) Installation Instructions",
+          "type": "install_guide",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/installation-manuals/P515-483.pdf",
+          "appliesTo": "JD60 deadbolt"
+        },
+        {
+          "title": "Dexter by Schlage warranty",
+          "type": "warranty",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/schlage-dexter-warranty.pdf",
+          "appliesTo": "Dexter J-Series levers and JD60 deadbolt"
+        },
+        {
+          "title": "J Series by Schlage warranty",
+          "type": "warranty",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/schlage-jseries-warranty.pdf",
+          "appliesTo": "J-Series"
+        }
+      ]
+    },
+    {
+      "vendor": "Emtek Products - LMC",
+      "brand": "Emtek",
+      "category": "Door Hardware",
+      "docs": [
+        {
+          "title": "Emtek 2025 Door Hardware Booklet",
+          "type": "catalog",
+          "url": "https://www.emtek.com/media/documents/2025_Emtek_Door_Hardware_Booklet.pdf",
+          "appliesTo": "Door hardware"
+        },
+        {
+          "title": "Emtek 2025 Electronic Lock Pocket Booklet",
+          "type": "catalog",
+          "url": "https://www.emtek.com/media/documents/2025_Emtek_Electronic_Lock_Pocket_Booklet.pdf",
+          "appliesTo": "Electronic locks"
+        },
+        {
+          "title": "Emtek 2025 Multi-Point Pocket Booklet",
+          "type": "catalog",
+          "url": "https://www.emtek.com/media/documents/2025_Emtek_Multi_Point_Pocket_Booklet.pdf",
+          "appliesTo": "Multi-point lock trim (Endura / PanoLock compatible)"
+        },
+        {
+          "title": "Emtek Limited Lifetime Warranty (mechanical, finish, electronics)",
+          "type": "warranty",
+          "url": "https://www.emtek.com/support/warranty/",
+          "appliesTo": "vendor"
+        }
+      ]
+    },
+    {
+      "vendor": "Hager - LMC",
+      "brand": "Hager",
+      "category": "Door Hardware",
+      "docs": [
+        {
+          "title": "Hager 2024 Catalog - Commercial Hinges section",
+          "type": "catalog",
+          "url": "https://www.hagerco.com/Files/Files/Main%20Catalog%20Sections/Catalog-CommercialHinges-2024-v39a.pdf",
+          "appliesTo": "Architectural / BB1279-type hinges"
+        },
+        {
+          "title": "Hager 2024 Catalog - Residential Hinges section",
+          "type": "catalog",
+          "url": "https://www.hagerco.com/Files/Files/Main%20Catalog%20Sections/Catalog_2024_ResidentialHinges_v00.pdf",
+          "appliesTo": "Residential hinges"
+        },
+        {
+          "title": "Hager 2024 Catalog - Sliding Door hardware section",
+          "type": "catalog",
+          "url": "https://www.hagerco.com/Files/Files/Main%20Catalog%20Sections/Hager_catalog_sliding_door_2024_v48.pdf",
+          "appliesTo": "Sliding / barn door hardware"
+        },
+        {
+          "title": "Hager Lifetime Warranty (Aug 2024)",
+          "type": "warranty",
+          "url": "https://www.hagerco.com/Files/Files/Warranties/lifetime_warranty_august_2024.pdf",
+          "appliesTo": "Commercial locks / closers / exit devices / certain hinges"
+        },
+        {
+          "title": "Hager One-Year Finish Warranty",
+          "type": "warranty",
+          "url": "https://www.hagerco.com/Files/Files/Warranties/one-year_finish_warranty_october_2018.pdf",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "Hager One-Year Warranty (Aug 2024) - covers Residential Hinges",
+          "type": "warranty",
+          "url": "https://www.hagerco.com/Files/Files/Warranties/one-year_warranty_august_2024.pdf",
+          "appliesTo": "Residential hinges"
+        }
+      ]
+    },
+    {
+      "vendor": "Lockgeniuses Inc",
+      "brand": "Kwikset",
+      "category": "Door Hardware",
+      "docs": [
+        {
+          "title": "Kwikset Product Catalog",
+          "type": "catalog",
+          "url": "https://s7d2.scene7.com/is/content/Kwikset/Kwikset-Product-Catalog",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "800-series handleset drilling instructions",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_di_5048341_800.pdf",
+          "appliesTo": "Hawthorne 800 handleset"
+        },
+        {
+          "title": "Deadbolt installation guide (660 / 780)",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5054525_qr_db_6al_eng.pdf",
+          "appliesTo": "780 deadbolt (also 660)"
+        },
+        {
+          "title": "Halifax lever (round) keyed entry installation guide",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5066865_lvr_ent_mpp.pdf",
+          "appliesTo": "Halifax lever (round) entry"
+        },
+        {
+          "title": "Halifax lever (square) passage/privacy installation guide",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5066866_lvr_prpa_mpp.pdf",
+          "appliesTo": "Halifax lever (square) passage/privacy"
+        },
+        {
+          "title": "Hawthorne 800 handleset installation guide",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5048333_800_hexj__cp.pdf",
+          "appliesTo": "Hawthorne 800 handleset"
+        },
+        {
+          "title": "Home Connect 620 installation guide (English, 892)",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5069369_892_eng_.pdf",
+          "appliesTo": "Home Connect 620"
+        },
+        {
+          "title": "Home Connect 620 installation guide (English, 893)",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5069940_893_eng_.pdf",
+          "appliesTo": "Home Connect 620"
+        },
+        {
+          "title": "Keyed entry knob installation guide (Hancock)",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5062541_knob_ent_ki.pdf",
+          "appliesTo": "Hancock knob entry"
+        },
+        {
+          "title": "Maven knob keyed entry installation guide",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5062821_knob_ent_nki.pdf",
+          "appliesTo": "Maven knob entry"
+        },
+        {
+          "title": "Maven knob passage/privacy installation guide",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5062822_knob_prpa_nki.pdf",
+          "appliesTo": "Maven knob passage/privacy"
+        },
+        {
+          "title": "Passage/privacy knob installation guide (Hancock)",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5062820_knob_prpa_ki.pdf",
+          "appliesTo": "Hancock knob passage/privacy"
+        },
+        {
+          "title": "San Clemente 818 handleset instruction sheet",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/ig_5057677_hndlst_lpdb_lvr.pdf",
+          "appliesTo": "San Clemente 818 handleset"
+        },
+        {
+          "title": "SmartCode 270 installation guide",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5052438_9270.pdf",
+          "appliesTo": "SmartCode 270"
+        },
+        {
+          "title": "Square-rose lever installation guide (Casey / Halifax square)",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5054784_qrcd_lpp-mpp_lvr_eng.pdf",
+          "appliesTo": "Casey lever"
+        },
+        {
+          "title": "Tustin lever keyed entry installation guide",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5044593_740_tln__cp.pdf",
+          "appliesTo": "Tustin lever entry"
+        },
+        {
+          "title": "Tustin lever passage/privacy installation guide",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5044594_720_tnl__cp.pdf",
+          "appliesTo": "Tustin lever passage/privacy"
+        },
+        {
+          "title": "780 Deadbolt sell sheet",
+          "type": "spec_sheet",
+          "url": "https://s7d2.scene7.com/is/content/Kwikset/780-Deadbolt-Sell-Sheet",
+          "appliesTo": "780 deadbolt"
+        },
+        {
+          "title": "Casey Lever sell sheet",
+          "type": "spec_sheet",
+          "url": "https://s7d2.scene7.com/is/content/Kwikset/casey-lever-sell-sheet",
+          "appliesTo": "Casey lever"
+        },
+        {
+          "title": "Halifax Lever sell sheet",
+          "type": "spec_sheet",
+          "url": "https://s7d2.scene7.com/is/content/Kwikset/Halifax-Lever-Sell-Sheet",
+          "appliesTo": "Halifax lever"
+        },
+        {
+          "title": "Hancock knob sell sheet",
+          "type": "spec_sheet",
+          "url": "https://s7d2.scene7.com/is/content/Kwikset/HancockSellSheet",
+          "appliesTo": "Hancock knob"
+        },
+        {
+          "title": "Hawthorne handleset sell sheet",
+          "type": "spec_sheet",
+          "url": "https://s7d2.scene7.com/is/content/Kwikset/hawthorne-handlset-sellsheet",
+          "appliesTo": "Hawthorne 800 handleset"
+        },
+        {
+          "title": "Home Connect 620 data sheet",
+          "type": "spec_sheet",
+          "url": "https://s7d2.scene7.com/is/content/Kwikset/home_connect_620_data_sheet",
+          "appliesTo": "Home Connect 620"
+        },
+        {
+          "title": "Home Connect 620 sell sheet",
+          "type": "spec_sheet",
+          "url": "https://s7d2.scene7.com/is/content/Kwikset/HomeConnect-620-Sell-Sheet",
+          "appliesTo": "Home Connect 620"
+        },
+        {
+          "title": "Maven sell sheet",
+          "type": "spec_sheet",
+          "url": "https://s7d2.scene7.com/is/content/Kwikset/Maven-Sell-Sheet",
+          "appliesTo": "Maven knob"
+        },
+        {
+          "title": "San Clemente handleset sell sheet",
+          "type": "spec_sheet",
+          "url": "https://s7d2.scene7.com/is/content/Kwikset/San-Clemente-Sell-Sheet",
+          "appliesTo": "San Clemente 818 handleset"
+        },
+        {
+          "title": "SmartCode 270 sell sheet",
+          "type": "spec_sheet",
+          "url": "https://s7d2.scene7.com/is/content/Kwikset/Smartcode-270-Sell-Sheet",
+          "appliesTo": "SmartCode 270"
+        },
+        {
+          "title": "Tustin Lever sell sheet",
+          "type": "spec_sheet",
+          "url": "https://s7d2.scene7.com/is/content/Kwikset/Tustin-Lever-Sell-Sheet",
+          "appliesTo": "Tustin lever"
+        },
+        {
+          "title": "Kwikset Use and Care Guide",
+          "type": "tech_manual",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_uc.pdf",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "Kwikset Limited Warranty (lifetime mechanical & finish, 1-yr electronics)",
+          "type": "warranty",
+          "url": "https://www.kwikset.com/support/warranty",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "Kwikset warranty document (PDF linked from product pages)",
+          "type": "warranty",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/warranty2009.pdf",
+          "appliesTo": "vendor"
+        }
+      ]
+    },
+    {
+      "vendor": "Lockgeniuses Inc",
+      "brand": "Kwikset Safe Lock",
+      "category": "Door Hardware",
+      "docs": [
+        {
+          "title": "Safe Lock Layton lever installation guide",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/we_ig_5049686_en.pdf",
+          "appliesTo": "Layton lever (Safe Lock)"
+        },
+        {
+          "title": "Safe Lock single cylinder deadbolt installation guide",
+          "type": "install_guide",
+          "url": "https://kwiksetprodstorage.blob.core.windows.net/documents/kw_ig_5061047_db_sd9100.pdf",
+          "appliesTo": "Safe Lock deadbolt (660)"
+        },
+        {
+          "title": "Safe Lock sell sheet",
+          "type": "spec_sheet",
+          "url": "https://s7d2.scene7.com/is/content/Kwikset/Safe-Lock-Sell-Sheet",
+          "appliesTo": "Safe Lock (Athens, Layton, deadbolt)"
+        }
+      ]
+    },
+    {
+      "vendor": "National Manufacturing Co",
+      "brand": "National Hardware",
+      "category": "Door Hardware",
+      "docs": [
+        {
+          "title": "National Hardware - 512 door hinge technical drawing",
+          "type": "cad_drawing",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_td_v512_n241-190.pdf",
+          "appliesTo": "512 door hinge"
+        },
+        {
+          "title": "National Hardware - Barn door bypass bracket technical drawing",
+          "type": "cad_drawing",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_td_1080.pdf",
+          "appliesTo": "1080 bypass bracket (N700-115)"
+        },
+        {
+          "title": "National Hardware - Barn door connecting adaptor technical drawing",
+          "type": "cad_drawing",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_td_v980.pdf",
+          "appliesTo": "980 connecting adaptor (N700-106)"
+        },
+        {
+          "title": "National Hardware - Builder Interior Barn Door Kit exploded view",
+          "type": "cad_drawing",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_td_929-exploded.pdf",
+          "appliesTo": "929 Builder barn door kit"
+        },
+        {
+          "title": "National Hardware - Builder Interior Barn Door Kit technical drawing",
+          "type": "cad_drawing",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_td_929.pdf",
+          "appliesTo": "929 Builder barn door kit"
+        },
+        {
+          "title": "National Hardware - Classic Interior Barn Door Kit technical drawing",
+          "type": "cad_drawing",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_td_928.pdf",
+          "appliesTo": "928 Classic barn door kit"
+        },
+        {
+          "title": "National Hardware - Decorative Interior Sliding Door Hardware technical drawing",
+          "type": "cad_drawing",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_td_920.pdf",
+          "appliesTo": "920 decorative sliding door hardware"
+        },
+        {
+          "title": "National Hardware - Designer Interior Barn Door Kit exploded view",
+          "type": "cad_drawing",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_td_927-exploded.pdf",
+          "appliesTo": "927 Designer barn door kit"
+        },
+        {
+          "title": "National Hardware - Designer Interior Barn Door Kit technical drawing",
+          "type": "cad_drawing",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_td_927.pdf",
+          "appliesTo": "927 Designer barn door kit"
+        },
+        {
+          "title": "National Hardware - Pocket door replacement kit technical drawing",
+          "type": "cad_drawing",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_td_v150_n236-023.pdf",
+          "appliesTo": "150 pocket door replacement kit (N236-023)"
+        },
+        {
+          "title": "National Hardware - Squeak Guard door hinge technical drawing",
+          "type": "cad_drawing",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_td_v525_n830-439-442-445-448.pdf",
+          "appliesTo": "525 Squeak Guard hinge"
+        },
+        {
+          "title": "National Hardware - Barn Door Hardware booklet",
+          "type": "catalog",
+          "url": "https://images.national-hardware.com/is/content/nh/Barn-Door%20POG%20Booklet",
+          "appliesTo": "Barn door hardware"
+        },
+        {
+          "title": "National Hardware - Track and Hanger catalog 2026",
+          "type": "catalog",
+          "url": "https://images.national-hardware.com/is/content/nh/Track-Hanger%20Catalog_2026",
+          "appliesTo": "Track and hanger / sliding door hardware"
+        },
+        {
+          "title": "National Hardware - Barn door lock installation guide",
+          "type": "install_guide",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_ig_v1045_n700-150_sn11207_.pdf",
+          "appliesTo": "1045 barn door lock (N700-150)"
+        },
+        {
+          "title": "National Hardware - Barn door soft close installation guide",
+          "type": "install_guide",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_ig_sn11405_v1060.pdf",
+          "appliesTo": "1060 soft close (N700-112)"
+        },
+        {
+          "title": "National Hardware - Builder Interior Barn Door Kit drilling template",
+          "type": "install_guide",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_dt_929_sn11480_.pdf",
+          "appliesTo": "929 Builder barn door kit"
+        },
+        {
+          "title": "National Hardware - Builder Interior Barn Door Kit installation guide",
+          "type": "install_guide",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_ig_929_sn11488.pdf",
+          "appliesTo": "929 Builder barn door kit (N700-001)"
+        },
+        {
+          "title": "National Hardware - Classic / Decorative 920 barn door drilling template",
+          "type": "install_guide",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_dt_920_928_sn11041_xx.pdf",
+          "appliesTo": "928 Classic and 920 decorative barn door kits"
+        },
+        {
+          "title": "National Hardware - Classic Interior Barn Door Kit installation guide",
+          "type": "install_guide",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_ig_928_sn11489.pdf",
+          "appliesTo": "928 Classic barn door kit (N700-003/-004)"
+        },
+        {
+          "title": "National Hardware - Designer Interior Barn Door Kit drilling template",
+          "type": "install_guide",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_dt_927_sn11491-xx_.pdf",
+          "appliesTo": "927 Designer barn door kit"
+        },
+        {
+          "title": "National Hardware - Designer Interior Barn Door Kit installation guide",
+          "type": "install_guide",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_ig_927_sn11490.pdf",
+          "appliesTo": "927 Designer barn door kit (N700-005/-006)"
+        },
+        {
+          "title": "National Hardware - Door hinge installation guide",
+          "type": "install_guide",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_ig_hinge_installation.pdf",
+          "appliesTo": "Residential door hinges (512 series)"
+        },
+        {
+          "title": "National Hardware - Horseshoe sliding door hardware installation guide",
+          "type": "install_guide",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/snh_ig_924.pdf",
+          "appliesTo": "924 Horseshoe sliding door hardware"
+        },
+        {
+          "title": "National Hardware - Pocket door hardware / soft close pocket door kit installation guide",
+          "type": "install_guide",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_ig_sn11435_882.pdf",
+          "appliesTo": "882 pocket door hardware and 883 soft close kit"
+        },
+        {
+          "title": "National Hardware - Pocket door latch installation guide",
+          "type": "install_guide",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_ig_v1954.pdf",
+          "appliesTo": "1954 pocket door latch"
+        },
+        {
+          "title": "National Hardware - Spoke Wheel sliding door hardware installation guide",
+          "type": "install_guide",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_ig_sn11403_926_.pdf",
+          "appliesTo": "926 Spoke Wheel sliding door hardware"
+        },
+        {
+          "title": "National Hardware - Squeak Guard door hinge installation guide",
+          "type": "install_guide",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_ig_sn11211_v525.pdf",
+          "appliesTo": "525 Squeak Guard hinge"
+        },
+        {
+          "title": "National Hardware - Builder Series Construction Hinges sell sheet",
+          "type": "spec_sheet",
+          "url": "https://images.national-hardware.com/is/content/nh/NH-BUILDER_SERIES-ConstructionHinges_SellSheet",
+          "appliesTo": "Builder Series hinges"
+        },
+        {
+          "title": "National Hardware - Builder Series Door Hardware sell sheet",
+          "type": "spec_sheet",
+          "url": "https://images.national-hardware.com/is/content/nh/NH-BUILDER_SERIES-DoorHardware_SellSheet",
+          "appliesTo": "Builder Series door hardware"
+        },
+        {
+          "title": "National Hardware - Door hinge size chart",
+          "type": "spec_sheet",
+          "url": "https://nationalhardwarestorage.blob.core.windows.net/documents/nh_ig_hinge_size_chart.pdf",
+          "appliesTo": "Residential door hinges"
+        },
+        {
+          "title": "National Hardware - Soft Close Pocket Door sell sheet",
+          "type": "spec_sheet",
+          "url": "https://images.national-hardware.com/is/content/nh/NH_Soft%20Close%20Pocket%20Door-SellSheet",
+          "appliesTo": "883 soft close pocket door kit"
+        },
+        {
+          "title": "National Hardware limited warranty statement",
+          "type": "warranty",
+          "url": "https://images.national-hardware.com/is/content/nh/NHWarranty",
+          "appliesTo": "vendor"
+        }
+      ]
+    },
+    {
+      "vendor": "Lockgeniuses Inc",
+      "brand": "Schlage",
+      "category": "Door Hardware",
+      "docs": [
+        {
+          "title": "BE-Series Door Prep Template (wood door, square corner) RB101",
+          "type": "install_guide",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/installation-manuals/RB101.pdf",
+          "appliesTo": "BE469"
+        },
+        {
+          "title": "Deadbolt (B60, B60CS, B60F, B62) Installation Instructions",
+          "type": "install_guide",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/installation-manuals/P515-788.pdf",
+          "appliesTo": "B60N deadbolt"
+        },
+        {
+          "title": "Deadbolt (B60, B62) Door Prep Template",
+          "type": "install_guide",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/installation-manuals/P515-771.pdf",
+          "appliesTo": "B60N deadbolt"
+        },
+        {
+          "title": "F-Series Door Prep Template - wood door, square corner faceplate (RF100)",
+          "type": "install_guide",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/installation-manuals/RF100.pdf",
+          "appliesTo": "F-Series knobs and levers"
+        },
+        {
+          "title": "F-Series Handleset (F60) Thick Door Kit",
+          "type": "install_guide",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/installation-manuals/P516-366-c.pdf",
+          "appliesTo": "F-Series handlesets"
+        },
+        {
+          "title": "F-Series Handleset (F60/F60F/F62/F93) Door Prep Template",
+          "type": "install_guide",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/installation-manuals/P513-593-a.pdf",
+          "appliesTo": "F-Series handlesets"
+        },
+        {
+          "title": "F-Series Handleset (F60/F60F/F62/F93) Installation Instructions",
+          "type": "install_guide",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/installation-manuals/P515-782-0310b.pdf",
+          "appliesTo": "F-Series handlesets incl. Century"
+        },
+        {
+          "title": "F-Series Knobs & Levers (F10/F40/F51) Door Prep Template",
+          "type": "install_guide",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/installation-manuals/P513-593.pdf",
+          "appliesTo": "F-Series knobs and levers"
+        },
+        {
+          "title": "F-Series Knobs & Levers (F10/F40/F51) Quick Start Guide",
+          "type": "install_guide",
+          "url": "https://www.schlage.com/content/dam/sch-us/documents/pdf/installation-manuals/P515-302.pdf",
+          "appliesTo": "F-Series knobs and levers (Accent, Latitude, Bowery, Georgian, Plymouth)"
+        },
+        {
+          "title": "Schlage Connect (BE469) interactive installation instructions",
+          "type": "install_guide",
+          "url": "https://instructions.allegion.com/instr/146/0",
+          "appliesTo": "BE469 Connect touchscreen deadbolt"
+        },
+        {
+          "title": "Schlage Residential Warranty (lifetime mechanical & finish, 3-yr electronics)",
+          "type": "warranty",
+          "url": "https://assets.schlage.com/content/dam/us-res-mktg/support-articles/warranty/warranty-schlage-us.pdf",
+          "appliesTo": "vendor (F-Series, B60N, BE469)"
+        }
+      ]
+    },
+    {
+      "vendor": "Endura Door Component Systems",
+      "brand": "Endura",
+      "category": "Doors",
+      "docs": [
+        {
+          "title": "Endura Full Line Catalog",
+          "type": "brochure",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraLiterature_Website/Endura-Full-Line-Catalog.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura FusionFrame Product Brochure",
+          "type": "brochure",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraLiterature_Website/FusionFrame/FusionFrame-Brochure.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura MiraVista Product Brochure",
+          "type": "brochure",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraLiterature_Website/MiraVista/MiraVista-Brochure.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura PanoLock+ Product Brochure",
+          "type": "brochure",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraLiterature_Website/PanoLock/PanoLock-Brochure.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura Trilennium Product Brochure",
+          "type": "brochure",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraLiterature_Website/Trilennium/Trilennium-Brochure.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura - ADA Compliant Sills - Product Profiles",
+          "type": "cad_drawing",
+          "url": "https://marketing.poweredbyendura.com/hubfs/Sills_TechnicalDocuments/ADA%20Compliant%20Sills%20-%20Product%20Profiles.pdf",
+          "appliesTo": "ADA sills"
+        },
+        {
+          "title": "Endura - Door Bottom Product Profiles",
+          "type": "cad_drawing",
+          "url": "https://marketing.poweredbyendura.com/hubfs/Weathersealing_TechnicalDocuments/Door%20Bottom%20Product%20Profiles_v2.pdf",
+          "appliesTo": "Door bottoms"
+        },
+        {
+          "title": "Endura - Mull Boot - Product Profiles",
+          "type": "cad_drawing",
+          "url": "https://marketing.poweredbyendura.com/hubfs/Sills_TechnicalDocuments/Mull%20Boot%20-%20Product%20Profiles.pdf",
+          "appliesTo": "Mull boots"
+        },
+        {
+          "title": "Endura - Traditional Sills - profiles",
+          "type": "cad_drawing",
+          "url": "https://marketing.poweredbyendura.com/hubfs/Sills_TechnicalDocuments/Traditional%20Sills.pdf",
+          "appliesTo": "Traditional sills"
+        },
+        {
+          "title": "Endura - Weatherstrip Product Profiles",
+          "type": "cad_drawing",
+          "url": "https://marketing.poweredbyendura.com/hubfs/Weathersealing_TechnicalDocuments/Weatherstrip%20Product%20Profiles.pdf",
+          "appliesTo": "Weatherstrip"
+        },
+        {
+          "title": "Endura - Z-Series Sills - Line Drawings",
+          "type": "cad_drawing",
+          "url": "https://marketing.poweredbyendura.com/hubfs/Sills_TechnicalDocuments/Z-Series%20Sills%20-%20Line%20Drawings.pdf",
+          "appliesTo": "Z-Series adjustable sills (ZAC / ZAI)"
+        },
+        {
+          "title": "Endura ADAptive Sill — Installation Instructions",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_SillsInstructions/ADAptive/ADAptive%20Installation%20Instructions.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura ADAvantage Sill — Installation Instructions",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_SillsInstructions/ADAvantage/ADAvantage%20Installation%20Instructions.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura Door Bottom — Installation Instructions",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_DoorBottomsInstructions/Door-Bottoms-Installation-Instructions.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura FrameSaver — Installation Instructions",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_FrameInstructions/FrameSaver/FrameSaver-Installation-Instructions.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura FusionFrame — Assembly Guide",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_FrameInstructions/FusionFrame/FusionFrame-Assembly-Guide.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura Multilpoint Astragal — PanoLock+ Assembly Guide",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_AstragalInstructions/PanoLock/PanoLock-Assembly-Guide.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura RDS Sill — Field Replacement Instructions",
+          "type": "install_guide",
+          "url": "https://www.enduraproducts.com/wp-content/uploads/2024/04/RDS-Field-Replacement-3_28_24-1.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura SureSill Sill Pan — Installation Instructions",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_SillPanInstructions/SureSill-Installation-Instructions.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura Trilennium Astragal — Assembly Guide",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_AstragalInstructions/Trilennium/Trilennium-Assembly-Guide.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura Ultimate Astragal — Field Inswing Instructions",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_AstragalInstructions/Ultimate/Ultimate-Astragal-Field-Inswing.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura Ultimate Astragal — Field Outswing Instructions",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_AstragalInstructions/Ultimate/Ultimate-Astragal-Field-Outswing.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura Ultimate Astragal — Shop Instructions",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_AstragalInstructions/Ultimate/Ultimate-Astragal-Shop-Instructions.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura VersaPan Sill Pan — Installation Instructions",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_SillPanInstructions/VersaPan-Installation-Instructions.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura Weatherstrip — Installation Instructions",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_WeatherstripInstructions/Weatherstrip-Installation-Instructions.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura Z-Series Sill — Field Replacement Instructions",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_SillsInstructions/Z-Series/ZAC%20Field%20Replacement%20Instructions.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura Z-Series Sill — Shop Replacement Instructions",
+          "type": "install_guide",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_SillsInstructions/Z-Series/ZAC%20Shop%20Replacement%20Instructions.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura - PanoLock+ compatibility list - Emtek locks (2026)",
+          "type": "spec_sheet",
+          "url": "https://www.enduraproducts.com/wp-content/uploads/2023/10/2026-PanoLock-Compatibility-List-Emtek-Locks.pdf",
+          "appliesTo": "PanoLock+"
+        },
+        {
+          "title": "Endura - PanoLock+ compatibility list - Kwikset locks (2026)",
+          "type": "spec_sheet",
+          "url": "https://www.enduraproducts.com/wp-content/uploads/2023/01/2026-PanoLock-Compatibility-List-Kwikset-Locks-1.pdf",
+          "appliesTo": "PanoLock+"
+        },
+        {
+          "title": "Endura - PanoLock+ compatibility list - Schlage locks (2026)",
+          "type": "spec_sheet",
+          "url": "https://www.enduraproducts.com/wp-content/uploads/2024/01/2026-PanoLock-Compatibility-List-Schlage-Locks.pdf",
+          "appliesTo": "PanoLock+"
+        },
+        {
+          "title": "Endura - Sill Parts Identification Guide",
+          "type": "spec_sheet",
+          "url": "https://marketing.poweredbyendura.com/hubfs/Sills_TechnicalDocuments/Sill%20Parts%20Identification%20Guide%20-%20Endura.pdf",
+          "appliesTo": "Sills"
+        },
+        {
+          "title": "Endura - Trilennium 3020 Lock Insert Pages",
+          "type": "spec_sheet",
+          "url": "https://marketing.poweredbyendura.com/hubfs/Trilennium_TechnicalDocuments/3020%20Lock%20Insert%20Pages.pdf",
+          "appliesTo": "Trilennium 3020"
+        },
+        {
+          "title": "Endura - Trilennium Handset Option Selection Guide",
+          "type": "spec_sheet",
+          "url": "https://marketing.poweredbyendura.com/hubfs/Trilennium_TechnicalDocuments/Trilennium%20Handset%20Option%20Selection%20Guide%20-%20Endura.pdf",
+          "appliesTo": "Trilennium handsets"
+        },
+        {
+          "title": "Endura - Trilennium Lock Comparison Guide",
+          "type": "spec_sheet",
+          "url": "https://marketing.poweredbyendura.com/hubfs/Trilennium_TechnicalDocuments/Trilennium%20Lock%20Comparison%20Guide%20-%20Endura.pdf",
+          "appliesTo": "Trilennium multi-point locks"
+        },
+        {
+          "title": "Endura - Trilennium Lock Option Selection Guide",
+          "type": "spec_sheet",
+          "url": "https://marketing.poweredbyendura.com/hubfs/Trilennium_TechnicalDocuments/Lock%20Option%20Selection%20Guide%20-%20Endura.pdf",
+          "appliesTo": "Trilennium multi-point locks"
+        },
+        {
+          "title": "Endura CPBE / Force 5 — Installation Guide",
+          "type": "spec_sheet",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_CPBEInstructions/CPBE-Force5-Installation-Guide.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura PanoLock+ — Troubleshooting & FAQ",
+          "type": "spec_sheet",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_TroubleshootingGuides/PanoLock-Troubleshooting-FAQ.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura Trilennium — Troubleshooting Guide",
+          "type": "spec_sheet",
+          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_TroubleshootingGuides/Trilennium-Troubleshooting.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura - Trilennium care and maintenance",
+          "type": "tech_manual",
+          "url": "https://marketing.poweredbyendura.com/hubfs/Trilennium_TechnicalDocuments/Trilennium%20Care%20and%20Maintenance.pdf",
+          "appliesTo": "Trilennium multi-point locks"
+        },
+        {
+          "title": "Endura Force 5 / CPBE Warranty",
+          "type": "warranty",
+          "url": "https://www.enduraproducts.com/wp-content/uploads/Endura-Force5-CPBE-Warranty.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura FrameSaver Transferable Lifetime Warranty",
+          "type": "warranty",
+          "url": "https://www.enduraproducts.com/wp-content/uploads/Endura-FrameSaver-Warranty.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura FusionFrame Warranty",
+          "type": "warranty",
+          "url": "https://www.enduraproducts.com/wp-content/uploads/Endura-FusionFrame-Warranty.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura General Limited Warranty",
+          "type": "warranty",
+          "url": "https://www.enduraproducts.com/wp-content/uploads/Endura-General-Limited-Warranty.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura PanoLock+ Warranty",
+          "type": "warranty",
+          "url": "https://www.enduraproducts.com/wp-content/uploads/Endura-PanoLock-Warranty.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura Trilennium Warranty",
+          "type": "warranty",
+          "url": "https://www.enduraproducts.com/wp-content/uploads/Endura-Trilennium-Warranty.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "Endura Wood Veneer Astragal Warranty",
+          "type": "warranty",
+          "url": "https://www.enduraproducts.com/wp-content/uploads/Endura-Wood-Veneer-Astragal-Warranty.pdf",
+          "appliesTo": null
+        }
+      ]
+    },
+    {
+      "vendor": "Front Line Building Products",
+      "brand": "Front Line Building Products",
+      "category": "Doors",
+      "docs": [
+        {
+          "title": "FrontLine - Composite Frame Technical Drawings",
+          "type": "cad_drawing",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/Frontline-Compsite-Drawings.pdf",
+          "appliesTo": "Composite door frame"
+        },
+        {
+          "title": "FrontLine - Drawing Details",
+          "type": "cad_drawing",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/03/drawing-details.pdf",
+          "appliesTo": "Aluminum clad entry door systems"
+        },
+        {
+          "title": "FrontLine Price Catalog (2026)",
+          "type": "catalog",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2026/01/FrontLine-Price-Catalog.pdf",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "FrontLine - Brickmould Replacement Installation Instructions",
+          "type": "install_guide",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/Brickmould-Replacement-Installation-Instructions.pdf",
+          "appliesTo": "Clad brickmould"
+        },
+        {
+          "title": "FrontLine - Composite Door Frame Installation Instructions",
+          "type": "install_guide",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/Composite-Door-Frame-Install-Instructions-2020-1.pdf",
+          "appliesTo": "Composite door frame"
+        },
+        {
+          "title": "FrontLine - Composite Transom Mulling Instructions",
+          "type": "install_guide",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/Composite-Transom-Mulling-Instructions.pdf",
+          "appliesTo": "Composite transom mulling"
+        },
+        {
+          "title": "FrontLine - Flat Casing Installation Instructions",
+          "type": "install_guide",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/Flat-Casing-Installation-Instructions-web.pdf",
+          "appliesTo": "Clad flat casing"
+        },
+        {
+          "title": "FrontLine - Outswing Cladding Installation Instructions",
+          "type": "install_guide",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/Outswing-Clad-Installation-Instructions.pdf",
+          "appliesTo": "Outswing door cladding"
+        },
+        {
+          "title": "FrontLine - Pre-Clad Entry Door Frame Installation Instructions",
+          "type": "install_guide",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/Pre-clad-frame-Installation-Instructions-web-1.pdf",
+          "appliesTo": "Pre-Clad door frame"
+        },
+        {
+          "title": "FrontLine - Remodel Door with Sidelites Installation Instructions",
+          "type": "install_guide",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/Remodel-Door-with-sidelites-instructions-web.pdf",
+          "appliesTo": "Remodel door frame cladding (with sidelites / mulls)"
+        },
+        {
+          "title": "FrontLine - Remodel Single Door Installation Instructions",
+          "type": "install_guide",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/Remodel-Single-Door-Instructions.pdf",
+          "appliesTo": "Remodel door frame cladding"
+        },
+        {
+          "title": "FrontLine - Clad Profile Sheet",
+          "type": "spec_sheet",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/03/Clad-Profile-Sheet.pdf",
+          "appliesTo": "Aluminum clad profiles (brickmould, mull cap, casing)"
+        },
+        {
+          "title": "FrontLine - Entry Door Cladding sell sheet",
+          "type": "spec_sheet",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/06/EntryDoorCladding.pdf",
+          "appliesTo": "Entry door frame cladding"
+        },
+        {
+          "title": "FrontLine - Outswing Cladding sell sheet",
+          "type": "spec_sheet",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/Outswing-Cladding.pdf",
+          "appliesTo": "Outswing door cladding"
+        },
+        {
+          "title": "FrontLine - Pre-Clad Entry Door Frame sell sheet",
+          "type": "spec_sheet",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/PreClad-Sell-Sheet.pdf",
+          "appliesTo": "Pre-Clad door frame"
+        },
+        {
+          "title": "FrontLine - Trim Profiles",
+          "type": "spec_sheet",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/03/trim-profiles.pdf",
+          "appliesTo": "Aluminum clad trim profiles"
+        },
+        {
+          "title": "FrontLine Composite Frame sell sheet",
+          "type": "spec_sheet",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/FrontLine-Composite-Frame.pdf",
+          "appliesTo": "Composite door frame"
+        },
+        {
+          "title": "FrontLine Door Finishing Guide",
+          "type": "tech_manual",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/FrontLine-Door-Finishing-Guide.pdf",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "FrontLine - Comprehensive Test Report",
+          "type": "test_report",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/ComprehensiveTestReport.pdf",
+          "appliesTo": "Aluminum cladding"
+        },
+        {
+          "title": "FrontLine - Salt Spray Test Report",
+          "type": "test_report",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/TestReport-SaltSpray.pdf",
+          "appliesTo": "Aluminum cladding finish"
+        },
+        {
+          "title": "FrontLine - Aluminum Cladding and All-Aluminum Garage Door Frame Limited Warranty",
+          "type": "warranty",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/FrontLine-Aluminum-Cladding-and-All-Aluminum-Garage-Door-Frame-Warranty-3.pdf",
+          "appliesTo": "Aluminum door frame cladding / mull caps"
+        },
+        {
+          "title": "FrontLine - Composite Frame Limited Lifetime Warranty",
+          "type": "warranty",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/Composite-Frame-LIMITED-LIFETIME-WARRANTY.pdf",
+          "appliesTo": "Composite door frame"
+        },
+        {
+          "title": "FrontLine - Pre-Clad Exterior Residential Door Frame Limited Warranty",
+          "type": "warranty",
+          "url": "https://frontlinebldg.com/wp-content/uploads/2023/04/FrontLine-Pre-Clad-Exterior-Residential-Door-Frame-Limited-Warranty.pdf",
+          "appliesTo": "Pre-Clad door frame"
+        }
+      ]
+    },
+    {
+      "vendor": "Jeld Wen - LMC",
+      "brand": "JELD-WEN",
+      "category": "Doors",
+      "docs": [
+        {
+          "title": "JELD-WEN exterior door installation instructions (JII106, 05/22)",
+          "type": "install_guide",
+          "url": "https://edge.sitecorecloud.io/jeldwencanada1-jeldwen-p523-e8d9/media/Project/JeldWen/JeldWenCanada/PDF/JII106_05_22-Door-installation-instructions.pdf",
+          "appliesTo": "Prehung exterior doors"
+        },
+        {
+          "title": "JELD-WEN Interior & Exterior Door Limited Warranty (eff. 06/01/2019)",
+          "type": "warranty",
+          "url": "https://edge.sitecorecloud.io/jeldwencanada1-jeldwen-p523-e8d9/media/Project/JeldWen/JeldWenCanada/Articles/Documents-Video/Canadian-Warranties/JWIntExtDoorWarrantyEff06-01-19_5.pdf",
+          "appliesTo": "Exterior and interior doors"
+        }
+      ]
+    },
+    {
+      "vendor": "Lynden Door Inc",
+      "brand": "Lynden Door",
+      "category": "Doors",
+      "docs": [
+        {
+          "title": "Lynden Door - Elemental Collection brochure",
+          "type": "brochure",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2021/05/Lynden-Door-Elemental-Collection-1.pdf",
+          "appliesTo": "Elemental"
+        },
+        {
+          "title": "Lynden Door - Features and Benefits",
+          "type": "brochure",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2023/06/Lynden-Door-Features-and-Benefits-2.pdf",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "Lynden Door - Residential brochure (LD550, 11.22)",
+          "type": "brochure",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2021/08/LD550-Residential-Brochure-11.22-web.pdf",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "Lynden Door - Aberdeen line drawings",
+          "type": "cad_drawing",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2019/02/Aberdeen-Line-Drawings-Combine.pdf",
+          "appliesTo": "Aberdeen"
+        },
+        {
+          "title": "Lynden Door - Bonneville 6-panel line drawing",
+          "type": "cad_drawing",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2019/03/LDI_Molded-LineDrawing_Bonneville_Raised_6-Panel.pdf",
+          "appliesTo": "Bonneville"
+        },
+        {
+          "title": "Lynden Door - Columbia 6-panel line drawing",
+          "type": "cad_drawing",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2019/02/LDI_Molded-LineDrawing_Columbia_SM_Raised_6-Panel.pdf",
+          "appliesTo": "Columbia"
+        },
+        {
+          "title": "Lynden Door - Elemental 1-panel drawing",
+          "type": "cad_drawing",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2021/05/A04-00066-1-LDI-Elemental-1-Panel-VA.pdf",
+          "appliesTo": "Elemental 1-panel"
+        },
+        {
+          "title": "Lynden Door - Elemental 2-panel drawing",
+          "type": "cad_drawing",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2021/05/A04-00067-1-LDI-Elemental-2-Panel-VA.pdf",
+          "appliesTo": "Elemental 2-panel"
+        },
+        {
+          "title": "Lynden Door - Kingston 2-panel line drawing",
+          "type": "cad_drawing",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2019/10/LDI_Molded-LineDrawing_Kingston_SM_Raised_2-Panel.pdf",
+          "appliesTo": "Kingston"
+        },
+        {
+          "title": "Lynden Door - Mercer 1-panel line drawing",
+          "type": "cad_drawing",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2019/02/LDI_Molded-LineDrawing_Mercer_SM_Flat_1-Panel.pdf",
+          "appliesTo": "Mercer"
+        },
+        {
+          "title": "Lynden Door - Molded doors combined line drawings (3.21)",
+          "type": "cad_drawing",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2019/07/Lynden-Door-Molded-combined-Line-Drawings-3.21.pdf",
+          "appliesTo": "Molded doors (all styles)"
+        },
+        {
+          "title": "Lynden Door - Rosario 2-panel line drawing",
+          "type": "cad_drawing",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2019/02/LDI_Molded-LineDrawing_Rosario_SM_Raised_2-Panel.pdf",
+          "appliesTo": "Rosario"
+        },
+        {
+          "title": "Lynden Door - Whitman 2-panel line drawing",
+          "type": "cad_drawing",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2017/08/LDI_Molded-LineDrawing_Whitman_SM_-Flat_2-Panel.pdf",
+          "appliesTo": "Whitman"
+        },
+        {
+          "title": "Lynden Door - Winthrop 5-panel line drawing",
+          "type": "cad_drawing",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2019/02/LDI_Molded-LineDrawing_Winthrop_SM_Flat_5-Panel.pdf",
+          "appliesTo": "Winthrop"
+        },
+        {
+          "title": "Lynden Door - Yarrow 3-panel line drawing",
+          "type": "cad_drawing",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2019/02/LDI_Molded-LineDrawing_Yarrow_SM_Flat_3-Panel.pdf",
+          "appliesTo": "Yarrow"
+        },
+        {
+          "title": "Lynden Door - Field finishing instructions",
+          "type": "install_guide",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2016/02/Field-Finishing-Instructions.pdf",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "Lynden Door - Finishing recommendations for molded doors",
+          "type": "install_guide",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2016/02/Finishing-Recommendations-for-Molded-Doors_0.pdf",
+          "appliesTo": "Molded doors"
+        },
+        {
+          "title": "Lynden Door - Jobsite storage and handling",
+          "type": "install_guide",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2021/09/Lynden-Door-Inc.-Jobsite-Storage-and-Handling.pdf",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "Lynden Door - Molded door installation information",
+          "type": "install_guide",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2016/02/Molded-Installation-Information.pdf",
+          "appliesTo": "Molded doors"
+        },
+        {
+          "title": "Lynden Door - SD maintenance and installation",
+          "type": "install_guide",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2016/02/SD-Maint-Installation.pdf",
+          "appliesTo": "SD Standard Construction"
+        },
+        {
+          "title": "Lynden Door - Construction Attributes matrix (2025)",
+          "type": "spec_sheet",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2025/05/LDI_CONSTRUCTION-ATTRIBUTES-2_5.25.pdf",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "Lynden Door - Elemental sell sheet",
+          "type": "spec_sheet",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2025/03/Lynden-Door-Elemental-Sell-Sheet.pdf",
+          "appliesTo": "Elemental"
+        },
+        {
+          "title": "Lynden Door - Flush Primed Hardboard product sheet",
+          "type": "spec_sheet",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2022/08/Lynden-Door-Flush-Primed-Hardboard.pdf",
+          "appliesTo": "Flush hardboard"
+        },
+        {
+          "title": "Lynden Door - Molded Flat Smooth - Aberdeen product sheet",
+          "type": "spec_sheet",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2022/08/Lynden-Door-Molded-Flat-Smooth_Aberdeen.pdf",
+          "appliesTo": "Aberdeen"
+        },
+        {
+          "title": "Lynden Door - Molded Flat Smooth - Mercer product sheet",
+          "type": "spec_sheet",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2022/08/Lynden-Door-Molded-Flat-Smooth_Mercer.pdf",
+          "appliesTo": "Mercer"
+        },
+        {
+          "title": "Lynden Door - Molded Flat Smooth - Whitman product sheet",
+          "type": "spec_sheet",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2022/08/Lynden-Door-Molded_Flat-Smooth_Whitman.pdf",
+          "appliesTo": "Whitman"
+        },
+        {
+          "title": "Lynden Door - Molded Flat Smooth - Winthrop product sheet",
+          "type": "spec_sheet",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2022/08/Lynden-Door-Molded-Flat-Smooth_Winthrop.pdf",
+          "appliesTo": "Winthrop"
+        },
+        {
+          "title": "Lynden Door - Molded Flat Smooth - Yarrow product sheet",
+          "type": "spec_sheet",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2022/08/Lynden-Door-Molded-Flat-Smooth_Yarrow.pdf",
+          "appliesTo": "Yarrow"
+        },
+        {
+          "title": "Lynden Door - Molded Raised Smooth - Columbia product sheet",
+          "type": "spec_sheet",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2022/08/Lynden-Door-Molded-Raised-Smooth_Columbia.pdf",
+          "appliesTo": "Columbia"
+        },
+        {
+          "title": "Lynden Door - Molded Raised Smooth - Kingston product sheet",
+          "type": "spec_sheet",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2022/08/Lynden-Door-Molded-Raised-Smooth_Kingston-2.pdf",
+          "appliesTo": "Kingston"
+        },
+        {
+          "title": "Lynden Door - Molded Raised Smooth - Rosario product sheet",
+          "type": "spec_sheet",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2022/08/Lynden-Door-Molded-Raised-Smooth_Rosario.pdf",
+          "appliesTo": "Rosario"
+        },
+        {
+          "title": "Lynden Door - Molded Raised Textured - Bonneville product sheet",
+          "type": "spec_sheet",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2022/08/Lynden-Door-Molded-Raised-Textured_Bonneville.pdf",
+          "appliesTo": "Bonneville"
+        },
+        {
+          "title": "Lynden Door - Polar White prefinished product sheet",
+          "type": "spec_sheet",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2025/03/Lynden-Door-web-product-sheets_Polar-White.pdf",
+          "appliesTo": "Polar White prefinish"
+        },
+        {
+          "title": "Lynden Door - SD Standard Series product sheet",
+          "type": "spec_sheet",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2021/12/SD-Standard-Series.pdf",
+          "appliesTo": "SD Standard Construction"
+        },
+        {
+          "title": "Lynden Door - Interior Limited Warranty - SD / LD / CD series",
+          "type": "warranty",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2016/01/Lynden-Door-SD-LD-CD-Warranties-1.pdf",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "Lynden Door - Standard Construction (SD residential) Limited Warranty",
+          "type": "warranty",
+          "url": "https://www.lyndendoor.com/wp-content/uploads/2016/01/Lynden-Door-Standard-Construction-Warranty.pdf",
+          "appliesTo": "SD Standard Construction (residential molded/flush)"
+        }
+      ]
+    },
+    {
+      "vendor": "Odl, Inc",
+      "brand": "ODL",
+      "category": "Doors",
+      "docs": [
+        {
+          "title": "ODL Blinds+Glass 2025 Catalog",
+          "type": "catalog",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Catalogs/ODL-BlindsGlass-2025.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL Custom Glass Catalog",
+          "type": "catalog",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Catalogs/ODL-Custom-Glass-Catalog.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL - 08 13 00 Steel Door 3-Part Spec (Aug 2026)",
+          "type": "csi_spec",
+          "url": "https://www.odl.com/hubfs/08_13_00%20-%20Steel%20Door%203-Part%20Spec%20-%20Final%20on%2008.2026.pdf",
+          "appliesTo": "ODL steel entry doors"
+        },
+        {
+          "title": "ODL - 08 16 13 Fiberglass Door 3-Part Spec (Aug 2026)",
+          "type": "csi_spec",
+          "url": "https://www.odl.com/hubfs/08_16_13%20-%20Fiberglass%20Door%203-Part%20Spec%20-%20Final%20on%2008.2026.pdf",
+          "appliesTo": "ODL / TruTech fiberglass entry doors"
+        },
+        {
+          "title": "ODL CSI 3-Part Spec — Blinds+Glass for Doors (08 10 00)",
+          "type": "csi_spec",
+          "url": "https://www.odl.com/hubfs/3-Part%20Specs/175423722_08_10_00odl.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL CSI 3-Part Spec — Blinds+Glass for Windows (08 88 00)",
+          "type": "csi_spec",
+          "url": "https://www.odl.com/hubfs/3-Part%20Specs/175423722_08_88_00odl.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL CSI 3-Part Spec — Door View Panel Inserts (08 10 13)",
+          "type": "csi_spec",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/08-10-13-Door-View-Panel-Inserts-ODL.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL - Add-On Blinds installation instructions (2026)",
+          "type": "install_guide",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Images/Products/Add-on%20Blinds/ODL%20Add-On%20Blinds%20-%20Installation%20Instructions%20-%20English%20Spanish%20-%202026-05-04.pdf",
+          "appliesTo": "Add-On Blinds"
+        },
+        {
+          "title": "ODL - Evolve doorglass frame installation instructions",
+          "type": "install_guide",
+          "url": "https://www.odl.com/hubfs/Replacement%20Doorglass%20Micro%20Site/PDFs/226019_Update%20Evolve%20DIY%20Instructions-EnglishUS.pdf",
+          "appliesTo": "Evolve doorglass frame"
+        },
+        {
+          "title": "ODL - Zeel doorglass frame installation instructions",
+          "type": "install_guide",
+          "url": "https://www.odl.com/hubfs/Micro%20Site/PDFs/DIY_Doorglass_Rplc_Instrct_ZEELFrame_616615_Rev022021.pdf",
+          "appliesTo": "Zeel doorglass frame"
+        },
+        {
+          "title": "ODL Add-On Blinds Install Guide (EN/ES)",
+          "type": "install_guide",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Installation/Add-On-Blinds-Install-EN-ES.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL Keystone Frame Install Guide v2",
+          "type": "install_guide",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Installation/Keystone-Install-v2.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL Keystone Frame Install Guide v7",
+          "type": "install_guide",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Installation/Keystone-Install-v7.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL Keystone Frame Sell Sheet",
+          "type": "install_guide",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Installation/Keystone-Sell-Sheet.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL Keystone Frame Tech Sheet",
+          "type": "install_guide",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Installation/Keystone-Tech-Sheet.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL ENERGY STAR Tables — Fiberglass Doors",
+          "type": "spec_sheet",
+          "url": "https://www.odl.com/hubfs/225208_ENERGY%20STAR%20Tables_Fiberglass%20(1)-compressed.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL ENERGY STAR Tables — Steel Doors",
+          "type": "spec_sheet",
+          "url": "https://www.odl.com/hubfs/225208_ENERGY%20STAR%20Tables_Steel-compressed.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL Low-E Comparison Guide",
+          "type": "spec_sheet",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Low-E-Comparison-Guide.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL Thermal Performance Database (live)",
+          "type": "spec_sheet",
+          "url": "https://www.odl.com/thermal-performance-database",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL 2026 Door Tech Manual",
+          "type": "tech_manual",
+          "url": "https://www.odl.com/hubfs/2026%20Door%20Tech%20Manual.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL STC Test Report — Decorative Glass (ATI)",
+          "type": "test_report",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/STC/ODL-STC-Decorative-Glass-ATI.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL STC Test Report — Impact-Rated / Blinds",
+          "type": "test_report",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/STC/ODL-STC-Impact-Blinds.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL STC Test Report — Laminated IG",
+          "type": "test_report",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/STC/ODL-STC-Laminated-IG.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL Add-On Blinds Warranty",
+          "type": "warranty",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Warranties/ODL-Add-On-Blinds-Warranty.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL Blinds+Glass Entry Warranty",
+          "type": "warranty",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Warranties/ODL-BlindsGlass-Entry-Warranty.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL Blinds+Glass Sliding Warranty",
+          "type": "warranty",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Warranties/ODL-BlindsGlass-Sliding-Warranty.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL Custom Solutions Warranty",
+          "type": "warranty",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Warranties/ODL-Custom-Solutions-Warranty.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL Doorglass Warranty",
+          "type": "warranty",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Warranties/ODL-Doorglass-Warranty.pdf",
+          "appliesTo": null
+        },
+        {
+          "title": "ODL Doors Warranty",
+          "type": "warranty",
+          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Warranties/ODL-Doors-Warranty.pdf",
+          "appliesTo": null
+        }
+      ]
+    },
+    {
+      "vendor": "Ferche Millwork, Inc.",
+      "brand": "Ferche",
+      "category": "Millwork",
+      "docs": [
+        {
+          "title": "Ferche BOLD 2024 brochure",
+          "type": "brochure",
+          "url": "https://cdn.prod.website-files.com/5df1499861c2beedaba75296/66bcce640072040796eeef4c_Ferche-BOLD-2024.pdf",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "Ferche moulding profiles - DWG set",
+          "type": "cad_drawing",
+          "url": "https://s3.us-east-2.amazonaws.com/switchboard.mn/Ferche/Ferche-Moulding-Profiles-dwg.zip",
+          "appliesTo": "All standard moulding profiles"
+        },
+        {
+          "title": "Ferche Book of Mouldings (2014)",
+          "type": "catalog",
+          "url": "https://cdn.prod.website-files.com/5df1499861c2beedaba75296/5df95831ca16d0af48a8e6f6_Ferche-Book-of-Mouldings-2014-Web.pdf",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "Ferche terms and conditions of sale",
+          "type": "tech_manual",
+          "url": "https://cdn.prod.website-files.com/5df1499861c2beedaba75296/5e18f4dd778ad8abd85edfe2_terms_and_conditions.pdf",
+          "appliesTo": "vendor"
+        }
+      ]
+    },
+    {
+      "vendor": "Metrie",
+      "brand": "Metrie",
+      "category": "Millwork",
+      "docs": [
+        {
+          "title": "Metrie Complete brochure - Midwest 2023",
+          "type": "brochure",
+          "url": "https://assets.ctfassets.net/icm6aedy07oo/4IZZu2OACXcetTm9DsxHs4/5c496286b68b04eb29611ff1c0cf7c2c/Metrie_Complete_Brochure_Midwest_2023.pdf",
+          "appliesTo": "Metrie Complete (prefinished)"
+        },
+        {
+          "title": "Metrie - Interior Moulding and Trim Profile Guide - Chicago region (2024)",
+          "type": "catalog",
+          "url": "https://downloads.ctfassets.net/icm6aedy07oo/5vrh74yMvWcjqrQglb27eg/2cf80cb78809bbad2c3fa161556d0664/2024_Metrie-Chicago_Profile_Guide.pdf",
+          "appliesTo": "Mouldings (Midwest / Chicago DC assortment)"
+        },
+        {
+          "title": "Metrie - Option {M} catalog - Midwest US",
+          "type": "catalog",
+          "url": "https://assets.ctfassets.net/icm6aedy07oo/1O1AXjHDzaErGLsdVZTzfi/f977bb1f07a4f62cd48dec1845c28bc8/MET-642_OM-Brochure_MidWest_US_0223_SW.pdf",
+          "appliesTo": "Option {M} moulding collections"
+        },
+        {
+          "title": "Metrie - How do I install and finish mouldings (web guide)",
+          "type": "install_guide",
+          "url": "https://www.metrie.com/resources/how-do-i-install-and-finish-mouldings",
+          "appliesTo": "Mouldings"
+        },
+        {
+          "title": "Metrie - TriFit Jamb overview (Sept 2026)",
+          "type": "spec_sheet",
+          "url": "https://assets.ctfassets.net/icm6aedy07oo/1ZN5C3Pf8MRCIb119D18iW/e7e268011290c0e38e297d240e6fcf25/Metrie_TriFit_Jamb_Overview_Sept_2026.pdf",
+          "appliesTo": "TriFit jamb"
+        }
+      ]
+    },
+    {
+      "vendor": "Novo Building Products",
+      "brand": "L.J. Smith",
+      "category": "Stair Parts",
+      "docs": [
+        {
+          "title": "L.J. Smith - Inner Artistry brochure 2024",
+          "type": "brochure",
+          "url": "https://res.cloudinary.com/novobp/image/upload/v1742923040/Inner_Artistry_Brochure_2024_yhnbok.pdf",
+          "appliesTo": "Iron balusters / Inner Artistry"
+        },
+        {
+          "title": "L.J. Smith - IronPro brochure",
+          "type": "brochure",
+          "url": "https://www.ljsmith.com/s/IronPro-Brochure.pdf",
+          "appliesTo": "IronPro kits"
+        },
+        {
+          "title": "L.J. Smith - Linear Collection brochure 2024",
+          "type": "brochure",
+          "url": "https://res.cloudinary.com/novobp/image/upload/v1742927612/Linear_Collections_Brochure_NEW_2024_ckh3xs.pdf",
+          "appliesTo": "Linear Collection (cable, tube, panel)"
+        },
+        {
+          "title": "L.J. Smith - Traditionally Manufactured Products (S Line)",
+          "type": "catalog",
+          "url": "https://res.cloudinary.com/novobp/image/upload/v1739471701/Traditioan_Manufactured_Products_mfdf7h.pdf",
+          "appliesTo": "S Line stair parts"
+        },
+        {
+          "title": "L.J. Smith Full Line Systems Catalog 2025",
+          "type": "catalog",
+          "url": "https://res.cloudinary.com/novobp/image/upload/v1738089916/LJSmith-FullCat_2025_x6yhey.pdf",
+          "appliesTo": "vendor"
+        },
+        {
+          "title": "L.J. Smith - 8079 False Tread installation",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/8079-False-Tread-Installation.pdf",
+          "appliesTo": "8079 false tread"
+        },
+        {
+          "title": "L.J. Smith - 8172/8179 False Tread installation",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/8172-8179-False-Tread-Installation.pdf",
+          "appliesTo": "8172 / 8179 false tread"
+        },
+        {
+          "title": "L.J. Smith - Balustrade Installation Guide (English)",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/Balustrade-Installation-Guide-English.pdf",
+          "appliesTo": "Wood balustrade (handrail, newels, balusters)"
+        },
+        {
+          "title": "L.J. Smith - Bending Rail Installation Guide",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/Bending-Rail-Installation-Guide.pdf",
+          "appliesTo": "Bending rail"
+        },
+        {
+          "title": "L.J. Smith - Conect-A-Kit Installation Guide",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/Conect-A-Kit-Installation-Guide.pdf",
+          "appliesTo": "Conect-A-Kit"
+        },
+        {
+          "title": "L.J. Smith - Iron Baluster Installation Guide",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/IronBalusterInstallationGuide.pdf",
+          "appliesTo": "Iron balusters"
+        },
+        {
+          "title": "L.J. Smith - Iron Newel Kit installation",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/Iron-Newel-Kit.pdf",
+          "appliesTo": "Iron newel kit"
+        },
+        {
+          "title": "L.J. Smith - IronPro Kneewall Kit detailed installation instructions",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/IronPro-Kneewall-Kit-Detailed-Installation-Instructions.pdf",
+          "appliesTo": "IronPro kneewall kit"
+        },
+        {
+          "title": "L.J. Smith - IronPro Level Kit detailed installation instructions",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/IronPro-Level-Kit-Detailed-Installation-Instructions.pdf",
+          "appliesTo": "IronPro level kit"
+        },
+        {
+          "title": "L.J. Smith - LJ-4075 Box Newel Installation Guide",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/LJ-4075-Box-Newel-Installation-Guide.pdf",
+          "appliesTo": "LJ-4075 box newel"
+        },
+        {
+          "title": "L.J. Smith - LJ-4091 Box Newel Installation Guide",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/LJ-4091-Box-Newel-Installation-Guide.pdf",
+          "appliesTo": "LJ-4091 box newel"
+        },
+        {
+          "title": "L.J. Smith - LJ-4092 Box Newel Installation Guide",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/LJ-4092-Box-Newel-Installation-Guide.pdf",
+          "appliesTo": "LJ-4092 box newel"
+        },
+        {
+          "title": "L.J. Smith - LJ-4392 Box Newel Installation Guide",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/LJ-4392-Box-Newel-Installation-Guide.pdf",
+          "appliesTo": "LJ-4392 box newel"
+        },
+        {
+          "title": "L.J. Smith - Linear Collection cable system - wood newels",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/Linear-Collection-Cable-System-Installation-Instructions-Wood-Newels.pdf",
+          "appliesTo": "Linear Collection cable"
+        },
+        {
+          "title": "L.J. Smith - Linear Collection panel system",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/Linear-Collection-Panel-System-Installation-Instructions.pdf",
+          "appliesTo": "Linear Collection panel"
+        },
+        {
+          "title": "L.J. Smith - Linear Collection tube system - wood newels",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/Linear-Collection-Tube-System-Installation-Instructions-Wood-Newels.pdf",
+          "appliesTo": "Linear Collection 3/4 tube"
+        },
+        {
+          "title": "L.J. Smith - ZipBolt / RailBolt installation instructions",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/ZipBolt-RailBolt-Installation-Instructions.pdf",
+          "appliesTo": "ZipBolt / RailBolt rail fasteners"
+        },
+        {
+          "title": "L.J. Smith - ZipBolt Drill Guide instructions",
+          "type": "install_guide",
+          "url": "https://www.ljsmith.com/s/ZipBolt-Drill-Guide-Instructions.pdf",
+          "appliesTo": "ZipBolt drill guide"
+        },
+        {
+          "title": "L.J. Smith - Use and Care Statement - Prime Coat (includes warranty terms)",
+          "type": "warranty",
+          "url": "https://www.ljsmith.com/s/Use-and-Care-Statement-Prime-Coat.pdf",
+          "appliesTo": "Primed stair parts"
+        },
+        {
+          "title": "L.J. Smith - Use and Care Statement - Wood (includes warranty terms)",
+          "type": "warranty",
+          "url": "https://www.ljsmith.com/s/Use-and-Care-Statement-Wood.pdf",
+          "appliesTo": "Wood stair parts"
+        },
+        {
+          "title": "L.J. Smith limited warranty (12 months)",
+          "type": "warranty",
+          "url": "https://www.ljsmith.com/warranty",
+          "appliesTo": "vendor"
+        }
+      ]
+    }
+  ]
+}

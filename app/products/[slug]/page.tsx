@@ -6,6 +6,7 @@ import FAQSection, { FAQ } from "@/components/FAQSection";
 import RelatedLinks, { RelatedLinkItem } from "@/components/RelatedLinks";
 import { PageHeader, CtaBand } from "@/app/ui/PageHeader";
 import { MdxContent } from "@/app/ui/MdxContent";
+import { ProductCatalog } from "@/app/ui/ProductCatalog";
 import { getCategoryEntries, getCategoryMdx, getCategoryBySlug } from "@/app/lib/content";
 import { getBrandEntries } from "@/app/lib/brands";
 import { productFaqsBySlug } from "@/app/data/faqs";
@@ -167,6 +168,8 @@ export default function ProductCategoryPage({ params }: { params: { slug: string
             </div>
           </aside>
         </div>
+
+        <ProductCatalog category={canonicalSlug} />
 
         <RelatedLinks links={relatedLinks} />
         <FAQSection title={`${category.name} FAQs`} faqs={faqs} category={canonicalSlug} />

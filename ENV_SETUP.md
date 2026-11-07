@@ -1,7 +1,7 @@
-# Environment Variables — Beisser Lumber Website
+# Environment Variables: Beisser Lumber Website
 
 ## Required before any form submission works:
-RESEND_API_KEY=           # Resend API key — get from Resend dashboard
+RESEND_API_KEY=           # Resend API key: get from Resend dashboard
 RESEND_FROM_EMAIL=        # Verified sender used for quote and service emails
 QUOTE_EMAIL_GRIMES=       # Inside sales email for Grimes branch
 QUOTE_EMAIL_CORALVILLE=   # Inside sales email for Coralville branch
@@ -18,3 +18,8 @@ NEXT_PUBLIC_SITE_URL=     # Full production URL: https://beisserlumber.com
 ## Optional:
 CONTACT_EMAIL=            # General contact form destination
 SERVICE_REQUEST_EMAIL=    # Service request form destination
+
+## GitHub Actions secrets (not the hosting env; the site never reads these at runtime):
+WEBSITE_EXPORT_TOKEN=     # Bearer token for LiveEdge GET /api/pip/web-export, same value as in LiveEdge's Vercel env.
+                          # Used only by .github/workflows/sync-pip.yml (scripts/sync-pip.mjs), which commits the
+                          # product catalog and literature JSON under app/data/pip/. See docs/agility-sync-plan.md.
