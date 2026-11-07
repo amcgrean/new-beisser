@@ -41,7 +41,7 @@ Description: ${body.description || ""}
         from: fromEmail,
         to: [to],
         reply_to: body.email,
-        subject: `New service request — ${body.service_type || "General"}`,
+        subject: `New service request: ${body.service_type || "General"}`,
         text: summary,
       }),
     });

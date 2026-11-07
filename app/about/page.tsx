@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import { PageHeader, StatList, CtaBand } from "@/app/ui/PageHeader";
+import { MapPin } from "@/app/ui/icons";
 import { locations } from "@/app/data/locations";
 
 export const metadata: Metadata = {
-  title: "About Beisser Lumber — Iowa's Largest Family-Owned Lumberyard Since 1953",
+  title: "About Beisser Lumber: Iowa's Largest Family-Owned Lumberyard Since 1953",
   description: "Learn about Beisser Lumber, Iowa's largest family-owned lumberyard since 1953, with four locations, a custom door shop, and statewide contractor support.",
 };
 
@@ -74,117 +75,108 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="space-y-8">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "About", href: "/about" }]} />
+    <div>
+      <PageHeader
+        eyebrow="About Beisser"
+        title="Iowa's Largest Family-Owned Lumberyard Since 1953"
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
+        image={{ src: "/locations/fort-dodge.jpg", alt: "Beisser Lumber Co. building and crew in Fort Dodge, Iowa, where the company started in 1953", width: 1100, height: 825 }}
+        lead={
+          <>
+            <p className="entity-definition">
+              Beisser Lumber is Iowa&apos;s largest family-owned lumberyard, established in 1953 in Fort Dodge, Iowa. We sell lumber, engineered wood, decking, siding, doors, and windows to contractors and homeowners across Central and Eastern Iowa from four locations: Grimes, Coralville, Fort Dodge, and our Birchwood/Johnston showroom.
+            </p>
+            <p className="text-base">
+              What began as a Fort Dodge lumber company has grown into a four-location Iowa operation serving builders, remodelers, specialty trades, and homeowners with material packages, estimating, design help, delivery coordination, and showroom support.
+            </p>
+          </>
+        }
+      />
 
-      <section className="space-y-4">
-        <h1 className="text-3xl font-bold text-beisserGray">Iowa&apos;s Largest Family-Owned Lumberyard Since 1953</h1>
-        <p className="entity-definition max-w-4xl text-sm text-slate-700">
-          Beisser Lumber is Iowa&apos;s largest family-owned lumberyard, established in 1953 in Fort Dodge, Iowa. We sell lumber, engineered wood, decking, siding, doors, and windows to contractors and homeowners across Central and Eastern Iowa from four locations: Grimes, Coralville, Fort Dodge, and our Birchwood/Johnston showroom.
-        </p>
-        <p className="max-w-4xl text-sm text-slate-700">
-          What began as a Fort Dodge lumber company has grown into a four-location Iowa operation serving builders, remodelers, specialty trades, and homeowners with material packages, estimating, design help, delivery coordination, and showroom support.
-        </p>
-      </section>
+      <div className="space-y-20">
+        <StatList stats={stats} label="Beisser Lumber by the numbers" />
 
-      <section aria-label="Beisser Lumber by the numbers" className="grid grid-cols-2 gap-3 md:grid-cols-4">
-        {stats.map((stat) => (
-          <div key={stat.label} className="rounded-xl border bg-white p-4 text-center shadow-sm">
-            <div className="text-2xl font-bold text-beisserGreen">{stat.value}</div>
-            <div className="mt-1 text-xs text-slate-600">{stat.label}</div>
+        <section className="grid gap-6 md:grid-cols-2">
+          <div className="card-muted p-8">
+            <p className="eyebrow">Our vision</p>
+            <p className="mt-3 text-xl font-semibold leading-snug text-ink-1">Provide building solutions that allow our customers to develop great communities.</p>
           </div>
-        ))}
-      </section>
+          <div className="card-muted p-8">
+            <p className="eyebrow">Our mission</p>
+            <p className="mt-3 text-ink-3">
+              To develop and maintain long-lasting relationships by delivering quality building materials and services. Beisser Lumber achieves customer satisfaction through the dedication of our valued employees to promote mutual growth and success.
+            </p>
+          </div>
+        </section>
 
-      <section className="grid gap-5 md:grid-cols-2">
-        <div className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700">
-          <h2 className="text-xl font-semibold text-beisserGray">Our vision</h2>
-          <p className="mt-2">Provide building solutions that allow our customers to develop great communities.</p>
-        </div>
-        <div className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700">
-          <h2 className="text-xl font-semibold text-beisserGray">Our mission</h2>
-          <p className="mt-2">
-            To develop and maintain long-lasting relationships by delivering quality building materials and services. Beisser Lumber achieves customer satisfaction through the dedication of our valued employees to promote mutual growth and success.
-          </p>
-        </div>
-      </section>
-
-      <section className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700">
-        <div className="flex flex-col gap-5 md:flex-row md:items-start">
-          <div className="flex-1">
-            <h2 className="text-xl font-semibold text-beisserGray">Company history</h2>
-            <ul className="mt-3 list-inside list-disc space-y-2">
+        <section className="grid gap-10 lg:grid-cols-[1.3fr_1fr]">
+          <div>
+            <h2 className="section-title">Company history</h2>
+            <ol className="mt-6 space-y-5 border-l-2 border-line pl-6">
               {history.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item} className="relative text-ink-3">
+                  <span aria-hidden className="absolute -left-[31px] top-2 h-2.5 w-2.5 rounded-full bg-gold-500 ring-4 ring-canvas" />
+                  {item}
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div className="space-y-6">
+            <figure>
+              <Image src="/images/company/about-heritage-pickup.jpg" alt="Two men standing beside an early Beisser Lumber Co. pickup truck" width={632} height={449} className="w-full rounded-lg object-cover" />
+              <figcaption className="mt-2 text-sm text-ink-4">From the Beisser archives.</figcaption>
+            </figure>
+            <div className="card-muted flex items-center gap-5 p-5">
+              <Image src="/images/company/about-founders-medallion.jpg" alt="Beisser Lumber founders medallion, established 1953" width={228} height={242} className="h-auto w-24 shrink-0" />
+              <Image src="/images/company/award-lbm-100-2025.jpg" alt="LBM Journal 100, 2025 Top Dealer" width={541} height={429} className="h-auto w-28 shrink-0 rounded-md" />
+              <p className="text-sm text-ink-3">
+                LBM Journal named Beisser Lumber one of the top 100 lumber and building material dealers in the country for 2025.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="grid gap-10 lg:grid-cols-2">
+          <div>
+            <h2 className="section-title">What sets Beisser apart</h2>
+            <div className="mt-4 space-y-4 text-ink-3">
+              <p>
+                Beisser is a premier Des Moines Remodelers Council member and continues to invest in operational capabilities that go beyond a standard lumberyard. The Grimes custom door shop produces thousands of doors each month, while the Components Division builds wall panels in a climate-controlled environment for residential and commercial projects.
+              </p>
+              <p>
+                That Components Division can custom-design panelized walls ranging from interior assemblies to finished exterior walls, helping project teams shorten framing timelines and improve consistency before materials ever reach the jobsite.
+              </p>
+            </div>
+            <h2 className="section-title mt-12">Leadership and the next chapter</h2>
+            <p className="mt-4 text-ink-3">
+              Just before Beisser&apos;s 70th anniversary, Kim Beisser passed the presidency to his son-in-law Dave Ling, continuing the family-owned legacy. Dave now leads the company as CEO, expanding Beisser&apos;s reach across Central and Eastern Iowa.
+            </p>
+            <Link href="/careers" className="text-link mt-4 inline-flex">
+              Explore careers at Beisser Lumber
+            </Link>
+          </div>
+
+          <div>
+            <h2 className="section-title">Locations across Iowa</h2>
+            <ul className="mt-4 grid gap-3">
+              {locations.map((location) => (
+                <li key={location.slug}>
+                  <Link href={`/locations/${location.slug}`} className="card flex gap-4 p-4 transition hover:border-brand-200 hover:shadow-lift">
+                    <MapPin size={20} className="mt-0.5 shrink-0 text-brand-500" />
+                    <span className="text-sm text-ink-3">
+                      <strong className="block text-base text-ink-1">{location.name}</strong>
+                      {location.addressLine1}, {location.city}, {location.state} {location.zip}
+                      <span className="block">{location.phone}</span>
+                    </span>
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
-          <Image
-            src="/images/company/about-founders-medallion.jpg"
-            alt="Beisser Lumber founders medallion, established 1953"
-            width={228}
-            height={242}
-            className="mx-auto h-auto w-40 shrink-0 md:mx-0"
-          />
-        </div>
-        <div className="mt-5 grid gap-4 sm:grid-cols-2">
-          <figure>
-            <Image src="/locations/fort-dodge.jpg" alt="Beisser Lumber Co. building and crew in Fort Dodge, Iowa" width={1100} height={825} className="h-56 w-full rounded-lg object-cover" />
-            <figcaption className="mt-1 text-xs text-slate-500">Fort Dodge, where Beisser started in 1953.</figcaption>
-          </figure>
-          <figure>
-            <Image src="/images/company/about-heritage-pickup.jpg" alt="Two men standing beside an early Beisser Lumber Co. pickup truck" width={632} height={449} className="h-56 w-full rounded-lg object-cover" />
-            <figcaption className="mt-1 text-xs text-slate-500">From the Beisser archives.</figcaption>
-          </figure>
-        </div>
-      </section>
+        </section>
+      </div>
 
-      <section className="flex flex-col items-center gap-5 rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700 sm:flex-row">
-        <Image src="/images/company/award-lbm-100-2025.jpg" alt="LBM Journal 100, 2025 Top Dealer" width={541} height={429} className="h-auto w-40 shrink-0 rounded-md" />
-        <div>
-          <h2 className="text-xl font-semibold text-beisserGray">Recognized as a top 100 dealer</h2>
-          <p className="mt-2">
-            LBM Journal named Beisser Lumber one of the top 100 lumber and building material dealers in the country for 2025.
-          </p>
-        </div>
-      </section>
-
-      <section className="grid gap-5 lg:grid-cols-2">
-        <div className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700">
-          <h2 className="text-xl font-semibold text-beisserGray">What sets Beisser apart</h2>
-          <div className="mt-3 space-y-3">
-            <p>
-              Beisser is a premier Des Moines Remodelers Council member and continues to invest in operational capabilities that go beyond a standard lumberyard. The Grimes custom door shop produces thousands of doors each month, while the Components Division builds wall panels in a climate-controlled environment for residential and commercial projects.
-            </p>
-            <p>
-              That Components Division can custom-design panelized walls ranging from interior assemblies to finished exterior walls, helping project teams shorten framing timelines and improve consistency before materials ever reach the jobsite.
-            </p>
-          </div>
-        </div>
-
-        <div className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700">
-          <h2 className="text-xl font-semibold text-beisserGray">Locations across Iowa</h2>
-          <div className="mt-3 grid gap-3">
-            {locations.map((location) => (
-              <div key={location.slug} className="rounded-md border bg-slate-50 p-3">
-                <strong>{location.name}</strong>
-                <p>{location.addressLine1}, {location.city}, {location.state} {location.zip}</p>
-                <p>{location.phone}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700">
-        <h2 className="text-xl font-semibold text-beisserGray">Leadership transition and next chapter</h2>
-        <p className="mt-2">
-          Just before Beisser&apos;s 70th anniversary, Kim Beisser passed the presidency to his son-in-law Dave Ling, continuing the family-owned legacy. Dave now leads the company as CEO, expanding Beisser&apos;s reach across Central and Eastern Iowa.
-        </p>
-        <Link href="/careers" className="mt-3 inline-flex text-brand-green underline">
-          Explore careers at Beisser Lumber
-        </Link>
-      </section>
+      <CtaBand />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />

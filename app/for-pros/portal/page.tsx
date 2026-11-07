@@ -1,18 +1,24 @@
+import type { Metadata } from "next";
+import { PageHeader } from "@/app/ui/PageHeader";
+export const metadata: Metadata = {
+  title: "Customer Portal | Beisser Lumber",
+  description: "Use Beisser's online portal to review invoices, pay bills, check balances and keep your account activity in one place.",
+};
+
 export default function PortalPage() {
   return (
-    <div className="space-y-4 max-w-3xl">
-      <h1 className="text-2xl font-semibold text-beisserGray">Customer Portal</h1>
-      <p className="text-sm text-slate-600">
-        Use Beisser's online portal to review invoices, pay bills, check balances, and keep your account activity in one place.
-      </p>
-      <a
-        href="https://pro.beisserlumber.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex px-4 py-2 rounded-md bg-brand-green text-white text-sm font-semibold hover:bg-brand-greenDark transition-colors"
-      >
-        Open Customer Portal
-      </a>
+    <div>
+      <PageHeader
+        eyebrow="For pros"
+        title="Customer Portal"
+        lead="Use Beisser's online portal to review invoices, pay bills, check balances, and keep your account activity in one place."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "For Pros", href: "/for-pros" }, { label: "Customer Portal" }]}
+        actions={
+          <a href="https://pro.beisserlumber.com" target="_blank" rel="noopener noreferrer" className="btn-primary">
+            Open Customer Portal
+          </a>
+        }
+      />
     </div>
   );
 }

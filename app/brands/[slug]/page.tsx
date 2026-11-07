@@ -4,7 +4,8 @@ import Link from "next/link";
 import FAQSection, { FAQ } from "@/components/FAQSection";
 import RelatedLinks from "@/components/RelatedLinks";
 import BrandViewTracker from "@/components/BrandViewTracker";
-import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import Image from "next/image";
+import { PageHeader, CtaBand } from "@/app/ui/PageHeader";
 import { getBrandBySlug, getBrandEntries } from "@/app/lib/brands";
 import { generateBrandMetadata } from "@/app/lib/seo";
 
@@ -82,41 +83,54 @@ export default function BrandPage({ params }: { params: { slug: string } }) {
   };
 
   return (
-    <div className="space-y-8">
+    <div>
       <BrandViewTracker brandName={brand.name} />
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Brands", href: "/brands" }, { label: brand.name }]} />
-
-      <header className="space-y-3">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-green">{retailerLabel}</p>
-        <h1 className="text-3xl font-bold text-beisserGray">{brand.name} at Beisser Lumber</h1>
-        <p className="max-w-3xl text-sm text-slate-700">
-          {brand.slug === "andersen"
+      <PageHeader
+        eyebrow={retailerLabel}
+        title={`${brand.name} at Beisser Lumber`}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Brands", href: "/brands" }, { label: brand.name }]}
+        lead={
+          brand.slug === "andersen"
             ? "Beisser Lumber is an official Andersen retailer with access to Andersen product lines, parts, and custom design support for Iowa projects."
-            : brand.description}
-        </p>
-      </header>
-
-      <section className="rounded-xl border bg-white p-5 shadow-sm">
-        <h2 className="text-xl font-semibold text-slate-900">Products We Carry</h2>
-        <ul className="mt-3 list-inside list-disc space-y-1 text-sm text-slate-700">
-          {brand.bullets?.length ? brand.bullets.map((bullet) => <li key={bullet}>{bullet}</li>) : <li>Core {brand.name} product lines for builder and remodeler projects</li>}
-        </ul>
-      </section>
-
-      <div className="flex flex-wrap gap-3">
-        <Link href={`/quote?brand=${brand.slug}`} className="inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark">Request a {brand.name} Quote</Link>
-        <Link href="/locations" className="inline-flex rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-brand-green hover:text-brand-green">Find a Location</Link>
-      </div>
-
-      <RelatedLinks
-        links={[
-          { href: categoryLink, label: "View related product category", description: `Browse the product category tied to ${brand.name}.` },
-          { href: locationLink, label: "Visit our nearest showroom", description: "Connect with a local Beisser branch for product support." },
-          { href: "/quote", label: "Request a material quote", description: "Get branch-routed pricing and lead-time guidance." },
-        ]}
+            : brand.description
+        }
+        actions={
+          <>
+            <Link href={`/quote?brand=${brand.slug}`} className="btn-primary">Request a {brand.name} Quote</Link>
+            <Link href="/locations" className="btn-secondary">Find a Location</Link>
+          </>
+        }
       />
 
-      <FAQSection title={`${brand.name} FAQs`} faqs={faqs} category={brand.slug} />
+      <div className="space-y-16">
+        <section className="grid gap-8 md:grid-cols-[16rem_1fr] md:items-start">
+          {brand.logo ? (
+            <div className="card flex h-40 items-center justify-center p-6">
+              <span className="relative block h-full w-full">
+                <Image src={brand.logo} alt={`${brand.name} logo`} fill sizes="16rem" className="object-contain" />
+              </span>
+            </div>
+          ) : null}
+          <div>
+            <h2 className="section-title">Products we carry</h2>
+            <ul className="bullets mt-4 text-ink-3">
+              {brand.bullets?.length ? brand.bullets.map((bullet) => <li key={bullet}>{bullet}</li>) : <li>Core {brand.name} product lines for builder and remodeler projects</li>}
+            </ul>
+          </div>
+        </section>
+
+        <RelatedLinks
+          links={[
+            { href: categoryLink, label: "View related product category", description: `Browse the product category tied to ${brand.name}.` },
+            { href: locationLink, label: "Visit our nearest showroom", description: "Connect with a local Beisser branch for product support." },
+            { href: "/quote", label: "Request a material quote", description: "Get branch-routed pricing and lead-time guidance." },
+          ]}
+        />
+
+        <FAQSection title={`${brand.name} FAQs`} faqs={faqs} category={brand.slug} />
+      </div>
+
+      <CtaBand primary={{ href: `/quote?brand=${brand.slug}`, label: `Request a ${brand.name} Quote` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </div>
   );
