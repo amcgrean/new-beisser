@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import { PageHeader } from "@/app/ui/PageHeader";
+import { ChevronDown } from "@/app/ui/icons";
 import literature from "@/app/data/literature.json";
 
 export const metadata: Metadata = {
@@ -21,30 +22,34 @@ const typeLabels = literature.types as Record<string, string>;
 const sections = literature.sections as Section[];
 const COLLAPSE_OVER = 8;
 
+function anchor(category: string) {
+  return category.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+}
+
 function isPdf(url: string) {
   return /\.pdf(\?|$)/i.test(url) || url.includes("/is/content/") || url.includes("cloudinary");
 }
 
 function DocRow({ doc }: { doc: Doc }) {
   return (
-    <li className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-slate-100 py-2 last:border-b-0">
-      <span className="inline-flex shrink-0 rounded bg-brand-mist px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-slate-600">
+    <li className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-line-soft py-2 last:border-b-0">
+      <span className="inline-flex shrink-0 rounded-sm bg-surface-2 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-ink-3">
         {typeLabels[doc.type] ?? doc.type}
       </span>
       {doc.url ? (
-        <a href={doc.url} target="_blank" rel="noopener noreferrer" className="font-medium text-brand-green underline-offset-4 hover:underline">
+        <a href={doc.url} target="_blank" rel="noopener noreferrer" className="text-link font-medium">
           {doc.title}
-          <span className="ml-1 text-xs font-normal text-slate-500">{isPdf(doc.url) ? "PDF" : "link"}</span>
+          <span className="ml-1 text-xs font-normal text-ink-4">{isPdf(doc.url) ? "PDF" : "link"}</span>
         </a>
       ) : (
-        <span className="font-medium text-slate-800">
+        <span className="font-medium text-ink-2">
           {doc.title}
-          <Link href="/contact" className="ml-2 text-xs font-normal text-slate-600 underline underline-offset-4">
+          <Link href="/contact" className="ml-2 text-xs font-normal text-ink-4 underline underline-offset-4 hover:text-brand-500">
             Request from your branch
           </Link>
         </span>
       )}
-      {doc.appliesTo ? <span className="text-xs text-slate-500">{doc.appliesTo}</span> : null}
+      {doc.appliesTo ? <span className="text-xs text-ink-4">{doc.appliesTo}</span> : null}
     </li>
   );
 }
@@ -52,8 +57,8 @@ function DocRow({ doc }: { doc: Doc }) {
 function BrandGroup({ brand }: { brand: Brand }) {
   const heading = (
     <span className="flex items-baseline gap-2">
-      <span className="text-base font-semibold text-brand-ink">{brand.brand}</span>
-      <span className="text-xs text-slate-500">{brand.docs.length} document{brand.docs.length === 1 ? "" : "s"}</span>
+      <span className="text-base font-semibold text-ink-1">{brand.brand}</span>
+      <span className="text-xs text-ink-4">{brand.docs.length} document{brand.docs.length === 1 ? "" : "s"}</span>
     </span>
   );
   const list = <ul className="mt-1">{brand.docs.map((doc) => <DocRow key={`${brand.brand}-${doc.title}-${doc.url}`} doc={doc} />)}</ul>;
@@ -64,7 +69,7 @@ function BrandGroup({ brand }: { brand: Brand }) {
         <summary className="cursor-pointer list-none py-1 marker:content-none [&::-webkit-details-marker]:hidden">
           <span className="flex items-center justify-between gap-3">
             {heading}
-            <span aria-hidden="true" className="text-sm text-brand-green transition-transform group-open:rotate-180">▾</span>
+            <ChevronDown size={18} className="shrink-0 text-brand-500 transition-transform group-open:rotate-180" />
           </span>
         </summary>
         {list}
@@ -92,32 +97,28 @@ export default function LiteraturePage() {
   };
 
   return (
-    <div className="space-y-6">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Product Literature & Spec Sheets" }]} />
-      <header className="space-y-2">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-green">Resources</p>
-        <h1 className="text-4xl font-bold leading-tight text-brand-ink sm:text-5xl">Product Literature &amp; Spec Sheets</h1>
-        <p className="max-w-3xl text-base text-slate-700">
-          {totalDocs} manufacturer documents for the products we carry: catalogs, spec sheets, installation guides, CAD drawings, and warranties.
-        </p>
-      </header>
+    <div>
+      <PageHeader
+        eyebrow="Resources"
+        title="Product Literature & Spec Sheets"
+        lead={`${totalDocs} manufacturer documents for the products we carry: catalogs, spec sheets, installation guides, CAD drawings, and warranties.`}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Product Literature & Spec Sheets" }]}
+      >
+        <p className="text-sm text-ink-4">Looking for a document that isn&apos;t listed? Call your branch: we can email any current spec sheet or brochure directly.</p>
+      </PageHeader>
 
-      <nav aria-label="Categories" className="flex flex-wrap gap-2 text-sm">
+      <nav aria-label="Categories" className="mb-8 flex flex-wrap gap-2">
         {sections.map((s) => (
-          <a key={s.category} href={`#${s.category.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`} className="rounded-md border border-slate-200 bg-white px-3 py-1.5 text-slate-700 hover:border-brand-green hover:text-brand-green">
+          <a key={s.category} href={`#${anchor(s.category)}`} className="chip">
             {s.category}
           </a>
         ))}
       </nav>
 
-      <section className="rounded-lg border border-brand-green/20 bg-brand-green/10 p-5 text-sm text-slate-800">
-        <p>Looking for a document that isn&apos;t listed? Call your branch — we can email any current spec sheet or brochure directly.</p>
-      </section>
-
-      <div className="space-y-6">
+      <div className="space-y-5">
         {sections.map((section) => (
-          <section key={section.category} id={section.category.toLowerCase().replace(/[^a-z0-9]+/g, "-")} className="scroll-mt-28 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold text-brand-ink">{section.category}</h2>
+          <section key={section.category} id={anchor(section.category)} className="card scroll-mt-28 p-6">
+            <h2 className="section-title">{section.category}</h2>
             <div className="mt-4 space-y-5">
               {section.brands.map((brand) => <BrandGroup key={brand.brand} brand={brand} />)}
             </div>

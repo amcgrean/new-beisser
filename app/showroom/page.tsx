@@ -1,12 +1,21 @@
-﻿import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import type { Metadata } from "next";
+import Image from "next/image";
+import { PageHeader, StatList, CtaBand } from "@/app/ui/PageHeader";
+import { Clock, MapPin, Phone } from "@/app/ui/icons";
 import { getPageMdx } from "@/app/lib/content";
 import { MdxContent } from "@/app/ui/MdxContent";
-import { getGalleryEntries } from "@/app/lib/content";
 
 type GalleryItem = { src: string; alt: string };
 type FeatureItem = { code: string; title: string; text: string };
 type HoursItem = { day: string; time: string };
 type StatItem = { value: string; label: string };
+
+export const metadata: Metadata = {
+  title: "Showroom & Millwork in Johnston | Beisser Lumber",
+  description:
+    "Visit the Beisser Lumber showroom at 7901 Birchwood Court in Johnston to compare windows, doors, decking, railing, stair parts and millwork on full-size displays.",
+  alternates: { canonical: "/showroom" },
+};
 
 export default function ShowroomPage() {
   const entry = getPageMdx("showroom");
@@ -40,195 +49,152 @@ export default function ShowroomPage() {
     | undefined;
 
   return (
-    <div className="space-y-8">
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Showroom & Millwork", href: "/showroom" },
-        ]}
+    <div>
+      <PageHeader
+        eyebrow={hero?.eyebrow ?? "Showroom"}
+        title={hero?.heading ?? fm.title ?? "Showroom & Millwork"}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Showroom & Millwork" }]}
+        lead={
+          <>
+            {hero?.subheading ? <p>{hero.subheading}</p> : null}
+            {fm.summary ? <p className="text-base">{fm.summary}</p> : null}
+          </>
+        }
+        image={hero?.image ? { src: hero.image, alt: "Stair parts and railing display in the Johnston showroom", width: 2000, height: 1500 } : undefined}
+        actions={
+          <>
+            {hero?.primaryCta?.href && hero.primaryCta.label ? (
+              <a className="btn-primary" href={hero.primaryCta.href}>
+                <Phone size={16} /> {hero.primaryCta.label}
+              </a>
+            ) : null}
+            {hero?.secondaryCta?.href && hero.secondaryCta.label ? (
+              <a className="btn-secondary" href={hero.secondaryCta.href}>
+                {hero.secondaryCta.label}
+              </a>
+            ) : null}
+          </>
+        }
       />
 
-      <section className="space-y-4">
-        <h1 className="text-3xl font-bold text-beisserGray">
-          {fm.title ?? "Showroom & Millwork"}
-        </h1>
+      <div className="space-y-20">
+        {stats.length > 0 && <StatList stats={stats} label="Showroom by the numbers" />}
 
-        {fm.summary && (
-          <p className="max-w-2xl text-sm text-slate-700">{fm.summary}</p>
+        {entry && (
+          <section className="max-w-3xl">
+            <MdxContent content={entry.content} />
+          </section>
         )}
 
-        {/* HERO */}
-        {hero?.image && (
-          <div className="relative overflow-hidden rounded-2xl bg-beisserGray text-white">
-            <div className="absolute inset-0 opacity-40">
-              <img
-                src={hero.image}
-                alt=""
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="relative p-8 md:p-12 space-y-3">
-              {hero.eyebrow && (
-                <div className="text-xs font-bold tracking-widest uppercase text-beisserGold">
-                  {hero.eyebrow}
+        {features.length > 0 && (
+          <section className="space-y-6">
+            <h2 className="section-title">Featured categories</h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              {features.map((f) => (
+                <div key={f.code} className="card p-6">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-brand-50 text-sm font-bold text-brand-500">
+                    {f.code}
+                  </span>
+                  <h3 className="mt-4 text-lg font-semibold text-ink-1">{f.title}</h3>
+                  <p className="mt-2 text-ink-3">{f.text}</p>
                 </div>
-              )}
-              <h2 className="text-2xl md:text-4xl font-extrabold">
-                {hero.heading ?? fm.title}
-              </h2>
-              {hero.subheading && (
-                <p className="max-w-2xl text-white/90">{hero.subheading}</p>
-              )}
-
-              <div className="pt-3 flex flex-wrap gap-3">
-                {hero.primaryCta?.href && hero.primaryCta?.label && (
-                  <a className="btn-primary" href={hero.primaryCta.href}>
-                    {hero.primaryCta.label}
-                  </a>
-                )}
-                {hero.secondaryCta?.href && hero.secondaryCta?.label && (
-                  <a
-                    className="btn-outline bg-white/10 border-white text-white hover:bg-white/20"
-                    href={hero.secondaryCta.href}
-                  >
-                    {hero.secondaryCta.label}
-                  </a>
-                )}
-              </div>
+              ))}
             </div>
-          </div>
+          </section>
         )}
 
-        {/* BODY MARKDOWN */}
-        {entry && <MdxContent content={entry.content} />}
-      </section>
+        {gallery.length > 0 && (
+          <section className="space-y-6">
+            <div>
+              <h2 className="section-title">Inside the showroom</h2>
+              <p className="mt-2 text-ink-4">Our Birchwood / Johnston location, including the grand opening.</p>
+            </div>
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+              {gallery.map((img) => (
+                <Image
+                  key={img.src}
+                  src={img.src}
+                  alt={img.alt}
+                  width={800}
+                  height={600}
+                  sizes="(min-width: 768px) 33vw, 50vw"
+                  className="aspect-[4/3] w-full rounded-lg object-cover"
+                />
+              ))}
+            </div>
+          </section>
+        )}
 
-      {/* GALLERY */}
-      {gallery.length > 0 && (
-        <section className="space-y-4">
-          <h2 className="text-xl font-bold text-beisserGray">Gallery</h2>
-          <p className="text-sm text-slate-600">
-            Inside our Birchwood / Johnston location, including the grand opening.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {gallery.map((img, idx) => (
-              <img
-                key={idx}
-                src={img.src}
-                alt={img.alt}
-                className="rounded-xl w-full h-40 md:h-48 object-cover"
-                loading="lazy"
-              />
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* STATS */}
-      {stats.length > 0 && (
-        <section className="space-y-4">
-          <h2 className="text-xl font-bold text-beisserGray">Showroom by the Numbers</h2>
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="rounded-xl border bg-white p-4">
-                <div className="text-2xl font-extrabold text-beisserGreen">{stat.value}</div>
-                <div className="mt-1 text-sm text-slate-700">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* FEATURES */}
-      {features.length > 0 && (
-        <section className="space-y-4">
-          <h2 className="text-xl font-bold text-beisserGray">
-            Featured Categories
-          </h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {features.map((f, idx) => (
-              <div key={idx} className="rounded-xl border bg-white p-5">
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-beisserGreen text-white font-bold">
-                  {f.code}
-                </div>
-                <div className="mt-3 text-lg font-bold text-beisserGray">
-                  {f.title}
-                </div>
-                <p className="mt-2 text-sm text-slate-700">{f.text}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* VISIT */}
-      {visit && (
-        <section id="visit" className="space-y-4">
-          <h2 className="text-xl font-bold text-beisserGray">Plan Your Visit</h2>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border bg-white p-6 space-y-3">
-              <div className="text-sm">
-                <div className="font-semibold text-beisserGray">Address</div>
-                <div>{visit.addressLine1}</div>
-                <div>{visit.addressLine2}</div>
-              </div>
-
-              <div className="text-sm">
-                <div className="font-semibold text-beisserGray">Phone</div>
-                {visit.phoneHref ? (
-                  <a className="text-beisserGreen underline" href={visit.phoneHref}>
-                    {visit.phoneLabel}
-                  </a>
-                ) : (
-                  <div>{visit.phoneLabel}</div>
-                )}
-              </div>
-
-              {visit.hours?.length ? (
-                <div className="text-sm">
-                  <div className="font-semibold text-beisserGray">Hours</div>
-                  <div className="mt-2 space-y-1">
-                    {visit.hours.map((h, idx) => (
-                      <div key={idx} className="flex justify-between gap-4">
-                        <span>{h.day}</span>
-                        <span className="font-semibold">{h.time}</span>
-                      </div>
-                    ))}
+        {visit && (
+          <section id="visit" className="scroll-mt-32 space-y-6">
+            <h2 className="section-title">Plan your visit</h2>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="card space-y-5 p-6 text-ink-3">
+                <div className="flex gap-3">
+                  <MapPin size={20} className="mt-0.5 shrink-0 text-brand-500" />
+                  <div>
+                    <div className="font-semibold text-ink-1">Address</div>
+                    <div>{visit.addressLine1}</div>
+                    <div>{visit.addressLine2}</div>
                   </div>
                 </div>
-              ) : null}
-
-              <div className="pt-2 flex flex-wrap gap-3">
-                {visit.directionsHref && (
-                  <a
-                    className="btn-primary"
-                    href={visit.directionsHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Get Directions
-                  </a>
-                )}
-                {visit.emailHref && (
-                  <a className="btn-outline" href={visit.emailHref}>
-                    Contact Us
-                  </a>
-                )}
+                <div className="flex gap-3">
+                  <Phone size={20} className="mt-0.5 shrink-0 text-brand-500" />
+                  <div>
+                    <div className="font-semibold text-ink-1">Phone</div>
+                    {visit.phoneHref ? (
+                      <a className="text-link" href={visit.phoneHref}>
+                        {visit.phoneLabel}
+                      </a>
+                    ) : (
+                      <div>{visit.phoneLabel}</div>
+                    )}
+                  </div>
+                </div>
+                {visit.hours?.length ? (
+                  <div className="flex gap-3">
+                    <Clock size={20} className="mt-0.5 shrink-0 text-brand-500" />
+                    <div className="flex-1">
+                      <div className="font-semibold text-ink-1">Hours</div>
+                      <dl className="mt-2 space-y-1">
+                        {visit.hours.map((h) => (
+                          <div key={h.day} className="flex justify-between gap-4">
+                            <dt>{h.day}</dt>
+                            <dd className="font-medium text-ink-1">{h.time}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </div>
+                  </div>
+                ) : null}
+                <div className="flex flex-wrap gap-3 pt-2">
+                  {visit.directionsHref && (
+                    <a className="btn-primary" href={visit.directionsHref} target="_blank" rel="noopener noreferrer">
+                      Get Directions
+                    </a>
+                  )}
+                  {visit.emailHref && (
+                    <a className="btn-secondary" href={visit.emailHref}>
+                      Contact Us
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
 
-            {visit.mapEmbedSrc && (
-              <iframe
-                className="w-full aspect-[16/11] rounded-2xl border"
-                loading="lazy"
-                src={visit.mapEmbedSrc}
-                title="Map to Beisser Lumber Showroom"
-              />
-            )}
-          </div>
-        </section>
-      )}
+              {visit.mapEmbedSrc && (
+                <iframe
+                  className="aspect-[16/11] w-full rounded-lg border border-line"
+                  loading="lazy"
+                  src={visit.mapEmbedSrc}
+                  title="Map to Beisser Lumber Showroom"
+                />
+              )}
+            </div>
+          </section>
+        )}
+      </div>
+
+      <CtaBand />
     </div>
   );
 }

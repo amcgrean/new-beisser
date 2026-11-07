@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
+import Link from "next/link";
+import { PageHeader, CtaBand } from "@/app/ui/PageHeader";
 import { resources } from "../../data/resources";
 
 type Params = { slug: string };
@@ -7,7 +9,7 @@ type Params = { slug: string };
 const articleContent: Record<string, string[]> = {
   "how-to-request-a-materials-quote": [
     "Send plans in PDF when possible, including elevations and sections so we can confirm spans, openings, and details that affect quantities.",
-    "Include timing—whether you are bidding, ready to order, or value engineering. Let us know who should receive the quote and how you prefer follow-up.",
+    "Include timing: whether you are bidding, ready to order, or value engineering. Let us know who should receive the quote and how you prefer follow-up.",
     "Share preferences for brands or series for windows, doors, decking, or siding. If you are flexible, tell us the performance or budget targets instead.",
   ],
   "lumber-and-building-material-basics": [
@@ -27,6 +29,12 @@ const articleContent: Record<string, string[]> = {
   ],
 };
 
+export function generateMetadata({ params }: { params: Params }): Metadata {
+  const article = resources.find((a) => a.slug === params.slug);
+  if (!article) return {};
+  return { title: `${article.title} | Beisser Lumber`, description: article.summary };
+}
+
 export default function ResourceDetailPage({ params }: { params: Params }) {
   const article = resources.find((a) => a.slug === params.slug);
 
@@ -35,30 +43,24 @@ export default function ResourceDetailPage({ params }: { params: Params }) {
   }
 
   return (
-    <div className="space-y-6 max-w-3xl">
-      <header className="space-y-2">
-        <div className="text-[11px] uppercase tracking-wide text-beisserGreen">
-          {article.category}
-        </div>
-        <h1 className="text-2xl font-semibold text-beisserGray">{article.title}</h1>
-        <div className="text-xs text-slate-500">{article.readTime}</div>
-      </header>
-      <Image
-        src={article.image}
-        alt={article.title}
-        width={800}
-        height={450}
-        className="w-full h-64 object-cover rounded-lg border bg-slate-100"
-      />
-      <div className="space-y-3 text-sm text-slate-700">
+    <div>
+      <PageHeader
+        eyebrow={article.category}
+        title={article.title}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: article.title }]}
+      >
+        <p className="text-sm text-ink-4">{article.readTime}</p>
+      </PageHeader>
+      <div className="prose-beisser">
         {(articleContent[article.slug] ?? []).map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
         <p>
-          Have a project or question related to this topic? Share details through our request form so we can connect
+          Have a project or question related to this topic? Share details through our <Link href="/quote">request form</Link> so we can connect
           you with the right specialist.
         </p>
       </div>
+      <CtaBand />
     </div>
   );
 }

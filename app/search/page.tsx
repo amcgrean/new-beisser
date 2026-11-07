@@ -19,14 +19,14 @@ export default function SearchPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-6">Search</h1>
+      <h1 className="page-title mb-6">Search</h1>
 
       <input
         type="text"
         value={query}
         onChange={(e) => handleSearch(e.target.value)}
         placeholder="Search products, brands…"
-        className="w-full p-3 border rounded"
+        className="field text-base"
       />
 
       <div className="mt-8 space-y-4">
@@ -34,7 +34,7 @@ export default function SearchPage() {
           <Link
             key={item.url}
             href={item.url}
-            className="block p-4 border rounded-lg shadow hover:shadow-md bg-white flex items-center gap-4"
+            className="card flex items-center gap-4 p-4 transition hover:border-brand-200 hover:shadow-lift"
           >
             {item.image && (
               <div className="relative h-16 w-20">
@@ -48,7 +48,7 @@ export default function SearchPage() {
             )}
             <div>
               <h3 className="font-semibold">{item.title}</h3>
-              <p className="text-sm text-slate-600">{item.type}</p>
+              <p className="text-sm text-ink-4">{item.type}</p>
             </div>
           </Link>
         ))}

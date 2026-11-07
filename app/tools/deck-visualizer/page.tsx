@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import { PageHeader } from "@/app/ui/PageHeader";
 
 export const metadata: Metadata = {
   title: "Deck Visualizer | Beisser Lumber",
@@ -17,11 +17,14 @@ export default function DeckVisualizerPage() {
   };
 
   return (
-    <div className="max-w-3xl space-y-4">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Deck Visualizer" }]} />
-      <h1 className="text-3xl font-bold text-beisserGray">Deck Visualizer</h1>
-      <p className="text-sm text-slate-700">Not sure what composite decking will look like on your home? Use our deck visualizer to try different colors and styles before you buy.</p>
-      <div className="rounded-xl border bg-white p-5 text-sm text-slate-700 shadow-sm">
+    <div>
+      <PageHeader
+        eyebrow="Tools"
+        title="Deck Visualizer"
+        lead="Not sure what composite decking will look like on your home? Use our deck visualizer to try different colors and styles before you buy."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Deck Visualizer" }]}
+      />
+      <div className="card p-5 text-ink-3">
         Aaron: replace this placeholder page with the confirmed visualizer link or embed before launch.
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />

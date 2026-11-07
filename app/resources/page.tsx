@@ -1,42 +1,42 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import { PageHeader } from "@/app/ui/PageHeader";
+import { ArrowRight } from "@/app/ui/icons";
 import { resources } from "../data/resources";
+
+export const metadata: Metadata = {
+  title: "Resources for Builders | Beisser Lumber",
+  description: "Practical guidance for builders and remodelers working with Beisser Lumber, covering quotes, deliveries, product basics and terminology.",
+};
 
 export default function ResourcesPage() {
   return (
-    <div className="space-y-6">
-      <header className="space-y-2">
-        <h1 className="text-2xl font-semibold text-beisserGray">Resources</h1>
-        <p className="text-sm text-slate-600 max-w-3xl">
-          Practical guidance for builders and remodelers working with Beisser Lumber—covering quotes, deliveries,
-          product basics, and terminology you can share with clients.
-        </p>
-      </header>
-      <div className="grid gap-4 md:grid-cols-3 text-sm">
+    <div>
+      <PageHeader
+        eyebrow="Resources"
+        title="Resources"
+        lead="Practical guidance for builders and remodelers working with Beisser Lumber, covering quotes, deliveries, product basics, and terminology you can share with clients."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Resources" }]}
+        actions={<Link href="/resources/literature" className="btn-secondary">Product literature &amp; spec sheets</Link>}
+      />
+      <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {resources.map((article) => (
-          <Link
-            key={article.slug}
-            href={`/resources/${article.slug}`}
-            className="rounded-lg border bg-white hover:border-beisserGreen/70 transition-colors overflow-hidden flex flex-col"
-          >
-            <Image
-              src={article.image}
-              alt={article.title}
-              width={400}
-              height={220}
-              className="w-full h-32 object-cover"
-            />
-            <div className="p-3 space-y-1 flex-1">
-              <div className="text-[11px] uppercase tracking-wide text-slate-400">
-                {article.category}
-              </div>
-              <div className="font-medium text-slate-800">{article.title}</div>
-              <p className="text-xs text-slate-500">{article.summary}</p>
-              <div className="text-[11px] text-slate-400 mt-1">{article.readTime}</div>
-            </div>
-          </Link>
+          <li key={article.slug}>
+            <Link
+              href={`/resources/${article.slug}`}
+              className="group card flex h-full flex-col p-6 transition hover:border-brand-200 hover:shadow-lift"
+            >
+              <span className="eyebrow">{article.category}</span>
+              <span className="mt-2 text-lg font-semibold leading-snug text-ink-1 group-hover:text-brand-500">{article.title}</span>
+              <span className="mt-2 text-sm text-ink-4">{article.summary}</span>
+              <span className="mt-auto flex items-center justify-between pt-4 text-sm">
+                <span className="text-ink-5">{article.readTime}</span>
+                <ArrowRight size={18} className="text-brand-500 transition-transform group-hover:translate-x-0.5" />
+              </span>
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

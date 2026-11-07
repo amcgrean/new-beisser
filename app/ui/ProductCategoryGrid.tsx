@@ -37,13 +37,13 @@ export function ProductCategoryGrid({ categories, brands }: Props) {
     <div className="space-y-4">
       {/* Filter bar */}
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-        <h1 className="text-2xl font-semibold text-slate-900">
+        <h1 className="text-2xl font-semibold text-ink-1">
           Products &amp; Services
         </h1>
         <div className="flex items-center gap-2">
           <label
             htmlFor="brand-filter"
-            className="text-sm text-slate-700 whitespace-nowrap"
+            className="text-ink-3 whitespace-nowrap"
           >
             Filter by brand:
           </label>
@@ -51,7 +51,7 @@ export function ProductCategoryGrid({ categories, brands }: Props) {
             id="brand-filter"
             value={selectedBrandSlug}
             onChange={(e) => setSelectedBrandSlug(e.target.value)}
-            className="rounded-md border border-slate-300 bg-white px-2 py-1 text-sm"
+            className="rounded-md border border-line-strong bg-white px-2 py-1 text-sm"
           >
             <option value="all">All brands</option>
             {filterableBrands.map((brand) => (
@@ -64,7 +64,7 @@ export function ProductCategoryGrid({ categories, brands }: Props) {
       </div>
 
       {selectedBrand && (
-        <p className="text-xs text-slate-600">
+        <p className="text-xs text-ink-4">
           Showing categories where{" "}
           <span className="font-semibold">{selectedBrand.name}</span> is a
           featured brand.
@@ -77,21 +77,21 @@ export function ProductCategoryGrid({ categories, brands }: Props) {
           <Link
             key={category.slug}
             href={`/products/${category.slug}`}
-            className="group rounded-lg border border-slate-200 bg-white p-4 hover:border-beisserGreen hover:shadow-sm transition"
+            className="group card p-4 hover:border-brand-500 hover:shadow-card transition"
           >
-            <h2 className="text-base font-semibold text-slate-900 group-hover:text-beisserGreen">
+            <h2 className="text-base font-semibold text-ink-1 group-hover:text-brand-500">
               {category.name}
             </h2>
-            <p className="mt-1 text-sm text-slate-600 line-clamp-3">
+            <p className="mt-1 text-sm text-ink-4 line-clamp-3">
               {category.summary || category.description}
             </p>
-            <span className="mt-3 inline-flex text-xs font-medium text-beisserGreen">
+            <span className="mt-3 inline-flex text-xs font-medium text-brand-500">
               View details &rarr;
             </span>
           </Link>
         ))}
         {visibleCategories.length === 0 && (
-          <div className="col-span-full rounded-md border border-dashed border-slate-300 bg-slate-50 p-4 text-sm text-slate-600">
+          <div className="col-span-full rounded-md border border-dashed border-line-strong bg-surface-1 p-4 text-sm text-ink-4">
             No categories match this brand filter yet. Try selecting a different
             brand or resetting to &quot;All brands&quot;.
           </div>

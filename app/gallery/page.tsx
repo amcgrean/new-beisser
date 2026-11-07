@@ -1,5 +1,6 @@
-﻿import Image from "next/image";
-import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import type { Metadata } from "next";
+import Image from "next/image";
+import { PageHeader } from "@/app/ui/PageHeader";
 import { getGalleryEntries } from "@/app/lib/content";
 
 type GalleryItem = {
@@ -11,6 +12,11 @@ type GalleryItem = {
   featured: boolean;
   date: Date | null;
   tags: string[];
+};
+
+export const metadata: Metadata = {
+  title: "Gallery | Beisser Lumber",
+  description: "Project photos, in-store highlights, community involvement and more from Beisser Lumber.",
 };
 
 export default function GalleryPage() {
@@ -41,28 +47,21 @@ export default function GalleryPage() {
     });
 
   return (
-    <div className="space-y-8">
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Gallery", href: "/gallery" },
-        ]}
+    <div>
+      <PageHeader
+        eyebrow="Gallery"
+        title="Gallery"
+        lead="Project photos, in-store highlights, community involvement, and more."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Gallery" }]}
       />
-
-      <header className="space-y-2">
-        <h1 className="text-3xl font-bold text-beisserGray">Gallery</h1>
-        <p className="text-sm text-slate-700 max-w-2xl">
-          Project photos, in-store highlights, community involvement, and more.
-        </p>
-      </header>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
           <article
             key={item.slug}
-            className="overflow-hidden rounded-xl border bg-white shadow-sm transition hover:shadow-md"
+            className="overflow-hidden card transition hover:shadow-lift"
           >
-            <div className="relative h-44 bg-slate-100">
+            <div className="relative h-44 bg-surface-2">
               <Image
                 src={item.image}
                 alt={item.title}
@@ -71,21 +70,21 @@ export default function GalleryPage() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               {item.featured ? (
-                <div className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-beisserGray shadow-sm">
+                <div className="absolute left-3 top-3 rounded-sm bg-canvas px-2 py-1 text-xs font-semibold text-ink-1">
                   Featured
                 </div>
               ) : null}
             </div>
 
             <div className="p-4 space-y-2">
-              <div className="font-semibold text-beisserGray">{item.title}</div>
+              <div className="font-semibold text-ink-1">{item.title}</div>
 
               {item.caption ? (
-                <div className="text-sm text-slate-600">{item.caption}</div>
+                <div className="text-sm text-ink-4">{item.caption}</div>
               ) : null}
 
               {(item.location || item.date) && (
-                <div className="text-xs text-slate-500">
+                <div className="text-xs text-ink-5">
                   {[item.location, item.date ? item.date.toLocaleDateString() : ""]
                     .filter(Boolean)
                     .join(" • ")}
@@ -97,7 +96,7 @@ export default function GalleryPage() {
                   {item.tags.slice(0, 6).map((t) => (
                     <span
                       key={t}
-                      className="text-[11px] px-2 py-1 rounded-full bg-slate-100 text-slate-600"
+                      className="rounded-sm bg-surface-2 px-2 py-0.5 text-xs text-ink-4"
                     >
                       {t}
                     </span>

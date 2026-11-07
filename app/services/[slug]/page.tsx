@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { PageHeader } from "@/app/ui/PageHeader";
 import { getServiceBySlug, getServiceEntries } from "@/app/lib/content";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -11,6 +13,13 @@ export async function generateStaticParams() {
     }));
 }
 
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+    const entry = getServiceBySlug(params.slug);
+    if (!entry) return {};
+    const fm = entry.frontmatter;
+    return { title: `${String(fm.title)} | Beisser Lumber`, description: fm.summary ? String(fm.summary) : undefined };
+}
+
 export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
     const entry = getServiceBySlug(params.slug);
 
@@ -21,28 +30,16 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
     const { frontmatter, content } = entry;
 
     return (
-        <article className="max-w-4xl mx-auto py-8">
-            <header className="mb-8 border-b pb-8">
-                <div className="text-sm font-medium text-slate-500 mb-2">Services</div>
-                <h1 className="text-4xl font-bold text-slate-900">{frontmatter.title}</h1>
-                {frontmatter.summary && (
-                    <p className="mt-4 text-xl text-slate-600 leading-relaxed">
-                        {frontmatter.summary}
-                    </p>
-                )}
-            </header>
+        <article>
+            <PageHeader
+                eyebrow="Services"
+                title={frontmatter.title}
+                lead={frontmatter.summary || undefined}
+                breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: String(frontmatter.title) }]}
+            />
 
-            {frontmatter.image && (
-                <div className="mb-8 w-full max-h-[400px] overflow-hidden rounded-xl bg-slate-100">
-                    <img
-                        src={frontmatter.image}
-                        alt={frontmatter.title}
-                        className="w-full h-full object-cover"
-                    />
-                </div>
-            )}
 
-            <div className="prose prose-slate max-w-none lg:prose-lg">
+            <div className="prose-beisser">
                 <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     rehypePlugins={[rehypeRaw]}

@@ -12,7 +12,7 @@ export default function TradesSpecialtyPage() {
     <ProAudiencePage
       breadcrumbLabel="Trades & Specialty Contractors"
       path="/pros/trades-specialty"
-      h1="Trades & Specialty Contractors — Building Materials from Beisser Lumber"
+      h1="Trades & Specialty Contractors: Building Materials from Beisser Lumber"
       intro="Beisser supports deck builders, siding installers, framers, and specialty trades with hardware, envelope products, flexible branch support, and quick access to the materials tied to their scope."
       body={[
         "Trades contractors often need speed, dependable will-call support, and a branch team that understands the specialty items tied to their work.",

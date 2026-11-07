@@ -1,4 +1,5 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import { PageHeader, CtaBand } from "@/app/ui/PageHeader";
 
 const coordinationBullets = [
   "Single point of contact for schedules, substitutions, and field fixes.",
@@ -13,40 +14,42 @@ const whoServed = [
   "Superintendents who want weekly updates on material status and service calls.",
 ];
 
+export const metadata: Metadata = {
+  title: "Jobsite Coordination | Beisser Lumber",
+  description: "Beisser Lumber aligns delivery schedules, field questions, returns and service calls with your superintendent and crew leads.",
+};
+
 export default function JobsiteCoordinationPage() {
   return (
-    <div className="space-y-5 max-w-4xl">
-      <header className="space-y-2">
-        <p className="text-xs uppercase tracking-[0.18em] text-beisserGreen font-semibold">
-          Services
-        </p>
-        <h1 className="text-3xl font-bold text-beisserGray">Jobsite Coordination</h1>
-        <p className="text-sm text-slate-700 max-w-3xl">
-          Clear communication between your superintendent, crew leads, and our branch teams. We align delivery
-          schedules, handle field questions, and keep returns or service calls organized so crews stay productive.
-        </p>
-      </header>
+    <div className="space-y-12">
+      <PageHeader
+        eyebrow="Services"
+        title="Jobsite Coordination"
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: "Jobsite Coordination" }]}
+        lead="Clear communication between your superintendent, crew leads, and our branch teams. We align delivery schedules, handle field questions, and keep returns or service calls organized so crews stay productive."
+      />
 
-      <section className="grid gap-6 md:grid-cols-2">
-        <div className="space-y-3 rounded-xl border bg-white p-4 shadow-sm">
-          <h2 className="text-lg font-semibold text-beisserGray">What’s Included</h2>
-          <ul className="list-disc list-inside space-y-1 text-sm text-slate-700">
+
+      <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="card space-y-3 p-6">
+          <h2 className="text-lg font-semibold text-ink-1">What’s Included</h2>
+          <ul className="bullets text-ink-3">
             {coordinationBullets.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </div>
-        <div className="space-y-3 rounded-xl border bg-white p-4 shadow-sm">
-          <h2 className="text-lg font-semibold text-beisserGray">Who It&apos;s For</h2>
-          <ul className="list-disc list-inside space-y-1 text-sm text-slate-700">
+        <div className="card space-y-3 p-6">
+          <h2 className="text-lg font-semibold text-ink-1">Who It&apos;s For</h2>
+          <ul className="bullets text-ink-3">
             {whoServed.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </div>
-        <div className="space-y-3 rounded-xl border bg-white p-4 shadow-sm">
-          <h2 className="text-lg font-semibold text-beisserGray">How to Engage Us</h2>
-          <ul className="list-disc list-inside space-y-1 text-sm text-slate-700">
+        <div className="card space-y-3 p-6">
+          <h2 className="text-lg font-semibold text-ink-1">How to Engage Us</h2>
+          <ul className="bullets text-ink-3">
             <li>Share weekly schedules and priorities with your account manager or inside sales lead.</li>
             <li>Flag changes to framing, window and door swings, or exterior details before deliveries.</li>
             <li>Provide the best onsite contact for each phase so questions get answered fast.</li>
@@ -54,26 +57,15 @@ export default function JobsiteCoordinationPage() {
         </div>
       </section>
 
-      <section className="space-y-3 rounded-xl border bg-slate-50 p-4">
-        <h2 className="text-lg font-semibold text-beisserGray">Service & Warranty Routing</h2>
-        <p className="text-sm text-slate-700">
+      <section className="space-y-3 card-muted p-6">
+        <h2 className="text-lg font-semibold text-ink-1">Service & Warranty Routing</h2>
+        <p className="text-ink-3">
           Window or door service requests go straight to the correct vendor team with photos, job info, and swing
           details included. We help track status so you know when to expect onsite visits or parts.
         </p>
       </section>
 
-      <div className="rounded-xl border bg-white p-4 shadow-sm flex flex-wrap gap-3 items-center">
-        <div className="text-sm text-slate-800">
-          Share your project list and preferred cadence for updates. We will set up a communication plan that fits
-          how your team works.
-        </div>
-        <Link
-          href="/quote"
-          className="inline-flex rounded-md bg-brand-green px-3 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark"
-        >
-          Set Up Coordination
-        </Link>
-      </div>
+      <CtaBand title="Set up jobsite coordination" body="Share your project list and preferred cadence for updates. We will set up a communication plan that fits how your team works." primary={{ href: "/quote", label: "Set Up Coordination" }} />
     </div>
   );
 }

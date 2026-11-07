@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { productCategories } from "@/app/data/categories";
-import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import { PageHeader, CtaBand } from "@/app/ui/PageHeader";
 import { getBrandEntries } from "@/app/lib/brands";
 
 export const metadata: Metadata = {
@@ -22,40 +22,41 @@ export default function BrandsPage() {
   };
 
   return (
-    <div className="space-y-8">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Brands", href: "/brands" }]} />
+    <div>
+      <PageHeader
+        eyebrow="Brands"
+        title="Brands We Carry"
+        lead="Beisser Lumber partners with trusted brands in windows, doors, decking, siding, millwork, framing, and hardware. Our goal is to help you spec products that perform on Iowa jobsites and fit the needs of builders and homeowners alike."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Brands" }]}
+      />
 
-      <header className="space-y-3">
-        <h1 className="text-3xl font-bold text-beisserGray">Brands We Carry</h1>
-        <p className="max-w-2xl text-sm text-slate-700">
-          Beisser Lumber partners with trusted brands in windows, doors, decking, siding, millwork, framing, and hardware. Our goal is to help you spec products that perform on Iowa jobsites and fit the needs of builders and homeowners alike.
-        </p>
-      </header>
-
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {brands.map((brand) => {
           const brandCategories = productCategories.filter((cat) => (brand.categories ?? []).includes(cat.slug));
 
           return (
-            <Link key={brand.slug} href={`/brands/${brand.slug}`} className="flex flex-col items-center rounded-lg border bg-white p-4 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-              <div className="relative mb-3 h-14 w-36">
-                <Image src={brand.logo} alt={brand.name} fill className="object-contain" />
-              </div>
-              <div className="text-sm font-semibold text-beisserGray">{brand.name}</div>
-              {brand.summary && <p className="mt-1 line-clamp-3 text-xs text-slate-600">{brand.summary}</p>}
-              {brandCategories.length > 0 && (
-                <div className="mt-3 w-full border-t pt-2">
-                  <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">Common Categories</div>
-                  <ul className="mt-1 space-y-0.5 text-[11px] text-slate-600">
-                    {brandCategories.slice(0, 3).map((cat) => <li key={cat.slug}>{cat.name}</li>)}
-                    {brandCategories.length > 3 && <li>+ more</li>}
-                  </ul>
-                </div>
-              )}
-            </Link>
+            <li key={brand.slug}>
+              <Link href={`/brands/${brand.slug}`} className="group card flex h-full flex-col p-5 transition hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-lift">
+                <span className="relative mb-4 block h-14 w-full">
+                  <Image src={brand.logo} alt={brand.name} fill sizes="12rem" className="object-contain object-left" />
+                </span>
+                <span className="font-semibold text-ink-1 group-hover:text-brand-500">{brand.name}</span>
+                {brand.summary && <span className="mt-1 line-clamp-3 text-sm text-ink-4">{brand.summary}</span>}
+                {brandCategories.length > 0 && (
+                  <span className="mt-auto flex flex-wrap gap-1.5 pt-4">
+                    {brandCategories.slice(0, 3).map((cat) => (
+                      <span key={cat.slug} className="rounded-sm bg-surface-2 px-2 py-0.5 text-xs text-ink-4">{cat.name}</span>
+                    ))}
+                    {brandCategories.length > 3 && <span className="px-1 py-0.5 text-xs text-ink-5">+{brandCategories.length - 3} more</span>}
+                  </span>
+                )}
+              </Link>
+            </li>
           );
         })}
-      </div>
+      </ul>
+
+      <CtaBand />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </div>
   );
