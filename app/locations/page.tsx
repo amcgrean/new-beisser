@@ -32,7 +32,7 @@ export default function LocationsPage() {
         <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Locations" }]} />
         <header className="mt-4 space-y-4">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-green">Locations</p>
-          <h1 className="text-4xl font-bold leading-tight text-brand-ink sm:text-5xl">Beisser Lumber locations</h1>
+          <h1 className="text-4xl font-bold leading-tight text-ink-1 sm:text-5xl">Beisser Lumber locations</h1>
           <p className="max-w-2xl text-base text-slate-700">
             Visit our Iowa branches in Grimes, Coralville, Fort Dodge, and the Birchwood / Johnston showroom.
           </p>
@@ -40,7 +40,7 @@ export default function LocationsPage() {
       </div>
 
       <section className="section-band bg-brand-mist py-12">
-        <h2 className="text-2xl font-semibold text-brand-ink sm:text-3xl">All branch addresses</h2>
+        <h2 className="text-2xl font-semibold text-ink-1 sm:text-3xl">All branch addresses</h2>
         <ul className="mt-4 grid gap-x-8 gap-y-2 text-sm text-slate-700 sm:grid-cols-2">
           {branchAddresses.map((address) => <li key={address}>{address}</li>)}
         </ul>
@@ -49,7 +49,7 @@ export default function LocationsPage() {
       <div className="grid gap-6 md:grid-cols-2">
         {locations.map((loc) => (
           <section key={loc.slug} className="space-y-4 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 className="text-xl font-semibold text-brand-ink">{loc.name}</h2>
+            <h2 className="text-xl font-semibold text-ink-1">{loc.name}</h2>
             <div className="text-sm text-slate-700">
               <div>{loc.addressLine1}</div>
               <div>{loc.city}, {loc.state} {loc.zip}</div>

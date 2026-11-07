@@ -58,9 +58,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en" className={montserrat.variable}>
-      <body className="flex min-h-screen flex-col bg-slate-50 font-sans text-slate-900 antialiased">
+      <body className="flex min-h-screen flex-col bg-canvas font-sans text-ink-2 antialiased">
         <Header />
-        <main className="flex-1 py-8">
+        <main id="main" className="flex-1 pb-20 pt-8">
           <div className="main-container">{children}</div>
         </main>
         <Footer />

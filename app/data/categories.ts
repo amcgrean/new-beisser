@@ -22,7 +22,7 @@ export const productCategories: ProductCategory[] = [
     name: "Doors",
     summary: "Interior, exterior, patio, and specialty door packages.",
     description: "With a Grimes custom door shop and showroom support, Beisser coordinates complete door packages for Iowa new construction and remodel work.",
-    heroImage: "https://images.unsplash.com/photo-1505842465776-3d90f6163101?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/placeholders/category.jpg",
     bullets: ["Interior and exterior door packages", "Custom-built doors from Grimes", "Hardware, glass, and trim coordination"],
   },
   {
@@ -38,7 +38,7 @@ export const productCategories: ProductCategory[] = [
     name: "Building Envelope & Accessories",
     summary: "Housewrap, flashing, sealants, and transition details for complete wall systems.",
     description: "Beisser helps Iowa builders match WRBs, tapes, flashings, and sealants to siding, windows, and door assemblies.",
-    heroImage: "https://images.unsplash.com/photo-1600585154203-aaefe2734275?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/placeholders/category.jpg",
     bullets: ["Housewrap and WRB products", "Flashing tapes and sill details", "Sealants for openings and transitions"],
   },
   {
@@ -46,7 +46,7 @@ export const productCategories: ProductCategory[] = [
     name: "Lumber & Panels",
     summary: "Framing lumber, treated lumber, plywood, OSB, and specialty boards.",
     description: "Beisser supplies core framing materials and panel products for jobs across Central and Eastern Iowa.",
-    heroImage: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8c?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/placeholders/category.jpg",
     bullets: ["Framing lumber packages", "OSB and plywood panels", "Cedar and treated lumber"],
   },
   {
@@ -54,7 +54,7 @@ export const productCategories: ProductCategory[] = [
     name: "Siding",
     summary: "James Hardie, LP SmartSide, trim, soffit, and accessory systems.",
     description: "Beisser supports Iowa siding packages with James Hardie and LP SmartSide plus the trim and accessory pieces that complete the wall assembly.",
-    heroImage: "https://images.unsplash.com/photo-1570129476766-47cbb58fc0c6?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/placeholders/category.jpg",
     bullets: ["Fiber cement and engineered wood siding", "Trim and soffit coordination", "Takeoffs and package support"],
   },
   {
@@ -62,7 +62,7 @@ export const productCategories: ProductCategory[] = [
     name: "Stair Parts",
     summary: "Treads, rails, balusters, and accessories for complete stair systems.",
     description: "Beisser helps coordinate stair parts with millwork and finish selections for new homes and remodeling work.",
-    heroImage: "https://images.unsplash.com/photo-1469796466635-455ede028aca?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/images/company/showroom-stair-display.jpg",
     bullets: ["Wood and iron stair systems", "Showroom support for finish choices", "Packages tied to interior millwork"],
   },
   {
@@ -70,7 +70,7 @@ export const productCategories: ProductCategory[] = [
     name: "Millwork",
     summary: "Interior trim, mouldings, custom profiles, and finish details.",
     description: "Beisser's millwork offering supports practical trim packages, custom details, and historical profile matching for Iowa projects.",
-    heroImage: "https://images.unsplash.com/photo-1595526114035-45c97e22c8c6?auto=format&fit=crop&w=1600&q=80",
+    heroImage: "/placeholders/category.jpg",
     bullets: ["Base, casing, crown, and specialty profiles", "Historical profile matching", "Showroom and branch support"],
   },
   {
