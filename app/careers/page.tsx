@@ -36,7 +36,7 @@ export default function CareersPage() {
         title="Work at Beisser Lumber"
         lead="Beisser Lumber is a family-owned Iowa company with more than 70 years of history serving contractors and homeowners. Our teams support four locations, a custom door shop, a Components Division, and the day-to-day work that keeps Iowa jobs moving."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Careers" }]}
-        image={{ src: "/images/company/grand-opening-team.jpg", alt: "Three Beisser Lumber team members in company shirts at the Johnston grand opening", width: 2000, height: 1600, className: "object-[center_30%]" }}
+        image={{ src: "/images/company/grand-opening-team.jpg", alt: "Three Beisser Lumber team members in company shirts at the Johnston grand opening", width: 2000, height: 1600, className: "object-cover object-[center_30%]" }}
         actions={<a href="#openings" className="btn-primary">See current openings</a>}
       />
 

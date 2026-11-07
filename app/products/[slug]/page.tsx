@@ -79,9 +79,12 @@ export default function ProductCategoryPage({ params }: { params: { slug: string
   const categoryMdx = getCategoryMdx(category.slug);
   const allBrands = getBrandEntries();
   const categoryBrands = allBrands.filter((b) => (b.categories ?? []).includes(category.slug));
-  // Only our own photos go in the header. Placeholders and remote stock images
-  // (several do not match their category) are skipped until real photos arrive.
-  const heroSrc = category.heroImage && category.heroImage.startsWith("/") && !category.heroImage.startsWith("/placeholders/") ? category.heroImage : null;
+  // Only our own photos go in the header: local images, or product shots from
+  // Beisser's image host (shown whole on white). Placeholders and remote stock
+  // images (several do not match their category) are skipped.
+  const hero = category.heroImage ?? "";
+  const isProductShot = hero.startsWith("https://images.beisser.cloud/");
+  const heroSrc = isProductShot || (hero.startsWith("/") && !hero.startsWith("/placeholders/")) ? hero : null;
   const mdxBody = categoryMdx?.content;
   const description = category.description ?? category.summary ?? "";
   const subcategories = category.subcategories ?? [];
@@ -112,7 +115,7 @@ export default function ProductCategoryPage({ params }: { params: { slug: string
         eyebrow="Products"
         title={`${category.name} at Beisser Lumber`}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Products", href: "/products" }, { label: category.name }]}
-        image={heroSrc ? { src: heroSrc, alt: category.name, width: 1600, height: 1200 } : undefined}
+        image={heroSrc ? { src: heroSrc, alt: category.name, width: 1600, height: 1200, className: isProductShot ? "border border-line-soft bg-canvas object-contain p-8" : undefined } : undefined}
         lead={
           <>
             <p>{description}</p>

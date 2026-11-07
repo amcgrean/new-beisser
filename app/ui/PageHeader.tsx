@@ -50,7 +50,7 @@ export function PageHeader({
             height={image.height}
             priority
             sizes="(min-width: 1024px) 34rem, 100vw"
-            className={`aspect-[4/3] w-full rounded-lg object-cover shadow-card ${image.className ?? ""}`}
+            className={`aspect-[4/3] w-full rounded-lg shadow-card ${image.className ?? "object-cover"}`}
           />
         ) : null}
       </div>
