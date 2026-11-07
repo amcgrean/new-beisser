@@ -1,7 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import RelatedLinks from "@/components/RelatedLinks";
-import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import { PageHeader, CtaBand } from "@/app/ui/PageHeader";
 
 type ProPageProps = {
   h1: string;
@@ -27,38 +26,45 @@ export default function ProAudiencePage({ h1, intro, body, highlights, breadcrum
   };
 
   return (
-    <div className="space-y-6">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Pros", href: "/pros" }, { label: breadcrumbLabel }]} />
-      <h1 className="text-3xl font-bold text-slate-900">{h1}</h1>
-      <p className="entity-definition max-w-3xl text-sm text-slate-700">{intro}</p>
-      {image ? (
-        <Image src={image.src} alt={image.alt} width={image.width} height={image.height} priority className="h-56 w-full rounded-xl object-cover md:h-72" />
-      ) : null}
-      <section className="rounded-xl border bg-white p-5 shadow-sm text-sm text-slate-700">
-        <div className="space-y-3">
-          {body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-        </div>
-        <ul className="mt-4 list-inside list-disc space-y-1">
-          {highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
-        </ul>
-      </section>
+    <div>
+      <PageHeader
+        eyebrow="For pros"
+        title={h1}
+        lead={<p className="entity-definition">{intro}</p>}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Pros", href: "/pros" }, { label: breadcrumbLabel }]}
+        image={image}
+      />
 
-      {extraSection}
+      <div className="space-y-12">
+        <section className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
+          <div className="space-y-4 text-ink-3">
+            {body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
+          <div className="card-muted p-6">
+            <h2 className="text-lg font-semibold text-ink-1">What you get</h2>
+            <ul className="bullets mt-3 text-ink-3">
+              {highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+            </ul>
+          </div>
+        </section>
 
-      <section className="rounded-xl border bg-white p-5 shadow-sm">
-        <h2 className="text-xl font-semibold text-slate-900">Relevant Product Paths</h2>
-        <div className="mt-3 flex flex-wrap gap-2">
-          <Link href="/products/lumber-panels" className="rounded-md border px-3 py-1.5 text-sm hover:border-brand-green hover:text-brand-green">Lumber &amp; Panels</Link>
-          <Link href="/products/engineered-wood-products" className="rounded-md border px-3 py-1.5 text-sm hover:border-brand-green hover:text-brand-green">Engineered Wood Products</Link>
-          <Link href="/products/windows-patio-doors" className="rounded-md border px-3 py-1.5 text-sm hover:border-brand-green hover:text-brand-green">Windows &amp; Patio Doors</Link>
-          <Link href="/products/doors" className="rounded-md border px-3 py-1.5 text-sm hover:border-brand-green hover:text-brand-green">Doors</Link>
-          <Link href="/products/decking-railing" className="rounded-md border px-3 py-1.5 text-sm hover:border-brand-green hover:text-brand-green">Decking &amp; Railing</Link>
-        </div>
-      </section>
+        {extraSection}
 
-      <RelatedLinks links={[{ href: "/products/decking-railing", label: "Decking & railing products", description: "See exterior products relevant to pro projects." }, { href: "/products/siding", label: "Siding systems", description: "Compare siding packages and support options." }, { href: "/products/engineered-wood-products", label: "Engineered wood products", description: "Explore EWP framing and structural options." }, { href: "/quote", label: "Request a material quote", description: "Start a branch-routed quote for your project." }]} />
+        <section className="space-y-4">
+          <h2 className="section-title">Relevant product paths</h2>
+          <div className="flex flex-wrap gap-2">
+            <Link href="/products/lumber-panels" className="chip">Lumber &amp; Panels</Link>
+            <Link href="/products/engineered-wood-products" className="chip">Engineered Wood Products</Link>
+            <Link href="/products/windows-patio-doors" className="chip">Windows &amp; Patio Doors</Link>
+            <Link href="/products/doors" className="chip">Doors</Link>
+            <Link href="/products/decking-railing" className="chip">Decking &amp; Railing</Link>
+          </div>
+        </section>
 
-      <div className="flex flex-wrap gap-3"><Link href="/quote" className="inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark">Request a Quote</Link></div>
+        <RelatedLinks links={[{ href: "/products/decking-railing", label: "Decking & railing products", description: "See exterior products relevant to pro projects." }, { href: "/products/siding", label: "Siding systems", description: "Compare siding packages and support options." }, { href: "/products/engineered-wood-products", label: "Engineered wood products", description: "Explore EWP framing and structural options." }, { href: "/quote", label: "Request a material quote", description: "Start a branch-routed quote for your project." }]} />
+      </div>
+
+      <CtaBand />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />

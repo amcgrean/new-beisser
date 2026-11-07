@@ -2,7 +2,7 @@ import localFont from "next/font/local";
 
 // Montserrat is loaded locally because the build environment is offline
 // (next/font/google would fail at build time). Montserrat is the
-// documented Gotham substitute — see brand/brand_guide.md.
+// documented Gotham substitute; see brand/brand_guide.md.
 export const montserrat = localFont({
   src: [
     { path: "../public/fonts/montserrat-v30-latin-regular.woff2", weight: "400", style: "normal" },

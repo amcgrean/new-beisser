@@ -12,12 +12,12 @@ export default function QuoteCTA({
   href?: string;
 }) {
   return (
-    <section className="rounded-xl border bg-slate-50 p-4">
-      <h2 className="text-base font-semibold text-beisserGray">{title}</h2>
-      <p className="mt-2 text-sm text-slate-700">{body}</p>
+    <section className="card-muted my-8 p-6">
+      <h2 className="text-lg font-semibold text-ink-1">{title}</h2>
+      <p className="mt-2 text-ink-3">{body}</p>
       <Link
         href={href}
-        className="mt-3 inline-flex rounded-md bg-brand-green px-4 py-2 text-sm font-semibold text-white hover:bg-brand-greenDark"
+        className="btn-primary mt-4"
       >
         {ctaLabel}
       </Link>

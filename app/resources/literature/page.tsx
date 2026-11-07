@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Breadcrumbs } from "@/app/ui/Breadcrumbs";
+import { PageHeader } from "@/app/ui/PageHeader";
 
 export const metadata: Metadata = {
   title: "Product Literature & Spec Sheets | Beisser Lumber",
@@ -84,25 +84,24 @@ export default function LiteraturePage() {
   };
 
   return (
-    <div className="space-y-6">
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Product Literature & Spec Sheets" }]} />
-      <header className="space-y-2">
-        <h1 className="text-3xl font-bold text-beisserGray">Product Literature &amp; Spec Sheets</h1>
-        <p className="max-w-3xl text-sm text-slate-700">Download brochures, spec sheets, and installation guides for the products we carry.</p>
-      </header>
-
-      <section className="rounded-xl border bg-brand-green/10 p-5 text-sm text-slate-800">
-        <p>Looking for a specific document? Call your branch — we can email any current spec sheet or brochure directly.</p>
-      </section>
+    <div>
+      <PageHeader
+        eyebrow="Resources"
+        title="Product Literature &amp; Spec Sheets"
+        lead="Download brochures, spec sheets, and installation guides for the products we carry."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Product Literature & Spec Sheets" }]}
+      >
+        <p className="text-sm text-ink-4">Looking for a specific document? Call your branch: we can email any current spec sheet or brochure directly.</p>
+      </PageHeader>
 
       <div className="space-y-5">
         {sections.map((section) => (
-          <section key={section.category} className="rounded-xl border bg-white p-5 shadow-sm">
-            <h2 className="text-xl font-semibold text-beisserGray">{section.category}</h2>
+          <section key={section.category} className="card p-6">
+            <h2 className="text-xl font-semibold text-ink-1">{section.category}</h2>
             <div className="mt-3 overflow-x-auto">
               <table className="min-w-full text-sm">
                 <thead>
-                  <tr className="border-b text-left text-slate-500">
+                  <tr className="border-b border-line-strong text-left text-ink-4">
                     <th className="py-2 pr-4">Brand</th>
                     <th className="py-2 pr-4">Document Type</th>
                     <th className="py-2">Download</th>
@@ -110,16 +109,16 @@ export default function LiteraturePage() {
                 </thead>
                 <tbody>
                   {section.items.map(([brand, document, href]) => (
-                    <tr key={`${section.category}-${brand}-${document}`} className="border-b last:border-b-0">
-                      <td className="py-2 pr-4 font-medium text-slate-800">{brand}</td>
-                      <td className="py-2 pr-4 text-slate-700">{document}</td>
-                      <td className="py-2 text-slate-700">
+                    <tr key={`${section.category}-${brand}-${document}`} className="border-b border-line last:border-b-0">
+                      <td className="py-2 pr-4 font-medium text-ink-2">{brand}</td>
+                      <td className="py-2 pr-4 text-ink-3">{document}</td>
+                      <td className="py-2 text-ink-3">
                         {href ? (
-                          <a href={href} target="_blank" rel="noopener noreferrer" className="text-brand-green underline">
+                          <a href={href} target="_blank" rel="noopener noreferrer" className="text-link">
                             {href.includes(".pdf") || href.includes("/is/content/") || href.includes("cloudinary") ? "Open PDF" : "Open link"}
                           </a>
                         ) : (
-                          <Link href="/contact" className="text-slate-600 underline">Request from your branch</Link>
+                          <Link href="/contact" className="text-ink-4 underline">Request from your branch</Link>
                         )}
                       </td>
                     </tr>

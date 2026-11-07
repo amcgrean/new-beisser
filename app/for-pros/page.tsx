@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { PageHeader } from "@/app/ui/PageHeader";
+import { ArrowRight } from "@/app/ui/icons";
+
+export const metadata: Metadata = {
+  title: "For Pros | Beisser Lumber",
+  description: "A central hub for builders, remodelers and contractors: the customer portal, estimating, delivery and other Beisser services.",
+};
 
 export default function ForProsPage() {
   const items = [
@@ -31,28 +39,31 @@ export default function ForProsPage() {
   ];
 
   return (
-    <div className="space-y-6">
-      <header className="space-y-2">
-        <h1 className="text-2xl font-semibold text-beisserGray">For Pros</h1>
-        <p className="text-sm text-slate-600 max-w-2xl">
-          A central hub for builders, remodelers, and contractors.
-          Access your tools and key services below.
-        </p>
-      </header>
-      <div className="grid gap-4 sm:grid-cols-2 text-sm">
+    <div>
+      <PageHeader
+        eyebrow="For pros"
+        title="For Pros"
+        lead="A central hub for builders, remodelers, and contractors. Access your tools and key services below."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "For Pros" }]}
+      />
+      <ul className="grid gap-6 sm:grid-cols-2">
         {items.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            target={item.external ? "_blank" : undefined}
-            rel={item.external ? "noreferrer" : undefined}
-            className="rounded-lg border bg-white hover:border-beisserGreen/70 transition-colors p-4"
-          >
-            <div className="font-medium text-slate-800">{item.title}</div>
-            <p className="text-xs text-slate-500 mt-1">{item.description}</p>
-          </Link>
+          <li key={item.href}>
+            <Link
+              href={item.href}
+              target={item.external ? "_blank" : undefined}
+              rel={item.external ? "noreferrer" : undefined}
+              className="group card flex h-full items-start justify-between gap-4 p-6 transition hover:border-brand-200 hover:shadow-lift"
+            >
+              <span>
+                <span className="block text-lg font-semibold text-ink-1 group-hover:text-brand-500">{item.title}</span>
+                <span className="mt-1 block text-sm text-ink-4">{item.description}</span>
+              </span>
+              <ArrowRight size={20} className="mt-1 shrink-0 text-brand-500 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

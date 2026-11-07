@@ -12,7 +12,7 @@ export function MdxContent({ content }: MdxContentProps) {
   const normalized = content.replace(/<QuoteCTA\s*\/>/g, '<div data-quote-cta="true"></div>');
 
   return (
-    <div className="space-y-4 text-sm leading-relaxed text-slate-800">
+    <div className="prose-beisser">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw]}
