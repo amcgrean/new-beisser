@@ -1,4 +1,4 @@
-# Beisser Lumber — Launch Checklist
+# Beisser Lumber: Launch Checklist
 
 > Live tracking doc for what's still open before the Next.js site can replace the current WordPress + Elementor site. Update this file as items land; don't rely on `HANDOFF_REPORT.md` (March 20 snapshot, some counts stale).
 >
@@ -8,31 +8,31 @@
 
 ## Legend
 
-- `[ ]` open — blocking launch
-- `[~]` open — not blocking (site handles gracefully; ships as polish)
+- `[ ]` open: blocking launch
+- `[~]` open: not blocking (site handles gracefully; ships as polish)
 - `[x]` done
 
 Each item names the owner (Aaron / Sales / Dev), the file or system to touch, and how to verify it's done.
 
 ---
 
-## 1. Environment variables — HARD BLOCKERS
+## 1. Environment variables: HARD BLOCKERS
 
 Owner: **Aaron** (hosting env settings). Source of truth: `ENV_SETUP.md`.
 
-None of these are in the repo (correctly — secrets don't get committed). All must land in the production hosting env before any form on the site works.
+None of these are in the repo (correctly: secrets don't get committed). All must land in the production hosting env before any form on the site works.
 
-- [ ] `RESEND_API_KEY` — get from Resend dashboard. Without it, quote and service-request emails don't send.
-- [ ] `RESEND_FROM_EMAIL` — verified sender for outbound.
-- [ ] `QUOTE_EMAIL_GRIMES` — inside sales inbox for Grimes.
-- [ ] `QUOTE_EMAIL_CORALVILLE` — inside sales inbox for Coralville.
-- [ ] `QUOTE_EMAIL_FORT_DODGE` — inside sales inbox for Fort Dodge.
-- [ ] `QUOTE_EMAIL_BIRCHWOOD` — inside sales inbox for Birchwood / Johnston.
-- [ ] `QUOTE_EMAIL_CC` — central inbox CC'd on every submission.
-- [ ] `NEXT_PUBLIC_GA_ID` — GA4 Measurement ID (format `G-XXXXXXXXXX`). Without it, launch day is blind — no traffic, conversion, or referrer data.
-- [ ] `NEXT_PUBLIC_SITE_URL` — full production URL (`https://beisserlumber.com`). Needed for absolute URLs in OG tags and sitemap.
-- [~] `CONTACT_EMAIL` — general contact form destination (optional).
-- [~] `SERVICE_REQUEST_EMAIL` — service request form destination (optional).
+- [ ] `RESEND_API_KEY`: get from Resend dashboard. Without it, quote and service-request emails don't send.
+- [ ] `RESEND_FROM_EMAIL`: verified sender for outbound.
+- [ ] `QUOTE_EMAIL_GRIMES`: inside sales inbox for Grimes.
+- [ ] `QUOTE_EMAIL_CORALVILLE`: inside sales inbox for Coralville.
+- [ ] `QUOTE_EMAIL_FORT_DODGE`: inside sales inbox for Fort Dodge.
+- [ ] `QUOTE_EMAIL_BIRCHWOOD`: inside sales inbox for Birchwood / Johnston.
+- [ ] `QUOTE_EMAIL_CC`: central inbox CC'd on every submission.
+- [ ] `NEXT_PUBLIC_GA_ID`: GA4 Measurement ID (format `G-XXXXXXXXXX`). Without it, launch day is blind: no traffic, conversion, or referrer data.
+- [ ] `NEXT_PUBLIC_SITE_URL`: full production URL (`https://beisserlumber.com`). Needed for absolute URLs in OG tags and sitemap.
+- [~] `CONTACT_EMAIL`: general contact form destination (optional).
+- [~] `SERVICE_REQUEST_EMAIL`: service request form destination (optional).
 
 **Verify:** submit a test quote from each branch option in the dropdown, confirm the correct branch inbox receives it and `QUOTE_EMAIL_CC` also received. Check GA4 Realtime shows the pageview.
 
@@ -40,27 +40,27 @@ None of these are in the repo (correctly — secrets don't get committed). All m
 
 ## 2. Content the sales team owns
 
-### 2a. FAQ answers — 28 empty across product categories
+### 2a. FAQ answers: 28 empty across product categories
 
-Owner: **Sales**. Files under `app/data/faqs/`. Empty answers are hidden by `<FAQSection>` and excluded from FAQPage JSON-LD, so the site works — but each empty answer is a missed long-tail SEO query.
+Owner: **Sales**. Files under `app/data/faqs/`. Empty answers are hidden by `<FAQSection>` and excluded from FAQPage JSON-LD, so the site works: but each empty answer is a missed long-tail SEO query.
 
-- [ ] `decking.ts` — 2 empty
-- [ ] `doors.ts` — 1 empty
-- [ ] `engineered-wood.ts` — 4 empty
-- [ ] `hardwareScrews.ts` — 4 empty
-- [ ] `lumber.ts` — 1 empty
-- [ ] `millwork.ts` — 3 empty
-- [ ] `roofing.ts` — 3 empty
-- [ ] `siding.ts` — 1 empty
-- [ ] `stairParts.ts` — 4 empty
-- [ ] `weatherization.ts` — 3 empty
-- [ ] `windows.ts` — 2 empty
+- [ ] `decking.ts`: 2 empty
+- [ ] `doors.ts`: 1 empty
+- [ ] `engineered-wood.ts`: 4 empty
+- [ ] `hardwareScrews.ts`: 4 empty
+- [ ] `lumber.ts`: 1 empty
+- [ ] `millwork.ts`: 3 empty
+- [ ] `roofing.ts`: 3 empty
+- [ ] `siding.ts`: 1 empty
+- [ ] `stairParts.ts`: 4 empty
+- [ ] `weatherization.ts`: 3 empty
+- [ ] `windows.ts`: 2 empty
 
 **Minimum for launch:** at least 1 answered question per category so every product page shows an FAQ section on day one. Rest can trickle in post-launch.
 
-**Verify:** run `grep -c 'answer: ""' app/data/faqs/*.ts` — target 0 unanswered (or the launch-minimum threshold you're comfortable with).
+**Verify:** run `grep -c 'answer: ""' app/data/faqs/*.ts`: target 0 unanswered (or the launch-minimum threshold you're comfortable with).
 
-### 2b. Staff data — all 3 entries are placeholders
+### 2b. Staff data: all 3 entries are placeholders
 
 Owner: **Sales / Aaron**. File: `app/data/staff.ts`.
 
@@ -70,7 +70,7 @@ Owner: **Sales / Aaron**. File: `app/data/staff.ts`.
 
 **Do NOT invent staff names.** The `/team` page renders whatever is in the data file, placeholders included.
 
-### 2c. Testimonials — all 3 quotes empty
+### 2c. Testimonials: all 3 quotes empty
 
 Owner: **Sales**. File: `app/data/testimonials.ts`.
 
@@ -79,16 +79,16 @@ Owner: **Sales**. File: `app/data/testimonials.ts`.
 
 `<TestimonialSection>` filters empty quotes, so the block currently doesn't render at all. First real quote unblocks the homepage social-proof section.
 
-### 2d. Brand logos — DONE; brand hero images are the real gap
+### 2d. Brand logos: DONE; brand hero images are the real gap
 
-Correction (2026-11-06): all 78 `content/brands/*.md` files have a `logo:` that resolves to a file under `public/Logos/` or `public/uploads/` — verified by script. The earlier "7 of 78" count only looked at `public/images/brand-*.png`. No logo work is needed.
+Correction (2026-11-06): all 78 `content/brands/*.md` files have a `logo:` that resolves to a file under `public/Logos/` or `public/uploads/`: verified by script. The earlier "7 of 78" count only looked at `public/images/brand-*.png`. No logo work is needed.
 
 What *is* a placeholder is each brand's `heroImage: /images/resources-article.png` (the same generic article graphic on every brand page).
 
 - [x] Brand logos present for all 78 brands.
-- [~] Brand `heroImage` — replace with a product or lifestyle photo per brand. PIP has photos for most stocked brands (`pip_product_images`, see `docs/agility-sync-plan.md`); Phase 1 of that plan drives this from PIP rather than by hand.
+- [~] Brand `heroImage`: replace with a product or lifestyle photo per brand. PIP has photos for most stocked brands (`pip_product_images`, see `docs/agility-sync-plan.md`); Phase 1 of that plan drives this from PIP rather than by hand.
 
-**Verify:** visit `/brands/andersen`, `/brands/trex`, `/brands/schlage` — logo renders; hero is still generic until Phase 1.
+**Verify:** visit `/brands/andersen`, `/brands/trex`, `/brands/schlage`: logo renders; hero is still generic until Phase 1.
 
 ### 2e. Showroom gallery photos
 
@@ -109,12 +109,13 @@ Owner: **Sales / Aaron**. Referenced in `content/pages/showroom.mdx` but not del
 - [ ] Update `app/products/[slug]/page.tsx` (line ~38, `internalLinksByCategory`).
 - [ ] Update `app/pros/remodelers/page.tsx` (line ~35).
 
-### 3b. Literature PDFs — DONE (public vendor docs)
+### 3b. Literature PDFs: DONE (public vendor docs)
 
-`/resources/literature` now renders `app/data/literature.json`: 217 public vendor documents from PIP (install guides, spec sheets, CAD, warranties, catalogs for Lynden, L.J. Smith, Schlage, Kwikset, Dexter, Emtek, Hager, National Hardware, Endura, Front Line, ODL, JELD-WEN, Metrie, Ferche) plus "request from your branch" rows for brands with no public document yet.
+`/resources/literature` renders `app/data/pip/literature.json`, synced nightly from PIP through LiveEdge (`scripts/sync-pip.mjs`, see `docs/agility-sync-plan.md`): 345 public vendor documents across 17 brands (Fiberon, Lynden, Endura, ODL, Front Line, JELD-WEN, Schlage, Dexter, Kwikset, Safe Lock, Emtek, Hager, National Hardware, Metrie, Ferche, L.J. Smith) plus the "request from your branch" rows in `app/data/literature-requests.json` for brands with no public document yet.
 
 - [x] Real links for every brand PIP has documents for.
-- [~] Brands still request-only: Gerkin, Andersen, Sierra Pacific, Therma-Tru, Trex, TimberTech, Deckorators, James Hardie, Rollex, Weyerhaeuser, Tyvek, ZIP, Dow, Simpson, FastenMaster, Empire, Coffman. Add to PIP `pip_vendor_documents` and regenerate (Phase 1 of `docs/agility-sync-plan.md` automates this).
+- [ ] `WEBSITE_EXPORT_TOKEN` set in LiveEdge (Vercel) and in this repo's GitHub Actions secrets, so the nightly sync runs (Aaron).
+- [~] Brands still request-only: Gerkin, Andersen, Sierra Pacific, Therma-Tru, Trex, TimberTech, Deckorators, James Hardie, Rollex, Weyerhaeuser, Tyvek, ZIP, Dow, Simpson, FastenMaster, Empire, Coffman. Load their documents into PIP and give the vendor a website category in LiveEdge; the sync picks them up and the row can then leave `literature-requests.json`.
 
 ### 3c. WordPress URL audit + redirect confirmation
 
@@ -122,7 +123,7 @@ Owner: **Sales / Aaron**. Referenced in `content/pages/showroom.mdx` but not del
 
 - [ ] Export a full URL list from the current WordPress site (WP-CLI: `wp post list --post_type=page,post --fields=ID,post_title,post_status,post_name --format=csv`, or crawl with Screaming Frog).
 - [ ] For each live WP URL, verify a matching redirect exists in `next.config.js` OR a matching route exists in the new site.
-- [ ] 301 spot-check: test 10 critical old URLs in a staging environment — confirm they land on the correct new URL with a 301 status (not 302, not 200 rewrite).
+- [ ] 301 spot-check: test 10 critical old URLs in a staging environment: confirm they land on the correct new URL with a 301 status (not 302, not 200 rewrite).
 
 ### 3d. Google Search Console
 
@@ -133,10 +134,10 @@ Owner: **Sales / Aaron**. Referenced in `content/pages/showroom.mdx` but not del
 
 ### 3e. Google Business Profile updates
 
-- [ ] Grimes GBP — new site description + new photos.
-- [ ] Coralville GBP — same.
-- [ ] Fort Dodge GBP — same.
-- [ ] Birchwood / Johnston GBP — same.
+- [ ] Grimes GBP: new site description + new photos.
+- [ ] Coralville GBP: same.
+- [ ] Fort Dodge GBP: same.
+- [ ] Birchwood / Johnston GBP: same.
 
 ### 3f. Schema validation
 
@@ -145,7 +146,7 @@ Owner: **Sales / Aaron**. Referenced in `content/pages/showroom.mdx` but not del
 ### 3g. PageSpeed
 
 - [ ] Run PageSpeed Insights on the homepage.
-- [ ] Confirm LCP green on mobile (< 2.5s). Hero image is the LCP — `priority` prop must stay on the hero `<Image>`.
+- [ ] Confirm LCP green on mobile (< 2.5s). Hero image is the LCP: `priority` prop must stay on the hero `<Image>`.
 
 ---
 
@@ -166,15 +167,15 @@ Owner: **Sales / Aaron**. Referenced in `content/pages/showroom.mdx` but not del
 
 ### 4c. Forms
 
-- [ ] Test quote form from each of the 4 branch dropdown options — verify email lands at the right branch inbox.
-- [ ] Test service request form — verify routing.
-- [ ] Test contact form — verify routing.
+- [ ] Test quote form from each of the 4 branch dropdown options: verify email lands at the right branch inbox.
+- [ ] Test service request form: verify routing.
+- [ ] Test contact form: verify routing.
 
 ---
 
 ## 5. Cutover plan (post-checklist)
 
-Not blocking — this is the how-do-we-flip-the-switch decision to make once §1–§4 are green:
+Not blocking: this is the how-do-we-flip-the-switch decision to make once §1–§4 are green:
 
 - [ ] Decide cutover strategy: (A) full DNS flip on a target date, (B) staging-subdomain soft launch then flip, (C) URL-by-URL edge rewrites via Cloudflare / hosting rewrites while WP stays live for the rest.
 - [ ] If option C: draft the rewrite map (which paths hit Next.js, which stay on WP).
@@ -183,14 +184,14 @@ Not blocking — this is the how-do-we-flip-the-switch decision to make once §1
 
 ---
 
-## 6. Verified clean (as of March 20 handoff — no re-verification needed unless code changes)
+## 6. Verified clean (as of March 20 handoff: no re-verification needed unless code changes)
 
 Per `HANDOFF_REPORT.md` §8:
 
-- [x] `robots.txt` — GPTBot, ClaudeBot, PerplexityBot, anthropic-ai all `Allow: /`.
-- [x] Broken portal URL (https-pro-beisserlumber) — 0 instances.
-- [x] Lorem ipsum — 0 instances.
-- [x] Old/wrong product slugs — 0 instances.
+- [x] `robots.txt`: GPTBot, ClaudeBot, PerplexityBot, anthropic-ai all `Allow: /`.
+- [x] Broken portal URL (https-pro-beisserlumber): 0 instances.
+- [x] Lorem ipsum: 0 instances.
+- [x] Old/wrong product slugs: 0 instances.
 - [x] All 10 product category pages live (via `app/products/[slug]/page.tsx`).
 - [x] All 5+ brand pages live (via `app/brands/[slug]/page.tsx`).
 - [x] All 4 pro audience pages live.
@@ -198,7 +199,7 @@ Per `HANDOFF_REPORT.md` §8:
 - [x] All 4 real branch addresses in `app/locations/page.tsx`.
 - [x] Entity phrase "largest family-owned lumberyard" on homepage / about / layout.
 - [x] Social links (Facebook, Instagram, X, LinkedIn) in footer and Organization schema.
-- [x] Meta titles — no duplicates or placeholders.
+- [x] Meta titles: no duplicates or placeholders.
 - [x] 30+ redirects in `next.config.js` including `/company/` → `/about`, `/professionals/` → `/pros`, `/literature/` → `/resources/literature`.
 - [x] TypeScript clean (`tsc --noEmit`).
 - [x] Build clean (`npm run build`).
