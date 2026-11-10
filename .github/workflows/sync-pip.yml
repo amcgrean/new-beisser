@@ -31,7 +31,7 @@ jobs:
         env:
           LIVEEDGE_URL: https://app.beisser.cloud
           WEBSITE_EXPORT_TOKEN: ${{ secrets.WEBSITE_EXPORT_TOKEN }}
-        run: node scripts/sync-pip.mjs ${{ inputs.check_images && '--check-images' || '' }}
+        run: node scripts/sync-pip.mjs --check-docs ${{ inputs.check_images && '--check-images' || '' }}
       - name: Open or update the sync PR
         uses: peter-evans/create-pull-request@v6
         with:

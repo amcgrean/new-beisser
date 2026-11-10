@@ -1106,36 +1106,6 @@
       "category": "Doors",
       "docs": [
         {
-          "title": "Endura Full Line Catalog",
-          "type": "brochure",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraLiterature_Website/Endura-Full-Line-Catalog.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura FusionFrame Product Brochure",
-          "type": "brochure",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraLiterature_Website/FusionFrame/FusionFrame-Brochure.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura MiraVista Product Brochure",
-          "type": "brochure",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraLiterature_Website/MiraVista/MiraVista-Brochure.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura PanoLock+ Product Brochure",
-          "type": "brochure",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraLiterature_Website/PanoLock/PanoLock-Brochure.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura Trilennium Product Brochure",
-          "type": "brochure",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraLiterature_Website/Trilennium/Trilennium-Brochure.pdf",
-          "appliesTo": null
-        },
-        {
           "title": "Endura - ADA Compliant Sills - Product Profiles",
           "type": "cad_drawing",
           "url": "https://marketing.poweredbyendura.com/hubfs/Sills_TechnicalDocuments/ADA%20Compliant%20Sills%20-%20Product%20Profiles.pdf",
@@ -1172,99 +1142,9 @@
           "appliesTo": "Z-Series adjustable sills (ZAC / ZAI)"
         },
         {
-          "title": "Endura ADAptive Sill — Installation Instructions",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_SillsInstructions/ADAptive/ADAptive%20Installation%20Instructions.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura ADAvantage Sill — Installation Instructions",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_SillsInstructions/ADAvantage/ADAvantage%20Installation%20Instructions.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura Door Bottom — Installation Instructions",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_DoorBottomsInstructions/Door-Bottoms-Installation-Instructions.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura FrameSaver — Installation Instructions",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_FrameInstructions/FrameSaver/FrameSaver-Installation-Instructions.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura FusionFrame — Assembly Guide",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_FrameInstructions/FusionFrame/FusionFrame-Assembly-Guide.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura Multilpoint Astragal — PanoLock+ Assembly Guide",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_AstragalInstructions/PanoLock/PanoLock-Assembly-Guide.pdf",
-          "appliesTo": null
-        },
-        {
           "title": "Endura RDS Sill — Field Replacement Instructions",
           "type": "install_guide",
           "url": "https://www.enduraproducts.com/wp-content/uploads/2024/04/RDS-Field-Replacement-3_28_24-1.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura SureSill Sill Pan — Installation Instructions",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_SillPanInstructions/SureSill-Installation-Instructions.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura Trilennium Astragal — Assembly Guide",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_AstragalInstructions/Trilennium/Trilennium-Assembly-Guide.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura Ultimate Astragal — Field Inswing Instructions",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_AstragalInstructions/Ultimate/Ultimate-Astragal-Field-Inswing.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura Ultimate Astragal — Field Outswing Instructions",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_AstragalInstructions/Ultimate/Ultimate-Astragal-Field-Outswing.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura Ultimate Astragal — Shop Instructions",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_AstragalInstructions/Ultimate/Ultimate-Astragal-Shop-Instructions.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura VersaPan Sill Pan — Installation Instructions",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_SillPanInstructions/VersaPan-Installation-Instructions.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura Weatherstrip — Installation Instructions",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_WeatherstripInstructions/Weatherstrip-Installation-Instructions.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura Z-Series Sill — Field Replacement Instructions",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_SillsInstructions/Z-Series/ZAC%20Field%20Replacement%20Instructions.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura Z-Series Sill — Shop Replacement Instructions",
-          "type": "install_guide",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_SillsInstructions/Z-Series/ZAC%20Shop%20Replacement%20Instructions.pdf",
           "appliesTo": null
         },
         {
@@ -1316,70 +1196,10 @@
           "appliesTo": "Trilennium multi-point locks"
         },
         {
-          "title": "Endura CPBE / Force 5 — Installation Guide",
-          "type": "spec_sheet",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_CPBEInstructions/CPBE-Force5-Installation-Guide.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura PanoLock+ — Troubleshooting & FAQ",
-          "type": "spec_sheet",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_TroubleshootingGuides/PanoLock-Troubleshooting-FAQ.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura Trilennium — Troubleshooting Guide",
-          "type": "spec_sheet",
-          "url": "https://marketing.poweredbyendura.com/hubfs/EnduraWebsite_TroubleshootingGuides/Trilennium-Troubleshooting.pdf",
-          "appliesTo": null
-        },
-        {
           "title": "Endura - Trilennium care and maintenance",
           "type": "tech_manual",
           "url": "https://marketing.poweredbyendura.com/hubfs/Trilennium_TechnicalDocuments/Trilennium%20Care%20and%20Maintenance.pdf",
           "appliesTo": "Trilennium multi-point locks"
-        },
-        {
-          "title": "Endura Force 5 / CPBE Warranty",
-          "type": "warranty",
-          "url": "https://www.enduraproducts.com/wp-content/uploads/Endura-Force5-CPBE-Warranty.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura FrameSaver Transferable Lifetime Warranty",
-          "type": "warranty",
-          "url": "https://www.enduraproducts.com/wp-content/uploads/Endura-FrameSaver-Warranty.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura FusionFrame Warranty",
-          "type": "warranty",
-          "url": "https://www.enduraproducts.com/wp-content/uploads/Endura-FusionFrame-Warranty.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura General Limited Warranty",
-          "type": "warranty",
-          "url": "https://www.enduraproducts.com/wp-content/uploads/Endura-General-Limited-Warranty.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura PanoLock+ Warranty",
-          "type": "warranty",
-          "url": "https://www.enduraproducts.com/wp-content/uploads/Endura-PanoLock-Warranty.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura Trilennium Warranty",
-          "type": "warranty",
-          "url": "https://www.enduraproducts.com/wp-content/uploads/Endura-Trilennium-Warranty.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "Endura Wood Veneer Astragal Warranty",
-          "type": "warranty",
-          "url": "https://www.enduraproducts.com/wp-content/uploads/Endura-Wood-Veneer-Astragal-Warranty.pdf",
-          "appliesTo": null
         }
       ]
     },
@@ -1776,18 +1596,6 @@
       "category": "Doors",
       "docs": [
         {
-          "title": "ODL Blinds+Glass 2025 Catalog",
-          "type": "catalog",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Catalogs/ODL-BlindsGlass-2025.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "ODL Custom Glass Catalog",
-          "type": "catalog",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Catalogs/ODL-Custom-Glass-Catalog.pdf",
-          "appliesTo": null
-        },
-        {
           "title": "ODL - 08 13 00 Steel Door 3-Part Spec (Aug 2026)",
           "type": "csi_spec",
           "url": "https://www.odl.com/hubfs/08_13_00%20-%20Steel%20Door%203-Part%20Spec%20-%20Final%20on%2008.2026.pdf",
@@ -1836,36 +1644,6 @@
           "appliesTo": "Zeel doorglass frame"
         },
         {
-          "title": "ODL Add-On Blinds Install Guide (EN/ES)",
-          "type": "install_guide",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Installation/Add-On-Blinds-Install-EN-ES.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "ODL Keystone Frame Install Guide v2",
-          "type": "install_guide",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Installation/Keystone-Install-v2.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "ODL Keystone Frame Install Guide v7",
-          "type": "install_guide",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Installation/Keystone-Install-v7.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "ODL Keystone Frame Sell Sheet",
-          "type": "install_guide",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Installation/Keystone-Sell-Sheet.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "ODL Keystone Frame Tech Sheet",
-          "type": "install_guide",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Installation/Keystone-Tech-Sheet.pdf",
-          "appliesTo": null
-        },
-        {
           "title": "ODL ENERGY STAR Tables — Fiberglass Doors",
           "type": "spec_sheet",
           "url": "https://www.odl.com/hubfs/225208_ENERGY%20STAR%20Tables_Fiberglass%20(1)-compressed.pdf",
@@ -1878,12 +1656,6 @@
           "appliesTo": null
         },
         {
-          "title": "ODL Low-E Comparison Guide",
-          "type": "spec_sheet",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Low-E-Comparison-Guide.pdf",
-          "appliesTo": null
-        },
-        {
           "title": "ODL Thermal Performance Database (live)",
           "type": "spec_sheet",
           "url": "https://www.odl.com/thermal-performance-database",
@@ -1893,60 +1665,6 @@
           "title": "ODL 2026 Door Tech Manual",
           "type": "tech_manual",
           "url": "https://www.odl.com/hubfs/2026%20Door%20Tech%20Manual.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "ODL STC Test Report — Decorative Glass (ATI)",
-          "type": "test_report",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/STC/ODL-STC-Decorative-Glass-ATI.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "ODL STC Test Report — Impact-Rated / Blinds",
-          "type": "test_report",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/STC/ODL-STC-Impact-Blinds.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "ODL STC Test Report — Laminated IG",
-          "type": "test_report",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/STC/ODL-STC-Laminated-IG.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "ODL Add-On Blinds Warranty",
-          "type": "warranty",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Warranties/ODL-Add-On-Blinds-Warranty.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "ODL Blinds+Glass Entry Warranty",
-          "type": "warranty",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Warranties/ODL-BlindsGlass-Entry-Warranty.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "ODL Blinds+Glass Sliding Warranty",
-          "type": "warranty",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Warranties/ODL-BlindsGlass-Sliding-Warranty.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "ODL Custom Solutions Warranty",
-          "type": "warranty",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Warranties/ODL-Custom-Solutions-Warranty.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "ODL Doorglass Warranty",
-          "type": "warranty",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Warranties/ODL-Doorglass-Warranty.pdf",
-          "appliesTo": null
-        },
-        {
-          "title": "ODL Doors Warranty",
-          "type": "warranty",
-          "url": "https://www.odl.com/hubfs/ODL/ODL%20Files/Warranties/ODL-Doors-Warranty.pdf",
           "appliesTo": null
         }
       ]

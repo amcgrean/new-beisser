@@ -36,7 +36,7 @@ const slugAliases: Record<string, string> = {
 const internalLinksByCategory: Record<string, RelatedLinkItem[]> = {
   "decking-railing": [
     { href: "/brands/trex", label: "Browse Trex products at Beisser", description: "Compare Trex decking and request a quote for your Iowa project." },
-    { href: "/tools/deck-visualizer", label: "Try the deck visualizer", description: "Preview decking colors and railing combinations before you buy. Aaron: confirm final visualizer URL before launch." },
+    { href: "/tools/deck-visualizer", label: "Try the deck visualizer", description: "Preview decking colors and railing combinations before you buy." },
     { href: "/quote", label: "Request a material quote", description: "Get branch-routed pricing for your next deck project." },
   ],
   siding: [

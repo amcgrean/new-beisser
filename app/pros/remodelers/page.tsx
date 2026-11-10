@@ -31,7 +31,6 @@ export default function RemodelersPage() {
         <section className="card-muted p-6 text-ink-3">
           <h2 className="text-xl font-semibold text-ink-1">Visualize Your Deck</h2>
           <p className="mt-2">Not sure what composite decking will look like on your home? Use our deck visualizer to try different colors and styles before you buy.</p>
-          <p className="mt-2 text-xs text-ink-5">Aaron: update the placeholder link below once the final visualizer URL is confirmed.</p>
           <Link href="/tools/deck-visualizer" className="btn-primary mt-4">Open the Deck Visualizer</Link>
         </section>
       )}

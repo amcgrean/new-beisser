@@ -221,3 +221,15 @@ Re-run before final launch:
 **Operational (needed for a clean cutover):** WP URL audit, redirect spot-check, GSC + sitemap, 4 GBP updates, schema validation, PageSpeed green.
 
 **Not blocking (ships as polish):** literature PDFs, remaining FAQ answers, showroom photos.
+
+---
+
+## Automated launch checks (run 2026-11-10 against a production build of `main`)
+
+- [x] Internal links: 132 pages crawled from the sitemap and every in-page link, 0 broken.
+- [x] One `<h1>` on every page; every page has a title and meta description; no duplicate titles.
+- [x] JSON-LD parses on every page (BreadcrumbList 113, FAQPage 9, Organization on all); breadcrumb positions are sequential and no FAQPage is empty. Still worth one pass through Google's Rich Results Test before launch (3f).
+- [x] External links: 359 checked. 47 literature links were dead (28 Endura, 19 ODL rows in PIP whose URLs return 404) and are now left out; the nightly sync runs with `--check-docs` so a dead document link cannot reach the site. Fix or remove those rows in PIP (the sync log lists them).
+- [x] Blog share buttons linked to Facebook and LinkedIn with an empty URL in the served HTML. Fixed.
+- [x] Notes addressed to Aaron were visible on `/products/decking-railing`, `/tools/deck-visualizer` and `/pros/remodelers`. Removed; the visualizer page is `noindex` and says the tool is being set up until the URL is confirmed (3a stays open).
+- [~] Lighthouse, homepage, mobile emulation, local server: performance 88, accessibility 100, best practices 96, SEO 100. LCP 2.6 s (target under 2.5), CLS 0, TBT 380 ms. Re-run on the real host with PageSpeed Insights (3g): hosting and CDN change these numbers.

@@ -1,8 +1,11 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+
 export default function SocialShareButtons({ title }: { title: string }) {
   const encoded = encodeURIComponent(title);
-  const url = typeof window !== "undefined" ? encodeURIComponent(window.location.href) : "";
+  // Built from the path so the links are complete in the server-rendered HTML.
+  const url = encodeURIComponent(`https://beisserlumber.com${usePathname() ?? ""}`);
 
   return (
     <div className="flex flex-wrap gap-2">
