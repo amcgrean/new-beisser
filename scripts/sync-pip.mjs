@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 // Pull what PIP publishes for the website and commit it as JSON.
 //
-//   LIVEEDGE_URL=https://app.beisser.cloud WEBSITE_EXPORT_TOKEN=... node scripts/sync-pip.mjs [--check-images]
+//   LIVEEDGE_URL=https://app.beisser.cloud WEBSITE_EXPORT_TOKEN=... node scripts/sync-pip.mjs [--check-images] [--check-docs]
+//
+// --check-docs requests every document link and leaves out the ones that answer 404 or 410
+// (listed on stdout so they can be fixed in PIP). Other failures (a site refusing robots, a
+// timeout) keep the link: only a definite "gone" drops it.
 //
 // Reads GET /api/pip/web-export (LiveEdge, bearer token) and writes
 //   app/data/pip/catalog.json     published web:<category> guides, grouped by site category
@@ -17,6 +21,7 @@ const OUT_DIR = path.resolve("app/data/pip");
 const base = (process.env.LIVEEDGE_URL || "https://app.beisser.cloud").replace(/\/+$/, "");
 const token = process.env.WEBSITE_EXPORT_TOKEN;
 const checkImages = process.argv.includes("--check-images");
+const checkDocs = process.argv.includes("--check-docs");
 
 if (!token) fail("WEBSITE_EXPORT_TOKEN is not set");
 
@@ -54,6 +59,29 @@ if (checkImages) {
   if (bad.length) fail(`${bad.length} image(s) not reachable:\n  ${bad.slice(0, 20).join("\n  ")}`);
 }
 
+if (checkDocs) {
+  const all = vendors.flatMap((v) => v.docs.map((d) => ({ v, d })));
+  const gone = new Set();
+  const todo = [...new Set(all.map((x) => x.d.url))];
+  await Promise.all(Array.from({ length: 12 }, async () => {
+    for (let u; (u = todo.pop()); ) {
+      try {
+        const r = await fetch(u, { redirect: "follow", headers: { "user-agent": "Mozilla/5.0 (compatible; beisser-sync)" }, signal: AbortSignal.timeout(25000) });
+        if (r.status === 404 || r.status === 410) gone.add(u);
+        await r.body?.cancel();
+      } catch {
+        // unreachable right now is not the same as gone
+      }
+    }
+  }));
+  if (gone.size) {
+    console.log(`left out ${gone.size} document link(s) that no longer exist (fix or remove them in PIP):`);
+    for (const { v, d } of all) if (gone.has(d.url)) console.log(`  ${v.brand} | ${d.type} | ${d.title} | ${d.url}`);
+    for (const v of vendors) v.docs = v.docs.filter((d) => !gone.has(d.url));
+  }
+}
+const liveVendors = vendors.filter((v) => v.docs.length);
+
 const sortBy = (arr, key) => [...arr].sort((a, b) => key(a).localeCompare(key(b)));
 const catalog = {
   imageBase: data.imageBase,
@@ -72,7 +100,7 @@ const catalog = {
   })),
 };
 const literature = {
-  vendors: sortBy(vendors, (v) => `${v.category}\u0000${v.brand}`).map((v) => ({
+  vendors: sortBy(liveVendors, (v) => `${v.category}\u0000${v.brand}`).map((v) => ({
     ...v,
     docs: sortBy(v.docs, (d) => `${d.type}\u0000${d.title}`),
   })),

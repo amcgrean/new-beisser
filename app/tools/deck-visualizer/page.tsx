@@ -3,7 +3,9 @@ import { PageHeader } from "@/app/ui/PageHeader";
 
 export const metadata: Metadata = {
   title: "Deck Visualizer | Beisser Lumber",
-  description: "Placeholder deck visualizer landing page for Beisser Lumber. Aaron: replace with the confirmed visualizer destination before launch.",
+  description: "Preview composite decking colors and styles on a home before you buy, with help from Beisser Lumber.",
+  // Placeholder until the final visualizer URL is confirmed (docs/launch-checklist.md 3a).
+  robots: { index: false },
 };
 
 export default function DeckVisualizerPage() {
@@ -25,7 +27,7 @@ export default function DeckVisualizerPage() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Deck Visualizer" }]}
       />
       <div className="card p-5 text-ink-3">
-        Aaron: replace this placeholder page with the confirmed visualizer link or embed before launch.
+        The online visualizer is being set up. Until it is ready, your branch can show you color samples and help you compare decking and railing options.
       </div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     </div>
