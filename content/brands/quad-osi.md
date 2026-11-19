@@ -19,8 +19,5 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-description: Professional sealants and adhesives for siding and exterior work.
-  At Beisser Lumber, we stock and support OSI Quad as part of our fasteners,
-  anchors, and hardware and siding and exterior trim offering, helping seal up
-  critical joints around windows, doors, and siding details.
+description: "Sealants and adhesives for siding and exterior work. We stock OSI Quad for sealing joints around windows, doors, and siding."
 ---

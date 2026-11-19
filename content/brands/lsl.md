@@ -1,11 +1,7 @@
 ---
 name: LSL
 summary: Laminated strand lumber used as a structural component.
-description: >-
-  Laminated strand lumber used as a structural component. At Beisser Lumber, we
-  stock and support LSL as part of our engineered wood products offering,
-  helping engineers and builders specify consistent, predictable structural
-  members.
+description: "Laminated strand lumber for structural members. We stock LSL where a project needs consistent, predictable strength."
 website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png

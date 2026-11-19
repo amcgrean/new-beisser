@@ -1,11 +1,7 @@
 ---
 name: Wild Hog Railing
 summary: Mesh railing panels that create an open view with a modern aesthetic.
-description: >-
-  Mesh railing panels that create an open view with a modern aesthetic. At
-  Beisser Lumber, we stock and support Wild Hog as part of our decking and
-  exterior projects offering, helping builders deliver modern, open railing
-  designs that hold up to the elements.
+description: "Mesh railing panels with an open, modern look. We stock Wild Hog panels for railings that keep the view open."
 website: 'https://wildhograiling.com/'
 heroImage: /images/resources-article.png
 categories:

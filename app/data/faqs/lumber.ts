@@ -3,34 +3,34 @@ import type { FAQItem } from "./types";
 export const lumberFAQs: FAQItem[] = [
   {
     question: "What lumber species does Beisser stock?",
-    answer: "Beisser stocks fir, whitewood, treated lumber, fire-treated lumber, cedar, and pine. Standard dimensional sizes run from 1×4 through 2×12.",
+    answer: "We stock fir, whitewood, pine, cedar, treated, and fire-treated lumber in dimensional sizes from 1x4 through 2x12.",
   },
   {
-    question: "What OSB does Beisser carry?",
-    answer: "We stock a full range of structural and specialty panels including OSB, CDX plywood, Advantech, ZIP System sheathing, oak, maple, and poplar panels, along with fire-treated and pressure-treated panel options. Call your branch for current stock and available thicknesses.",
+    question: "What panels and sheathing does Beisser carry?",
+    answer: "We stock OSB, CDX plywood, AdvanTech, ZIP System sheathing, and oak, maple, and poplar panels, along with fire-treated and pressure-treated panels. Call your branch for current stock and thicknesses.",
   },
   {
     question: "What lumber grades and dimensions does Beisser stock?",
-    answer: "We stock #2 and better dimensional framing lumber at all four locations, with #1 grade available by special order. Common contractor sizes run from 1×4 through 2×12. Call your branch for current grade and dimension availability.",
+    answer: "All four locations stock #2 and better framing lumber in common sizes from 1x4 through 2x12. #1 grade is available by special order. Call your branch for current availability.",
   },
   {
     question: "Can I order lumber by the piece or bunk?",
-    answer: "Yes — you can order lumber by the piece. Full bunks and packages are also available. Talk to your branch about pricing and availability for the dimensions and quantities you need.",
+    answer: "Both. You can buy by the piece or order full bunks and packages. Your branch can price the sizes and quantities you need.",
   },
   {
-    question: "Do you carry treated lumber and framing panels?",
-    answer: "Yes — we stock pressure-treated lumber at all four locations in both ground-contact and in-ground ratings, suitable for decks, fences, and exterior framing applications. Ask your branch for current dimensions and grade availability.",
+    question: "Do you carry treated lumber?",
+    answer: "Yes. All four locations stock pressure-treated lumber in ground-contact and in-ground ratings for decks, fences, and exterior framing. Ask your branch which sizes and grades are in stock.",
   },
   {
     question: "Can Beisser quote framing packages from blueprints?",
-    answer: "Yes — our team can put together a framing package from your blueprints or plans. Submit your project through our contact form or call your branch and we will connect you with the right person to get a quote started.",
+    answer: "Yes. Send your blueprints through the contact form or call your branch, and we'll get the right person started on a framing package quote.",
   },
   {
-    question: "Do you deliver lumber directly to jobsites?",
-    answer: "Yes — lumber delivery to job sites can be coordinated through your branch. Call ahead with your order and delivery location and we will work out timing and logistics.",
+    question: "Do you deliver lumber directly to job sites?",
+    answer: "Yes. Your branch schedules job site deliveries. Call with your order and the delivery address and we'll work out the timing.",
   },
   {
     question: "Which branch should I contact for availability?",
-    answer: "",
+    answer: "Call the branch closest to your job: Grimes (515) 986-4422, Coralville (319) 545-7120, Fort Dodge (515) 573-4166, or Birchwood/Johnston (515) 986-4422. Grimes is our main yard. If you're not sure, call any branch and we'll route you.",
   },
 ];

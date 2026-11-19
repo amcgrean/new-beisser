@@ -18,8 +18,5 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-description: Glued laminated timber beams for structural applications. At
-  Beisser Lumber, we stock and support fir glulams as part of our engineered
-  wood products offering, helping builders span longer distances with engineered
-  beams that can be left exposed or concealed.
+description: "Glued laminated fir beams for structural use. We stock fir glulams for long spans, exposed or concealed."
 ---

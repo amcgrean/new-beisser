@@ -1,11 +1,7 @@
 ---
 name: LP
 summary: 'Engineered wood siding, sheathing, and structural products.'
-description: >-
-  Engineered wood siding, sheathing, and structural products. At Beisser Lumber,
-  we stock and support LP as part of our siding and exterior trim and engineered
-  wood products offering, helping builders tie together the structure and
-  exterior envelope with compatible solutions.
+description: "Engineered wood siding, sheathing, and structural products. We stock LP for both the structure and the exterior of the house."
 website: 'https://lpcorp.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/Siding/LP Logo.png

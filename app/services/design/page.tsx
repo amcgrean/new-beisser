@@ -3,8 +3,8 @@ import { PageHeader, CtaBand } from "@/app/ui/PageHeader";
 import FAQSection from "@/components/FAQSection";
 
 const faqs = [
-  { question: "Does Beisser offer in-house design services?", answer: "" },
-  { question: "Can Beisser help with custom floor plans?", answer: "" },
+  { question: "Does Beisser offer in-house design services?", answer: "Yes. Our in-house design team has been helping customers since 1989, from stock blueprints to custom home designs." },
+  { question: "Can Beisser help with custom floor plans?", answer: "Yes. The design team can help with floor plans for nearly any home style, starting from scratch or reworking an existing plan." },
   { question: "Are visualizer tools available for design selections?", answer: "" },
 ];
 
@@ -27,7 +27,7 @@ export default function DesignServicePage() {
       <div className="space-y-16">
         <div className="prose-beisser">
           <p>That design support works especially well for builders and remodelers who want one partner to help bridge the gap between concept, quoting, and final product selection. Beisser also offers free product visualizers so homeowners can compare styles before decisions are finalized.</p>
-          <p>Whether you are refining an existing plan or starting from scratch, the design team can help move a project from rough idea to a quote-ready direction that fits your site, budget, and product goals.</p>
+          <p>Starting from scratch or reworking an existing plan, the design team can take a project from a rough idea to something ready to quote, fitted to your site, budget, and product choices.</p>
         </div>
         <FAQSection title="Design FAQs" faqs={faqs} category="design" />
       </div>

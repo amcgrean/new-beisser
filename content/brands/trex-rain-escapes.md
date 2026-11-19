@@ -18,8 +18,5 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-description: An under-deck drainage system for dry space below decks. At Beisser
-  Lumber, we stock and support Trex RainEscape as part of our decking and
-  exterior projects offering, helping builders turn the space under a deck into
-  usable, protected storage or living area.
+description: "An under-deck drainage system that keeps the space below a deck dry. We stock Trex RainEscape for turning that space into storage or living area."
 ---

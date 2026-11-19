@@ -1,11 +1,7 @@
 ---
 name: Maple
 summary: Stain-grade hardwood used for trim and millwork.
-description: >-
-  Stain-grade hardwood used for trim and millwork. At Beisser Lumber, we stock
-  and support Maple as part of our millwork, stair parts, and interior trim
-  offering, helping finish carpenters deliver crisp, durable stain-grade
-  results.
+description: "A stain-grade hardwood for trim and millwork. We stock maple trim and boards."
 website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png

@@ -1,11 +1,7 @@
 ---
 name: Everlast Siding
 summary: Composite siding for long-term performance and low upkeep.
-description: >-
-  Composite siding for long-term performance and low upkeep. At Beisser Lumber,
-  we stock and support Everlast as part of our siding and exterior trim
-  offering, giving builders a premium, low-maintenance siding option for
-  demanding projects.
+description: "Composite siding built for long life and low upkeep. We stock Everlast as a low-maintenance siding option."
 website: 'https://www.everlastsiding.com/'
 heroImage: /images/resources-article.png
 categories:

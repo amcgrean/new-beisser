@@ -18,8 +18,5 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-description: Natural wood known for its durability and resistance to decay. At
-  Beisser Lumber, we stock and support Cedar as part of our lumber and panel
-  products offering, supplying both appearance-grade and structural cedar for
-  decks, siding, and exterior details.
+description: "A naturally durable, decay-resistant wood. We stock appearance-grade and structural cedar for decks, siding, and exterior details."
 ---

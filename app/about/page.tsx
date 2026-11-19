@@ -15,7 +15,7 @@ const history = [
   "Expanded to Des Moines in 1979.",
   "Moved the Des Moines location to Grimes in December 1999, when the city was still a fraction of its current size.",
   "Added a millwork warehouse in 2003.",
-  "Opened the custom door shop in Grimes in January 2004 in a 26,500-square-foot facility that now produces thousands of doors monthly.",
+  "Opened the custom door shop in Grimes in January 2004. The door shop and millwork have since moved to the Birchwood / Johnston campus, alongside the new showroom.",
   "Expanded to Coralville in 2005.",
   "Added Engineered Wood Products in partnership with Weyerhaeuser in 2017, which has become one of Beisser's most extensive service lines.",
   "Kim Beisser passed the presidency to his son-in-law Dave Ling just before the company's 70th anniversary. Dave now leads Beisser as CEO.",
@@ -141,7 +141,7 @@ export default function AboutPage() {
             <h2 className="section-title">What sets Beisser apart</h2>
             <div className="mt-4 space-y-4 text-ink-3">
               <p>
-                Beisser is a premier Des Moines Remodelers Council member and continues to invest in operational capabilities that go beyond a standard lumberyard. The Grimes custom door shop produces thousands of doors each month, while the Components Division builds wall panels in a climate-controlled environment for residential and commercial projects.
+                Beisser is a premier Des Moines Remodelers Council member and continues to invest in operational capabilities that go beyond a standard lumberyard. The custom door shop at our Johnston campus produces thousands of doors each month, while the Components Division builds wall panels in a climate-controlled environment for residential and commercial projects.
               </p>
               <p>
                 That Components Division can custom-design panelized walls ranging from interior assemblies to finished exterior walls, helping project teams shorten framing timelines and improve consistency before materials ever reach the jobsite.

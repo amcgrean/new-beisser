@@ -1,11 +1,7 @@
 ---
 name: Hilti
 summary: 'Tools, fasteners, and anchors for professional construction work.'
-description: >-
-  Tools, fasteners, and anchors for professional construction work. At Beisser
-  Lumber, we stock and support Hilti anchors and fasteners as part of our
-  fasteners, anchors, and hardware offering, helping pros hit engineering specs
-  in concrete and masonry.
+description: "Anchors, fasteners, and tools for professional construction. We stock Hilti anchors and fasteners for concrete and masonry."
 website: 'https://www.hilti.com/'
 heroImage: /images/resources-article.png
 categories:

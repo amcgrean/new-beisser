@@ -43,7 +43,7 @@ export default function InteriorDoorsPage() {
           <li>Lynden Doors for interior door programs.</li>
           <li>JELD-WEN and Masonite for broad style, panel, and budget coverage.</li>
           <li>Wood Port and Bayer Built / True Style for upgraded interior selections.</li>
-          <li>Custom machining and pre-hung package coordination through the Grimes door shop.</li>
+          <li>Custom machining and pre-hung package coordination through the Johnston door shop.</li>
         </ul>
       </section>
       </div>

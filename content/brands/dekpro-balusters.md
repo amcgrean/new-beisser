@@ -18,8 +18,5 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-description: Aluminum railing and baluster systems for decks and exteriors. At
-  Beisser Lumber, we stock and support DekPro as part of our decking and
-  exterior projects offering, helping customers pair modern metal balusters with
-  wood or composite framing.
+description: "Aluminum railing and baluster systems for decks. We stock DekPro balusters to pair metal railing with wood or composite decks."
 ---

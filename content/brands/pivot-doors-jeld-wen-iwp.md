@@ -1,11 +1,7 @@
 ---
 name: Pivot Doors (Jeld Wen IWP)
 summary: 'Pivot-style entry doors that create a modern, statement entrance.'
-description: >-
-  Pivot-style entry doors that create a modern, statement entrance. At Beisser
-  Lumber, we support Jeld-Wen IWP pivot doors as part of our interior and
-  exterior doors offering, helping builders spec, order, and coordinate these
-  specialty units correctly.
+description: "Pivot-style entry doors for a modern, statement entrance. We can order JELD-WEN IWP pivot doors and help builders spec them correctly."
 website: 'https://www.jeld-wen.com/en-us/search?query=pivot%20door&tab=products'
 heroImage: /images/resources-article.png
 logo: /Logos/Doors/Jeld-Wen.jpg

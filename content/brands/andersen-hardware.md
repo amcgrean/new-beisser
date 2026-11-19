@@ -1,11 +1,7 @@
 ---
 name: Andersen Hardware
 summary: Hardware options designed specifically for Andersen windows and doors.
-description: >-
-  Hardware options designed specifically for Andersen windows and doors. At
-  Beisser Lumber, we stock and support Andersen hardware as part of our
-  fasteners, anchors, and hardware and windows and patio doors offering, helping
-  builders finish window and door packages with matching hardware solutions.
+description: "Hardware made for Andersen windows and doors. We stock it so window and door packages can be finished with matching hardware."
 website: 'https://www.andersenwindows.com/'
 heroImage: /images/resources-article.png
 categories:

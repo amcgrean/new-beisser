@@ -1,10 +1,7 @@
 ---
 name: Plywood
 summary: 'Panel products used for sheathing, subfloors, and more.'
-description: >-
-  Panel products used for sheathing, subfloors, and more. At Beisser Lumber, we
-  stock and support plywood as part of our lumber and panel products offering,
-  providing a range of panel grades and thicknesses for structure and finish.
+description: "Panels for sheathing, subfloors, and more. We stock plywood in a range of grades and thicknesses."
 website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png

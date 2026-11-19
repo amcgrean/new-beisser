@@ -1,11 +1,7 @@
 ---
 name: Velux
 summary: 'Skylights, sun tunnels, and roof windows for natural light.'
-description: >-
-  Skylights, sun tunnels, and roof windows for natural light. At Beisser Lumber,
-  we stock and support Velux as part of our windows and patio doors offering,
-  helping builders integrate daylighting into roof designs with the right
-  flashing kits and installation guidance.
+description: "Skylights, sun tunnels, and roof windows. We carry Velux with the right flashing kits for each roof."
 website: 'https://www.veluxusa.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/Windows/Velux Logo.png

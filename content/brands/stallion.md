@@ -1,11 +1,7 @@
 ---
 name: Stallion
 summary: Interior and exterior doors for residential projects.
-description: >-
-  Interior and exterior doors for residential projects. At Beisser Lumber, we
-  support Stallion as part of our interior and exterior doors offering, giving
-  builders access to panel and glass door styles that work well in both starter
-  and move-up homes.
+description: "Interior and exterior doors for residential projects. We can order Stallion panel and glass doors for starter and move-up homes."
 website: 'https://www.stalliondoors.com/'
 heroImage: /images/resources-article.png
 categories:

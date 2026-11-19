@@ -26,7 +26,7 @@ export default function SpecialOrdersPage() {
         eyebrow="Services"
         title="Special Orders"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: "Special Orders" }]}
-        lead="Access to non-stock items, custom sizes, and brand-specific solutions with clear expectations on lead times, approvals, and jobsite delivery. We coordinate with manufacturers so you have one point of contact."
+        lead="Non-stock items, custom sizes, and brand-specific products, with clear expectations on lead times, approvals, and jobsite delivery. We coordinate with manufacturers so you have one point of contact."
       />
 
 

@@ -3,9 +3,9 @@ import { PageHeader, CtaBand } from "@/app/ui/PageHeader";
 import FAQSection from "@/components/FAQSection";
 
 const faqs = [
-  { question: "Does Beisser have an installed sales program?", answer: "" },
-  { question: "Can Beisser help with window service and warranty work?", answer: "" },
-  { question: "Does wall panel delivery arrive ready to install?", answer: "" },
+  { question: "Does Beisser have an installed sales program?", answer: "Yes. Our installed sales team installs doors, windows, and some decking, with seven trucks dedicated to installed sales." },
+  { question: "Can Beisser help with window service and warranty work?", answer: "Yes. We help with service and warranty work on existing windows and route it to the right manufacturer contacts. Use our service request form to get started." },
+  { question: "Does wall panel delivery arrive ready to install?", answer: "Yes. Wall panels from our Components Division are built in a climate-controlled shop and arrive ready to install." },
 ];
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function InstallationServicePage() {
       <div className="space-y-16">
         <div className="prose-beisser">
           <p>Our installed sales team handles doors, windows, and some decking, with seven trucks dedicated to installed sales.</p>
-          <p>That matters for builders and service teams who need support after the initial sale, whether the project involves a service issue, a warranty question, or field coordination tied to a larger package. Instead of leaving customers to navigate the manufacturer alone, Beisser helps route service needs through the right contacts.</p>
+          <p>That matters for builders and service teams who need support after the initial sale, whether the project involves a service issue, a warranty question, or field coordination tied to a larger package. Instead of leaving you to deal with the manufacturer alone, we route service needs to the right contacts.</p>
           <p>On the structural side, wall panel delivery is designed to make framing more efficient. Panels are coordinated before shipment so crews can receive a turnkey product and keep installation moving once materials land on site.</p>
         </div>
         <FAQSection title="Installation FAQs" faqs={faqs} category="installation" />
