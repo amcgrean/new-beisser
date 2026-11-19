@@ -1,10 +1,7 @@
 ---
 name: LVL
 summary: Laminated veneer lumber used for beams and headers.
-description: >-
-  Laminated veneer lumber used for beams and headers. At Beisser Lumber, we
-  stock and support LVL as part of our engineered wood products offering, giving
-  pros reliable options for headers, beams, and long-span applications.
+description: "Laminated veneer lumber for beams and headers. We stock LVL for headers, beams, and long spans."
 website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png

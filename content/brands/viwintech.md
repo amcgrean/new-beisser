@@ -1,11 +1,7 @@
 ---
 name: ViWinTech
 summary: Vinyl window and door products for residential projects.
-description: >-
-  Vinyl window and door products for residential projects. At Beisser Lumber, we
-  stock and support ViWinTech as part of our windows and patio doors offering,
-  giving builders a dependable vinyl window line matched to Midwestern
-  performance expectations.
+description: "Vinyl windows and doors for residential projects. We carry ViWinTech as a dependable vinyl line."
 website: 'https://www.viwintech.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/Windows/ViWinTech Logo.png

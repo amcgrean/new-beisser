@@ -3,11 +3,11 @@ import type { FAQItem } from "./types";
 export const weatherizationFAQs: FAQItem[] = [
   {
     question: "What housewrap brands does Beisser carry?",
-    answer: "We stock ZIP System sheathing and tape, Tyvek CommercialWrap, and HomeGuard housewrap at our locations, along with value-priced housewrap options. Call your branch for current stock and pricing.",
+    answer: "We stock ZIP System sheathing and tape, Tyvek CommercialWrap, and HomeGuard housewrap, plus value-priced housewrap. Call your branch for current stock and pricing.",
   },
   {
     question: "Does Beisser stock ZIP System sheathing and tape?",
-    answer: "Yes — we carry ZIP System sheathing and ZIP System tape. Ask your branch for current panel dimensions and tape widths in stock.",
+    answer: "Yes. We carry ZIP System sheathing and ZIP System tape. Ask your branch which panel sizes and tape widths are in stock.",
   },
   {
     question: "What insulation products does Beisser carry?",

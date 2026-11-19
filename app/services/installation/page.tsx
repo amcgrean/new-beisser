@@ -27,7 +27,7 @@ export default function InstallationServicePage() {
       <div className="space-y-16">
         <div className="prose-beisser">
           <p>Our installed sales team handles doors, windows, and some decking, with seven trucks dedicated to installed sales.</p>
-          <p>That matters for builders and service teams who need support after the initial sale, whether the project involves a service issue, a warranty question, or field coordination tied to a larger package. Instead of leaving customers to navigate the manufacturer alone, Beisser helps route service needs through the right contacts.</p>
+          <p>That matters for builders and service teams who need support after the initial sale, whether the project involves a service issue, a warranty question, or field coordination tied to a larger package. Instead of leaving you to deal with the manufacturer alone, we route service needs to the right contacts.</p>
           <p>On the structural side, wall panel delivery is designed to make framing more efficient. Panels are coordinated before shipment so crews can receive a turnkey product and keep installation moving once materials land on site.</p>
         </div>
         <FAQSection title="Installation FAQs" faqs={faqs} category="installation" />

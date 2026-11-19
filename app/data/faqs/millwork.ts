@@ -3,7 +3,7 @@ import type { FAQItem } from "./types";
 export const millworkFAQs: FAQItem[] = [
   {
     question: "What wood species does Beisser stock for interior trim?",
-    answer: "We stock interior trim in primed MDF, poplar, pine, oak, and maple at all locations, available in base, casing, 1x, and crown profiles. Specific sizes and profiles beyond standard stock may be available by special order — call your branch for what is in stock.",
+    answer: "Every location stocks interior trim in primed MDF, poplar, pine, oak, and maple, in base, casing, crown, and 1x profiles. Other sizes and profiles can often be special ordered. Call your branch to see what's in stock.",
   },
   {
     question: "Can Beisser match historical trim profiles for a remodel?",
@@ -15,7 +15,7 @@ export const millworkFAQs: FAQItem[] = [
   },
   {
     question: "Does Beisser carry primed MDF trim?",
-    answer: "Yes — primed MDF trim is stocked at all four locations in base, casing, and other common profiles. Call your branch for specific sizes and current availability.",
+    answer: "Yes. All four locations stock primed MDF base, casing, and other common profiles. Call your branch for sizes and current stock.",
   },
   {
     question: "How quickly can Beisser get a special-order trim profile?",

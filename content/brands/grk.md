@@ -1,11 +1,7 @@
 ---
 name: GRK
 summary: 'High-performance fasteners for framing, decking, and specialty uses.'
-description: >-
-  High-performance fasteners for framing, decking, and specialty uses. At
-  Beisser Lumber, we stock and support GRK as part of our fasteners, anchors,
-  and hardware offering, helping Iowa builders tackle tough framing and exterior
-  applications with proven structural fasteners.
+description: "Fasteners for framing, decking, and specialty uses. We stock GRK structural screws for demanding framing and exterior work."
 website: 'https://www.grkfasteners.com/'
 heroImage: /images/resources-article.png
 logo: '/Logos/Fasteners, Screws, Hardware/GRK logo.png'

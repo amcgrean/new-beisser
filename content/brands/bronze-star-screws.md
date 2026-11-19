@@ -18,8 +18,5 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-description: Exterior screws and fasteners designed for decking and outdoor
-  projects. At Beisser Lumber, we stock and support Bronze Star Screws as part
-  of our fasteners, anchors, and hardware offering, helping deck crews get
-  reliable fastening systems for exterior work.
+description: "Exterior screws and fasteners for decking and outdoor projects. We stock Bronze Star for deck crews and other exterior work."
 ---

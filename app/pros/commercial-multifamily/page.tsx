@@ -4,7 +4,7 @@ import ProAudiencePage from "../pro-template";
 // breadcrumb schema handled in ProAudiencePage
 export const metadata: Metadata = {
   title: "Commercial & Multi-Family Builders | Beisser Lumber",
-  description: "Commercial and multifamily support from Beisser Lumber, including estimating, wall panelization, and engineered wood solutions.",
+  description: "Commercial and multifamily support from Beisser Lumber, including estimating, wall panelization, and engineered wood.",
 };
 
 export default function CommercialMultifamilyPage() {

@@ -3,19 +3,19 @@ import type { FAQItem } from "./types";
 export const engineeredWoodFAQs: FAQItem[] = [
   {
     question: "Does Beisser carry LVL beams and I-joists?",
-    answer: "Yes — we stock Weyerhaeuser Trus Joist LVL in common sizes. Larger or non-standard sizes are available by special order. Call your branch or submit a quote request with your beam schedule and our team will confirm availability and lead times.",
+    answer: "Yes. We stock Weyerhaeuser Trus Joist LVL in common sizes, and larger or non-standard sizes can be special ordered. Call your branch or send a quote request with your beam schedule and we'll confirm availability and lead time.",
   },
   {
     question: "What EWP products does Beisser carry?",
-    answer: "Beisser carries Weyerhaeuser floor trusses, roof trusses, wall panelization through its Components Division, OSB panels, LVL beams, LSL beams, PSL beams, treated beams, and engineered floor systems.",
+    answer: "We carry Weyerhaeuser floor trusses, roof trusses, OSB, LVL, LSL, PSL, treated beams, and engineered floor systems. Our Components Division also builds wall panels.",
   },
   {
     question: "What is the difference between LVL, LSL, and PSL?",
     answer: "",
   },
   {
-    question: "Can your team help engineer floor and roof systems?",
-    answer: "Yes — our EWP team can help you spec and size engineered floor and roof systems for your project. Bring in your plans or reach out through our contact form and we will connect you with our EWP specialist.",
+    question: "Can your team help size engineered floor and roof systems?",
+    answer: "Yes. Our EWP team can help you spec and size engineered floor and roof systems. Bring in your plans or send them through the contact form and we'll connect you with an EWP specialist.",
   },
   {
     question: "Do you support commercial and multifamily EWP packages?",

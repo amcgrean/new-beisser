@@ -3,11 +3,7 @@ name: Trex
 summary: >-
   Composite decking and railing systems that stand up to heavy use and harsh
   weather with low maintenance.
-description: >-
-  Composite decking and railing systems that stand up to heavy use and harsh
-  weather with low maintenance. At Beisser Lumber, we stock and support Trex as
-  part of our decking and exterior projects offering, ensuring pros can get
-  popular colors, matching railing, and jobsite support in one place.
+description: "Composite decking and railing that stands up to heavy use and harsh weather with little maintenance. We stock popular Trex colors and matching railing."
 website: 'https://www.trex.com/'
 heroImage: /images/resources-article.png
 logo: /Logos/Decking & Railing/Trex Logo.jfif

@@ -82,6 +82,10 @@ if (checkDocs) {
 }
 const liveVendors = vendors.filter((v) => v.docs.length);
 
+// Site style: no em-dashes. Vendor titles and catalog names arrive with them.
+const tidy = (s) => (typeof s === "string" ? s.replace(/\s+\u2014\s+/g, ": ").replace(/\u2014/g, "-") : s);
+const tidyAll = (o) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, tidy(v)]));
+
 const sortBy = (arr, key) => [...arr].sort((a, b) => key(a).localeCompare(key(b)));
 const catalog = {
   imageBase: data.imageBase,
@@ -94,7 +98,7 @@ const catalog = {
       description: g.description,
       sections: g.sections.map((s) => ({
         name: s.name,
-        items: [...s.items].sort((a, b) => a.sortOrder - b.sortOrder).map(({ sortOrder: _omit, ...item }) => item),
+        items: [...s.items].sort((a, b) => a.sortOrder - b.sortOrder).map(({ sortOrder: _omit, ...item }) => tidyAll(item)),
       })),
     })),
   })),
@@ -102,7 +106,7 @@ const catalog = {
 const literature = {
   vendors: sortBy(liveVendors, (v) => `${v.category}\u0000${v.brand}`).map((v) => ({
     ...v,
-    docs: sortBy(v.docs, (d) => `${d.type}\u0000${d.title}`),
+    docs: sortBy(v.docs.map(tidyAll), (d) => `${d.type}\u0000${d.title}`),
   })),
 };
 

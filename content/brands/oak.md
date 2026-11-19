@@ -1,11 +1,7 @@
 ---
 name: Oak
 summary: 'Hardwood species widely used for flooring, trim, and millwork.'
-description: >-
-  Hardwood species widely used for flooring, trim, and millwork. At Beisser
-  Lumber, we stock and support Oak as part of our millwork, stair parts, and
-  interior trim offering, giving customers a timeless hardwood option for stairs
-  and interior finishes.
+description: "A hardwood widely used for trim, stairs, and millwork. We stock oak trim, boards, and stair parts."
 website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png

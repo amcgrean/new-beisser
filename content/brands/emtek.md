@@ -1,11 +1,7 @@
 ---
 name: Emtek
 summary: Decorative residential door hardware with many style options.
-description: >-
-  Decorative residential door hardware with many style options. At Beisser
-  Lumber, we stock and support Emtek as part of our fasteners, anchors, and
-  hardware offering, helping designers and homeowners dial in the finishing
-  touches on premium door packages.
+description: "Decorative residential door hardware in many styles and finishes. We carry Emtek for higher-end door packages."
 website: 'https://www.emtek.com/'
 heroImage: /images/resources-article.png
 categories:

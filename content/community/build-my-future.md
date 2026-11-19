@@ -13,4 +13,4 @@ Beisser Lumber participates by:
 - Helping students explore career opportunities in building materials  
 - Supporting workforce development in Iowa  
 
-We’re committed to strengthening the next generation of industry professionals.
+We want to help train the next generation of builders and tradespeople.

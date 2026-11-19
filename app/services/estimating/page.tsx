@@ -27,7 +27,7 @@ export default function EstimatingServicePage() {
       <div className="space-y-16">
         <div className="prose-beisser">
           <p>Customers are paired with a dedicated sales representative and support team, with product-line specialists available in windows, decking, engineered wood products, and other major categories. That coordination helps reduce missed scope items and makes it easier to compare alternates before a project is released.</p>
-          <p>Whether you are bidding a house, an addition, or a larger commercial package, Beisser's estimating team focuses on clear takeoffs, practical substitutions, and package planning tied to real-world branch support.</p>
+          <p>For a house, an addition, or a larger commercial package, our estimating team puts together clear takeoffs, suggests practical substitutions, and plans the package with the branch that will supply it.</p>
           <p>Beisser's Components Division adds panelized wall production to the estimating and supply chain. With 15+ years of wall-panel experience, the division builds panels in a climate-controlled environment, custom-designed for any application from interior walls to finished exterior assemblies. The turnkey product arrives ready to install, reducing framing time and coordination overhead on commercial and residential projects alike.</p>
         </div>
         <FAQSection title="Estimating FAQs" faqs={faqs} category="estimating" />

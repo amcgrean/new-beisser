@@ -3,7 +3,7 @@ import type { FAQItem } from "./types";
 export const stairPartsFAQs: FAQItem[] = [
   {
     question: "What stair part styles does Beisser carry?",
-    answer: "We stock a wide variety of stair parts through WM Coffman and LJ Smith at all four locations, including balusters, newel posts, handrails, and treads. Our Johnston location has the largest LJ Smith display in the Midwest — stop in to see the full selection in person.",
+    answer: "All four locations stock a wide range of stair parts from WM Coffman and L.J. Smith, including balusters, newel posts, handrails, and treads. Our Johnston location has the largest L.J. Smith display in the Midwest, so stop in to see the full selection.",
   },
   {
     question: "Does Beisser stock horizontal tube balusters?",

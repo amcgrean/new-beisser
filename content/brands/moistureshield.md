@@ -1,11 +1,7 @@
 ---
 name: MoistureShield
 summary: Composite decking engineered for performance in moisture-prone environments.
-description: >-
-  Composite decking engineered for performance in moisture-prone environments.
-  At Beisser Lumber, we stock and support MoistureShield as part of our decking
-  and exterior projects offering, helping builders tackle ground-level and
-  high-moisture deck installs with confidence.
+description: "Composite decking made for moisture-prone sites. We stock MoistureShield for ground-level and high-moisture decks."
 website: 'https://www.moistureshield.com/'
 heroImage: /images/resources-article.png
 categories:

@@ -1,10 +1,7 @@
 ---
 name: Camo
 summary: Hidden deck fastening systems and tools.
-description: >-
-  Hidden deck fastening systems and tools. At Beisser Lumber, we stock and
-  support Camo as part of our fasteners, anchors, and hardware offering, helping
-  builders deliver clean deck surfaces with fast, repeatable installation.
+description: "Hidden deck fastening systems and tools. We stock Camo for clean deck surfaces with no face screws."
 website: 'http://www.camofasteners.com/'
 heroImage: /images/resources-article.png
 categories:

@@ -1,11 +1,7 @@
 ---
 name: Azek
 summary: 'PVC decking, trim, and exterior products.'
-description: >-
-  PVC decking, trim, and exterior products. At Beisser Lumber, we stock and
-  support Azek as part of our decking and exterior projects offering, helping
-  Iowa builders deliver low-maintenance, long-lasting decks and exterior
-  details.
+description: "PVC decking, trim, and exterior products. We stock Azek for low-maintenance decks and exterior trim."
 website: 'https://azekco.com/'
 heroImage: /images/resources-article.png
 categories:

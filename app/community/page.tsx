@@ -21,7 +21,7 @@ export default function CommunityPage() {
       <PageHeader
         eyebrow="Community"
         title="Community Involvement"
-        lead="Beisser Lumber is committed to supporting the communities we serve across Iowa. From youth sports and trades education to Habitat for Humanity and child wellness initiatives, we believe in showing up, pitching in, and doing what is right for our neighbors."
+        lead="Beisser Lumber supports the Iowa communities where we work and live: youth sports, trades education, Habitat for Humanity, and children's health and safety programs."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Community" }]}
         image={{ src: "/images/company/habitat-framing.jpg", alt: "Beisser Lumber volunteers framing a Habitat for Humanity home", width: 914, height: 636 }}
       />

@@ -1,11 +1,7 @@
 ---
 name: Floor Trusses
 summary: Engineered floor truss systems designed for each project.
-description: >-
-  Engineered floor truss systems designed for each project. At Beisser Lumber,
-  we design and supply floor trusses as part of our trusses, panels, and
-  structural components offering, working with builders to coordinate layouts
-  and mechanical runs.
+description: "Engineered floor trusses designed for each project. We design and supply floor trusses and work with builders on layouts and mechanical runs."
 website: ''
 heroImage: /images/resources-article.png
 logo: /images/resources-article.png

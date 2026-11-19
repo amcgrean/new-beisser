@@ -18,7 +18,5 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-description: Residential locksets and door hardware. At Beisser Lumber, we stock
-  and support Kwikset as part of our fasteners, anchors, and hardware offering,
-  providing dependable lock solutions for everyday residential projects.
+description: "Residential locksets and door hardware. We stock Kwikset for everyday residential projects."
 ---

@@ -18,8 +18,5 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-description: Natural cedar boards used for decks and outdoor structures. At
-  Beisser Lumber, we stock and support Cedar decking as part of our lumber and
-  panel products offering, giving builders a natural alternative to composites
-  and treated lumber.
+description: "Natural cedar boards for decks and outdoor structures. We stock cedar decking as a natural-wood alternative to composite and treated lumber."
 ---

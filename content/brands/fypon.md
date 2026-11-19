@@ -1,11 +1,7 @@
 ---
 name: Fypon
 summary: 'Polyurethane millwork, trim, and decorative elements.'
-description: >-
-  Polyurethane millwork, trim, and decorative elements. At Beisser Lumber, we
-  stock and support Fypon as part of our millwork, stair parts, and interior
-  trim offering, giving builders durable, low-maintenance millwork solutions for
-  both interior and exterior details.
+description: "Polyurethane millwork, trim, and decorative pieces. We stock Fypon for low-maintenance details inside and out."
 website: 'https://fypon.com/'
 heroImage: /images/resources-article.png
 categories:

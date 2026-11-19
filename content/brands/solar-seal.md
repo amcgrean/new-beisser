@@ -18,8 +18,5 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-description: Sealants used for roofing, siding, and other exterior applications.
-  At Beisser Lumber, we stock and support Solar Seal as part of our fasteners,
-  anchors, and hardware offering, helping manage tough exterior sealing
-  conditions on roofs and walls.
+description: "Sealants for roofing, siding, and other exterior work. We stock Solar Seal for hard-to-seal spots on roofs and walls."
 ---

@@ -18,8 +18,5 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-description: Cedar siding options for exterior applications. At Beisser Lumber,
-  we stock and support Cedar siding as part of our lumber and panel products
-  offering, helping customers achieve classic wood exteriors with the right
-  profiles and finishes.
+description: "Cedar siding for exterior walls. We stock cedar siding in a range of profiles for a classic wood exterior."
 ---

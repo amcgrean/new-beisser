@@ -19,8 +19,5 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-description: Tongue-and-groove cedar siding products for a classic interior or
-  exterior look. At Beisser Lumber, we stock and support Cedar carsiding as part
-  of our lumber and panel products offering, helping customers add warm, natural
-  wood finishes to walls and ceilings.
+description: "Tongue-and-groove cedar for walls and ceilings, inside or out. We stock cedar carsiding for a warm, natural wood finish."
 ---

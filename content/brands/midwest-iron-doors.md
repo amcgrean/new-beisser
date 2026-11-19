@@ -18,8 +18,5 @@ completion:
   logoAdded: true
   summaryAdded: true
   bodyAdded: false
-description: Decorative and secure iron door packages. At Beisser Lumber, we
-  support Midwest Iron Doors as part of our interior and exterior doors
-  offering, helping builders and homeowners create premium, statement entryways
-  with local ordering and coordination.
+description: "Decorative iron entry doors. We can order Midwest Iron Doors and coordinate the order with your branch."
 ---
