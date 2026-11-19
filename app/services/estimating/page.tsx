@@ -3,9 +3,9 @@ import { PageHeader, CtaBand } from "@/app/ui/PageHeader";
 import FAQSection from "@/components/FAQSection";
 
 const faqs = [
-  { question: "Does Beisser provide full takeoff services?", answer: "" },
-  { question: "Can Beisser estimate both commercial and residential projects?", answer: "" },
-  { question: "Can my project be routed to a dedicated sales rep?", answer: "" },
+  { question: "Does Beisser provide full takeoff services?", answer: "Yes. Send us your plans and our estimating team will put together a complete takeoff covering lumber, engineered wood, windows, decking, and siding." },
+  { question: "Can Beisser estimate both commercial and residential projects?", answer: "Yes. We estimate houses, additions, and commercial and multifamily packages." },
+  { question: "Can my project be routed to a dedicated sales rep?", answer: "Yes. Every customer works with a dedicated sales rep and support team, with specialists for windows, decking, engineered wood, and other major categories." },
 ];
 
 export const metadata: Metadata = {

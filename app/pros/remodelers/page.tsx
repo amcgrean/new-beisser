@@ -24,7 +24,7 @@ export default function RemodelersPage() {
         "Premier Des Moines Remodelers Council member",
         "400+ years of combined sales-staff experience",
         "Historical profile matching through the millwork shop",
-        "Custom-built doors from the Grimes door shop",
+        "Custom-built doors from the Johnston door shop",
         "Free product visualizers for homeowner-facing selection work",
       ]}
       extraSection={(

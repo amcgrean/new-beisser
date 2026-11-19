@@ -21,9 +21,9 @@ export const productCategories: ProductCategory[] = [
     slug: "doors",
     name: "Doors",
     summary: "Interior, exterior, patio, and specialty door packages.",
-    description: "With a Grimes custom door shop and showroom support, Beisser coordinates complete door packages for Iowa new construction and remodel work.",
+    description: "With a custom door shop and showroom in Johnston, Beisser coordinates complete door packages for Iowa new construction and remodel work.",
     heroImage: "/placeholders/category.jpg",
-    bullets: ["Interior and exterior door packages", "Custom-built doors from Grimes", "Hardware, glass, and trim coordination"],
+    bullets: ["Interior and exterior door packages", "Custom-built doors from Johnston", "Hardware, glass, and trim coordination"],
   },
   {
     slug: "engineered-wood-products",

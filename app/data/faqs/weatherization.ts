@@ -11,14 +11,14 @@ export const weatherizationFAQs: FAQItem[] = [
   },
   {
     question: "What insulation products does Beisser carry?",
-    answer: "",
+    answer: "We carry Dow BlueBoard closed-cell foam insulation for below-grade, wall, and roof applications. Ask your branch about other insulation products in stock.",
   },
   {
     question: "What weatherization products work best for Iowa new construction?",
-    answer: "",
+    answer: "ZIP System sheathing with ZIP tape is widely used on Iowa new construction because it combines sheathing and a water-resistive barrier in one product. Tyvek housewrap over standard sheathing works well too. Either way, flashing tape at windows and doors matters as much as the wrap itself.",
   },
   {
     question: "Does Beisser carry flashing, sill pan, and window/door rough opening products?",
-    answer: "",
+    answer: "Yes. We stock flashing tapes and window wrap (DuPont, ZIP Stretch Tape, and Vycor), Z-flashing, drip cap, and kick-out flashing. Ask your branch about sill pans for your door or window.",
   },
 ];

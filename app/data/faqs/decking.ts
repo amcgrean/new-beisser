@@ -7,7 +7,7 @@ export const deckingFAQs: FAQItem[] = [
   },
   {
     question: "What composite decking holds up best in Iowa winters?",
-    answer: "",
+    answer: "Capped composite and PVC boards handle Iowa's freeze-thaw cycles and spring moisture best, as long as the framing, board spacing, and fasteners are done right. Standard composite from brands like Trex, Fiberon, and TimberTech is the most common upgrade for Iowa decks. For decks near a pool or hot tub, under heavy shade, or in a part of the yard that stays damp, PVC and premium capped boards are worth the extra cost.",
   },
   {
     question: "Does Beisser offer deck material takeoffs for contractors?",

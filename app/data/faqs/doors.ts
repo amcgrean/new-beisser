@@ -7,7 +7,7 @@ export const doorsFAQs: FAQItem[] = [
   },
   {
     question: "Does Beisser have a custom door shop?",
-    answer: "Yes. Our Grimes location has a 26,500 sq ft custom door shop that builds thousands of doors a month for houses, apartments, and commercial projects. It builds pre-hung, custom-machined, and made-to-order door packages.",
+    answer: "Yes. Our custom door shop is at the Birchwood/Johnston campus, alongside the new showroom. It builds thousands of doors a month for houses, apartments, and commercial projects, including pre-hung, custom-machined, and made-to-order door packages.",
   },
   {
     question: "Is Beisser a Schlage dealer?",

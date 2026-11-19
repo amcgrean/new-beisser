@@ -31,6 +31,6 @@ export const lumberFAQs: FAQItem[] = [
   },
   {
     question: "Which branch should I contact for availability?",
-    answer: "",
+    answer: "Call the branch closest to your job: Grimes (515) 986-4422, Coralville (319) 545-7120, Fort Dodge (515) 573-4166, or Birchwood/Johnston (515) 986-4422. Grimes is our main yard. If you're not sure, call any branch and we'll route you.",
   },
 ];

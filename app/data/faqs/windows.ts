@@ -19,7 +19,7 @@ export const windowsFAQs: FAQItem[] = [
   },
   {
     question: "Can Beisser quote full window schedules from plans?",
-    answer: "",
+    answer: "Yes. Send your plans or window schedule and our window specialists will quote the full package.",
   },
   {
     question: "What are typical lead times on replacement windows?",
@@ -27,6 +27,6 @@ export const windowsFAQs: FAQItem[] = [
   },
   {
     question: "Do you deliver windows directly to Iowa job sites?",
-    answer: "",
+    answer: "Yes. We deliver windows to job sites across Central and Eastern Iowa. Our installed sales team also installs doors, windows, and some decking.",
   },
 ];

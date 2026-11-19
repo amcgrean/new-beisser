@@ -15,7 +15,7 @@ export const sidingFAQs: FAQItem[] = [
   },
   {
     question: "How does James Hardie compare to LP SmartSide in Iowa?",
-    answer: "",
+    answer: "Both hold up well in Iowa when they're installed correctly. James Hardie is fiber cement: heavier, fire-resistant, and known for a crisp painted finish. LP SmartSide is treated engineered wood: lighter, faster to cut and install, and impact-resistant. Builders who want install speed often pick LP. Homeowners who want fiber cement or fire resistance often pick Hardie. Our blog has a full comparison.",
   },
   {
     question: "Is Beisser an authorized James Hardie dealer?",

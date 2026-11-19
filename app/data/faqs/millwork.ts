@@ -7,11 +7,11 @@ export const millworkFAQs: FAQItem[] = [
   },
   {
     question: "Can Beisser match historical trim profiles for a remodel?",
-    answer: "",
+    answer: "Yes. Our millwork shop in Johnston can match historical profiles for remodels. If you're working on an older home and need new trim to match what's there, ask our team.",
   },
   {
     question: "What millwork profiles does Beisser keep in stock vs. special order?",
-    answer: "",
+    answer: "Our Birchwood/Johnston millwork shop stocks base, casing, shoe and quarter round, crown and cove, door stops, jambs, and boards, in poplar, red oak, maple, hickory, white oak, pine, and primed and clay-coated finishes. Most are Ferche and L.J. Smith profiles. Hundreds of other profile and species combinations are available by special order.",
   },
   {
     question: "Does Beisser carry primed MDF trim?",
@@ -19,6 +19,6 @@ export const millworkFAQs: FAQItem[] = [
   },
   {
     question: "How quickly can Beisser get a special-order trim profile?",
-    answer: "",
+    answer: "Many special-order profiles and species arrive within a few days. Custom or historical matches take longer. Ask your branch for timing on your profile.",
   },
 ];

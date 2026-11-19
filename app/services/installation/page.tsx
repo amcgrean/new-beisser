@@ -3,9 +3,9 @@ import { PageHeader, CtaBand } from "@/app/ui/PageHeader";
 import FAQSection from "@/components/FAQSection";
 
 const faqs = [
-  { question: "Does Beisser have an installed sales program?", answer: "" },
-  { question: "Can Beisser help with window service and warranty work?", answer: "" },
-  { question: "Does wall panel delivery arrive ready to install?", answer: "" },
+  { question: "Does Beisser have an installed sales program?", answer: "Yes. Our installed sales team installs doors, windows, and some decking, with seven trucks dedicated to installed sales." },
+  { question: "Can Beisser help with window service and warranty work?", answer: "Yes. We help with service and warranty work on existing windows and route it to the right manufacturer contacts. Use our service request form to get started." },
+  { question: "Does wall panel delivery arrive ready to install?", answer: "Yes. Wall panels from our Components Division are built in a climate-controlled shop and arrive ready to install." },
 ];
 
 export const metadata: Metadata = {
